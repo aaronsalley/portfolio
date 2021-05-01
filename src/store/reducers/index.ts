@@ -1,5 +1,5 @@
-import { RootStateOrAny } from "react-redux";
-import { AnyAction } from "redux";
+import { RootStateOrAny } from 'react-redux';
+import { AnyAction } from 'redux';
 
 const initialState: RootStateOrAny = {
   pages: [],
@@ -7,77 +7,41 @@ const initialState: RootStateOrAny = {
   menus: {
     SiteNav: [
       {
-        url: "",
-        title: "",
+        url: '/projects',
+        title: 'Projects',
+      },
+      {
+        url: '/about',
+        title: 'About',
+      },
+      {
+        url: '/resume',
+        title: 'Résumé',
       },
     ],
     SocialMenu: [
       {
-        url: "",
-        title: "",
+        url: 'https://www.linkedin.com/in/aaronsalley',
+        title: 'LinkedIn',
+      },
+      {
+        url: 'https://github.com/aaronsalley',
+        title: 'Github',
+      },
+      {
+        url: 'https://www.instagram.com/aaronsalleyhim/',
+        title: 'Instagram',
+      },
+      {
+        url: 'https://twitter.com/aaronsalley',
+        title: 'Twitter',
       },
     ],
   },
-  settings: {
-    homeId: 0,
-    projectCatId: 0,
-  },
-  ready: false,
 };
 
 const reducer = (state = initialState, action: AnyAction): RootStateOrAny => {
   switch (action.type) {
-    case "GET_PAGES":
-      return {
-        ...state,
-        pages: [...state.pages, ...action.payload],
-      };
-    case "GET_PROJECTS":
-      return {
-        ...state,
-        projects: action.payload,
-      };
-    case "GET_SITENAV":
-      return {
-        ...state,
-        menus: {
-          ...state.menus,
-          SiteNav: action.payload,
-        },
-      };
-    case "GET_SOCIALMENU":
-      return {
-        ...state,
-        menus: {
-          ...state.menus,
-          SocialMenu: action.payload,
-        },
-      };
-    case "GET_HOME_ID":
-      return {
-        ...state,
-        settings: {
-          ...state.settings,
-          homeId: action.payload,
-        },
-      };
-    case "GET_PROJECT_CAT":
-      return {
-        ...state,
-        settings: {
-          ...state.settings,
-          projectCatId: action.payload,
-        },
-      };
-    case "GET_SETTINGS":
-      return {
-        ...state,
-      };
-    case "IS_INITIALIZED":
-      return {
-        ...state,
-        ready: true,
-      };
     default:
       return state;
   }

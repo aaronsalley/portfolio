@@ -1,7 +1,6 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
-import { getPages, getProjectPosts } from '../../../store/actions';
-import htmlDecode from '../../../utils/htmlDecode';
+import { Helmet } from 'react-helmet';
 import ProjectSlate from '../../molecules/ProjectSlate';
 import styles from './index.module.scss';
 
@@ -17,10 +16,7 @@ const mapStateToProps = (state: any, ownProps: any) => {
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: any) => {
-  return {
-    getPages: () => dispatch(getPages()),
-    getFeaturedProjects: () => dispatch(getProjectPosts()),
-  };
+  return {};
 };
 
 class Home extends React.Component<any, any> {
@@ -40,40 +36,6 @@ class Home extends React.Component<any, any> {
     };
   }
 
-  componentDidMount() {
-    this.props.getPages();
-    this.props.getFeaturedProjects();
-    this.selectHomeFromPages();
-  }
-
-  componentDidUpdate(prevProps: any) {
-    if (prevProps.settings.projectCatId !== this.props.settings.projectCatId) {
-      this.props.getFeaturedProjects();
-    }
-    if (prevProps.pages !== this.props.pages) {
-      this.selectHomeFromPages();
-    }
-  }
-
-  selectHomeFromPages = () => {
-    const content = this.props.pages
-      .filter(
-        (page: any) =>
-          this.props.settings.homeId !== 0 &&
-          page.id === this.props.settings.homeId
-      )
-      .pop();
-
-    if (content) {
-      this.setState({
-        title: htmlDecode(content.title.rendered),
-        excerpt: htmlDecode(content.excerpt.rendered),
-      });
-    }
-
-    return false;
-  };
-
   composeIntro = () => {
     return this.state.excerpt.split('</br>').map((p: string, i: number) => {
       return <p key={i}>{p}</p>;
@@ -88,18 +50,24 @@ class Home extends React.Component<any, any> {
 
   render() {
     return (
-      <main className={styles.container}>
-        <section id='about' className={styles.Section__intro}>
-          <h1>
-            <small>Hey there,</small>
-            {this.state.title}
-          </h1>
-          <div className={styles.intro}>{<this.composeIntro />}</div>
-        </section>
-        <section id='projects' className={styles.Section__showcase}>
-          {<this.composeProjects />}
-        </section>
-      </main>
+      <React.Fragment>
+        <Helmet>
+          <title>Test</title>
+        </Helmet>
+        <main className={styles.container}>
+          <section id='about' className={styles.Section__intro}>
+            <h1>
+              <small>Hey there,</small>
+              {this.state.title}
+            </h1>
+            <div className={styles.intro}>{<this.composeIntro />}</div>
+            <div></div>
+          </section>
+          <section id='projects' className={styles.Section__showcase}>
+            {<this.composeProjects />}
+          </section>
+        </main>
+      </React.Fragment>
     );
   }
 }

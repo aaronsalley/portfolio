@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import NavItems from "../../organisms/SiteNav";
-import styles from "./index.module.scss";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import NavItems from '../../organisms/SiteNav';
+import styles from './index.module.scss';
 
 const mapPropsToState = (state: any, ownProps: any) => {
   const { menus } = state;
@@ -15,7 +15,7 @@ const SiteHeader = (props: any) => {
   return (
     <header className={styles.container}>
       <Link to='/' className={styles.SiteLogo}>
-        Disruptv LLC
+        Aaron Salley & Disruptv LLC
       </Link>
       <nav>
         <NavItems items={props.siteNav} />

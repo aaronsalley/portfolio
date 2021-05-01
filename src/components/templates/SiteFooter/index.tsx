@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import sleep from "../../../utils/sleep";
-import SocialMenu from "../../organisms/SocialMenu";
-import styles from "./index.module.scss";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import sleep from '../../../utils/sleep';
+import SocialMenu from '../../organisms/SocialMenu';
+import styles from './index.module.scss';
 
 const mapPropsToState = (state: any, ownProps: any) => {
   const { menus, ready } = state;
@@ -13,41 +13,41 @@ const mapPropsToState = (state: any, ownProps: any) => {
     ready,
     body: document.body as HTMLElement,
     timing: getComputedStyle(document.documentElement).getPropertyValue(
-      "--timing"
+      '--timing'
     ),
   };
 };
 
 const SiteFooter = (props: any) => {
   const [isDocked, dock] = useState(false);
-  let [classes, setClasses] = useState(["container", "docked"]);
+  let [classes, setClasses] = useState(['container', 'docked']);
 
   useEffect(
     ({ body, timing } = props) => {
-      body.addEventListener("scroll", () => {
+      body.addEventListener('scroll', () => {
         body.scrollTop === 0 ? dock(false) : dock(true);
       });
 
       return () => {
         // TODO: fix jankiness when quick scrolling at the top of the page
         const animationClasses = async () => {
-          !classes.includes("inTransit--start")
-            ? classes.push("inTransit--start")
+          !classes.includes('inTransit--start')
+            ? classes.push('inTransit--start')
             : classes.push();
           setClasses(classes);
           await sleep(0.01);
 
           classes = classes.filter(
-            (className: string) => className !== "inTransit--start"
+            (className: string) => className !== 'inTransit--start'
           );
-          !classes.includes("inTransit")
-            ? classes.push("inTransit")
+          !classes.includes('inTransit')
+            ? classes.push('inTransit')
             : classes.push();
-          if (isDocked && !classes.includes("docked")) {
-            classes.push("docked");
+          if (isDocked && !classes.includes('docked')) {
+            classes.push('docked');
           } else if (!isDocked) {
             classes = classes.filter(
-              (className: string) => className !== "docked"
+              (className: string) => className !== 'docked'
             );
           }
           setClasses(classes);
@@ -55,7 +55,7 @@ const SiteFooter = (props: any) => {
           await sleep(timing);
 
           const endTransit = classes.filter(
-            (className: string) => className !== "inTransit"
+            (className: string) => className !== 'inTransit'
           );
           setClasses(endTransit.filter(Boolean));
         };
@@ -70,12 +70,12 @@ const SiteFooter = (props: any) => {
   });
 
   return (
-    <footer className={classNames.join(" ")}>
+    <footer className={classNames.join(' ')}>
       <menu className={styles.SocialMenu}>
         <SocialMenu items={props.socialMenu} />
       </menu>
       <small className={styles.copyright}>
-        © Copyright Disruptv LLC {new Date().getFullYear()}
+        © Copyright {new Date().getFullYear()}. All Rights Reserved.
       </small>
     </footer>
   );

@@ -1,27 +1,25 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import reportWebVitals from "./reportWebVitals";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import reportWebVitals from './reportWebVitals';
 
-import { Provider } from "react-redux";
-import store from "./store";
-import { initialize } from "./store/actions";
+import { Provider } from 'react-redux';
+import store from './store';
 
-import SiteFooter from "./components/templates/SiteFooter";
-import SiteHeader from "./components/templates/SiteHeader";
+import SiteFooter from './components/templates/SiteFooter';
+import SiteHeader from './components/templates/SiteHeader';
 
-import "./assets/styles/index.scss";
-import Home from "./components/views/Home";
-import Project from "./components/views/Project";
-import Resume from "./components/views/Resume";
+import './assets/styles/index.scss';
+import Home from './components/views/Home';
+import Project from './components/views/Project';
+import Resume from './components/views/Resume';
 
-store.dispatch(initialize);
 const vh = () => {
   const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
 };
-window.addEventListener("load resize", vh);
-window.addEventListener("resize", vh);
+window.addEventListener('load resize', vh);
+window.addEventListener('resize', vh);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -44,7 +42,7 @@ ReactDOM.render(
       </Router>
     </React.Fragment>
   </Provider>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

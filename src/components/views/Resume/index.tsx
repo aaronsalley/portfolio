@@ -1,9 +1,8 @@
-import axios from "axios";
-import React, { Dispatch } from "react";
-import { connect } from "react-redux";
-import { getProjectPosts, getTagsByID } from "../../../store/actions";
-import htmlDecode from "../../../utils/htmlDecode";
-import styles from "./index.module.scss";
+import React, { Dispatch } from 'react';
+import { Helmet } from 'react-helmet';
+import { connect } from 'react-redux';
+import htmlDecode from '../../../utils/htmlDecode';
+import styles from './index.module.scss';
 
 const mapStateToProps = (state: any, ownProps: any) => {
   const { projects, settings } = state;
@@ -12,10 +11,7 @@ const mapStateToProps = (state: any, ownProps: any) => {
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: any) => {
-  return {
-    getJobs: () => dispatch(getProjectPosts()),
-    getSkills: () => getTagsByID(),
-  };
+  return {};
 };
 
 class Resume extends React.Component<any, any> {
@@ -23,87 +19,57 @@ class Resume extends React.Component<any, any> {
     super(props);
 
     this.state = {
-      fullName: "Aaron Salley",
+      fullName: 'Aaron Salley',
       bio: `Having careers in the arts and tech, my philosophy leverages connections between diverse experiences.
       I draw from human-centered yet pragmatic technical skills to bring conscientiousness, creativity, and strategic thinking to all that I do.
       Over the last decade, I've worked with startups and established companies alike — taking ideas from mind to market.`,
       contacts: [
         {
-          title: "New York, NY",
+          title: 'New York, NY',
         },
         {
-          title: "646-535-0114",
-          url: "tel:+16465350114",
+          title: '646-535-0114',
+          url: 'tel:+16465350114',
         },
         {
-          title: "aaron@disruptv.llc",
-          url: "mailto:aaron@disruptv.llc",
+          title: 'aaron@disruptv.llc',
+          url: 'mailto:aaron@disruptv.llc',
         },
         {
-          title: "linkedin.com/in/aaronsalley",
-          url: "https://linkedin.com/in/aaronsalley",
+          title: 'linkedin.com/in/aaronsalley',
+          url: 'https://linkedin.com/in/aaronsalley',
         },
       ],
       educations: [
         {
-          school: "NYU Stern School of Business",
-          location: "New York, NY",
-          degree: "MBA",
+          school: 'NYU Stern School of Business',
+          location: 'New York, NY',
+          degree: 'MBA',
           summary:
-            "Entrepreneurship & Innovation, Mgmt. of Technology & Operations, General Management; Class President",
+            'Entrepreneurship & Innovation, Mgmt. of Technology & Operations, General Management; Class President',
         },
         {
-          school: "Stanford University",
-          location: "Stanford, CA",
-          degree: "Certificate",
-          summary: "Machine Learning",
+          school: 'Stanford University',
+          location: 'Stanford, CA',
+          degree: 'Certificate',
+          summary: 'Machine Learning',
         },
         {
-          school: "UNC Chapel Hill",
-          location: "Chapel Hill, NC",
-          degree: "BA",
+          school: 'UNC Chapel Hill',
+          location: 'Chapel Hill, NC',
+          degree: 'BA',
         },
       ],
       skills: [],
-      languages: ["English", "Spanish", "Italian"],
+      languages: ['English', 'Spanish', 'Italian'],
       references: [],
     };
   }
 
-  componentDidMount = async () => {
-    this.props.getJobs();
-    let skills = await this.props.getSkills();
-    skills = skills.map((skill: any) => {
-      return skill.name;
-    });
-
-    this.setState({
-      skills: skills,
-    });
-  };
-
-  componentDidUpdate = (prevProps: any, state: any) => {
-    if (prevProps.settings.projectCatId !== this.props.settings.projectCatId) {
-      this.props.getJobs();
-    }
-    if (prevProps.projects !== this.props.projects) {
-      this.composeJobs();
-    }
-  };
-
-  composeContacts = () => {
-    const contacts = this.state.contacts.map((contact: any, i: string) => {
-      return (
-        <article key={i}>
-          {contact.url ? (
-            <a href={contact.url}>{contact.title}</a>
-          ) : (
-            contact.title
-          )}
-        </article>
-      );
-    });
-    return <ul className={styles.contacts}>{contacts}</ul>;
+  formatDate = (date: Date) => {
+    return `${new Intl.DateTimeFormat('en-US', { month: 'long' }).format(
+      date
+    )} ${date.getFullYear()}`;
   };
 
   sortJobs = () => {
@@ -121,13 +87,22 @@ class Resume extends React.Component<any, any> {
     });
   };
 
-  formatDate = (date: Date) => {
-    return `${new Intl.DateTimeFormat("en-US", { month: "long" }).format(
-      date
-    )} ${date.getFullYear()}`;
+  ComposeContacts = () => {
+    const contacts = this.state.contacts.map((contact: any, i: string) => {
+      return (
+        <article key={i}>
+          {contact.url ? (
+            <a href={contact.url}>{contact.title}</a>
+          ) : (
+            contact.title
+          )}
+        </article>
+      );
+    });
+    return <ul className={styles.contacts}>{contacts}</ul>;
   };
 
-  composeJobs = () => {
+  ComposeJobs = () => {
     this.sortJobs();
 
     const jobs = this.props.jobs.map((job: any, i: number) => {
@@ -140,17 +115,17 @@ class Resume extends React.Component<any, any> {
       } = job.meta;
 
       startDate = this.formatDate(new Date(startDate));
-      endDate = endDate !== "" ? this.formatDate(new Date(endDate)) : "Present";
+      endDate = endDate !== '' ? this.formatDate(new Date(endDate)) : 'Present';
 
-      let articleStyles: string | string[] = ["job"];
-      endDate === "Present"
-        ? articleStyles.push("active")
+      let articleStyles: string | string[] = ['job'];
+      endDate === 'Present'
+        ? articleStyles.push('active')
         : articleStyles.push();
       articleStyles = articleStyles
         .map((style: string) => {
           return styles[style];
         })
-        .join(" ");
+        .join(' ');
 
       return (
         <article className={articleStyles} key={i}>
@@ -176,7 +151,7 @@ class Resume extends React.Component<any, any> {
     );
   };
 
-  composeEducations = () => {
+  ComposeEducations = () => {
     const educations = this.state.educations.map(
       (education: any, i: string) => {
         return (
@@ -213,31 +188,36 @@ class Resume extends React.Component<any, any> {
 
   render = () => {
     return (
-      <article className={styles.document}>
-        <header>
-          <h1>{this.state.fullName}</h1>
-          <this.composeContacts />
-          <section className={styles.statement}>
-            <h2>Executive Summary</h2>
-            <p>{this.state.bio}</p>
-          </section>
-        </header>
-        <div>
-          <this.composeJobs />
-          <aside className={styles.about}>
-            <section className={styles.big5}></section>
-            <section className={styles.skills}>
-              <h2>Skills</h2>
-              <this.ComposeLists items={this.state.skills} />
+      <React.Fragment>
+        <Helmet>
+          <title>Resume</title>
+        </Helmet>
+        <article className={styles.document}>
+          <header>
+            <h1>{this.state.fullName}</h1>
+            <this.ComposeContacts />
+            <section className={styles.statement}>
+              <h2>Executive Summary</h2>
+              <p>{this.state.bio}</p>
             </section>
-            <section className={styles.languages}>
-              <h2>Languages</h2>
-              <this.ComposeLists items={this.state.languages} />
-            </section>
-            <this.composeEducations />
-          </aside>
-        </div>
-      </article>
+          </header>
+          <div>
+            <this.ComposeJobs />
+            <aside className={styles.about}>
+              <section className={styles.big5}></section>
+              <section className={styles.skills}>
+                <h2>Skills</h2>
+                <this.ComposeLists items={this.state.skills} />
+              </section>
+              <section className={styles.languages}>
+                <h2>Languages</h2>
+                <this.ComposeLists items={this.state.languages} />
+              </section>
+              <this.ComposeEducations />
+            </aside>
+          </div>
+        </article>
+      </React.Fragment>
     );
   };
 }
