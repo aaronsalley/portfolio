@@ -1,9 +1,9 @@
 import React, { Dispatch } from 'react';
-import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import browser from '../../../utils/browserDetection';
 import htmlDecode from '../../../utils/htmlDecode';
+import HeaderMeta from '../../atoms/HeaderMeta';
 import styles from './index.module.scss';
 
 const mapStateToProps = (state: any, ownProps: any) => {
@@ -24,7 +24,10 @@ class Project extends React.Component<any, any> {
     super(props);
 
     this.state = {
-      id: 0,
+      meta: {
+        id: 0,
+        title: '',
+      },
       client: '',
       title: '',
       date: '',
@@ -49,9 +52,7 @@ class Project extends React.Component<any, any> {
   render() {
     return (
       <React.Fragment>
-        <Helmet>
-          <title>{this.state.title}</title>
-        </Helmet>
+        <HeaderMeta meta={this.state.meta} />
         <article className={styles.container}>
           <header
             className={styles.slate}

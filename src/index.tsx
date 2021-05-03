@@ -6,8 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './store';
 
-import SiteFooter from './components/templates/SiteFooter';
-import SiteHeader from './components/templates/SiteHeader';
+import SiteFooter from './components/organisms/SiteFooter';
+import SiteHeader from './components/organisms/SiteHeader';
 
 import './assets/styles/index.scss';
 import Home from './components/views/Home';

@@ -1,7 +1,7 @@
 import React, { Dispatch } from 'react';
-import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import htmlDecode from '../../../utils/htmlDecode';
+import HeaderMeta from '../../atoms/HeaderMeta';
 import styles from './index.module.scss';
 
 const mapStateToProps = (state: any, ownProps: any) => {
@@ -19,6 +19,10 @@ class Resume extends React.Component<any, any> {
     super(props);
 
     this.state = {
+      meta: {
+        id: 0,
+        title: 'Resume',
+      },
       fullName: 'Aaron Salley',
       bio: `Having careers in the arts and tech, my philosophy leverages connections between diverse experiences.
       I draw from human-centered yet pragmatic technical skills to bring conscientiousness, creativity, and strategic thinking to all that I do.
@@ -189,9 +193,7 @@ class Resume extends React.Component<any, any> {
   render = () => {
     return (
       <React.Fragment>
-        <Helmet>
-          <title>Resume</title>
-        </Helmet>
+        <HeaderMeta meta={this.state.meta} />
         <article className={styles.document}>
           <header>
             <h1>{this.state.fullName}</h1>

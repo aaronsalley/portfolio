@@ -1,8 +1,9 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
-import { Helmet } from 'react-helmet';
-import ProjectSlate from '../../molecules/ProjectSlate';
+import ProjectSlate from '../../templates/ProjectSlate';
 import styles from './index.module.scss';
+import FeaturedClients from '../../molecules/FeaturedClients';
+import HeaderMeta from '../../atoms/HeaderMeta';
 
 const mapStateToProps = (state: any, ownProps: any) => {
   const { projects, pages, settings, ready } = state;
@@ -24,10 +25,13 @@ class Home extends React.Component<any, any> {
     super(props);
 
     this.state = {
-      id: 0,
+      meta: {
+        id: 0,
+        title: '',
+      },
       title: `I work with startups and top companies on intentional, 
       radical, innovative digital solutions.`,
-      excerpt: `I'm Aaron. Having careers in the arts and tech, my 
+      excerpt: `I'm Aaron. Having had careers in the arts and tech, my 
       philosophy leverages connections between diverse experiences.</br> 
       I draw from human-centered yet pragmatic technical skills to 
       bring conscientiousness, creativity, and strategic thinking to all that I do.</br> 
@@ -51,9 +55,7 @@ class Home extends React.Component<any, any> {
   render() {
     return (
       <React.Fragment>
-        <Helmet>
-          <title>Test</title>
-        </Helmet>
+        <HeaderMeta meta={this.state.meta} />
         <main className={styles.container}>
           <section id='about' className={styles.Section__intro}>
             <h1>
@@ -61,7 +63,7 @@ class Home extends React.Component<any, any> {
               {this.state.title}
             </h1>
             <div className={styles.intro}>{<this.composeIntro />}</div>
-            <div></div>
+            <FeaturedClients />
           </section>
           <section id='projects' className={styles.Section__showcase}>
             {<this.composeProjects />}

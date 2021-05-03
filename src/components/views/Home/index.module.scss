@@ -16,17 +16,24 @@
     height: 100%;
     min-height: calc(var(--vh, 1vh) * 100 - 56px - 32px);
     @include make-container();
-    @include make-container-max-widths();
+    @each $breakpoint, $container-max-width in $container-max-widths {
+      @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+        max-width: $container-max-width;
+      }
+    }
 
     h1 {
-      margin: 1em 0;
       @include make-col-ready(0);
       @include make-col(12);
+
+      margin-top: 4em;
+      margin-bottom: 1em;
 
       @include media-breakpoint-up(sm) {
         font-size: 4.4vw;
       }
       @include media-breakpoint-up(md) {
+        margin-top: auto;
         font-size: 4.4vw;
         @include make-col(9);
       }
@@ -41,12 +48,29 @@
       small {
         display: block;
         margin-bottom: 0.5em;
+        font-size: 80%;
         font-weight: 500;
       }
     }
 
     .intro {
+      position: relative;
       @include make-row();
+
+      padding-bottom: 40px;
+      margin: 0;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: calc(var(--bs-gutter-x) / 2);
+        display: block;
+        width: 25%;
+        height: 1px;
+        content: "";
+        background-color: var(--text);
+        opacity: 0.18;
+      }
 
       p {
         @include make-col-ready();

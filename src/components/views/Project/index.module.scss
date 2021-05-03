@@ -72,7 +72,11 @@ $dark: #000c1a;
       flex: 1 0 100%;
       align-items: center;
       @include make-container();
-      @include make-container-max-widths();
+      @each $breakpoint, $container-max-width in $container-max-widths {
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+          max-width: $container-max-width;
+        }
+      }
 
       @media (max-height: map-get($map: $container-max-widths, $key: lg)) {
         min-height: calc(var(--vh, 1vh) * 25);
@@ -83,20 +87,32 @@ $dark: #000c1a;
       z-index: 2;
       margin-bottom: 2em;
       @include make-container();
-      @include make-container-max-widths();
+      @each $breakpoint, $container-max-width in $container-max-widths {
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+          max-width: $container-max-width;
+        }
+      }
     }
 
     .excerpt {
       z-index: 2;
       @include make-container();
-      @include make-container-max-widths();
+      @each $breakpoint, $container-max-width in $container-max-widths {
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+          max-width: $container-max-width;
+        }
+      }
     }
 
     .details {
       z-index: 2;
       @include make-row();
       @include make-container();
-      @include make-container-max-widths();
+      @each $breakpoint, $container-max-width in $container-max-widths {
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+          max-width: $container-max-width;
+        }
+      }
       @include row-cols(1);
 
       @include media-breakpoint-up(md) {
@@ -115,7 +131,11 @@ $dark: #000c1a;
     padding: 2em 0;
     margin: 2em 0;
     @include make-container();
-    @include make-container-max-widths();
+    @each $breakpoint, $container-max-width in $container-max-widths {
+      @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+        max-width: $container-max-width;
+      }
+    }
 
     img {
       height: auto;
