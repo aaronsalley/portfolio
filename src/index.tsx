@@ -11,8 +11,8 @@ import SiteHeader from './components/organisms/SiteHeader';
 
 import './assets/styles/index.scss';
 import Home from './components/views/Home';
-import Project from './components/views/Project';
 import Resume from './components/views/Resume';
+import CaseStudy from './components/templates/CaseStudy';
 
 const vh = () => {
   const vh = window.innerHeight * 0.01;
@@ -31,7 +31,7 @@ ReactDOM.render(
             <Home />
           </Route>
           <Route path='/project/:id'>
-            <Project />
+            <CaseStudy />
           </Route>
           <Route path='/resume'>
             <Resume />

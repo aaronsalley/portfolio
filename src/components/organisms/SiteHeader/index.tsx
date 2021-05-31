@@ -17,7 +17,9 @@ const SiteHeader = (props: any) => {
       <Link to='/' className={styles.SiteLogo}>
         Aaron Salley & Disruptv LLC
       </Link>
-      <nav>{/* <NavItems items={props.siteNav} /> */}</nav>
+      <nav>
+        <NavItems items={props.siteNav} />
+      </nav>
     </header>
   );
 };

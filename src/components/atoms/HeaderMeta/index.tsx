@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-const HeaderMeta = (props: any) => {
+const HeaderMeta = (props: any): any => {
   const { title } = props.meta;
 
   return (

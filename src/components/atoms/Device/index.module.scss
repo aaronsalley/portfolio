@@ -1,0 +1,52 @@
+@import "~bootstrap/scss/functions";
+@import "../../../../src/assets/styles/variables";
+@import "~bootstrap/scss/mixins";
+
+.container {
+  position: relative;
+  // margin-top: 4rem;
+  @include make-container(0);
+
+  .hardware {
+    z-index: 3;
+    height: 36vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include media-breakpoint-up(md) {
+      max-height: 60vh;
+    }
+    @include media-breakpoint-up(4k) {
+      max-height: 60vh;
+    }
+
+    &--MacBookPro {
+      position: relative;
+      background-image: var(--MacBookPro);
+    }
+    &--iMac {
+      position: relative;
+      background-image: var(--iMac);
+      @media screen and (prefers-color-scheme: light) {
+        background-position-x: 38%;
+      }
+    }
+    &--iPhone {
+      position: relative;
+      background-image: var(--iPhone);
+    }
+    &--iPhones {
+      position: relative;
+      background-image: var(--iPhones);
+    }
+    &--iPadLandscape {
+      position: relative;
+      background-image: var(--iPadLandscape);
+    }
+    &--iPadPortrait {
+      position: relative;
+      background-image: var(--iPadPortrait);
+    }
+  }
+}

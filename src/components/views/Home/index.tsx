@@ -1,9 +1,11 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
-import ProjectSlate from '../../templates/ProjectSlate';
 import styles from './index.module.scss';
 import FeaturedClients from '../../molecules/FeaturedClients';
 import HeaderMeta from '../../atoms/HeaderMeta';
+import LeadForm from '../../organisms/forms/Lead';
+import Showcase from '../../organisms/Showcase';
+import MailChimpForm from '../../organisms/forms/MailChimpEmailSignup';
 
 const mapStateToProps = (state: any, ownProps: any) => {
   const { projects, pages, settings, ready } = state;
@@ -46,29 +48,21 @@ class Home extends React.Component<any, any> {
     });
   };
 
-  composeProjects = () => {
-    return this.props.projects.map((project: any, i: number) => {
-      return project.sticky ? <ProjectSlate {...project} key={i} /> : false;
-    });
-  };
-
   render() {
     return (
       <React.Fragment>
         <HeaderMeta meta={this.state.meta} />
         <main className={styles.container}>
-          <section id='about' className={styles.Section__intro}>
-            <h1>
-              <small>Hey there,</small>
-              {this.state.title}
-            </h1>
-            <div className={styles.intro}>{<this.composeIntro />}</div>
-            <FeaturedClients />
-          </section>
-          <section id='projects' className={styles.Section__showcase}>
-            {<this.composeProjects />}
-          </section>
+          <h1 className={styles.welcome}>
+            <small>Hey there,</small>
+            {this.state.title}
+          </h1>
+          <div className={styles.intro}>{<this.composeIntro />}</div>
+          <FeaturedClients />
+          {/* <LeadForm /> */}
+          <MailChimpForm />
         </main>
+        <Showcase />
       </React.Fragment>
     );
   }

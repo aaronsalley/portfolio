@@ -1,0 +1,46 @@
+@import "~bootstrap/scss/functions";
+@import "../../../../../src/assets/styles/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/forms";
+
+.container {
+  @include make-col-ready();
+  @include make-row(0);
+
+  margin-top: 60px;
+
+  .collapse {
+    @include make-row(0);
+    @include make-col-ready();
+    @include row-cols(2);
+
+    height: 0;
+    overflow: hidden;
+  }
+
+  div {
+    flex-grow: 1;
+    @extend .form-floating !optional;
+    @extend .input-group !optional;
+  }
+
+  input:not([type="submit"]) {
+    background-color: rgba(var(--text), 0.5);
+    @extend .form-control !optional;
+  }
+
+  label {
+    z-index: 10;
+  }
+
+  button {
+    border-style: none;
+    @include button-variant(#f2af2d, #f2af2d);
+    @include button-size(
+      $btn-padding-y,
+      $btn-padding-x,
+      $btn-font-size,
+      $btn-border-radius
+    );
+  }
+}

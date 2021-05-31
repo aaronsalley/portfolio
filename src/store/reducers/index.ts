@@ -38,10 +38,22 @@ const initialState: RootStateOrAny = {
       },
     ],
   },
+  browser: '',
+  colorScheme: '',
 };
 
 const reducer = (state = initialState, action: AnyAction): RootStateOrAny => {
   switch (action.type) {
+    case 'SET_COLOR_SCHEME':
+      return {
+        ...state,
+        colorScheme: action.payload,
+      };
+    case 'SET_BROWSER':
+      return {
+        ...state,
+        browser: action.payload,
+      };
     default:
       return state;
   }

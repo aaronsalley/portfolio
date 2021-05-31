@@ -1,4 +1,4 @@
-version: "3.9"
+version: '3.9'
 
 services:
   web_db:
@@ -6,6 +6,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: development
+      MYSQL_DATABASE: ghost_dev
     volumes:
       - public-data:/var/lib/mysql
     networks:
@@ -28,9 +29,28 @@ services:
       - web
     depends_on:
       - web_db
+  ghost:
+    image: ghost
+    restart: always
+    ports:
+      - 3001:2368
+    environment:
+      database__client: mysql
+      database__connection__host: web_db
+      database__connection__user: root
+      database__connection__password: development
+      database__connection__database: ghost_dev
+    env_file:
+      - './.env'
+    volumes:
+      - ./dist:/var/lib/ghost/content/themes/devBuild
+      - ghost-data:/var/lib/ghost/content
+    networks:
+      - web
 
 networks:
   web:
 volumes:
-  wp-content:
   public-data:
+  wp-content:
+  ghost-data:

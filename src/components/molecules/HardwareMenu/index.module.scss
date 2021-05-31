@@ -1,0 +1,27 @@
+@import "~bootstrap/scss/functions";
+@import "../../../../src/assets/styles/variables";
+@import "~bootstrap/scss/mixins";
+
+.container {
+  padding-left: 0;
+  margin-left: -0.75rem;
+
+  .hardware {
+    @media screen and (prefers-color-scheme: light) {
+      opacity: 0.5;
+      @include button-variant(#f8f9fa, transparent);
+    }
+    @media screen and (prefers-color-scheme: dark) {
+      opacity: 0.5;
+      @include button-variant(#000c1a, transparent);
+    }
+    @include button-size(
+      $btn-padding-y,
+      $btn-padding-x,
+      $btn-font-size,
+      $btn-border-radius
+    );
+
+    color: var(--text) !important;
+  }
+}

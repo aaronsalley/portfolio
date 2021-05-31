@@ -14,7 +14,7 @@ class Wordpress {
 
   constructor() {
     this.$http = axios.create({
-      baseURL: `${process.env.REACT_APP_PROXY}/wp-json/wp/v2`,
+      baseURL: `${process.env.PROXY}/wp-json/wp/v2`,
     });
   }
 

@@ -53,33 +53,6 @@ body {
   background-color: var(--material);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  // &::-webkit-scrollbar {
-  //   width: 0.5em;
-  // }
-  // &:hover::-webkit-scrollbar {
-  //   width: 0.5em;
-
-  //   &--track {
-  //     background: var(--material);
-  //   }
-
-  //   /* Handle */
-  //   &-thumb {
-  //     transition: background-color 25s ease;
-
-  //     @media screen and (prefers-color-scheme: light) {
-  //       background-color: var(--dark);
-  //     }
-  //     @media screen and (prefers-color-scheme: dark) {
-  //       background-color: var(--light);
-  //     }
-
-  //     &:hover {
-  //       background-color: var(--primary);
-  //     }
-  //   }
-  // }
 }
 
 code {
