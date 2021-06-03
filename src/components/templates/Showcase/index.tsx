@@ -64,21 +64,27 @@ class Showcase extends React.Component<any, any> {
                 <h2 className={style.client}>{project.client}</h2>
                 <p className={style.summary}>{project.summary}</p>
 
-                <a href={`project/${project.slug}`} className={style.button}>
+                <a
+                  href={`project/${project.slug}`}
+                  className={style.button}
+                  title='View Case Study'
+                >
                   View Case Study
                 </a>
               </section>
-              <picture>
-                <source
-                  media='screen and (prefers-color-scheme: dark)'
-                  srcSet={featuredImageDark}
-                />
-                <source
-                  media='screen and (prefers-color-scheme: light)'
-                  srcSet={featuredImageLight}
-                />
-                <img src={featuredImage} alt={project.title} />
-              </picture>
+              <a href={`project/${project.slug}`} title='View Case Study'>
+                <picture>
+                  <source
+                    media='screen and (prefers-color-scheme: dark)'
+                    srcSet={featuredImageDark}
+                  />
+                  <source
+                    media='screen and (prefers-color-scheme: light)'
+                    srcSet={featuredImageLight}
+                  />
+                  <img src={featuredImage} alt={project.title} />
+                </picture>
+              </a>
             </article>
           );
         }
