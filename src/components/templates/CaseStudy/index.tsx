@@ -75,9 +75,9 @@ class CaseStudy extends React.Component<any, any> {
 
   setHardware = (event: any) => {
     event.preventDefault();
-    // TODO: make event target alway be a button
+
     this.setState({
-      device: event.target.value,
+      device: event.target.closest('button').value,
     });
   };
 
