@@ -35,6 +35,20 @@ $gray: lighten($black, 80%);
     }
   }
 
+  .title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  .summary {
+    opacity: 0.5;
+
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+  }
+
   .button {
     @extend .btn;
     @media screen and (prefers-color-scheme: light) {

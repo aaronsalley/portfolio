@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-/design/mockups/*/
+/design/mockups
 /.pnp
 .pnp.js
 
