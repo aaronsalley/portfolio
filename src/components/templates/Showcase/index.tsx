@@ -1,5 +1,6 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { detectColorScheme } from '../../../store/actions';
 import style from './index.module.scss';
 
@@ -64,15 +65,15 @@ class Showcase extends React.Component<any, any> {
                 <h2 className={style.client}>{project.client}</h2>
                 <p className={style.summary}>{project.summary}</p>
 
-                <a
-                  href={`project/${project.slug}`}
+                <Link
+                  to={`project/${project.slug}`}
                   className={style.button}
                   title='View Case Study'
                 >
                   View Case Study
-                </a>
+                </Link>
               </section>
-              <a href={`project/${project.slug}`} title='View Case Study'>
+              <Link to={`project/${project.slug}`} title='View Case Study'>
                 <picture>
                   <source
                     media='screen and (prefers-color-scheme: dark)'
@@ -84,7 +85,7 @@ class Showcase extends React.Component<any, any> {
                   />
                   <img src={featuredImage} alt={project.title} />
                 </picture>
-              </a>
+              </Link>
             </article>
           );
         }

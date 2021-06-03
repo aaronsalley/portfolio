@@ -1,6 +1,6 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { detectBrowser, detectColorScheme } from '../../../store/actions';
 import HeaderMeta from '../../atoms/HeaderMeta';
 import CaseStudyHeader from '../CaseStudyHeader';
@@ -99,7 +99,11 @@ class CaseStudy extends React.Component<any, any> {
             setHardware={this.setHardware}
           ></CaseStudyHeader>
           {/* <main dangerouslySetInnerHTML={{ __html: this.state.content }}></main> */}
-          {/* <footer className={style.container}></footer> */}
+          <footer className={style.container}>
+            <Link to={'/projects'} className={style.showAll}>
+              <i className='fas fa-arrow-left'></i>Back to Projects
+            </Link>
+          </footer>
         </article>
       </React.Fragment>
     );

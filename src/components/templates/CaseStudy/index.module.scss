@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/functions";
 @import "../../../../src/assets/styles/variables";
 @import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/buttons";
 
 $dark: #000c1a;
 
@@ -30,6 +31,20 @@ $dark: #000c1a;
       @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
         max-width: $container-max-width;
       }
+    }
+  }
+
+  .showAll {
+    @extend .btn;
+    @media screen and (prefers-color-scheme: light) {
+      @include button-outline-variant($dark);
+    }
+    @media screen and (prefers-color-scheme: dark) {
+      @include button-outline-variant(rgba($light, 0.8));
+    }
+
+    i {
+      padding-right: 1rem;
     }
   }
 }
