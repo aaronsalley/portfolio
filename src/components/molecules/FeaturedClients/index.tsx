@@ -5,24 +5,24 @@ import { ReactComponent as BNYMellonLogo } from '../../../assets/media/bnymellon
 import { ReactComponent as RaviManglaniLogo } from '../../../assets/media/rm+compass.svg';
 import { ReactComponent as IntryLogo } from '../../../assets/media/intry.svg';
 
-import styles from './index.module.scss';
+import style from './index.module.scss';
 
 const FeaturedClients = (props: any): ReactComponentElement<'ul'> => {
   return (
-    <ul className={styles.container}>
-      <li className={styles.logo}>
+    <ul className={style.container}>
+      <li className={style.logo}>
         <BHPhotoLogo title='B&H Photo Video' />
       </li>
-      <li className={styles.logo}>
+      <li className={style.logo}>
         <MTFLogo title='Musical Theatre Factory' />
       </li>
-      <li className={styles.logo}>
+      <li className={style.logo}>
         <BNYMellonLogo title='BNY Mellon' />
       </li>
-      <li className={styles.logo}>
+      <li className={style.logo}>
         <RaviManglaniLogo title='Ravi Manglani + Compass' />
       </li>
-      <li className={styles.logo}>
+      <li className={style.logo}>
         <IntryLogo title='Intry' />
       </li>
     </ul>

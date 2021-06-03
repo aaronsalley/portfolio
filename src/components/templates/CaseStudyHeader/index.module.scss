@@ -23,12 +23,12 @@
     }
 
     & ~ aside {
-      padding-top: 1rem;
+      gap: 1rem;
 
       @include media-breakpoint-up(md) {
         display: flex;
-        padding-top: 4rem;
-        @include row-cols(3);
+        padding-bottom: 3rem;
+        @include row-cols(4);
       }
     }
 
@@ -47,13 +47,16 @@
 
   .summary {
     opacity: 0.5;
-    @include make-col(6);
+
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
   }
 
   .info {
     h5 {
       font-size: 1rem;
-      opacity: 0.5;
+      opacity: 0.55;
     }
 
     .items {
@@ -63,7 +66,7 @@
     .item {
       display: inline-block;
       font-size: 85%;
-      opacity: 0.35;
+      opacity: 0.5;
 
       &:not(:last-child)::after {
         padding-right: 0.3em;

@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './index.module.scss';
+import style from './index.module.scss';
 
-const PlatformList = (props: any) => {
+const PlatformList = (props: any): any => {
   const { items: platforms } = props;
   const items = [];
   for (const key in platforms) {
@@ -11,17 +11,20 @@ const PlatformList = (props: any) => {
         key !== 'web' ? 'fab fa-' + key.toLowerCase() : 'fas fa-code'
       );
       classes.push(
-        platforms[key] ? styles['platform--applicable'] : styles['platform--NA']
+        platforms[key] ? style['platform--applicable'] : style['platform--NA']
       );
       items.push(
-        <li className={styles.platform} key={key}>
-          <i className={classes.join(' ')}></i>
+        <li className={style.platform} key={key}>
+          <i
+            className={classes.join(' ')}
+            title={key[0].toUpperCase() + key.substring(1)}
+          ></i>
         </li>
       );
     }
   }
 
-  return <ul className={styles.container}>{items}</ul>;
+  return <ul className={style.container}>{items}</ul>;
 };
 
 export default PlatformList;

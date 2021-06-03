@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import sleep from '../../../utils/sleep';
 import SocialMenu from '../../molecules/SocialMenu';
-import styles from './index.module.scss';
+import style from './index.module.scss';
 
 const mapPropsToState = (state: any, ownProps: any) => {
   const { menus, ready } = state;
@@ -66,15 +66,15 @@ const SiteFooter = (props: any) => {
   );
 
   const classNames = classes.map((className: string) => {
-    return styles[className];
+    return style[className];
   });
 
   return (
     <footer className={classNames.join(' ')}>
-      <menu className={styles.SocialMenu}>
+      <menu className={style.SocialMenu}>
         <SocialMenu items={props.socialMenu} />
       </menu>
-      <small className={styles.copyright}>
+      <small className={style.copyright}>
         © Copyright {new Date().getFullYear()}. All Rights Reserved.
       </small>
     </footer>

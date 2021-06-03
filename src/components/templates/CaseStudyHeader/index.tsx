@@ -1,21 +1,28 @@
 import React from 'react';
+import { connect } from 'react-redux';
 // import { connect } from 'react-redux';
 import Device from '../../atoms/Device';
 import PlatformList from '../../atoms/PlatformList';
 import HardwareMenu from '../../molecules/HardwareMenu';
-import styles from './index.module.scss';
+import style from './index.module.scss';
+
+const mapStateToProps = (state: any, ownProps: any) => {
+  return {
+    featured_image: ownProps.featured_image[state.colorScheme],
+  };
+};
 
 const CreateList = (props: any) => {
   const { items: listItems } = props;
   if (listItems === undefined) return null;
   const items = listItems.map((item: any, i: string) => {
     return (
-      <li className={styles.item} key={i}>
+      <li className={style.item} key={i}>
         {item}
       </li>
     );
   });
-  return <ul className={styles.items}>{items}</ul>;
+  return <ul className={style.items}>{items}</ul>;
 };
 
 const CaseStudyHeader = (props: any): any => {
@@ -26,33 +33,34 @@ const CaseStudyHeader = (props: any): any => {
     platforms,
     roles,
     tools,
-    timeframe,
+    date,
     device,
     setHardware,
+    featured_image: hardware,
   } = props;
 
   return (
-    <header className={styles.wrapper}>
-      <section className={styles.container}>
-        <h3 className={styles.title}>{title}</h3>
-        <h2 className={styles.client}>{client}</h2>
-        <p className={styles.summary}>{summary}</p>
+    <header className={style.wrapper}>
+      <section className={style.container}>
+        <h3 className={style.title}>{title}</h3>
+        <h2 className={style.client}>{client}</h2>
+        <p className={style.summary}>{summary}</p>
         <div>
           <PlatformList items={platforms} />
-          <HardwareMenu setHardware={setHardware} />
+          <HardwareMenu setHardware={setHardware} hardware={hardware} />
         </div>
       </section>
       <Device device={device} />
-      <aside className={styles.container}>
-        <section className={styles.info}>
+      <aside className={style.container}>
+        <section className={style.info}>
           <h5>Role</h5>
           <CreateList items={roles} />
         </section>
-        <section className={styles.info}>
+        <section className={style.info}>
           <h5>Timeframe</h5>
-          <p className={styles.item}>{timeframe}</p>
+          <p className={style.item}>{date}</p>
         </section>
-        <section className={styles.info}>
+        <section className={style.info}>
           <h5>Tools</h5>
           <CreateList items={tools} />
         </section>
@@ -61,4 +69,4 @@ const CaseStudyHeader = (props: any): any => {
   );
 };
 
-export default CaseStudyHeader;
+export default connect(mapStateToProps)(CaseStudyHeader);

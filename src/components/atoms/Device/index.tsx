@@ -1,13 +1,12 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-import styles from './index.module.scss';
+import style from './index.module.scss';
 
 const Device = (props: any): any => {
   const { device } = props;
   return (
-    <figure className={styles.container}>
+    <figure className={style.container}>
       <div
-        className={`${styles['hardware']} ${styles['hardware--' + device]}`}
+        className={`${style['hardware']} ${style['hardware--' + device]}`}
       ></div>
     </figure>
   );

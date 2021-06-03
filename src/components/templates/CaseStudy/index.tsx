@@ -1,23 +1,10 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { detectBrowser, detectColorScheme } from '../../../store/actions';
 import HeaderMeta from '../../atoms/HeaderMeta';
 import CaseStudyHeader from '../CaseStudyHeader';
-import styles from './index.module.scss';
-
-import MacBookProLight from '../../atoms/Device/media/shadowed/MBP.png';
-import iMacLight from '../../atoms/Device/media/shadowed/iMac.png';
-import iPhoneLight from '../../atoms/Device/media/shadowed/iPhone_1.png';
-import iPhonesLight from '../../atoms/Device/media/shadowed/iPhone_2.png';
-import iPadLandscapeLight from '../../atoms/Device/media/shadowed/iPad_landscape.png';
-import iPadPortraitLight from '../../atoms/Device/media/shadowed/iPad_portrait.png';
-import MacBookProDark from '../../atoms/Device/media/infinite/MBP.png';
-import iMacDark from '../../atoms/Device/media/infinite/iMac.png';
-import iPhoneDark from '../../atoms/Device/media/infinite/iPhone_1.png';
-import iPhonesDark from '../../atoms/Device/media/infinite/iPhone_2.png';
-import iPadLandscapeDark from '../../atoms/Device/media/infinite/iPad_landscape.png';
-import iPadPortraitDark from '../../atoms/Device/media/infinite/iPad_portrait.png';
-import { detectBrowser, detectColorScheme } from '../../../store/actions';
+import style from './index.module.scss';
 
 const mapStateToProps = (state: any, ownProps: any) => {
   const { projects, settings, colorScheme, browser } = state;
@@ -42,36 +29,24 @@ class CaseStudy extends React.Component<any, any> {
     super(props);
 
     this.state = {
-      client: 'Client Name',
       title: 'Project Title',
-      platforms: { android: false, apple: false, web: false },
+      client: 'Client Name',
+      date: '',
       summary: `This is a short project summary.`,
       roles: [],
-      timeframe: '',
+      platforms: { android: false, apple: false, web: false },
       tools: [],
       content: '',
-      images: {
-        light: {
-          '--MacBookPro': `url(${MacBookProLight})`,
-          '--iMac': `url(${iMacLight})`,
-          '--iPhone': `url(${iPhoneLight})`,
-          '--iPhones': `url(${iPhonesLight})`,
-          '--iPadLandscape': `url(${iPadLandscapeLight})`,
-          '--iPadPortrait': `url(${iPadPortraitLight})`,
-        },
-        dark: {
-          '--MacBookPro': `url(${MacBookProDark})`,
-          '--iMac': `url(${iMacDark})`,
-          '--iPhone': `url(${iPhoneDark})`,
-          '--iPhones': `url(${iPhonesDark})`,
-          '--iPadLandscape': `url(${iPadLandscapeDark})`,
-          '--iPadPortrait': `url(${iPadPortraitDark})`,
-        },
+      featured_image: {
+        light: {},
+        dark: {},
       },
       device: 'iMac',
       meta: {
         id: 0,
         title: '',
+        og: {},
+        twitter: {},
       },
     };
   }
@@ -79,6 +54,19 @@ class CaseStudy extends React.Component<any, any> {
   componentDidMount = () => {
     this.props.detectBrowser();
     this.props.detectColorScheme();
+
+    const data = this.props.projects.find(
+      ({ slug }: { slug: any }) => slug === this.props.match.params.slug
+    );
+
+    if (data === undefined) {
+      this.props.history.replace('/not-found');
+    }
+
+    this.setState((state: any, props: any) => ({
+      ...state,
+      ...data,
+    }));
   };
 
   componentDidUpdate = (prevProps: any, prevState: any) => {
@@ -98,23 +86,20 @@ class CaseStudy extends React.Component<any, any> {
       <React.Fragment>
         <HeaderMeta meta={this.state.meta} />
         <article
-          className={styles.wrapper}
+          className={style.wrapper}
           style={
             this.props.colorScheme === 'light'
-              ? this.state.images.light
-              : this.state.images.dark
+              ? this.state.featured_image.light
+              : this.state.featured_image.dark
           }
         >
           <CaseStudyHeader
-            className={styles.container}
+            className={style.container}
             {...this.state}
             setHardware={this.setHardware}
           ></CaseStudyHeader>
-          <main
-            className={styles.container}
-            dangerouslySetInnerHTML={{ __html: this.state.content }}
-          ></main>
-          <footer className={styles.container}></footer>
+          {/* <main dangerouslySetInnerHTML={{ __html: this.state.content }}></main> */}
+          {/* <footer className={style.container}></footer> */}
         </article>
       </React.Fragment>
     );

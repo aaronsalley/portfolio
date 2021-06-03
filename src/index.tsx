@@ -10,9 +10,12 @@ import SiteFooter from './components/organisms/SiteFooter';
 import SiteHeader from './components/organisms/SiteHeader';
 
 import './assets/styles/index.scss';
-import Home from './components/views/Home';
-import Resume from './components/views/Resume';
+import Home from './pages/Home';
+import Resume from './pages/Resume';
 import CaseStudy from './components/templates/CaseStudy';
+import Error404 from './pages/404';
+import About from './pages/About';
+import CaseStudies from './pages/CaseStudies';
 
 const vh = () => {
   const vh = window.innerHeight * 0.01;
@@ -30,13 +33,21 @@ ReactDOM.render(
           <Route exact strict path='/'>
             <Home />
           </Route>
-          <Route path='/project/:id'>
+          <Route exact path='/projects'>
+            <CaseStudies />
+          </Route>
+          <Route path='/project/:slug'>
             <CaseStudy />
+          </Route>
+          <Route path='/about'>
+            <About />
           </Route>
           <Route path='/resume'>
             <Resume />
           </Route>
-          <Route path='/:id'></Route>
+          <Route path='/'>
+            <Error404 />
+          </Route>
         </Switch>
         <SiteFooter></SiteFooter>
       </Router>

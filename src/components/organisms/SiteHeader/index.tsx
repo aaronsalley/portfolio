@@ -2,23 +2,30 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import NavItems from '../../molecules/SiteNav';
-import styles from './index.module.scss';
+import style from './index.module.scss';
 
 const mapPropsToState = (state: any, ownProps: any) => {
-  const { menus } = state;
+  const { menus, homepage } = state;
   return {
     siteNav: menus.SiteNav,
+    homepage,
   };
 };
 
 const SiteHeader = (props: any) => {
   return (
-    <header className={styles.container}>
-      <Link to='/' className={styles.SiteLogo}>
+    <header className={style.container}>
+      <Link to='/' className={style.SiteLogo}>
         Aaron Salley & Disruptv LLC
       </Link>
       <nav>
-        <NavItems items={props.siteNav} />
+        <NavItems
+          items={
+            props.homepage.includes('aaronsalley')
+              ? props.siteNav.aaronsalley
+              : props.siteNav.disruptv
+          }
+        />
       </nav>
     </header>
   );
