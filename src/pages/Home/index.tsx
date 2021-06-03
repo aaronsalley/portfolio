@@ -38,7 +38,7 @@ class Home extends React.Component<any, any> {
       radical, innovative digital solutions.`,
       excerpt: this.props.homepage.includes('aaronsalley')
         ? `<p>I'm Aaron. My philosophy draws connections between diverse experiences.
-        Currently I lead the mobile product team at <a href="https://bhphotovideo.com">B&H Photo</a>.</p>
+        Currently I lead the mobile product team at <a href="https://bhphotovideo.com" target="_blank" rel="noreferrer nofollow">B&H Photo</a>.</p>
         <p>I draw from human-centered yet pragmatic technical skills to 
       bring conscientiousness, creativity, and strategic thinking to all that I do.</p> 
       <p>Over the last decade, I've worked with startups and established companies alike
