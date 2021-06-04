@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.777bd7f5.chunk.css",
-    "main.js": "/static/js/main.ce7b4959.chunk.js",
-    "main.js.map": "/static/js/main.ce7b4959.chunk.js.map",
+    "main.css": "/static/css/main.dc21c70e.chunk.css",
+    "main.js": "/static/js/main.83fff868.chunk.js",
+    "main.js.map": "/static/js/main.83fff868.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.317e347d.js",
     "runtime-main.js.map": "/static/js/runtime-main.317e347d.js.map",
-    "static/js/2.344215ce.chunk.js": "/static/js/2.344215ce.chunk.js",
-    "static/js/2.344215ce.chunk.js.map": "/static/js/2.344215ce.chunk.js.map",
+    "static/js/2.48554a17.chunk.js": "/static/js/2.48554a17.chunk.js",
+    "static/js/2.48554a17.chunk.js.map": "/static/js/2.48554a17.chunk.js.map",
     "static/js/3.1c163fdf.chunk.js": "/static/js/3.1c163fdf.chunk.js",
     "static/js/3.1c163fdf.chunk.js.map": "/static/js/3.1c163fdf.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.777bd7f5.chunk.css.map": "/static/css/main.777bd7f5.chunk.css.map",
-    "static/js/2.344215ce.chunk.js.LICENSE.txt": "/static/js/2.344215ce.chunk.js.LICENSE.txt",
+    "static/css/main.dc21c70e.chunk.css.map": "/static/css/main.dc21c70e.chunk.css.map",
+    "static/js/2.48554a17.chunk.js.LICENSE.txt": "/static/js/2.48554a17.chunk.js.LICENSE.txt",
     "static/media/bhphoto.bea6678a.svg": "/static/media/bhphoto.bea6678a.svg",
     "static/media/bhphotovideo_MBP--dark.fe8355cb.webp": "/static/media/bhphotovideo_MBP--dark.fe8355cb.webp",
     "static/media/bhphotovideo_MBP--light.c4386dde.webp": "/static/media/bhphotovideo_MBP--light.c4386dde.webp",
@@ -25,6 +25,7 @@
     "static/media/bhphotovideo_iPhone_1--light.87d4ad2d.webp": "/static/media/bhphotovideo_iPhone_1--light.87d4ad2d.webp",
     "static/media/bhphotovideo_iPhone_2--dark.835cb9cb.webp": "/static/media/bhphotovideo_iPhone_2--dark.835cb9cb.webp",
     "static/media/bhphotovideo_iPhone_2--light.153c8e63.webp": "/static/media/bhphotovideo_iPhone_2--light.153c8e63.webp",
+    "static/media/bnhphotovideo-mobile_web_evolution.29704fbf.webp": "/static/media/bnhphotovideo-mobile_web_evolution.29704fbf.webp",
     "static/media/bnymellon.39d783bf.svg": "/static/media/bnymellon.39d783bf.svg",
     "static/media/davincian_iPad_landscape--dark.fddd657f.webp": "/static/media/davincian_iPad_landscape--dark.fddd657f.webp",
     "static/media/davincian_iPad_landscape--light.a9e368b8.webp": "/static/media/davincian_iPad_landscape--light.a9e368b8.webp",
@@ -53,8 +54,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.317e347d.js",
-    "static/js/2.344215ce.chunk.js",
-    "static/css/main.777bd7f5.chunk.css",
-    "static/js/main.ce7b4959.chunk.js"
+    "static/js/2.48554a17.chunk.js",
+    "static/css/main.dc21c70e.chunk.css",
+    "static/js/main.83fff868.chunk.js"
   ]
 }
