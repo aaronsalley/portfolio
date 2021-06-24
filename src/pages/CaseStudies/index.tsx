@@ -3,6 +3,10 @@ import HeaderMeta from '../../components/atoms/HeaderMeta';
 import Showcase from '../../components/templates/Showcase';
 
 class CaseStudies extends React.Component<any, any> {
+  componentDidMount = () => {
+    document.body.scrollTo(0, 0);
+  };
+
   render() {
     return (
       <React.Fragment>

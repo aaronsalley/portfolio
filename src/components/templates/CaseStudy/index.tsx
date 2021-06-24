@@ -52,6 +52,8 @@ class CaseStudy extends React.Component<any, any> {
   }
 
   componentDidMount = () => {
+    document.body.scrollTo(0, 0);
+
     this.props.detectBrowser();
     this.props.detectColorScheme();
 
@@ -70,6 +72,9 @@ class CaseStudy extends React.Component<any, any> {
   };
 
   componentDidUpdate = (prevProps: any, prevState: any) => {
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0);
+    }
     this.props.detectColorScheme();
   };
 
@@ -98,7 +103,7 @@ class CaseStudy extends React.Component<any, any> {
             {...this.state}
             setHardware={this.setHardware}
           ></CaseStudyHeader>
-          {/* <main dangerouslySetInnerHTML={{ __html: this.state.content }}></main> */}
+          <main>{this.state.content ? this.state.content : null}</main>
           <footer className={style.container}>
             <Link to={'/projects'} className={style.showAll}>
               <i className='fas fa-arrow-left'></i>Back to Projects

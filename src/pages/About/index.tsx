@@ -37,6 +37,10 @@ class Home extends React.Component<any, any> {
     };
   }
 
+  componentDidMount = () => {
+    document.body.scrollTo(0, 0);
+  };
+
   composeIntro = () => {
     return this.state.excerpt.split('</br>').map((p: string, i: number) => {
       return <p key={i}>{p}</p>;

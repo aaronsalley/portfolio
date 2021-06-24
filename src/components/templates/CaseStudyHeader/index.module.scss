@@ -28,14 +28,8 @@
       @include media-breakpoint-up(md) {
         display: flex;
         padding-bottom: 3rem;
-        @include row-cols(4);
+        @include row-cols(3);
       }
-    }
-
-    & > div {
-      align-items: center;
-      justify-content: space-between;
-      @include make-row(0);
     }
   }
 

@@ -51,6 +51,10 @@ class Home extends React.Component<any, any> {
     };
   }
 
+  componentDidMount = () => {
+    document.body.scrollTo(0, 0);
+  };
+
   render() {
     return (
       <React.Fragment>

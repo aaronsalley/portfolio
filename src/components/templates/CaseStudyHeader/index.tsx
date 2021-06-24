@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import { connect } from 'react-redux';
-import Device from '../../atoms/Device';
+import Device from '../../molecules/Device';
 import PlatformList from '../../atoms/PlatformList';
-import HardwareMenu from '../../molecules/HardwareMenu';
+// import HardwareMenu from '../../atoms/HardwareMenu';
 import style from './index.module.scss';
 
 const mapStateToProps = (state: any, ownProps: any) => {
@@ -45,12 +45,9 @@ const CaseStudyHeader = (props: any): any => {
         <h3 className={style.title}>{title}</h3>
         <h2 className={style.client}>{client}</h2>
         <p className={style.summary}>{summary}</p>
-        <div>
-          <PlatformList items={platforms} />
-          <HardwareMenu setHardware={setHardware} hardware={hardware} />
-        </div>
+        <PlatformList items={platforms} />
       </section>
-      <Device device={device} />
+      <Device device={device} setHardware={setHardware} hardware={hardware} />
       <aside className={style.container}>
         <section className={style.info}>
           <h5>Role</h5>

@@ -35,7 +35,6 @@ class Showcase extends React.Component<any, any> {
 
   Features = () => {
     const { projects, colorScheme, max } = this.props;
-    console.log(max);
 
     if (colorScheme) {
       return projects.map((project: any, i: any) => {
@@ -49,13 +48,11 @@ class Showcase extends React.Component<any, any> {
           let featuredImageLight: any = project.featured_image['light'][
             `--${project.device}`
           ].split(pattern);
-          console.log(featuredImageLight);
           featuredImageLight = featuredImageLight ? featuredImageLight[2] : '';
 
           let featuredImageDark: any = project.featured_image['dark'][
             `--${project.device}`
           ].split(pattern);
-          console.log(featuredImageDark);
           featuredImageDark = featuredImageDark ? featuredImageDark[2] : '';
 
           return (
@@ -68,12 +65,12 @@ class Showcase extends React.Component<any, any> {
                 <Link
                   to={`project/${project.slug}`}
                   className={style.button}
-                  title='View Case Study'
+                  title='View Project Summary'
                 >
-                  View Case Study
+                  View Project Summary
                 </Link>
               </section>
-              <Link to={`project/${project.slug}`} title='View Case Study'>
+              <Link to={`project/${project.slug}`} title='View Project Summary'>
                 <picture>
                   <source
                     media='screen and (prefers-color-scheme: dark)'

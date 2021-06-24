@@ -7,11 +7,11 @@ $dark: #000c1a;
 $gray: lighten($black, 80%);
 
 .container {
-  display: flex;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  @include make-row();
   @include make-container();
 
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   @each $breakpoint, $container-max-width in $container-max-widths {
     @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
       max-width: $container-max-width;

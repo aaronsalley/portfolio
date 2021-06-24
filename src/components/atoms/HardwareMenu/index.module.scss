@@ -3,10 +3,20 @@
 @import "~bootstrap/scss/mixins";
 
 .container {
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: -0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-bottom: calc(var(--bs-gutter-y) * -1);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+  font-size: 1.25rem;
+  opacity: 0.75;
+  @include list-unstyled();
+
+  label {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    @include make-col(12);
+  }
 
   .hardware {
     @media screen and (prefers-color-scheme: light) {

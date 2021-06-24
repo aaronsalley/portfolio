@@ -1,13 +1,17 @@
-import axios, { AxiosResponse } from 'axios';
-import { Action, AnyAction, Dispatch } from 'redux';
-import { ThunkAction as ReduxThunkAction, ThunkDispatch } from 'redux-thunk';
+// import axios, { AxiosResponse } from 'axios';
+import // Action,
+// AnyAction, Dispatch
+'redux';
+import // ThunkAction as ReduxThunkAction,
+// ThunkDispatch
+'redux-thunk';
 
-type ThunkAction<ReturnType = void> = ReduxThunkAction<
-  ReturnType,
-  any,
-  unknown,
-  Action<string>
->;
+// type ThunkAction<ReturnType = void> = ReduxThunkAction<
+//   ReturnType,
+//   any,
+//   unknown,
+//   Action<string>
+// >;
 
 export const detectColorScheme = () => {
   const colorScheme =

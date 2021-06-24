@@ -24,7 +24,12 @@ const PlatformList = (props: any): any => {
     }
   }
 
-  return <ul className={style.container}>{items}</ul>;
+  return (
+    <ul className={style.container}>
+      <label>Available for:</label>
+      {items}
+    </ul>
+  );
 };
 
 export default PlatformList;

@@ -2,6 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
+import AaronSalley from '../../../assets/media/aaronsalley--og_card.webp';
+
 const mapStateToProps = (state: any, ownProps: any) => {
   const { homepage } = state;
 
@@ -27,7 +29,9 @@ const HeaderMeta = (props: any): any => {
       description: ogDescription = props.homepage.includes('aaronsalley')
         ? 'I work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management, and leadership capacities. Contact me today to build something disruptive.'
         : 'We work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management. Contact us today to build something disruptv.',
-      image: ogImage = '',
+      image: ogImage = props.homepage.includes('aaronsalley')
+        ? AaronSalley
+        : '',
     },
     twitter: {
       type: twitterType = 'summary',
@@ -40,7 +44,9 @@ const HeaderMeta = (props: any): any => {
       description: twitterDescription = props.homepage.includes('aaronsalley')
         ? 'I work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management, and leadership capacities. Contact me today to build something disruptive.'
         : 'We work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management. Contact us today to build something disruptv.',
-      image: twitterImage = '',
+      image: twitterImage = props.homepage.includes('aaronsalley')
+        ? AaronSalley
+        : '',
     },
   } = props.meta;
 

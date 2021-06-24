@@ -7,9 +7,14 @@
   padding-right: 0;
   padding-left: 0;
   @include make-container();
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
 
   @include media-breakpoint-down(sm) {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 
   .hardware {
@@ -36,7 +41,10 @@
       position: relative;
       background-image: var(--MacBookPro);
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-only(xs) {
+        background-size: 115vw;
+      }
+      @include media-breakpoint-only(sm) {
         background-size: 145vw;
       }
     }
@@ -44,7 +52,10 @@
       position: relative;
       background-image: var(--iMac);
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-only(xs) {
+        background-size: 115vw;
+      }
+      @include media-breakpoint-only(sm) {
         background-size: 145vw;
       }
     }
@@ -56,7 +67,7 @@
       position: relative;
       background-image: var(--iPhones);
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-only(sm) {
         background-size: 120vw;
       }
     }
@@ -64,7 +75,7 @@
       position: relative;
       background-image: var(--iPadLandscape);
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-only(sm) {
         background-size: 120vw;
       }
     }
@@ -72,9 +83,22 @@
       position: relative;
       background-image: var(--iPadPortrait);
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-only(sm) {
         background-size: 145vw;
       }
+    }
+  }
+
+  menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    transform: translateY(-100%);
+
+    @include media-breakpoint-down(sm) {
+      left: 0;
     }
   }
 }

@@ -4,12 +4,19 @@
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 0;
   font-size: 1.25rem;
   opacity: 0.75;
   @include list-unstyled();
 
   --bs-gutter-x: 1.5rem;
+
+  label {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    @include make-col(12);
+  }
 
   .platform {
     &:not(:first-of-type) {
