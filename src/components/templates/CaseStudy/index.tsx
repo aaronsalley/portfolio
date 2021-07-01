@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 import { detectBrowser, detectColorScheme } from '../../../store/actions';
 import HeaderMeta from '../../atoms/HeaderMeta';
 import CaseStudyHeader from '../CaseStudyHeader';
+import TOC from '../CaseStudyTOC';
 import style from './index.module.scss';
 
 const mapStateToProps = (state: any, ownProps: any) => {
@@ -103,7 +104,10 @@ class CaseStudy extends React.Component<any, any> {
             {...this.state}
             setHardware={this.setHardware}
           ></CaseStudyHeader>
-          <main>{this.state.content ? this.state.content : null}</main>
+          <main>
+            <TOC />
+            {this.state.content ? this.state.content : null}
+          </main>
           <footer className={style.container}>
             <Link to={'/projects'} className={style.showAll}>
               <i className='fas fa-arrow-left'></i>Back to Projects
