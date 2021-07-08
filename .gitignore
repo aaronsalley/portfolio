@@ -4,7 +4,13 @@
 /node_modules
 /design/mockups
 /.pnp
-.pnp.js
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
 
 # wp dev
 /dist

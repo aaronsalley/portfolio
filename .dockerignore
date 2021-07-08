@@ -1,0 +1,5 @@
+design/
+dist/
+.gitignore
+docker-compose.yml
+Dockerfile
