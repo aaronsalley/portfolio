@@ -3,12 +3,12 @@
   "name": "Disruptv New York",
   "icons": [
     {
-      "src": "static/media/disruptv-icon--onLight192.png",
+      "src": "static/media/Aaron-Salley-Disruptv-NYC-icon--onLight192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "static/media/disruptv-icon--onLight512.png",
+      "src": "static/media/Aaron-Salley-Disruptv-NYC-icon--onLight512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -25,7 +25,7 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "static/media/disruptv-icon--onLight192.png",
+          "src": "static/media/Aaron-Salley-Disruptv-NYC-icon--onLight192.png",
           "sizes": "192x192"
         }
       ]
