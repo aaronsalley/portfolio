@@ -1,7 +1,7 @@
 @import "~bootstrap/scss/functions";
 @import "../../../../../src/assets/styles/variables";
 @import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/forms";
+// @import "~bootstrap/scss/forms";
 
 .container {
   @include make-col-ready();

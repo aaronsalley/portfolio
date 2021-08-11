@@ -1,17 +1,17 @@
 import React from 'react';
 
-// import MacBookProLight from '../components/atoms/Device/media/shadowed/MBP.png';
-// import iMacLight from '../components/atoms/Device/media/shadowed/iMac.png';
-// import iPhoneLight from '../components/atoms/Device/media/shadowed/iPhone_1.png';
-// import iPhonesLight from '../components/atoms/Device/media/shadowed/iPhone_2.png';
-// import iPadLandscapeLight from '../components/atoms/Device/media/shadowed/iPad_landscape.png';
-// import iPadPortraitLight from '../components/atoms/Device/media/shadowed/iPad_portrait.png';
-// import MacBookProDark from '../components/atoms/Device/media/infinite/MBP.png';
-// import iMacDark from '../components/atoms/Device/media/infinite/iMac.png';
-// import iPhoneDark from '../components/atoms/Device/media/infinite/iPhone_1.png';
-// import iPhonesDark from '../components/atoms/Device/media/infinite/iPhone_2.png';
-// import iPadLandscapeDark from '../components/atoms/Device/media/infinite/iPad_landscape.png';
-// import iPadPortraitDark from '../components/atoms/Device/media/infinite/iPad_portrait.png';
+// import MacBookProLight from '../components/atoms/Device/media/shadowed/Aaron-Salley-Disruptv-NYC-MBP.png';
+// import iMacLight from '../components/atoms/Device/media/shadowed/Aaron-Salley-Disruptv-NYC-iMac.png';
+// import iPhoneLight from '../components/atoms/Device/media/shadowed/Aaron-Salley-Disruptv-NYC-iPhone_1.png';
+// import iPhonesLight from '../components/atoms/Device/media/shadowed/Aaron-Salley-Disruptv-NYC-iPhone_2.png';
+// import iPadLandscapeLight from '../components/atoms/Device/media/shadowed/Aaron-Salley-Disruptv-NYC-iPad_landscape.png';
+// import iPadPortraitLight from '../components/atoms/Device/media/shadowed/Aaron-Salley-Disruptv-NYC-iPad_portrait.png';
+// import MacBookProDark from '../components/atoms/Device/media/infinite/Aaron-Salley-Disruptv-NYC-MBP.png';
+// import iMacDark from '../components/atoms/Device/media/infinite/Aaron-Salley-Disruptv-NYC-iMac.png';
+// import iPhoneDark from '../components/atoms/Device/media/infinite/Aaron-Salley-Disruptv-NYC-iPhone_1.png';
+// import iPhonesDark from '../components/atoms/Device/media/infinite/Aaron-Salley-Disruptv-NYC-iPhone_2.png';
+// import iPadLandscapeDark from '../components/atoms/Device/media/infinite/Aaron-Salley-Disruptv-NYC-iPad_landscape.png';
+// import iPadPortraitDark from '../components/atoms/Device/media/infinite/Aaron-Salley-Disruptv-NYC-iPad_portrait.png';
 
 const caseStudyModel = {
   slug: '',

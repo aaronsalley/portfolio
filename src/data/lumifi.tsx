@@ -1,19 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
-// import MacBookProLight from './lumifi_MBP--light.webp';
-// import iMacLight from './lumifi_iMac--light.webp';
-import iPhoneLight from './lumifi_iPhone_1--light.webp';
-import iPhonesLight from './lumifi_iPhone_2--light.webp';
-// import iPadLandscapeLight from './lumifi_iPad_landscape--light.webp';
-// import iPadPortraitLight from './lumifi_iPad_portrait--light.webp';
+// import MacBookProLight from './Aaron-Salley-Disruptv-NYC-lumifi_MBP--light.webp';
+// import iMacLight from './Aaron-Salley-Disruptv-NYC-lumifi_iMac--light.webp';
+import iPhoneLight from './Aaron-Salley-Disruptv-NYC-lumifi_iPhone_1--light.webp';
+import iPhonesLight from './Aaron-Salley-Disruptv-NYC-lumifi_iPhone_2--light.webp';
+// import iPadLandscapeLight from './Aaron-Salley-Disruptv-NYC-lumifi_iPad_landscape--light.webp';
+// import iPadPortraitLight from './Aaron-Salley-Disruptv-NYC-lumifi_iPad_portrait--light.webp';
 
-// import MacBookProDark from './lumifi_MBP--dark.webp';
-// import iMacDark from './lumifi_iMac--dark.webp';
-import iPhoneDark from './lumifi_iPhone_1--dark.webp';
-import iPhonesDark from './lumifi_iPhone_2--dark.webp';
-// import iPadLandscapeDark from './lumifi_iPad_landscape--dark.webp';
-// import iPadPortraitDark from './lumifi_iPad_portrait--dark.webp';
+// import MacBookProDark from './Aaron-Salley-Disruptv-NYC-lumifi_MBP--dark.webp';
+// import iMacDark from './Aaron-Salley-Disruptv-NYC-lumifi_iMac--dark.webp';
+import iPhoneDark from './Aaron-Salley-Disruptv-NYC-lumifi_iPhone_1--dark.webp';
+import iPhonesDark from './Aaron-Salley-Disruptv-NYC-lumifi_iPhone_2--dark.webp';
+// import iPadLandscapeDark from './Aaron-Salley-Disruptv-NYC-lumifi_iPad_landscape--dark.webp';
+// import iPadPortraitDark from './Aaron-Salley-Disruptv-NYC-lumifi_iPad_portrait--dark.webp';
 
 const lumifi = {
   slug: 'lumifi',

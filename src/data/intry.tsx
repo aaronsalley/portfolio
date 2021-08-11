@@ -1,19 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
-import MacBookProLight from './intry_MBP--light.webp';
-import iMacLight from './intry_iMac--light.webp';
-// import iPhoneLight from './intry_iPhone_1--light.webp';
-// import iPhonesLight from './intry_iPhone_1--light.webp';
-import iPadLandscapeLight from './intry_iPad_landscape--light.webp';
-import iPadPortraitLight from './intry_iPad_portrait--light.webp';
+import MacBookProLight from './Aaron-Salley-Disruptv-NYC-intry_MBP--light.webp';
+import iMacLight from './Aaron-Salley-Disruptv-NYC-intry_iMac--light.webp';
+// import iPhoneLight from './Aaron-Salley-Disruptv-NYC-intry_iPhone_1--light.webp';
+// import iPhonesLight from './Aaron-Salley-Disruptv-NYC-intry_iPhone_1--light.webp';
+import iPadLandscapeLight from './Aaron-Salley-Disruptv-NYC-intry_iPad_landscape--light.webp';
+import iPadPortraitLight from './Aaron-Salley-Disruptv-NYC-intry_iPad_portrait--light.webp';
 
-import MacBookProDark from './intry_MBP--dark.webp';
-import iMacDark from './intry_iMac--dark.webp';
-// import iPhoneDark from './intry_iPhone_1--dark.webp';
-// import iPhonesDark from './intry_iPhone_1--dark.webp';
-import iPadLandscapeDark from './intry_iPad_landscape--dark.webp';
-import iPadPortraitDark from './intry_iPad_portrait--dark.webp';
+import MacBookProDark from './Aaron-Salley-Disruptv-NYC-intry_MBP--dark.webp';
+import iMacDark from './Aaron-Salley-Disruptv-NYC-intry_iMac--dark.webp';
+// import iPhoneDark from './Aaron-Salley-Disruptv-NYC-intry_iPhone_1--dark.webp';
+// import iPhonesDark from './Aaron-Salley-Disruptv-NYC-intry_iPhone_1--dark.webp';
+import iPadLandscapeDark from './Aaron-Salley-Disruptv-NYC-intry_iPad_landscape--dark.webp';
+import iPadPortraitDark from './Aaron-Salley-Disruptv-NYC-intry_iPad_portrait--dark.webp';
 
 const intry = {
   slug: 'intry',

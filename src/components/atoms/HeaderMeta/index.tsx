@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 
-import AaronSalley from '../../../assets/media/aaronsalley--og_card.webp';
+import AaronSalley from '../../../assets/media/Aaron-Salley-Disruptv-NYC--og_card.webp';
 
 const mapStateToProps = (state: any, ownProps: any) => {
   const { homepage } = state;

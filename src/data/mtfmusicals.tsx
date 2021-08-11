@@ -1,19 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
-// import MacBookProLight from './mtfmusicals_MBP--light.webp';
-import iMacLight from './mtfmusicals_iMac--light.webp';
-// import iPhoneLight from './mtfmusicals_iPhone_1--light.webp';
-// import iPhonesLight from './mtfmusicals_iPhone_1--light.webp';
-// import iPadLandscapeLight from './mtfmusicals_iPad_landscape--light.webp';
-// import iPadPortraitLight from './mtfmusicals_iPad_portrait--light.webp';
+// import MacBookProLight from './Aaron-Salley-Disruptv-NYC-mtfmusicals_MBP--light.webp';
+import iMacLight from './Aaron-Salley-Disruptv-NYC-mtfmusicals_iMac--light.webp';
+// import iPhoneLight from './Aaron-Salley-Disruptv-NYC-mtfmusicals_iPhone_1--light.webp';
+// import iPhonesLight from './Aaron-Salley-Disruptv-NYC-mtfmusicals_iPhone_1--light.webp';
+// import iPadLandscapeLight from './Aaron-Salley-Disruptv-NYC-mtfmusicals_iPad_landscape--light.webp';
+// import iPadPortraitLight from './Aaron-Salley-Disruptv-NYC-mtfmusicals_iPad_portrait--light.webp';
 
-// import MacBookProDark from './mtfmusicals_MBP--dark.webp';
-import iMacDark from './mtfmusicals_iMac--dark.webp';
-// import iPhoneDark from './mtfmusicals_iPhone_1--dark.webp';
-// import iPhonesDark from './mtfmusicals_iPhone_1--dark.webp';
-// import iPadLandscapeDark from './mtfmusicals_iPad_landscape--dark.webp';
-// import iPadPortraitDark from './mtfmusicals_iPad_portrait--dark.webp';
+// import MacBookProDark from './Aaron-Salley-Disruptv-NYC-mtfmusicals_MBP--dark.webp';
+import iMacDark from './Aaron-Salley-Disruptv-NYC-mtfmusicals_iMac--dark.webp';
+// import iPhoneDark from './Aaron-Salley-Disruptv-NYC-mtfmusicals_iPhone_1--dark.webp';
+// import iPhonesDark from './Aaron-Salley-Disruptv-NYC-mtfmusicals_iPhone_1--dark.webp';
+// import iPadLandscapeDark from './Aaron-Salley-Disruptv-NYC-mtfmusicals_iPad_landscape--dark.webp';
+// import iPadPortraitDark from './Aaron-Salley-Disruptv-NYC-mtfmusicals_iPad_portrait--dark.webp';
 
 const mtfmusicals = {
   slug: 'mtfmusicals',

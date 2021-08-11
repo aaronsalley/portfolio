@@ -1,21 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 
-import MacBookProLight from './bhphotovideo_MBP--light.webp';
-import iMacLight from './bhphotovideo_iMac--light.webp';
-import iPhoneLight from './bhphotovideo_iPhone_1--light.webp';
-import iPhonesLight from './bhphotovideo_iPhone_2--light.webp';
-import iPadLandscapeLight from './bhphotovideo_iPad_landscape--light.webp';
-import iPadPortraitLight from './bhphotovideo_iPad_portrait--light.webp';
+import MacBookProLight from './Aaron-Salley-Disruptv-NYC-bhphotovideo_MBP--light.webp';
+import iMacLight from './Aaron-Salley-Disruptv-NYC-bhphotovideo_iMac--light.webp';
+import iPhoneLight from './Aaron-Salley-Disruptv-NYC-bhphotovideo_iPhone_1--light.webp';
+import iPhonesLight from './Aaron-Salley-Disruptv-NYC-bhphotovideo_iPhone_2--light.webp';
+import iPadLandscapeLight from './Aaron-Salley-Disruptv-NYC-bhphotovideo_iPad_landscape--light.webp';
+import iPadPortraitLight from './Aaron-Salley-Disruptv-NYC-bhphotovideo_iPad_portrait--light.webp';
 
-import MacBookProDark from './bhphotovideo_MBP--dark.webp';
-import iMacDark from './bhphotovideo_iMac--dark.webp';
-import iPhoneDark from './bhphotovideo_iPhone_1--dark.webp';
-import iPhonesDark from './bhphotovideo_iPhone_2--dark.webp';
-import iPadLandscapeDark from './bhphotovideo_iPad_landscape--dark.webp';
-import iPadPortraitDark from './bhphotovideo_iPad_portrait--dark.webp';
+import MacBookProDark from './Aaron-Salley-Disruptv-NYC-bhphotovideo_MBP--dark.webp';
+import iMacDark from './Aaron-Salley-Disruptv-NYC-bhphotovideo_iMac--dark.webp';
+import iPhoneDark from './Aaron-Salley-Disruptv-NYC-bhphotovideo_iPhone_1--dark.webp';
+import iPhonesDark from './Aaron-Salley-Disruptv-NYC-bhphotovideo_iPhone_2--dark.webp';
+import iPadLandscapeDark from './Aaron-Salley-Disruptv-NYC-bhphotovideo_iPad_landscape--dark.webp';
+import iPadPortraitDark from './Aaron-Salley-Disruptv-NYC-bhphotovideo_iPad_portrait--dark.webp';
 
-import mobileWebEvolution from './bnhphotovideo-mobile_web_evolution.webp';
+import mobileWebEvolution from './Aaron-Salley-Disruptv-NYC-bnhphotovideo-mobile_web_evolution.webp';
 
 const bhphotovideo = {
   slug: 'bhphotovideo',

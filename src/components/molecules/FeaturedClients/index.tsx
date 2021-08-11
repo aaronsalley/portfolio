@@ -1,9 +1,9 @@
 import React, { ReactComponentElement } from 'react';
-import { ReactComponent as BHPhotoLogo } from '../../../assets/media/bhphoto.svg';
-import { ReactComponent as MTFLogo } from '../../../assets/media/mtf.svg';
-import { ReactComponent as BNYMellonLogo } from '../../../assets/media/bnymellon.svg';
-import { ReactComponent as RaviManglaniLogo } from '../../../assets/media/rm+compass.svg';
-import { ReactComponent as IntryLogo } from '../../../assets/media/intry.svg';
+import { ReactComponent as BHPhotoLogo } from '../../../assets/media/Aaron-Salley-Disruptv-NYC-bhphoto-logo.svg';
+import { ReactComponent as MTFLogo } from '../../../assets/media/Aaron-Salley-Disruptv-NYC-mtf-logo.svg';
+import { ReactComponent as BNYMellonLogo } from '../../../assets/media/Aaron-Salley-Disruptv-NYC-bnymellon-logo.svg';
+import { ReactComponent as RaviManglaniLogo } from '../../../assets/media/Aaron-Salley-Disruptv-NYC-rm+compass-logo.svg';
+import { ReactComponent as IntryLogo } from '../../../assets/media/Aaron-Salley-Disruptv-NYC-intry-logo.svg';
 
 import style from './index.module.scss';
 
