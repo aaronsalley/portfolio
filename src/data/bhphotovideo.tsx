@@ -142,9 +142,9 @@ const bhphotovideo = {
         conversion funnel right before goal completion.
       </p>
       <figure>
-        <source srcSet={mobileWebEvolution} />
+        <source srcSet={mobileWebEvolution.src} />
         <img
-          src={mobileWebEvolution}
+          src={mobileWebEvolution.src}
           alt='Mobile web evolution to PWA'
           width='100%'
           height='auto'
@@ -196,20 +196,20 @@ const bhphotovideo = {
   ),
   featured_image: {
     light: {
-      '--MacBookPro': `url(${MacBookProLight})`,
-      '--iMac': `url(${iMacLight})`,
-      '--iPhone': `url(${iPhoneLight})`,
-      '--iPhones': `url(${iPhonesLight})`,
-      '--iPadLandscape': `url(${iPadLandscapeLight})`,
-      '--iPadPortrait': `url(${iPadPortraitLight})`,
+      '--MacBookPro': MacBookProLight,
+      '--iMac': iMacLight,
+      '--iPhone': iPhoneLight,
+      '--iPhones': iPhonesLight,
+      '--iPadLandscape': iPadLandscapeLight,
+      '--iPadPortrait': iPadPortraitLight,
     },
     dark: {
-      '--MacBookPro': `url(${MacBookProDark})`,
-      '--iMac': `url(${iMacDark})`,
-      '--iPhone': `url(${iPhoneDark})`,
-      '--iPhones': `url(${iPhonesDark})`,
-      '--iPadLandscape': `url(${iPadLandscapeDark})`,
-      '--iPadPortrait': `url(${iPadPortraitDark})`,
+      '--MacBookPro': MacBookProDark,
+      '--iMac': iMacDark,
+      '--iPhone': iPhoneDark,
+      '--iPhones': iPhonesDark,
+      '--iPadLandscape': iPadLandscapeDark,
+      '--iPadPortrait': iPadPortraitDark,
     },
   },
   device: 'iPhone',

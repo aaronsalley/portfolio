@@ -29,12 +29,12 @@ $gray: lighten($black, 80%);
   @media screen and (prefers-color-scheme: light) {
     --material: #{$light};
     --text: #{$dark};
-    --logo: url('../media/Aaron-Salley-Disruptv-NYC-logo--onLight.svg');
+    --logo: url('/static/media/Aaron-Salley-Disruptv-NYC-logo--onLight.svg');
   }
   @media screen and (prefers-color-scheme: dark) {
     --material: #{$dark};
     --text: #{rgba($light, 0.8)};
-    --logo: url('../media/Aaron-Salley-Disruptv-NYC-logo--onDark.svg');
+    --logo: url('/static/media/Aaron-Salley-Disruptv-NYC-logo--onDark.svg');
   }
 }
 
@@ -60,7 +60,7 @@ code {
     monospace;
 }
 
-#root {
+#__next {
   display: flex;
   flex-direction: column;
   min-height: calc(var(--vh, 1vh) * 100);

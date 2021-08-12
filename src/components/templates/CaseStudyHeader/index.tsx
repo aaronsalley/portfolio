@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { connect } from 'react-redux';
 import Device from '../../molecules/Device';
 import PlatformList from '../../atoms/PlatformList';
-// import HardwareMenu from '../../atoms/HardwareMenu';
 import style from './index.module.scss';
 
 const mapStateToProps = (state: any, ownProps: any) => {

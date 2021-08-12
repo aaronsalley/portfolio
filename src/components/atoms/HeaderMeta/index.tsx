@@ -1,6 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
+import Head from 'next/head';
 
 import AaronSalley from '../../../assets/media/Aaron-Salley-Disruptv-NYC--og_card.webp';
 
@@ -30,7 +30,7 @@ const HeaderMeta = (props: any): any => {
         ? 'I work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management, and leadership capacities. Contact me today to build something disruptive.'
         : 'We work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management. Contact us today to build something disruptv.',
       image: ogImage = props.homepage.includes('aaronsalley')
-        ? AaronSalley
+        ? AaronSalley.src
         : '',
     },
     twitter: {
@@ -45,13 +45,13 @@ const HeaderMeta = (props: any): any => {
         ? 'I work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management, and leadership capacities. Contact me today to build something disruptive.'
         : 'We work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management. Contact us today to build something disruptv.',
       image: twitterImage = props.homepage.includes('aaronsalley')
-        ? AaronSalley
+        ? AaronSalley.src
         : '',
     },
   } = props.meta;
 
   return (
-    <Helmet>
+    <Head>
       <title>
         {title ? `${title} -` : ''}{' '}
         {props.homepage.includes('aaronsalley')
@@ -71,7 +71,7 @@ const HeaderMeta = (props: any): any => {
       <meta property='twitter:url' content={twitterUrl} />
       <meta property='twitter:description' content={twitterDescription} />
       <meta property='twitter:image' content={twitterImage} />
-    </Helmet>
+    </Head>
   );
 };
 

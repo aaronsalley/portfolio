@@ -1,6 +1,6 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { detectColorScheme } from '../../../store/actions';
 import style from './index.module.scss';
 
@@ -39,21 +39,8 @@ class Showcase extends React.Component<any, any> {
     if (colorScheme) {
       return projects.map((project: any, i: any) => {
         if (i < (max ? max : Infinity)) {
-          const pattern = new RegExp(/(url\()([A-z0-9\/\-_.]+)(\))/, 'g');
-          let featuredImage: any = project.featured_image[colorScheme][
-            `--${project.device}`
-          ].split(pattern);
-          featuredImage = featuredImage ? featuredImage[2] : '';
-
-          let featuredImageLight: any = project.featured_image['light'][
-            `--${project.device}`
-          ].split(pattern);
-          featuredImageLight = featuredImageLight ? featuredImageLight[2] : '';
-
-          let featuredImageDark: any = project.featured_image['dark'][
-            `--${project.device}`
-          ].split(pattern);
-          featuredImageDark = featuredImageDark ? featuredImageDark[2] : '';
+          let featuredImage: any =
+            project.featured_image[colorScheme][`--${project.device}`];
 
           return (
             <article className={style.container} key={i}>
@@ -62,26 +49,18 @@ class Showcase extends React.Component<any, any> {
                 <h2 className={style.client}>{project.client}</h2>
                 <p className={style.summary}>{project.summary}</p>
 
-                <Link
-                  to={`project/${project.slug}`}
-                  className={style.button}
-                  title='View Project Summary'
-                >
-                  View Project Summary
+                <Link href={`project/${encodeURIComponent(project.slug)}`}>
+                  <a className={style.button} title='View Project Summary'>
+                    View Project Summary
+                  </a>
                 </Link>
               </section>
-              <Link to={`project/${project.slug}`} title='View Project Summary'>
-                <picture>
-                  <source
-                    media='screen and (prefers-color-scheme: dark)'
-                    srcSet={featuredImageDark}
-                  />
-                  <source
-                    media='screen and (prefers-color-scheme: light)'
-                    srcSet={featuredImageLight}
-                  />
-                  <img src={featuredImage} alt={project.title} />
-                </picture>
+              <Link href={`project/${encodeURIComponent(project.slug)}`}>
+                <a title='View Project Summary'>
+                  <picture>
+                    <img {...featuredImage} alt={project.title} />
+                  </picture>
+                </a>
               </Link>
             </article>
           );

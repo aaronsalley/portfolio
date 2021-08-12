@@ -1,10 +1,10 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
 import style from './index.module.scss';
-import FeaturedClients from '../../components/molecules/FeaturedClients';
-import HeaderMeta from '../../components/atoms/HeaderMeta';
-import LeadForm from '../../components/organisms/forms/Lead';
-import Showcase from '../../components/templates/Showcase';
+import FeaturedClients from '../components/molecules/FeaturedClients';
+import HeaderMeta from '../components/atoms/HeaderMeta';
+import LeadForm from '../components/organisms/forms/Lead';
+import Showcase from '../components/templates/Showcase';
 
 const mapStateToProps = (state: any, ownProps: any) => {
   const { projects, pages, settings, ready, homepage } = state;

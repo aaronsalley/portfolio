@@ -1,5 +1,5 @@
 import React, { ReactComponentElement } from 'react';
-import { NavLink } from 'react-router-dom';
+import Link from 'next/link';
 import style from './index.module.scss';
 
 const SiteNavItem = (props: any) => {
@@ -22,7 +22,9 @@ const SiteNavItem = (props: any) => {
         return style[className];
       })}
     >
-      <NavLink to={`${url}`}>{title}</NavLink>
+      <Link href={`${url}`}>
+        <a>{title}</a>
+      </Link>
     </li>
   );
 };

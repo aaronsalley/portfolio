@@ -21,7 +21,9 @@
 
 # production
 *.zip
+.next
 /build
+/out
 /portfolio
 
 # misc

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import NavItems from '../../molecules/SiteNav';
 import style from './index.module.scss';
 
@@ -15,8 +15,8 @@ const mapPropsToState = (state: any, ownProps: any) => {
 const SiteHeader = (props: any) => {
   return (
     <header className={style.container}>
-      <Link to='/' className={style.SiteLogo}>
-        Aaron Salley & Disruptv LLC
+      <Link href='/'>
+        <a className={style.SiteLogo}>Aaron Salley & Disruptv LLC</a>
       </Link>
       <nav>
         <NavItems

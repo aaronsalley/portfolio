@@ -1,6 +1,6 @@
-@import "~bootstrap/scss/functions";
-@import "../../../src/assets/styles/variables";
-@import "~bootstrap/scss/mixins";
+@import '~bootstrap/scss/functions';
+@import '../assets/styles/variables';
+@import '~bootstrap/scss/mixins';
 
 .container {
   display: flex;
@@ -62,7 +62,7 @@
       display: block;
       width: 25%;
       height: 1px;
-      content: "";
+      content: '';
       background-color: var(--text);
       opacity: 0.18;
     }

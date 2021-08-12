@@ -1,7 +1,7 @@
-@import "~bootstrap/scss/functions";
-@import "../../../../src/assets/styles/variables";
-@import "~bootstrap/scss/mixins";
-@import "~bootstrap/scss/buttons";
+@import '~bootstrap/scss/functions';
+@import '../../../../src/assets/styles/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/buttons';
 
 $dark: #000c1a;
 $gray: lighten($black, 80%);
@@ -29,6 +29,7 @@ $gray: lighten($black, 80%);
 
   img {
     width: 100%;
+    height: auto;
 
     @include media-breakpoint-down(sm) {
       margin-top: 4rem;

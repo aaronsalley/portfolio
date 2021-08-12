@@ -1,6 +1,6 @@
-@import "~bootstrap/scss/functions";
-@import "../../../../src/assets/styles/variables";
-@import "~bootstrap/scss/mixins";
+@import '~bootstrap/scss/functions';
+@import '../../../../src/assets/styles/variables';
+@import '~bootstrap/scss/mixins';
 
 .container {
   @include make-col-ready();

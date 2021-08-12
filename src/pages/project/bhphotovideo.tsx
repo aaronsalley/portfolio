@@ -1,11 +1,13 @@
 import React, { Dispatch } from 'react';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router-dom';
-import { detectBrowser, detectColorScheme } from '../../../store/actions';
-import HeaderMeta from '../../atoms/HeaderMeta';
-import CaseStudyHeader from '../CaseStudyHeader';
+import Link from 'next/link';
+import { useRouter, withRouter } from 'next/router';
+import { detectBrowser, detectColorScheme } from '../../store/actions';
+import HeaderMeta from '../../components/atoms/HeaderMeta';
+import CaseStudyHeader from '../../components/templates/CaseStudyHeader';
 // import TOC from '../CaseStudyTOC';
 import style from './index.module.scss';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
 const mapStateToProps = (state: any, ownProps: any) => {
   const { projects, settings, colorScheme, browser } = state;
@@ -58,8 +60,9 @@ class CaseStudy extends React.Component<any, any> {
     this.props.detectBrowser();
     this.props.detectColorScheme();
 
+    const currentSlug = this.props.router.route.replace('/project/', '');
     const data = this.props.projects.find(
-      ({ slug }: { slug: any }) => slug === this.props.match.params.slug
+      ({ slug }: { slug: any }) => slug === currentSlug
     );
 
     if (data === undefined) {
@@ -88,17 +91,17 @@ class CaseStudy extends React.Component<any, any> {
   };
 
   render() {
+    let featured_image: any = {};
+    for (const image in this.state.featured_image[this.props.colorScheme]) {
+      featured_image[image] = `url(${
+        this.state.featured_image[this.props.colorScheme][image].src
+      })`;
+    }
+
     return (
       <React.Fragment>
         <HeaderMeta meta={this.state.meta} />
-        <article
-          className={style.wrapper}
-          style={
-            this.props.colorScheme === 'light'
-              ? this.state.featured_image.light
-              : this.state.featured_image.dark
-          }
-        >
+        <article className={style.wrapper} style={featured_image}>
           <CaseStudyHeader
             className={style.container}
             {...this.state}
@@ -109,8 +112,10 @@ class CaseStudy extends React.Component<any, any> {
             {this.state.content ? this.state.content : null}
           </main> */}
           <footer className={style.container}>
-            <Link to={'/projects'} className={style.showAll}>
-              <i className='fas fa-arrow-left'></i>Back to Projects
+            <Link href={'/projects'}>
+              <a className={style.showAll}>
+                <i className='fas fa-arrow-left'></i>Back to Projects
+              </a>
             </Link>
           </footer>
         </article>
