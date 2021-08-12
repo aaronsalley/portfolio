@@ -1,5 +1,5 @@
 import React from 'react';
-import Freshsales from '../../../../services/Freshsales/controller';
+// import Freshsales from '../../../../services/Freshsales/controller';
 import style from './index.module.scss';
 
 class LeadForm extends React.Component<any, any> {
@@ -22,7 +22,7 @@ class LeadForm extends React.Component<any, any> {
 
   handleSubmit = (event: any): void => {
     event.preventDefault();
-    Freshsales.createLead(this.state);
+    // Freshsales.createLead(this.state);
     return;
   };
 
