@@ -15,9 +15,12 @@
 
 # wp dev
 /dist
+/packages/plugins
+/packages/uploads
 
 # testing
 /coverage
+/logs
 
 # production
 *.zip

@@ -69,7 +69,9 @@ class Home extends React.Component<any, any> {
             dangerouslySetInnerHTML={{ __html: this.state.excerpt }}
           ></section>
           <FeaturedClients />
-          {!this.props.homepage.includes('aaronsalley') ? <LeadForm /> : null}
+          {/* {!this.props.homepage.includes('aaronsalley') ? */}
+          <LeadForm />
+          {/* : null} */}
         </main>
         <Showcase max={3} />
       </React.Fragment>

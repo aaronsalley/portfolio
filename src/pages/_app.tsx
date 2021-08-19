@@ -24,22 +24,19 @@ function MyApp({ Component, pageProps }: { Component: any; pageProps: any }) {
           name='viewport'
           content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'
         />
-        {/* <!-- Start Google Tag Manager --> */}
-        <script>
+        <script id='gtm'>
           {`(function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', '${process.env.NEXT_PUBLIC_GTM_ID}');`}
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', '${process.env.NEXT_PUBLIC_GTM_ID}');`}
         </script>
-        {/* <!-- End Google Tag Manager --> */}
-        {/* <!-- Start Single Page Apps for GitHub Pages --> */}
-        <script>
+        <script id='gh-pages'>
           {`(function (l) {
         if (l.search[1] === '/') {
           var decoded = l.search
@@ -57,7 +54,6 @@ function MyApp({ Component, pageProps }: { Component: any; pageProps: any }) {
         }
       })(window.location);`}
         </script>
-        {/* <!-- End Single Page Apps for GitHub Pages --> */}
       </Head>
       <SiteHeader></SiteHeader>
       <Component {...pageProps} />

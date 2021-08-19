@@ -1,5 +1,14 @@
+.husky/
+.next/
+.vscode/
+.yarn/
 design/
 dist/
+logs/
+node_modules/
+out/
+
+.dockerignore
 .gitignore
 docker-compose.yml
 Dockerfile
