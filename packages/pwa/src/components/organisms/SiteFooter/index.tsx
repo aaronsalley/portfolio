@@ -1,11 +1,28 @@
-import SocialMenu from "../../molecules/menus/SocialMenu";
+import { useAppSelector } from "../../../../data/data/store";
 
-const SiteFooter = () => {
+const SiteFooter = ({
+  links = useAppSelector((state) => state.menus.SocialMenu),
+}: React.ComponentProps<any>): React.ReactElement => {
+  let items = null;
   const year = new Date().getFullYear();
+
+  if (links) {
+    items = links.map((link: any, i: number) => {
+      return (
+        <li key={i}>
+          <a href={link.href} target="_blank">
+            {link.title}
+          </a>
+        </li>
+      );
+    });
+  }
 
   return (
     <footer>
-      <SocialMenu></SocialMenu>
+      <menu>
+        <ul>{items}</ul>
+      </menu>
       <span></span>
       <p>© Copyright {year}. All rights reserved.</p>
     </footer>

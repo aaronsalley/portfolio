@@ -1,7 +1,9 @@
 import Link from "next/link";
 
 // TODO: autogenerate based off markdown headers
-const CaseSidebar = ({}: React.ComponentProps<any>): React.ReactElement => {
+const CaseSidebar = ({
+  outline,
+}: React.ComponentProps<any>): React.ReactElement => {
   return (
     <aside>
       <ul>

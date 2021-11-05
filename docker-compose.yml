@@ -10,6 +10,7 @@ services:
     volumes:
       - ./packages/pwa/public:/home/portfolio/public
       - ./packages/pwa/src:/home/portfolio/src
+      - ./packages/pwa/data:/home/portfolio/data
 
   storybook:
     build:
@@ -19,3 +20,4 @@ services:
       - 3001:3001
     volumes:
       - ./packages/pwa/src:/home/portfolio/src
+      - ./packages/pwa/data:/home/portfolio/data

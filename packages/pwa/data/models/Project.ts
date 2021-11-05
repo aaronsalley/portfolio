@@ -1,9 +1,12 @@
+import { Device } from "./devices";
+
 export interface Project {
   slug: String;
   title: String;
   client: String;
-  date: String;
   summary: String;
+  content: String | null;
+  date: String;
   roles: String[];
   platforms: {
     android: Boolean;
@@ -11,33 +14,32 @@ export interface Project {
     web: Boolean;
   };
   tools: String[];
-  content: String | null;
   featured_image: {
-    light: {
-      MacbookPro: String | null;
-      iMac: String | null;
-      iPhone: String | null;
-      iPhones: String | null;
-      iPad: {
-        landscape: String | null;
-        portrait: String | null;
-      };
-    };
-    dark: {
-      MacbookPro: String | null;
-      iMac: String | null;
-      iPhone: String | null;
-      iPhones: String | null;
-      iPad: {
-        landscape: String | null;
-        portrait: String | null;
-      };
-    };
+    light: FeaturedImageSet;
+    dark: FeaturedImageSet;
   };
-  device: Device;
+  device?: Device;
   meta: {
     title: String;
     og: {};
     twitter: {};
   };
 }
+
+export const flatten = (object: any) => {
+  let result: any = {};
+
+  for (const [key, value] of Object.entries(object)) {
+    if (value !== null && typeof value === "object" && !Array.isArray(value)) {
+      const temp = flatten(value);
+
+      for (const [_key, value] of Object.entries(temp)) {
+        result[key + "." + _key] = value;
+      }
+    } else {
+      result[key] = value;
+    }
+  }
+
+  return result;
+};

@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import CaseFooter from ".";
 
 export default {
-  title: "Design System/Organisms/Case Study",
+  title: "Design System/Templates/Case Study",
   component: CaseFooter,
 } as ComponentMeta<any>;
 
