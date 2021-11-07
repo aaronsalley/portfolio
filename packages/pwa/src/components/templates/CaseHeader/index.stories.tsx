@@ -52,6 +52,6 @@ const project: Project = {
 };
 
 const HeaderTemplate: ComponentStory<any> = (args) => (
-  <CaseHeader project={project}></CaseHeader>
+  <CaseHeader {...{ project }}></CaseHeader>
 );
 export const Header = HeaderTemplate.bind({});

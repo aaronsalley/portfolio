@@ -1,4 +1,4 @@
-import { useAppSelector } from "../../../../data/data/store";
+import { useAppSelector } from "../../../../data/viewModel/store";
 
 const SiteFooter = ({
   links = useAppSelector((state) => state.menus.SocialMenu),

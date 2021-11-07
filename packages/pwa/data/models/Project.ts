@@ -8,13 +8,13 @@ export interface Project {
   content: String | null;
   date: String;
   roles: String[];
-  platforms: {
+  platforms?: {
     android: Boolean;
     mac: Boolean;
     web: Boolean;
   };
   tools: String[];
-  featured_image: {
+  images?: {
     light: FeaturedImageSet;
     dark: FeaturedImageSet;
   };
@@ -26,17 +26,15 @@ export interface Project {
   };
 }
 
-export const flatten = (object: any) => {
+export const flatten = (object: any): any => {
   let result: any = {};
 
   for (const [key, value] of Object.entries(object)) {
-    if (value !== null && typeof value === "object" && !Array.isArray(value)) {
-      const temp = flatten(value);
-
-      for (const [_key, value] of Object.entries(temp)) {
-        result[key + "." + _key] = value;
+    if (key == "iPad") {
+      for (const [_key, _value] of Object.entries(object[key])) {
+        result[key + "." + _key] = _value;
       }
-    } else {
+    } else if (key in Device) {
       result[key] = value;
     }
   }

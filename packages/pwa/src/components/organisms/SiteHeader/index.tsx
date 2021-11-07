@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useAppSelector } from "../../../../data/data/store";
+import { useAppSelector } from "../../../../data/viewModel/store";
 
 const SiteHeader = ({
   siteTitle = useAppSelector((state) => state.siteTitle),
@@ -21,7 +21,9 @@ const SiteHeader = ({
   return (
     <header>
       <Link href="/">
-        <img src={brandingURL} alt={siteTitle} />
+        <a>
+          <img src={brandingURL.src} height="75px" alt={siteTitle} />
+        </a>
       </Link>
       <span></span>
       <nav>

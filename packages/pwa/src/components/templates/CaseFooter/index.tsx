@@ -1,5 +1,5 @@
-const CaseFooter = ({}: React.ComponentProps<any>): React.ReactElement => {
-  return <footer></footer>;
-};
+const CaseFooter = ({}: React.ComponentProps<any>): React.ReactElement => (
+  <footer></footer>
+);
 
 export default CaseFooter;

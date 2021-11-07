@@ -1,23 +1,20 @@
 import { RootStateOrAny } from "react-redux";
 import packageJson from "../../package.json";
-import bhphotovideo from "../data/BHPhoto";
-// import davincian from '../../data/davincian';
-// import intry from '../../data/intry';
-// import lumifi from '../../data/lumifi';
-// import mtfmusicals from '../../data/mtfmusicals';
+
+import brand from "../../public/media/Aaron-Salley-Disruptv-NYC-logo--onLight.svg";
+
+import bhphotovideo from "../viewModel/projects/bhphotovideo";
+import davincian from "../viewModel/projects/davincian";
+import intry from "../viewModel/projects/intry";
+import lumifi from "../viewModel/projects/lumifi";
+import mtfmusicals from "../viewModel/projects/mtfmusicals";
 
 export const initialState: RootStateOrAny = {
   siteTitle: "Disruptv",
-  brandingURL: "",
+  brandingURL: brand,
   homepage: packageJson.homepage,
   pages: [],
-  projects: [
-    bhphotovideo,
-    // intry,
-    // davincian,
-    // mtfmusicals,
-    // lumifi,
-  ],
+  projects: [bhphotovideo, intry, davincian, mtfmusicals, lumifi],
   menus: {
     SiteNav: [
       {
@@ -49,6 +46,10 @@ export const initialState: RootStateOrAny = {
       {
         href: "https://twitter.com/aaronsalley",
         title: "Twitter",
+      },
+      {
+        href: "https://angel.co/u/aaronsalley",
+        title: "AngelList",
       },
     ],
   },
