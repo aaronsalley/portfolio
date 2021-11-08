@@ -14,7 +14,7 @@ const getProject = (state: RootState) => {
 };
 
 const Page: NextPage = ({
-  project = useAppSelector((state) => getProject(state)),
+  project = useAppSelector((state: RootState) => getProject(state)),
 }: React.ComponentProps<any>): React.ReactElement => (
   <article>
     <CaseHeader {...project}></CaseHeader>

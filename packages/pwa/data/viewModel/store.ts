@@ -7,7 +7,7 @@ import {
 } from "react-redux";
 import thunk, { ThunkMiddleware } from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { initialState } from "../models/aaronsalley";
+import { initialState } from "./deployments/aaronsalley";
 
 // TODO: dynamically import the right inital state
 // import packageJson from "../../package.json";

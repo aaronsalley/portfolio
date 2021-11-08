@@ -1,25 +1,28 @@
 import Link from "next/link";
-import { useAppSelector } from "../../../../data/viewModel/store";
+import { RootState, useAppSelector } from "../../../../data/viewModel/store";
+import style from "./index.module.scss";
 
 const SiteHeader = ({
-  siteTitle = useAppSelector((state) => state.siteTitle),
-  brandingURL = useAppSelector((state) => state.brandingURL),
-  links = useAppSelector((state) => state.menus.SiteNav),
+  siteTitle = useAppSelector((state: RootState) => state.siteTitle),
+  brandingURL = useAppSelector((state: RootState) => state.brandingURL),
+  pages = useAppSelector((state: RootState) => state.pages),
 }: React.ComponentProps<any>): React.ReactElement => {
   let items = null;
 
-  if (links) {
-    items = links.map((link: any, i: number) => {
-      return (
-        <li key={i}>
-          <Link href={link.href}>{link.title}</Link>
-        </li>
-      );
+  if (pages) {
+    items = pages.map((page: any, i: number) => {
+      if (page.href) {
+        return (
+          <li key={i}>
+            <Link href={page.href}>{page.title}</Link>
+          </li>
+        );
+      }
     });
   }
 
   return (
-    <header>
+    <header className={style.container}>
       <Link href="/">
         <a>
           <img src={brandingURL.src} height="75px" alt={siteTitle} />

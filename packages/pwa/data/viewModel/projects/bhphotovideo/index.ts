@@ -23,7 +23,7 @@ const BHPhoto: Project = {
   client: "B&H Photo Video Pro Audio",
   summary:
     "Leader of a diverse team managing the nation's largest independent consumer electronics ecommerce channels across platforms and OSes.",
-  content: "# Title",
+  content: "",
   date: "October 2016 - November 2021",
   roles: [
     "Strategy",

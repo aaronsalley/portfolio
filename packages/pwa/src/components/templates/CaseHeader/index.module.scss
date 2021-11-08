@@ -1,0 +1,135 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/buttons";
+
+.platforms {
+  @include make-col(6);
+
+  label {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    @include make-col(12);
+  }
+
+  ul {
+    --bs-gutter-x: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    opacity: 0.75;
+    @include list-unstyled();
+  }
+
+  li {
+    &:not(:first-of-type) {
+      margin-left: var(--bs-gutter-x, 0);
+    }
+
+    &:not(:last-of-type) {
+      margin-right: var(--bs-gutter-x, 0);
+    }
+
+    &.unavailable {
+      opacity: 0.25;
+    }
+  }
+}
+
+.facts {
+  @include make-container();
+  @include make-row(0);
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      max-width: $container-max-width;
+    }
+  }
+  margin-right: auto;
+  margin-left: auto;
+
+  aside {
+    @include make-container();
+    @include media-breakpoint-up(md) {
+      padding-bottom: 3rem;
+      @include make-col(4);
+    }
+    // @include media-breakpoint-down(sm) {
+    padding-right: 0;
+    padding-left: 0;
+    // }
+    gap: 1rem;
+
+    h4 {
+      font-size: 1rem;
+      opacity: 0.55;
+    }
+
+    ul {
+      @include list-unstyled();
+    }
+
+    li {
+      display: inline-block;
+      font-size: 85%;
+      opacity: 0.5;
+
+      &:not(:last-child)::after {
+        padding-right: 0.3em;
+        content: ",";
+      }
+    }
+  }
+}
+
+.devices {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--bs-gutter-y) * -1);
+  margin-bottom: calc(var(--bs-gutter-y) * -1);
+  margin-left: calc(var(--bs-gutter-x) / -2);
+  font-size: 1.25rem;
+  opacity: 0.75;
+  justify-content: flex-end;
+  @include list-unstyled();
+  @include make-col(6);
+
+  button {
+    @include button-size(
+      $btn-padding-y,
+      $btn-padding-x,
+      $btn-font-size,
+      $btn-border-radius
+    );
+    opacity: 0.5;
+    color: var(--text);
+
+    @media screen and (prefers-color-scheme: light) {
+      @include button-variant(#f8f9fa, transparent);
+    }
+    @media screen and (prefers-color-scheme: dark) {
+      @include button-variant(#000c1a, transparent);
+    }
+  }
+}
+
+.deviceImage {
+  @include make-col(12);
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  height: 36vh;
+  overflow: visible;
+
+  @include media-breakpoint-down(sm) {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  @include media-breakpoint-up(md) {
+    height: 60vh;
+  }
+  @include media-breakpoint-up(4k) {
+    height: 60vh;
+  }
+}

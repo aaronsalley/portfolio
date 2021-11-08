@@ -1,36 +1,39 @@
+import React from "react";
 import { RootStateOrAny } from "react-redux";
-import packageJson from "../../package.json";
+import brand from "../../../public/media/Aaron-Salley-Disruptv-NYC-logo--onLight.svg";
 
-import brand from "../../public/media/Aaron-Salley-Disruptv-NYC-logo--onLight.svg";
-
-import bhphotovideo from "../viewModel/projects/bhphotovideo";
-import davincian from "../viewModel/projects/davincian";
-import intry from "../viewModel/projects/intry";
-import lumifi from "../viewModel/projects/lumifi";
-import mtfmusicals from "../viewModel/projects/mtfmusicals";
+import bhphotovideo from "../projects/bhphotovideo";
+import davincian from "../projects/davincian";
+import intry from "../projects/intry";
+import lumifi from "../projects/lumifi";
+import mtfmusicals from "../projects/mtfmusicals";
 
 export const initialState: RootStateOrAny = {
   siteTitle: "Disruptv",
   brandingURL: brand,
-  homepage: packageJson.homepage,
-  pages: [],
+  pages: [
+    {
+      title: "Home",
+      content: "",
+    },
+    {
+      href: "/projects",
+      title: "Projects",
+    },
+    {
+      href: "/about",
+      title: "About",
+      content: "",
+    },
+    {
+      href: "/contact",
+      title: "Contact",
+    },
+  ],
   projects: [bhphotovideo, intry, davincian, mtfmusicals, lumifi],
+  featuredClients: ["bhphoto", "mtf", "bnymellon", "compass", "intry"],
   menus: {
-    SiteNav: [
-      {
-        href: "/projects",
-        title: "Projects",
-      },
-      {
-        href: "/about",
-        title: "About",
-      },
-      {
-        href: "/contact",
-        title: "Contact",
-      },
-    ],
-    SocialMenu: [
+    social: [
       {
         href: "https://www.linkedin.com/in/aaronsalley",
         title: "LinkedIn",
@@ -54,5 +57,5 @@ export const initialState: RootStateOrAny = {
     ],
   },
   browser: "",
-  colorScheme: "",
+  colorScheme: "light",
 };

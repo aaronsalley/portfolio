@@ -1,7 +1,8 @@
-import { useAppSelector } from "../../../../data/viewModel/store";
+import { RootState, useAppSelector } from "../../../../data/viewModel/store";
+import style from "./index.module.scss";
 
 const SiteFooter = ({
-  links = useAppSelector((state) => state.menus.SocialMenu),
+  links = useAppSelector((state: RootState) => state.menus.social),
 }: React.ComponentProps<any>): React.ReactElement => {
   let items = null;
   const year = new Date().getFullYear();
@@ -11,7 +12,7 @@ const SiteFooter = ({
       return (
         <li key={i}>
           <a href={link.href} target="_blank">
-            {link.title}
+            <i className={"fab fa-" + link.title.toLowerCase()}></i>
           </a>
         </li>
       );
@@ -19,12 +20,14 @@ const SiteFooter = ({
   }
 
   return (
-    <footer>
+    <footer className={style.container}>
       <menu>
         <ul>{items}</ul>
       </menu>
       <span></span>
-      <p>© Copyright {year}. All rights reserved.</p>
+      <p className={style.copyright}>
+        © Copyright {year}. All rights reserved.
+      </p>
     </footer>
   );
 };

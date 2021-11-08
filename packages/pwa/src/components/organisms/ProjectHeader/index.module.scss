@@ -1,0 +1,26 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.case {
+  display: block;
+}
+
+.list {
+  display: block;
+}
+
+.container {
+  h1 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  p {
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+    opacity: 0.5;
+  }
+}

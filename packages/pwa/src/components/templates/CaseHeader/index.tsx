@@ -1,10 +1,15 @@
-import React from "react";
-import { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import Image, { ImageProps } from "next/image";
 import { RootState, useAppSelector } from "../../../../data/viewModel/store";
 import { flatten } from "../../../../data/models/Project";
 import ProjectHeader from "../../organisms/ProjectHeader";
 
+import style from "./index.module.scss";
+import { Platform } from "../../../../data/models/platforms";
+import { Device } from "../../../../data/models/devices";
+
 const CaseHeader = ({
+  theme = useAppSelector((state: RootState) => state.colorScheme),
   ...project
 }: React.ComponentProps<any>): React.ReactElement => {
   /**
@@ -18,86 +23,52 @@ const CaseHeader = ({
 
     for (const [platform, value] of Object.entries(project.platforms)) {
       platforms.push(
-        <li className={value ? "available" : "unavailable"} key={platform}>
-          {platform}
+        <li
+          className={style[value ? "available" : "unavailable"]}
+          key={platform}
+        >
+          <i className={Platform[platform as keyof typeof Platform]}></i>
         </li>
       );
     }
 
     return (
-      <div>
-        Avaliable for:
+      <div className={style.platforms}>
+        <label htmlFor="platforms">Avaliable for:</label>
         <ul>{platforms}</ul>
       </div>
     );
   };
 
   /**
-   * Creates the section that describes my role(s)
-   * on the project.
+   * Creates the section that describes facts
+   * about the project.
    */
-  const Role = (
-    <section>
-      <h4>Role</h4>
-      {project.roles.join(", ")}
-    </section>
-  );
+  const Facts = ({
+    title,
+    value,
+  }: React.ComponentProps<any>): React.ReactElement => {
+    if (Array.isArray(value)) {
+      value = value.map((item: any) => {
+        return <li key={item}>{item}</li>;
+      });
+      value = <ul>{value}</ul>;
+    } else {
+      value = <p>{value}</p>;
+    }
 
-  /**
-   * Creates the section that describes the timeframe
-   * of the project.
-   */
-  const Timeframe = (
-    <section>
-      <h4>Timeframe</h4>
-      {project.date}
-    </section>
-  );
-
-  /**
-   * Creates the section that describes the tool(s)
-   * used on the project.
-   */
-  const Tools = (
-    <section>
-      <h4>Tools</h4>
-      {project.tools.join(", ")}
-    </section>
-  );
-
-  /**
-   * Creates the project image display.
-   *
-   * @param props
-   * @returns ReactElement
-   */
-  const Device = ({
-    theme = useAppSelector((state: RootState) => state.colorScheme),
-    draw,
-    ...rest
-  }: any): React.ReactElement => {
-    const deviceRef = useRef(null);
-
-    useEffect(() => {
-      const canvas = deviceRef.current as any;
-      const context = canvas.getContext("2d");
-      let frameCount = 0;
-      let animationFrameId: any;
-
-      const render = () => {
-        frameCount++;
-        draw(context, frameCount);
-        animationFrameId = window.requestAnimationFrame(render);
-      };
-      render();
-
-      return () => {
-        window.cancelAnimationFrame(animationFrameId);
-      };
-    }, [draw]);
-
-    return <canvas ref={deviceRef} {...rest} />;
+    return (
+      <aside className={style.fact}>
+        <h4>{title}</h4>
+        {value}
+      </aside>
+    );
   };
+
+  /**
+   * State storage for device display.
+   */
+  const [device, setDevice] = useState(project.device);
 
   /**
    * Creates the list of devices for which the
@@ -105,59 +76,91 @@ const CaseHeader = ({
    *
    * @returns ReactElement
    */
-  const DeviceSelection = ({
-    theme = useAppSelector((state: RootState) => state.colorScheme),
+  const Devices = ({
+    images = flatten(project.images[theme]),
   }): React.ReactElement => {
     let devices: React.ReactElement[] = [];
 
-    const images = flatten(project.images[theme]);
-
     for (const [device, image] of Object.entries(images)) {
+      let icon, title, style;
+
+      switch (device) {
+        case Device.MacbookPro:
+          icon = "fas fa-laptop";
+          title = "Laptop";
+          break;
+        case Device.iMac:
+          icon = "fas fa-desktop";
+          title = "Desktop";
+          break;
+        case Device.iPhone:
+          icon = "fas fa-mobile-alt";
+          title = "Mobile";
+          break;
+        case Device.iPhones:
+          icon = "fas fa-mobile-alt";
+          title = "Mobile (multiple)";
+          break;
+        case Device["iPad.landscape"]:
+          icon = "fas fa-tablet-alt";
+          title = "Tablet (landscape)";
+          style = { transform: "rotate(90deg)" };
+          break;
+        case Device["iPad.portrait"]:
+          icon = "fas fa-tablet-alt";
+          title = "Tablet (portrait)";
+          break;
+      }
+
       if (image) {
         devices.push(
           <li key={device}>
-            <button onClick={handleDeviceSelection} value={device as string}>
-              <i>{device}</i>
+            <button onClick={() => setDevice(device)} value={device as string}>
+              <i className={icon} style={style} />
             </button>
           </li>
         );
       }
     }
 
-    return <menu>{devices}</menu>;
-  };
-
-  const draw = (ctx: any, frameCount: any) => {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    ctx.fillStyle = "#000000";
-    ctx.beginPath();
-    ctx.arc(50, 100, 20 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI);
-    ctx.fill();
+    return <menu className={style.devices}>{devices}</menu>;
   };
 
   /**
-   * Handles the interaction that changes
-   * the project image.
+   * Creates the project image display.
    *
-   * @param e Element
-   * @returns
+   * @returns ReactElement
    */
-  const handleDeviceSelection = (e: any): any => {
-    const image = e.target.closest("button").value;
-    // TODO: change canvas image
-    return;
+  const DeviceImage = ({
+    images = flatten(project.images[theme]),
+  }: any): React.ReactElement | null => {
+    let image: ImageProps = images[device];
+
+    try {
+      useEffect(() => {
+        image = images[device];
+      }, [device]);
+
+      return image ? (
+        <div className={style["deviceImage"]}>
+          <Image {...image} />
+        </div>
+      ) : null;
+    } catch (error) {}
+
+    return null;
   };
 
   return (
     <React.Fragment>
-      <ProjectHeader {...project} />
+      <ProjectHeader {...project} context={"case"} />
       <AvailableFor />
-      <DeviceSelection />
-      <Device draw={draw} />
-      <div>
-        {Role}
-        {Timeframe}
-        {Tools}
+      <Devices />
+      <DeviceImage />
+      <div className={style.facts}>
+        <Facts title={"Role"} value={project.roles} />
+        <Facts title={"Timeframe"} value={project.date} />
+        <Facts title={"Tools"} value={project.tools} />
       </div>
     </React.Fragment>
   );

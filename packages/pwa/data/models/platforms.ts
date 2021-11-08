@@ -1,5 +1,5 @@
 export enum Platform {
-  android = "android",
-  mac = "mac",
-  web = "web",
+  android = "fab fa-android",
+  mac = "fab fa-apple",
+  web = "fas fa-code",
 }
