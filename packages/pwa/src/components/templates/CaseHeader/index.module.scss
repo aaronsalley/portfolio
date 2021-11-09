@@ -52,6 +52,7 @@
   aside {
     @include make-row();
     @include make-col-ready();
+    align-content: flex-start;
     @include media-breakpoint-up(md) {
       padding-bottom: 3rem;
       @include make-col();

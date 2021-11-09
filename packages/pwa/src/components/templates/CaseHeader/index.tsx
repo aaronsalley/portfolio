@@ -144,6 +144,7 @@ const CaseHeader = ({
         image = images[device];
       }, [device]);
 
+      // FIXME: Keep image size in check
       return image ? (
         <div className={style["deviceImage"]}>
           <Image {...image} placeholder={"blur"} />

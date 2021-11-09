@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { RootState, useAppSelector } from "../../../../data/viewModel/store";
+import Branding from "../../atoms/Branding";
 import style from "./index.module.scss";
 
 const SiteHeader = ({
-  siteTitle = useAppSelector((state: RootState) => state.siteTitle),
-  brandingURL = useAppSelector((state: RootState) => state.brandingURL),
   pages = useAppSelector((state: RootState) => state.pages),
 }: React.ComponentProps<any>): React.ReactElement => {
   let items = null;
@@ -23,12 +22,9 @@ const SiteHeader = ({
 
   return (
     <header className={style["container"]}>
-      <Link href={"/"}>
-        <a>
-          <img src={brandingURL.src} height={"75px"} alt={siteTitle} />
-        </a>
-      </Link>
-      <span></span>
+      <span>
+        <Branding />
+      </span>
       <nav>
         <ul>{items}</ul>
       </nav>

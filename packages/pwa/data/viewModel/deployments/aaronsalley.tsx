@@ -1,6 +1,5 @@
 import React from "react";
 import { RootStateOrAny } from "react-redux";
-import brand from "../../../public/media/Aaron-Salley-Disruptv-NYC-logo--onLight.svg";
 
 import bhphotovideo from "../projects/bhphotovideo";
 import davincian from "../projects/davincian";
@@ -10,7 +9,7 @@ import mtfmusicals from "../projects/mtfmusicals";
 
 export const initialState: RootStateOrAny = {
   siteTitle: "Aaron Salley",
-  brandingURL: brand,
+  branding: "Aaron-Salley-Disruptv-NYC-logo",
   pages: [
     {
       title: "Home",
@@ -61,7 +60,7 @@ export const initialState: RootStateOrAny = {
     },
   ],
   projects: [bhphotovideo, intry, davincian, mtfmusicals, lumifi],
-  featuredClients: ["bhphoto", "mtf", "bnymellon", "compass", "intry"],
+  featuredClients: ["bhphoto", "mtf", "bnymellon", "rm+compass", "intry"],
   menus: {
     social: [
       {

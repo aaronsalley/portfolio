@@ -3,13 +3,14 @@
 @import "~bootstrap/scss/mixins";
 
 .container {
+  @include make-col-ready();
   @include make-row(0);
   @include list-unstyled();
   justify-content: space-between;
   margin-top: 40px;
   margin-bottom: 40px;
 
-  svg {
+  img {
     width: auto;
     max-width: calc(1 / 6 * 100vw);
     height: 100%;
