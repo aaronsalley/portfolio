@@ -3,13 +3,11 @@
 @import "~bootstrap/scss/mixins";
 
 .container {
-  @include make-container();
-  @include make-row(0);
+  @include make-row();
   align-items: center;
   justify-content: space-between;
   margin-top: 2rem;
-  margin-left: auto;
-  margin-right: auto;
+  @include make-container();
 
   @each $breakpoint, $container-max-width in $container-max-widths {
     @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
@@ -30,9 +28,9 @@
   }
 
   nav ul {
+    @include list-unstyled();
     display: flex;
     margin: 0;
-    @include list-unstyled();
 
     @include media-breakpoint-down(sm) {
       display: none;

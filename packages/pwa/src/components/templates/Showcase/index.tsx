@@ -1,28 +1,16 @@
 import React from "react";
 import Image, { ImageProps } from "next/image";
-import Link from "next/link";
 import { Project } from "../../../../data/models/Project";
 import { RootState, useAppSelector } from "../../../../data/viewModel/store";
 import ProjectHeader from "../../../components/organisms/ProjectHeader";
+import Button from "../../atoms/Button";
+
+import style from "./index.module.scss";
 
 const Showcase = ({
   projects = useAppSelector((state: RootState) => state.projects),
   max, // TODO: implement max return items
 }: React.ComponentProps<any>): React.ReactElement => {
-  /**
-   * Creates the CTA for each case study.
-   *
-   * @param props
-   * @returns React.ReactElement
-   */
-  const Button = ({
-    client,
-  }: React.ComponentProps<any>): React.ReactElement => (
-    <button title={`Read the full ${client} case study`}>
-      View Case Study
-    </button>
-  );
-
   /**
    * Conditionally display the featured image
    * for the project.
@@ -38,6 +26,7 @@ const Showcase = ({
 
       if (image) {
         return (
+          // FIXME: Images are appearing distorted.
           <Image {...image} alt={`${project.client} project on a device`} />
         );
       }
@@ -55,25 +44,24 @@ const Showcase = ({
     ? projects.map((project: Project, i: number) => {
         return (
           <li key={i}>
-            <Link
-              href={{
-                pathname: "/project/[slug]",
-                query: { slug: project.slug as string },
-              }}
-              passHref
-            >
-              <a>
-                <ProjectHeader {...project} />
-                <Button client={project.client} />
-                <FeaturedImage {...project} />
-              </a>
-            </Link>
+            <section>
+              <ProjectHeader context={"showcase"} {...project} />
+              <Button
+                href={{
+                  pathname: "/project/[slug]",
+                  query: { slug: project.slug as string },
+                }}
+                CTA={"View Case Study"}
+                title={`Read the full ${project.client} case study`}
+              />
+            </section>
+            <FeaturedImage {...project} />
           </li>
         );
       })
     : null;
 
-  return <ul>{items}</ul>;
+  return <ul className={style["container"]}>{items}</ul>;
 };
 
 export default Showcase;

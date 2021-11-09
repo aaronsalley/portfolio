@@ -11,8 +11,8 @@ const SiteFooter = ({
     items = links.map((link: any, i: number) => {
       return (
         <li key={i}>
-          <a href={link.href} target="_blank">
-            <i className={"fab fa-" + link.title.toLowerCase()}></i>
+          <a href={link.href} target={"_blank"}>
+            <i className={"fab fa-" + link.title.toLowerCase()} aria-hidden />
           </a>
         </li>
       );
@@ -20,12 +20,12 @@ const SiteFooter = ({
   }
 
   return (
-    <footer className={style.container}>
+    <footer className={style["container"]}>
       <menu>
         <ul>{items}</ul>
       </menu>
       <span></span>
-      <p className={style.copyright}>
+      <p className={style["copyright"]}>
         © Copyright {year}. All rights reserved.
       </p>
     </footer>

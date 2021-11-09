@@ -34,10 +34,6 @@ class MyDocument extends Document {
           </noscript>
           <Main />
           <NextScript />
-          <script
-            src="https://kit.fontawesome.com/07e616e69d.js"
-            crossOrigin="anonymous"
-          ></script>
         </body>
       </Html>
     );

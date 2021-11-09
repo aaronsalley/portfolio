@@ -14,7 +14,7 @@ const SiteHeader = ({
       if (page.href) {
         return (
           <li key={i}>
-            <Link href={page.href}>{page.title}</Link>
+            <Link href={page["href"]}>{page.title}</Link>
           </li>
         );
       }
@@ -22,10 +22,10 @@ const SiteHeader = ({
   }
 
   return (
-    <header className={style.container}>
-      <Link href="/">
+    <header className={style["container"]}>
+      <Link href={"/"}>
         <a>
-          <img src={brandingURL.src} height="75px" alt={siteTitle} />
+          <img src={brandingURL.src} height={"75px"} alt={siteTitle} />
         </a>
       </Link>
       <span></span>

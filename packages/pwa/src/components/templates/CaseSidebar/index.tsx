@@ -7,26 +7,26 @@ const CaseSidebar = ({
   <aside>
     <ul>
       <li>
-        <Link href="#Challenge">Challenge</Link>
+        <Link href={"#Challenge"}>Challenge</Link>
         <ul>
           <li>
-            <Link href="#Situation">Situation</Link>
+            <Link href={"#Situation"}>Situation</Link>
           </li>
           <li>
-            <Link href="#Task">Task</Link>
+            <Link href={"#Task"}>Task</Link>
           </li>
         </ul>
       </li>
       <li>
-        <Link href="#Solution">Solution</Link>
+        <Link href={"#Solution"}>Solution</Link>
         <ul>
           <li>
-            <Link href="#Approach">Approach</Link>
+            <Link href={"#Approach"}>Approach</Link>
           </li>
         </ul>
       </li>
       <li>
-        <Link href="#Results">Results</Link>
+        <Link href={"#Results"}>Results</Link>
       </li>
     </ul>
   </aside>

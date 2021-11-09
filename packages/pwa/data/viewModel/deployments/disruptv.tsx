@@ -1,4 +1,3 @@
-import React from "react";
 import { RootStateOrAny } from "react-redux";
 import brand from "../../../public/media/Aaron-Salley-Disruptv-NYC-logo--onLight.svg";
 

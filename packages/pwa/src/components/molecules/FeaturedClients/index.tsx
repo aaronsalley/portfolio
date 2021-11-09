@@ -8,7 +8,7 @@ const FeaturedClients = ({
     return <li key={client}>{client}</li>;
   });
 
-  return <ul className={style.container}>{items}</ul>;
+  return <ul className={style["container"]}>{items}</ul>;
 };
 
 export default FeaturedClients;

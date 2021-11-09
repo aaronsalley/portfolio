@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Image, { ImageProps } from "next/image";
 import { RootState, useAppSelector } from "../../../../data/viewModel/store";
 import { flatten } from "../../../../data/models/Project";
 import ProjectHeader from "../../organisms/ProjectHeader";
-
-import style from "./index.module.scss";
 import { Platform } from "../../../../data/models/platforms";
 import { Device } from "../../../../data/models/devices";
+
+import style from "./index.module.scss";
 
 const CaseHeader = ({
   theme = useAppSelector((state: RootState) => state.colorScheme),
@@ -27,14 +27,17 @@ const CaseHeader = ({
           className={style[value ? "available" : "unavailable"]}
           key={platform}
         >
-          <i className={Platform[platform as keyof typeof Platform]}></i>
+          <i
+            className={Platform[platform as keyof typeof Platform]}
+            aria-hidden
+          />
         </li>
       );
     }
 
     return (
-      <div className={style.platforms}>
-        <label htmlFor="platforms">Avaliable for:</label>
+      <div className={style["platforms"]}>
+        <label htmlFor={"platforms"}>Avaliable for:</label>
         <ul>{platforms}</ul>
       </div>
     );
@@ -58,7 +61,7 @@ const CaseHeader = ({
     }
 
     return (
-      <aside className={style.fact}>
+      <aside className={style["fact"]}>
         <h4>{title}</h4>
         {value}
       </aside>
@@ -116,14 +119,14 @@ const CaseHeader = ({
         devices.push(
           <li key={device}>
             <button onClick={() => setDevice(device)} value={device as string}>
-              <i className={icon} style={style} />
+              <i className={icon} style={style} aria-hidden />
             </button>
           </li>
         );
       }
     }
 
-    return <menu className={style.devices}>{devices}</menu>;
+    return <menu className={style["devices"]}>{devices}</menu>;
   };
 
   /**
@@ -143,7 +146,7 @@ const CaseHeader = ({
 
       return image ? (
         <div className={style["deviceImage"]}>
-          <Image {...image} />
+          <Image {...image} placeholder={"blur"} />
         </div>
       ) : null;
     } catch (error) {}
@@ -151,13 +154,14 @@ const CaseHeader = ({
     return null;
   };
 
+  // FIXME: Keep AvailableFor and Devices elements from colliding on mobile
   return (
     <React.Fragment>
       <ProjectHeader {...project} context={"case"} />
       <AvailableFor />
       <Devices />
       <DeviceImage />
-      <div className={style.facts}>
+      <div className={style["facts"]}>
         <Facts title={"Role"} value={project.roles} />
         <Facts title={"Timeframe"} value={project.date} />
         <Facts title={"Tools"} value={project.tools} />

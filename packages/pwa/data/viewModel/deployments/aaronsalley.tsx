@@ -20,19 +20,29 @@ export const initialState: RootStateOrAny = {
             <small>Hey there,</small> I work with startups and top companies on
             intentional, radical, innovative digital solutions.
           </h1>
-          I'm Aaron. My philosophy draws connections between diverse
-          experiences. Currently I lead the mobile product team at
-          <a
-            href="https://bhphotovideo.com"
-            target="_blank"
-            rel="noreferrer, nofollow, external"
-          >
-            B&H Photo
-          </a>
-          . I draw from human-centered yet pragmatic technical skills to bring
-          conscientiousness, creativity, and strategic thinking to all that I
-          do. Over the last decade, I've worked with startups and established
-          companies alike — taking ideas from mind to market.
+          <section>
+            <p>
+              I'm Aaron. My philosophy draws connections between diverse
+              experiences. Currently I lead the mobile product team at{" "}
+              <a
+                href="https://bhphotovideo.com"
+                target="_blank"
+                rel="noreferrer nofollow external"
+              >
+                B&amp;H Photo
+              </a>
+              .
+            </p>
+            <p>
+              I draw from human-centered yet pragmatic technical skills to bring
+              conscientiousness, creativity, and strategic thinking to all that
+              I do.
+            </p>
+            <p>
+              Over the last decade, I've worked with startups and established
+              companies alike — taking ideas from mind to market.
+            </p>
+          </section>
         </React.Fragment>
       ),
     },

@@ -3,10 +3,12 @@
 @import "~bootstrap/scss/mixins";
 
 .case {
+  @include make-row();
+  @include make-container();
   display: block;
 }
 
-.list {
+.showcase {
   display: block;
 }
 

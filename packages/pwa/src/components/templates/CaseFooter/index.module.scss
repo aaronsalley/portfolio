@@ -4,21 +4,7 @@
 @import "~bootstrap/scss/buttons";
 
 .container {
-  @include make-container();
-  @include make-row(0);
+  @include make-row();
   margin-top: 4rem;
-
-  a {
-    @extend .btn;
-    @media screen and (prefers-color-scheme: light) {
-      @include button-outline-variant($dark);
-    }
-    @media screen and (prefers-color-scheme: dark) {
-      @include button-outline-variant(rgba($light, 0.8));
-    }
-
-    i {
-      padding-right: 1rem;
-    }
-  }
+  @include make-container();
 }

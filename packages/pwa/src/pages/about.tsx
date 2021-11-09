@@ -1,8 +1,7 @@
 import React from "react";
 import type { NextPage } from "next";
 import { RootState, useAppSelector } from "../../data/viewModel/store";
-import Showcase from "../components/templates/Showcase";
-import FeaturedClients from "../components/molecules/FeaturedClients";
+import Intro from "../components/organisms/Intro";
 
 const Page: NextPage = ({
   // TODO: query pages for title = About
@@ -10,9 +9,7 @@ const Page: NextPage = ({
 }: React.ComponentProps<any>): React.ReactElement => {
   return (
     <React.Fragment>
-      {page.content}
-      <FeaturedClients />
-      <Showcase max={3} />
+      <Intro includeFeatured {...page} />
     </React.Fragment>
   );
 };
