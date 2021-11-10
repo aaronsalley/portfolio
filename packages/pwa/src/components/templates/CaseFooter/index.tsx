@@ -5,7 +5,8 @@ import style from "./index.module.scss";
 const CaseFooter = ({}: React.ComponentProps<any>): React.ReactElement => {
   const CTA = (
     <React.Fragment>
-      <i className={"fas fa-arrow-left"}></i>Back to Projects
+      <i className={"fas fa-arrow-left"} aria-hidden />
+      Back to Projects
     </React.Fragment>
   );
 

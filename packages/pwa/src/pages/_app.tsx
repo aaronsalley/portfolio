@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import type { AppProps } from "next/app";
+import Script from "next/script";
 import Head from "next/head";
 import { Provider } from "react-redux";
 import store from "../../data/viewModel/store";
+import { detectColorScheme } from "../../data/controllers/actions";
+
 import SiteFooter from "../components/organisms/SiteFooter";
 import SiteHeader from "../components/organisms/SiteHeader";
-import { detectColorScheme } from "../../data/controllers/actions";
-import { useEffect } from "react";
-
 import "../../public/styles/global.scss";
-import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
   if (typeof window !== "undefined") {
     useEffect(() => {
+      //TODO: Make pages scroll to top on change
       /**
        * Initalize and watch for viewport height changes.
        */

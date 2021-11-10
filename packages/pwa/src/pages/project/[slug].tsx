@@ -1,26 +1,19 @@
 import type { NextPage } from "next";
-import { useRouter } from "next/router";
+import { getProject } from "../../../data/controllers/actions";
 import { RootState, useAppSelector } from "../../../data/viewModel/store";
 import CaseContent from "../../components/templates/CaseContent";
 import CaseFooter from "../../components/templates/CaseFooter";
 import CaseHeader from "../../components/templates/CaseHeader";
 import CaseSidebar from "../../components/templates/CaseSidebar";
 
-const getProject = (state: RootState) => {
-  const router = useRouter();
-  const { slug } = router.query;
-
-  return state.projects[0];
-};
-
 const Page: NextPage = ({
   project = useAppSelector((state: RootState) => getProject(state)),
 }: React.ComponentProps<any>): React.ReactElement => (
   <article>
-    <CaseHeader {...project}></CaseHeader>
+    {project ? <CaseHeader {...project} /> : null}
     <main>
-      <CaseSidebar outline={project.content}></CaseSidebar>
-      <CaseContent content={project.content}></CaseContent>
+      {project ? <CaseSidebar outline={project.content} /> : null}
+      {project ? <CaseContent content={project.content} /> : null}
     </main>
     <CaseFooter></CaseFooter>
   </article>

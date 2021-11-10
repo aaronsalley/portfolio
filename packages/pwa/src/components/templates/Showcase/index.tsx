@@ -9,7 +9,7 @@ import style from "./index.module.scss";
 
 const Showcase = ({
   projects = useAppSelector((state: RootState) => state.projects),
-  max, // TODO: implement max return items
+  max = projects.length,
 }: React.ComponentProps<any>): React.ReactElement => {
   /**
    * Conditionally display the featured image
@@ -38,30 +38,39 @@ const Showcase = ({
   };
 
   /**
-   * Creates the linked list of case study items.
+   * Creates the case study items.
    */
-  const items = projects
-    ? projects.map((project: Project, i: number) => {
-        return (
-          <li key={i}>
-            <section>
-              <ProjectHeader context={"showcase"} {...project} />
-              <Button
-                href={{
-                  pathname: "/project/[slug]",
-                  query: { slug: project.slug as string },
-                }}
-                CTA={"View Case Study"}
-                title={`Read the full ${project.client} case study`}
-              />
-            </section>
-            <FeaturedImage {...project} />
-          </li>
-        );
-      })
-    : null;
+  const Items = (): any => {
+    let items = [];
+    for (let i = 0; i < max; i++) {
+      const project: Project = projects[i];
 
-  return <ul className={style["container"]}>{items}</ul>;
+      items.push(
+        <li key={i}>
+          <section>
+            <ProjectHeader context={"showcase"} {...project} />
+            <Button
+              href={{
+                pathname: "/project/[slug]",
+                query: { slug: project.slug as string },
+              }}
+              CTA={"View Case Study"}
+              title={`Read the full ${project.client} case study`}
+            />
+          </section>
+          <FeaturedImage {...project} />
+        </li>
+      );
+    }
+
+    return items;
+  };
+
+  return (
+    <ul className={style["container"]}>
+      <Items />
+    </ul>
+  );
 };
 
 export default Showcase;

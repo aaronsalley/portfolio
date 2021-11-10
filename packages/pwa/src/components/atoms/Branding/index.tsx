@@ -15,6 +15,7 @@ const Branding = ({
       let image = await import(
         `./assets/${branding}--on${capitalizeFirstLetter(colorScheme)}.svg`
       );
+
       setLogo(image.default);
     })();
   }, [colorScheme]);

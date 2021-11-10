@@ -13,7 +13,9 @@ const SiteHeader = ({
       if (page.href) {
         return (
           <li key={i}>
-            <Link href={page["href"]}>{page.title}</Link>
+            <Link href={page["href"]}>
+              <a>{page.title}</a>
+            </Link>
           </li>
         );
       }

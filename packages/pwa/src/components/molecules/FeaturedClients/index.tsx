@@ -1,7 +1,13 @@
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { RootState, useAppSelector } from "../../../../data/viewModel/store";
 import Image from "next/image";
 import style from "./index.module.scss";
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+
+import { ReactComponent as BHPhotoLogo } from "@svgr/webpack?!url-loader?modules!./assets/Aaron-Salley-Disruptv-NYC-bhphoto-logo.svg";
+import { ReactComponent as MTFLogo } from "@svgr/webpack?!url-loader?modules!./assets/Aaron-Salley-Disruptv-NYC-mtf-logo.svg";
+import { ReactComponent as BNYMellonLogo } from "@svgr/webpack?!url-loader?modules!./assets/Aaron-Salley-Disruptv-NYC-bnymellon-logo.svg";
+import { ReactComponent as RMCompassLogo } from "@svgr/webpack?!url-loader?modules!./assets/Aaron-Salley-Disruptv-NYC-rm+compass-logo.svg";
+import { ReactComponent as IntryLogo } from "@svgr/webpack?!url-loader?modules!./assets/Aaron-Salley-Disruptv-NYC-intry-logo.svg";
 
 const FeaturedClients = ({
   clients = useAppSelector((state: RootState) => state.featuredClients),
@@ -20,6 +26,7 @@ const FeaturedClients = ({
     setLogos(images);
   }, []);
 
+  // TODO: Handle auto import of SVG files from assets directory
   const items = clients.map((client: any) => {
     return (
       <li key={client}>
@@ -28,7 +35,25 @@ const FeaturedClients = ({
     );
   });
 
-  return <ul className={style["container"]}>{items}</ul>;
+  return (
+    <ul className={style["container"]}>
+      <li>
+        <BHPhotoLogo />
+      </li>
+      <li>
+        <MTFLogo />
+      </li>
+      <li>
+        <BNYMellonLogo />
+      </li>
+      <li>
+        <RMCompassLogo />
+      </li>
+      <li>
+        <IntryLogo />
+      </li>
+    </ul>
+  );
 };
 
 export default FeaturedClients;

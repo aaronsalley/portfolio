@@ -1,3 +1,6 @@
+import { useRouter } from "next/router";
+import { RootState } from "../viewModel/store";
+
 export const detectColorScheme = () => {
   const colorScheme =
     window.matchMedia &&
@@ -44,4 +47,43 @@ export const detectBrowser = () => {
     type: "SET_BROWSER",
     payload: browser,
   };
+};
+
+export const getProject = (state: RootState) => {
+  const router = useRouter();
+  const { slug: currentPage } = router.query;
+
+  let select;
+  for (let project of state.projects) {
+    if (currentPage === project["slug"]) {
+      select = project;
+    } else {
+      // TODO: redirect to 404
+    }
+  }
+
+  return select;
+};
+
+export const loadState = (state: RootState) => {
+  return {
+    type: "LOAD_STATE",
+    payload: state,
+  };
+};
+
+export const getPage = (state: RootState) => {
+  const router = useRouter();
+  const { pathname: currentPage } = router;
+
+  let select;
+  for (let page of state.pages) {
+    if (currentPage === page.href) {
+      select = page;
+    } else {
+      // TODO: redirect to 404
+    }
+  }
+
+  return select;
 };

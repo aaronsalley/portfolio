@@ -10,17 +10,26 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { initialState } from "./deployments/aaronsalley";
 
 // TODO: dynamically import the right inital state
-// import packageJson from "../../package.json";
-// const initialState = async () => {
+// const initialState = async (): Promise<RootStateOrAny> => {
+//   let state;
+//   const packageJson = await import("../../package.json");
 //   if (packageJson.homepage.includes("disruptv")) {
-//     (await import("../models/disruptv")).initialState;
+//     state = await import("../viewModel/deployments/disruptv");
 //   } else {
-//     (await import("../models/aaronsalley")).initialState;
+//     state = await import("../viewModel/deployments/aaronsalley");
 //   }
+
+//   console.log(state.initialState);
+//   return state.initialState;
 // };
 
 const reducer = (state = initialState, action: AnyAction): RootStateOrAny => {
   switch (action.type) {
+    case "LOAD_STATE":
+      return {
+        ...state,
+        ...action.payload,
+      };
     case "SET_COLOR_SCHEME":
       return {
         ...state,
