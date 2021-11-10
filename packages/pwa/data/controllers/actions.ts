@@ -53,16 +53,13 @@ export const getProject = (state: RootState) => {
   const router = useRouter();
   const { slug: currentPage } = router.query;
 
-  let select;
   for (let project of state.projects) {
     if (currentPage === project["slug"]) {
-      select = project;
-    } else {
-      // TODO: redirect to 404
+      return project;
     }
   }
 
-  return select;
+  return null;
 };
 
 export const loadState = (state: RootState) => {
@@ -76,14 +73,11 @@ export const getPage = (state: RootState) => {
   const router = useRouter();
   const { pathname: currentPage } = router;
 
-  let select;
   for (let page of state.pages) {
     if (currentPage === page.href) {
-      select = page;
-    } else {
-      // TODO: redirect to 404
+      return page;
     }
   }
 
-  return select;
+  return null;
 };

@@ -15,10 +15,12 @@
   }
 
   ul {
+    @include make-row();
+    @include make-container();
+    // @include make-col();
     @include list-unstyled();
-    --bs-gutter-x: 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
+    --bs-gutter-x: 1rem;
+    flex-wrap: nowrap;
     margin-bottom: 0;
     font-size: 1.25rem;
     opacity: 0.75;
@@ -86,13 +88,19 @@
   @include make-row();
   @include make-container();
   @include make-col();
-  @include list-unstyled();
+  padding-left: calc(var(--bs-gutter-x, 0.75rem) * 0.5);
+  padding-right: calc(var(--bs-gutter-x, 0.75rem) * 0.5);
+  list-style: none;
   margin-bottom: 0;
   flex-grow: 1;
   font-size: 1.25rem;
   opacity: 0.75;
-  justify-content: flex-end;
   z-index: 6;
+  flex-wrap: nowrap;
+
+  @include media-breakpoint-up(md) {
+    justify-content: flex-end;
+  }
 
   li {
     display: flex;
@@ -119,7 +127,9 @@
 }
 
 .deviceImage {
+  @include make-container();
   @include make-col(12);
+  position: relative;
   display: flex;
   align-items: center;
   height: 36vh;
@@ -133,7 +143,16 @@
   @include media-breakpoint-up(md) {
     height: 60vh;
   }
-  @include media-breakpoint-up(4k) {
-    height: 60vh;
+  // @include media-breakpoint-up(4k) {
+  //   height: 60vh;
+  // }
+
+  & > span {
+    overflow: visible !important;
+    height: 100% !important;
+  }
+
+  img {
+    object-fit: contain;
   }
 }

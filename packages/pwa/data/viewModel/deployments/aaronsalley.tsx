@@ -7,8 +7,11 @@ import intry from "../projects/intry";
 import lumifi from "../projects/lumifi";
 import mtfmusicals from "../projects/mtfmusicals";
 
+import SocialCard from "../../../public/media/Aaron-Salley-Disruptv-NYC--og_card.webp";
+
 export const initialState: RootStateOrAny = {
-  siteTitle: "Aaron Salley",
+  siteTitle: "Aaron Salley | Digital Product Executive • EDI Advocate",
+  description: `I work with people and firms on thoughtful, innovative projects in UI/UX design, technical development &amp; product management, and executive leadership capacities.`,
   branding: "Aaron-Salley-Disruptv-NYC-logo",
   pages: [
     {
@@ -110,6 +113,22 @@ export const initialState: RootStateOrAny = {
         title: "AngelList",
       },
     ],
+  },
+  og: {
+    type: "webhomepage",
+    title:
+      "Aaron Salley — Digital Product Executive & EDI Advocate | Portfolio",
+    url: "https://aaronsalley.com",
+    description: `I work with people and firms on thoughtful, innovative projects in UI/UX design, technical development &amp; product management, and leadership capacities. Contact me today to build something disruptive.`,
+    image: SocialCard.src,
+  },
+  twitter: {
+    type: "summary",
+    title:
+      "Aaron Salley — Digital Product Executive & EDI Advocate | Portfolio",
+    url: "https://aaronsalley.com",
+    description: `I work with people and firms on thoughtful, innovative projects in UI/UX design, technical development &amp; product management, and leadership capacities. Contact me today to build something disruptive.`,
+    image: SocialCard.src,
   },
   browser: "",
   colorScheme: "light",

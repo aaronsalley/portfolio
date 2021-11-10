@@ -26,7 +26,6 @@ const Showcase = ({
 
       if (image) {
         return (
-          // FIXME: Images are appearing distorted.
           <Image {...image} alt={`${project.client} project on a device`} />
         );
       }

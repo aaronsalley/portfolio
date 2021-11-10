@@ -8,7 +8,8 @@ import lumifi from "../projects/lumifi";
 import mtfmusicals from "../projects/mtfmusicals";
 
 export const initialState: RootStateOrAny = {
-  siteTitle: "Disruptv",
+  siteTitle: "Disruptv Digital Product Solutions | Disruptv New York",
+  description: "",
   branding: "Aaron-Salley-Disruptv-NYC-logo",
   pages: [
     {
@@ -54,6 +55,22 @@ export const initialState: RootStateOrAny = {
         title: "AngelList",
       },
     ],
+  },
+  og: {
+    type: "webhomepage",
+    title: "Disruptv Digital Product Solutions | Disruptv New York",
+    url: "https://disruptv.llc",
+    description:
+      "We work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management. Contact us today to build something disruptv.",
+    image: "",
+  },
+  twitter: {
+    type: "summary",
+    title: "Disruptv Digital Product Solutions | Disruptv New York",
+    url: "https://disruptv.llc",
+    description:
+      "We work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management. Contact us today to build something disruptv.",
+    image: "",
   },
   browser: "",
   colorScheme: "light",

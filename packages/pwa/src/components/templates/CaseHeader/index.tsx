@@ -144,7 +144,6 @@ const CaseHeader = ({
         image = images[device];
       }, [device]);
 
-      // FIXME: Keep image size in check
       return image ? (
         <div className={style["deviceImage"]}>
           <Image {...image} placeholder={"blur"} />
@@ -155,7 +154,6 @@ const CaseHeader = ({
     return null;
   };
 
-  // FIXME: Keep AvailableFor and Devices elements from colliding on mobile
   return (
     <React.Fragment>
       <ProjectHeader {...project} context={"case"} />

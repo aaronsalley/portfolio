@@ -9,11 +9,14 @@ import { detectColorScheme } from "../../data/controllers/actions";
 import SiteFooter from "../components/organisms/SiteFooter";
 import SiteHeader from "../components/organisms/SiteHeader";
 import "../../public/styles/global.scss";
+import HeaderMeta from "../components/templates/HeaderMeta";
 
-function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
+function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
   if (typeof window !== "undefined") {
     useEffect(() => {
       //TODO: Make pages scroll to top on change
+      document.body.scrollTo(0, 0);
+
       /**
        * Initalize and watch for viewport height changes.
        */
@@ -45,6 +48,7 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
 
   return (
     <Provider store={store}>
+      <HeaderMeta />
       <Head>
         <meta
           name="viewport"
@@ -101,4 +105,4 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
   );
 }
 
-export default MyApp;
+export default Portfolio;
