@@ -1,4 +1,5 @@
 import { Device } from "./devices";
+import { FeaturedImageSet } from "./featuredImages";
 
 export interface Project {
   slug: String;
@@ -18,26 +19,10 @@ export interface Project {
     light: FeaturedImageSet;
     dark: FeaturedImageSet;
   };
-  device?: Device;
+  device?: string | keyof typeof Device;
   meta: {
     title: String;
     og: {};
     twitter: {};
   };
 }
-
-export const flatten = (object: any): any => {
-  let result: any = {};
-
-  for (const [key, value] of Object.entries(object)) {
-    if (key == "iPad") {
-      for (const [_key, _value] of Object.entries(object[key])) {
-        result[key + "." + _key] = _value;
-      }
-    } else if (key in Device) {
-      result[key] = value;
-    }
-  }
-
-  return result;
-};

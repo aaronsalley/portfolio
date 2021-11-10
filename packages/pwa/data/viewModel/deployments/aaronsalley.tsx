@@ -130,6 +130,4 @@ export const initialState: RootStateOrAny = {
     description: `I work with people and firms on thoughtful, innovative projects in UI/UX design, technical development &amp; product management, and leadership capacities. Contact me today to build something disruptive.`,
     image: SocialCard.src,
   },
-  browser: "",
-  colorScheme: "light",
 };

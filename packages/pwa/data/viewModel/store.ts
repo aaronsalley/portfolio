@@ -7,21 +7,13 @@ import {
 } from "react-redux";
 import thunk, { ThunkMiddleware } from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { initialState } from "./deployments/aaronsalley";
+import { initialState as PortfolioData } from "./deployments/disruptv";
 
-// TODO: dynamically import the right inital state
-// const initialState = async (): Promise<RootStateOrAny> => {
-//   let state;
-//   const packageJson = await import("../../package.json");
-//   if (packageJson.homepage.includes("disruptv")) {
-//     state = await import("../viewModel/deployments/disruptv");
-//   } else {
-//     state = await import("../viewModel/deployments/aaronsalley");
-//   }
-
-//   console.log(state.initialState);
-//   return state.initialState;
-// };
+const initialState = {
+  browser: "",
+  colorScheme: "light",
+  ...PortfolioData,
+};
 
 const reducer = (state = initialState, action: AnyAction): RootStateOrAny => {
   switch (action.type) {

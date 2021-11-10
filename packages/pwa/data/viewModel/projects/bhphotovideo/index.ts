@@ -36,7 +36,7 @@ const BHPhoto: Project = {
   platforms: {
     android: true,
     mac: true,
-    web: false,
+    web: true,
   },
   tools: [
     "Sketch",

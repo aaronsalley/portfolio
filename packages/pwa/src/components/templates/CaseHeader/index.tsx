@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Image, { ImageProps } from "next/image";
 import { RootState, useAppSelector } from "../../../../data/viewModel/store";
-import { flatten } from "../../../../data/models/Project";
+import { toString } from "../../../../data/models/featuredImages";
 import ProjectHeader from "../../organisms/ProjectHeader";
 import { Platform } from "../../../../data/models/platforms";
 import { Device } from "../../../../data/models/devices";
 
 import style from "./index.module.scss";
+import { capitalizeFirstLetter } from "../../../../utils";
 
 const CaseHeader = ({
   theme = useAppSelector((state: RootState) => state.colorScheme),
@@ -30,6 +31,7 @@ const CaseHeader = ({
           <i
             className={Platform[platform as keyof typeof Platform]}
             aria-hidden
+            title={capitalizeFirstLetter(platform)}
           />
         </li>
       );
@@ -80,7 +82,7 @@ const CaseHeader = ({
    * @returns ReactElement
    */
   const Devices = ({
-    images = flatten(project.images[theme]),
+    images = toString(project.images[theme]),
   }): React.ReactElement => {
     let devices: React.ReactElement[] = [];
 
@@ -104,12 +106,12 @@ const CaseHeader = ({
           icon = "fas fa-mobile-alt";
           title = "Mobile (multiple)";
           break;
-        case Device["iPad.landscape"]:
+        case Device.iPad.landscape:
           icon = "fas fa-tablet-alt";
           title = "Tablet (landscape)";
           style = { transform: "rotate(90deg)" };
           break;
-        case Device["iPad.portrait"]:
+        case Device.iPad.portrait:
           icon = "fas fa-tablet-alt";
           title = "Tablet (portrait)";
           break;
@@ -119,7 +121,12 @@ const CaseHeader = ({
         devices.push(
           <li key={device}>
             <button onClick={() => setDevice(device)} value={device as string}>
-              <i className={icon} style={style} aria-hidden />
+              <i
+                className={icon}
+                style={style}
+                aria-hidden
+                title={`View on ${device.replace(".", " in ")}`}
+              />
             </button>
           </li>
         );
@@ -135,7 +142,7 @@ const CaseHeader = ({
    * @returns ReactElement
    */
   const DeviceImage = ({
-    images = flatten(project.images[theme]),
+    images = toString(project.images[theme]),
   }: any): React.ReactElement | null => {
     let image: ImageProps = images[device];
 

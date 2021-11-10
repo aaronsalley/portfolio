@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { getProject } from "../../../data/controllers/actions";
 import { RootState, useAppSelector } from "../../../data/viewModel/store";
-import CaseContent from "../../components/templates/CaseContent";
-import CaseFooter from "../../components/templates/CaseFooter";
 import CaseHeader from "../../components/templates/CaseHeader";
 import CaseSidebar from "../../components/templates/CaseSidebar";
+import CaseContent from "../../components/templates/CaseContent";
+import CaseFooter from "../../components/templates/CaseFooter";
 
 const Page: NextPage = ({
   project = useAppSelector((state: RootState) => getProject(state)),
@@ -30,10 +30,10 @@ const Page: NextPage = ({
         </title>
       </Head>
       {project ? <CaseHeader {...project} /> : null}
-      <main>
+      {/* <main>
         {project ? <CaseSidebar outline={project.content} /> : null}
         {project ? <CaseContent content={project.content} /> : null}
-      </main>
+      </main> */}
       <CaseFooter></CaseFooter>
     </article>
   );

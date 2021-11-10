@@ -72,6 +72,4 @@ export const initialState: RootStateOrAny = {
       "We work with people and firms on thoughtful, innovative projects in UI/UX design, technical development & product management. Contact us today to build something disruptv.",
     image: "",
   },
-  browser: "",
-  colorScheme: "light",
 };

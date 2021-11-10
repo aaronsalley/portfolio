@@ -6,6 +6,8 @@ import ProjectHeader from "../../../components/organisms/ProjectHeader";
 import Button from "../../atoms/Button";
 
 import style from "./index.module.scss";
+import Link from "next/link";
+import { toKeys } from "../../../../data/models/featuredImages";
 
 const Showcase = ({
   projects = useAppSelector((state: RootState) => state.projects),
@@ -22,16 +24,23 @@ const Showcase = ({
     ...project
   }: React.ComponentProps<any>): React.ReactElement | null => {
     try {
-      const image: ImageProps = project.images[theme][project.device];
+      const image: ImageProps = toKeys(project.images[theme], project.device);
 
       if (image) {
         return (
-          <Image {...image} alt={`${project.client} project on a device`} />
+          <Link
+            href={{
+              pathname: "/project/[slug]",
+              query: { slug: project.slug as string },
+            }}
+          >
+            <a>
+              <Image {...image} alt={`${project.client} project on a device`} />
+            </a>
+          </Link>
         );
       }
-    } catch (error) {
-      // console.log(error);
-    }
+    } catch (error) {}
 
     return null;
   };

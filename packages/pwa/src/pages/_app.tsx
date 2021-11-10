@@ -1,21 +1,25 @@
-import React, { useEffect } from "react";
 import type { AppProps } from "next/app";
 import Script from "next/script";
 import Head from "next/head";
+import { useEffect } from "react";
 import { Provider } from "react-redux";
 import store from "../../data/viewModel/store";
-import { detectColorScheme } from "../../data/controllers/actions";
+import { detectColorScheme, loadState } from "../../data/controllers/actions";
 
+import HeaderMeta from "../components/templates/HeaderMeta";
 import SiteFooter from "../components/organisms/SiteFooter";
 import SiteHeader from "../components/organisms/SiteHeader";
 import "../../public/styles/global.scss";
-import HeaderMeta from "../components/templates/HeaderMeta";
 
 function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
   if (typeof window !== "undefined") {
     useEffect(() => {
       //TODO: Make pages scroll to top on change
       document.body.scrollTo(0, 0);
+      /**
+       * Initalize the right portfolio state.
+       */
+      store.dispatch(loadState);
 
       /**
        * Initalize and watch for viewport height changes.

@@ -68,7 +68,7 @@ const Intry: Project = {
       },
     },
   },
-  device: Device["iPad.portrait"],
+  device: Device.iPad.portrait,
   meta: {
     title: "AI-Powered Hybrid Resume™ Generator",
     og: {},

@@ -19,8 +19,8 @@ const FeaturedClients = ({
     let images: any = {};
 
     files.keys().map((image: any) => {
-      const match = /(.\/Aaron-Salley-Disruptv-NYC-|-logo.svg)/g;
-      images[image.replace(match, "")] = files(image).default;
+      const match = /.\/Aaron-Salley-Disruptv-NYC-([\w\+]+)-logo.svg/g;
+      images[image.replace(match, "$1")] = files(image).default;
     });
 
     setLogos(images);

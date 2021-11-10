@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { RootStateOrAny } from "react-redux";
 import { RootState } from "../viewModel/store";
 
 export const detectColorScheme = () => {
@@ -62,11 +63,16 @@ export const getProject = (state: RootState) => {
   return null;
 };
 
-export const loadState = (state: RootState) => {
-  return {
+export const loadState = async (dispatch: any, state: any) => {
+  const portfolio =
+    window.location.hostname == "disruptv"
+      ? await import("../../data/viewModel/deployments/disruptv")
+      : await import("../../data/viewModel/deployments/aaronsalley");
+
+  dispatch({
     type: "LOAD_STATE",
-    payload: state,
-  };
+    payload: portfolio.initialState,
+  });
 };
 
 export const getPage = (state: RootState) => {

@@ -39,9 +39,6 @@ $gray: lighten($black, 80%);
       @include media-breakpoint-down(sm) {
         margin-top: 4rem;
       }
-      @include media-breakpoint-up(md) {
-        transform: scale(1.25);
-      }
     }
 
     header {
