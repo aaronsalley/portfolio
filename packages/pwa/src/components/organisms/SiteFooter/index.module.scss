@@ -31,6 +31,14 @@
 
         a {
           color: var(--black);
+
+          i {
+            font-size: 0;
+
+            &::before {
+              font-size: var(--bs-body-font-size);
+            }
+          }
         }
       }
     }

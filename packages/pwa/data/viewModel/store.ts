@@ -8,10 +8,11 @@ import {
 import thunk, { ThunkMiddleware } from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { initialState as PortfolioData } from "./deployments/disruptv";
+import { Theme } from "../models/themes";
 
 const initialState = {
   browser: "",
-  colorScheme: "light",
+  colorScheme: Theme.light,
   ...PortfolioData,
 };
 

@@ -60,7 +60,7 @@
       @include make-col();
     }
 
-    h4 {
+    h3 {
       @include make-col(12);
       font-size: 1rem;
       opacity: 0.55;
@@ -87,7 +87,6 @@
 .devices {
   @include make-row();
   @include make-container();
-  @include make-col();
   padding-left: calc(var(--bs-gutter-x, 0.75rem) * 0.5);
   padding-right: calc(var(--bs-gutter-x, 0.75rem) * 0.5);
   list-style: none;
@@ -99,6 +98,7 @@
   flex-wrap: nowrap;
 
   @include media-breakpoint-up(md) {
+    @include make-col();
     justify-content: flex-end;
   }
 

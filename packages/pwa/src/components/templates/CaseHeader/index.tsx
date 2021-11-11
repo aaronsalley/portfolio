@@ -64,7 +64,7 @@ const CaseHeader = ({
 
     return (
       <aside className={style["fact"]}>
-        <h4>{title}</h4>
+        <h3>{title}</h3>
         {value}
       </aside>
     );
@@ -133,7 +133,7 @@ const CaseHeader = ({
       }
     }
 
-    return <menu className={style["devices"]}>{devices}</menu>;
+    return <ul className={style["devices"]}>{devices}</ul>;
   };
 
   /**
@@ -153,7 +153,11 @@ const CaseHeader = ({
 
       return image ? (
         <div className={style["deviceImage"]}>
-          <Image {...image} placeholder={"blur"} />
+          <Image
+            {...image}
+            placeholder={"blur"}
+            alt={`${project.client} on ${device}`}
+          />
         </div>
       ) : null;
     } catch (error) {}

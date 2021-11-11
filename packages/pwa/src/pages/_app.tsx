@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
-import Script from "next/script";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import { useEffect } from "react";
 import { Provider } from "react-redux";
 import store from "../../data/viewModel/store";
@@ -11,6 +11,7 @@ import HeaderMeta from "../components/templates/HeaderMeta";
 import SiteFooter from "../components/organisms/SiteFooter";
 import SiteHeader from "../components/organisms/SiteHeader";
 import "../../public/styles/global.scss";
+import reportWebVitals from "../reportWebVitals";
 
 function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
   const router = useRouter();
@@ -67,8 +68,8 @@ function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
       <Head>
         <meta
           name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-        ></meta>
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+        />
       </Head>
       <SiteHeader />
       <Component {...pageProps} className={"main"} />
@@ -119,5 +120,7 @@ function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
     </Provider>
   );
 }
+
+reportWebVitals();
 
 export default Portfolio;

@@ -11,7 +11,7 @@ const SiteFooter = ({
     items = links.map((link: any, i: number) => {
       return (
         <li key={i}>
-          <a href={link.href} target={"_blank"}>
+          <a href={link.href} target={"_blank"} rel={"noopener noreferrer"}>
             <i className={"fab fa-" + link.title.toLowerCase()} aria-hidden />
           </a>
         </li>

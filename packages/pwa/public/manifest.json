@@ -5,7 +5,8 @@
     {
       "src": "/media/Aaron-Salley-Disruptv-NYC-icon--onLight192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "/media/Aaron-Salley-Disruptv-NYC-icon--onLight512.png",

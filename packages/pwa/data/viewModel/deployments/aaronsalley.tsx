@@ -88,7 +88,13 @@ export const initialState: RootStateOrAny = {
       title: "Résumé",
     },
   ],
-  projects: [bhphotovideo, intry, davincian, lumifi, mtfmusicals],
+  projects: [
+    bhphotovideo,
+    intry,
+    davincian,
+    lumifi,
+    // mtfmusicals
+  ],
   featuredClients: ["bhphoto", "mtf", "bnymellon", "rm+compass", "intry"],
   menus: {
     social: [

@@ -19,6 +19,24 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="manifest" href="/manifest.json" />
+          <link
+            rel="icon"
+            href="/media/Aaron-Salley-Disruptv-NYC-brand--favicon.svg"
+          />
+          <meta
+            name="theme-color"
+            content="#f8f9fa"
+            media="(prefers-color-scheme: light)"
+          />
+          <meta
+            name="theme-color"
+            content="#000c1a"
+            media="(prefers-color-scheme: dark)"
+          />
+          <link
+            rel="apple-touch-icon"
+            href="/media/Aaron-Salley-Disruptv-NYC-icon--onDark192.png"
+          />
         </Head>
         <body>
           {/* <!-- Google Tag Manager (noscript) --> */}
