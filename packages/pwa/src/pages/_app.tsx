@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import Script from "next/script";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { Provider } from "react-redux";
 import store from "../../data/viewModel/store";
@@ -12,10 +13,18 @@ import SiteHeader from "../components/organisms/SiteHeader";
 import "../../public/styles/global.scss";
 
 function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
+  const router = useRouter();
+
   if (typeof window !== "undefined") {
     useEffect(() => {
-      //TODO: Make pages scroll to top on change
-      document.body.scrollTo(0, 0);
+      /**
+       * Make pages scroll to the top on route change.
+       */
+      const scrollToTop = () => {
+        document.body.scrollTo(0, 0);
+      };
+      router.events.on("routeChangeComplete", scrollToTop);
+
       /**
        * Initalize the right portfolio state.
        */
@@ -42,6 +51,8 @@ function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
       portfolio.addEventListener("change", theme);
 
       return () => {
+        router.events.off("routeChangeComplete", scrollToTop);
+
         window.removeEventListener("load", vh);
         window.removeEventListener("resize", vh);
 
