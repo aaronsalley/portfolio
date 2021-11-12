@@ -3,9 +3,8 @@ import { RootState, useAppSelector } from "../../../../data/viewModel/store";
 import Branding from "../../atoms/Branding";
 import style from "./index.module.scss";
 
-const SiteHeader = ({
-  pages = useAppSelector((state: RootState) => state.pages),
-}: React.ComponentProps<any>): React.ReactElement => {
+const SiteHeader = (): React.ReactElement => {
+  const pages = useAppSelector((state: RootState) => state.pages);
   let items = null;
 
   if (pages) {

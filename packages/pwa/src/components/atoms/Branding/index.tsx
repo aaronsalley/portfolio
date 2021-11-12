@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { capitalizeFirstLetter } from "../../../../utils";
 
-const Branding = ({
-  siteTitle = useAppSelector((state: RootState) => state.siteTitle),
-  branding = useAppSelector((state: RootState) => state.branding),
-  colorScheme = useAppSelector((state: RootState) => state.colorScheme),
-}) => {
+const Branding = (): React.ReactElement => {
+  const siteTitle = useAppSelector((state: RootState) => state.siteTitle);
+  const branding = useAppSelector((state: RootState) => state.branding);
+  const colorScheme = useAppSelector((state: RootState) => state.colorScheme);
+
   const [logo, setLogo] = useState();
   useEffect(() => {
     (async () => {
@@ -18,7 +18,7 @@ const Branding = ({
 
       setLogo(image.default);
     })();
-  }, [colorScheme]);
+  }, [colorScheme, branding]);
 
   return (
     <Link href={"/"}>

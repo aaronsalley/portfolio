@@ -6,18 +6,18 @@ import { useEffect } from "react";
 import { Provider } from "react-redux";
 import store from "../../data/viewModel/store";
 import { detectColorScheme, loadState } from "../../data/controllers/actions";
+import reportWebVitals from "../reportWebVitals";
 
 import HeaderMeta from "../components/templates/HeaderMeta";
 import SiteFooter from "../components/organisms/SiteFooter";
 import SiteHeader from "../components/organisms/SiteHeader";
 import "../../public/styles/global.scss";
-import reportWebVitals from "../reportWebVitals";
 
 function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
   const router = useRouter();
 
-  if (typeof window !== "undefined") {
-    useEffect(() => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
       /**
        * Make pages scroll to the top on route change.
        */
@@ -59,8 +59,8 @@ function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
 
         portfolio.removeEventListener("change", theme);
       };
-    }, []);
-  }
+    }
+  }, [router.events]);
 
   return (
     <Provider store={store}>

@@ -12,6 +12,9 @@
 /.next/
 /out/
 
+# servicework cache
+workbox-*.js
+
 # production
 /build
 

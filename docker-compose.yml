@@ -13,6 +13,7 @@ services:
       - ./packages/pwa/public:/home/portfolio/public
       - ./packages/pwa/src:/home/portfolio/src
       - ./packages/pwa/data:/home/portfolio/data
+      - ./packages/pwa/out:/home/portfolio/out
 
   storybook:
     build:

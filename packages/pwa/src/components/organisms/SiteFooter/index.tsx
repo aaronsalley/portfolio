@@ -1,11 +1,11 @@
 import { RootState, useAppSelector } from "../../../../data/viewModel/store";
 import style from "./index.module.scss";
 
-const SiteFooter = ({
-  links = useAppSelector((state: RootState) => state.menus.social),
-}: React.ComponentProps<any>): React.ReactElement => {
-  let items = null;
+const SiteFooter = (): React.ReactElement => {
+  const links = useAppSelector((state: RootState) => state.menus.social);
   const year = new Date().getFullYear();
+
+  let items = null;
 
   if (links) {
     items = links.map((link: any, i: number) => {

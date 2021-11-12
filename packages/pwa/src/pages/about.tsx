@@ -5,10 +5,10 @@ import { getPage } from "../../data/controllers/actions";
 import { RootState, useAppSelector } from "../../data/viewModel/store";
 import Intro from "../components/organisms/Intro";
 
-const Page: NextPage = ({
-  page = useAppSelector((state: RootState) => getPage(state)),
-  siteTitle = useAppSelector((state: RootState) => state.siteTitle),
-}: React.ComponentProps<any>): React.ReactElement => {
+const Page: NextPage = (): React.ReactElement => {
+  const page = useAppSelector((state: RootState) => getPage(state));
+  const siteTitle = useAppSelector((state: RootState) => state.siteTitle);
+
   return (
     <React.Fragment>
       <Head>

@@ -9,17 +9,16 @@ import CaseSidebar from "../../components/templates/CaseSidebar";
 import CaseContent from "../../components/templates/CaseContent";
 import CaseFooter from "../../components/templates/CaseFooter";
 
-const Page: NextPage = ({
-  project = useAppSelector((state: RootState) => getProject(state)),
-  siteTitle = useAppSelector((state: RootState) => state.siteTitle),
-}: React.ComponentProps<any>): React.ReactElement => {
+const Page: NextPage = (): React.ReactElement => {
+  const project = useAppSelector((state: RootState) => getProject(state));
+  const siteTitle = useAppSelector((state: RootState) => state.siteTitle);
   const router = useRouter();
 
   useEffect(() => {
     if (router.isReady && project === null) {
       router.push("/404");
     }
-  }, [router]);
+  }, [router, project]);
 
   return (
     <article>

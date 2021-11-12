@@ -5,14 +5,15 @@ import { toString } from "../../../../data/models/featuredImages";
 import ProjectHeader from "../../organisms/ProjectHeader";
 import { Platform } from "../../../../data/models/platforms";
 import { Device } from "../../../../data/models/devices";
-
-import style from "./index.module.scss";
 import { capitalizeFirstLetter } from "../../../../utils";
 
+import style from "./index.module.scss";
+
 const CaseHeader = ({
-  theme = useAppSelector((state: RootState) => state.colorScheme),
   ...project
 }: React.ComponentProps<any>): React.ReactElement => {
+  const theme = useAppSelector((state: RootState) => state.colorScheme);
+
   /**
    * Creates the list of platforms for which the
    * project is available.

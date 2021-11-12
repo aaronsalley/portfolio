@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../atoms/Button";
 import style from "./index.module.scss";
 
-const CaseFooter = ({}: React.ComponentProps<any>): React.ReactElement => {
+const CaseFooter = (): React.ReactElement => {
   const CTA = (
     <React.Fragment>
       <i className={"fas fa-arrow-left"} aria-hidden />

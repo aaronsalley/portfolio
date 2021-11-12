@@ -3,10 +3,11 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../../data/viewModel/store";
 
 const HeaderMeta = ({
-  site = useSelector((state: RootState) => state),
   ...children
-}) => {
-  const { siteTitle, description, og, twitter } = site;
+}: React.ComponentProps<any>): React.ReactElement => {
+  const { siteTitle, description, og, twitter } = useSelector(
+    (state: RootState) => state
+  );
 
   return (
     <Head>

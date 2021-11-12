@@ -9,10 +9,9 @@ import style from "./index.module.scss";
 import Link from "next/link";
 import { toKeys } from "../../../../data/models/featuredImages";
 
-const Showcase = ({
-  projects = useAppSelector((state: RootState) => state.projects),
-  max = projects.length,
-}: React.ComponentProps<any>): React.ReactElement => {
+const Showcase = ({ max }: React.ComponentProps<any>): React.ReactElement => {
+  const projects = useAppSelector((state: RootState) => state.projects);
+
   /**
    * Conditionally display the featured image
    * for the project.
@@ -20,9 +19,10 @@ const Showcase = ({
    * @returns React.ReactElement or null
    */
   const FeaturedImage = ({
-    theme = useAppSelector((state) => state.colorScheme),
     ...project
   }: React.ComponentProps<any>): React.ReactElement | null => {
+    const theme = useAppSelector((state) => state.colorScheme);
+
     try {
       const image: ImageProps = toKeys(project.images[theme], project.device);
 
@@ -50,7 +50,7 @@ const Showcase = ({
    */
   const Items = (): any => {
     let items = [];
-    for (let i = 0; i < max; i++) {
+    for (let i = 0; i < (max ?? projects.length); i++) {
       const project: Project = projects[i];
 
       items.push(

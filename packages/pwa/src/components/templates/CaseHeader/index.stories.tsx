@@ -22,28 +22,6 @@ const project: Project = {
     web: true,
   },
   tools: [],
-  featured_image: {
-    light: {
-      MacbookPro: null,
-      iMac: null,
-      iPhone: null,
-      iPhones: null,
-      iPad: {
-        landscape: null,
-        portrait: null,
-      },
-    },
-    dark: {
-      MacbookPro: null,
-      iMac: null,
-      iPhone: null,
-      iPhones: null,
-      iPad: {
-        landscape: null,
-        portrait: null,
-      },
-    },
-  },
   meta: {
     title: "",
     og: "",
