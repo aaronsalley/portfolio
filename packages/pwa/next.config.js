@@ -10,27 +10,7 @@ const nextConfig = {
   images: {
     disableStaticImages: true,
   },
-  exportPathMap: async function (
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
-    return {
-      "/": { page: "/" },
-      "/about": { page: "/about" },
-      "/projects": { page: "/projects" },
-      "/project/bhphotovideo": {
-        page: "/project",
-        query: { slug: "bhphotovideo" },
-      },
-      "/project/davincian": {
-        page: "/project",
-        query: { slug: "davincian" },
-      },
-      "/project/intry": { page: "/project", query: { slug: "intry" } },
-      "/project/lumifi": { page: "/project", query: { slug: "lumifi" } },
-      // '/project/mtfmusicals': { page: '/project', query: { slug: 'mtfmusicals' } },
-    };
-  },
+  poweredByHeader: false,
 };
 
 module.exports = withPlugins(

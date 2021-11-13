@@ -32,6 +32,18 @@ $gray: lighten($black, 80%);
     & > a {
       position: relative;
 
+      // while not using next/Image component
+      box-sizing: border-box;
+      display: block;
+      overflow: hidden;
+      height: initial;
+      background: none;
+      opacity: 1;
+      border: 0px;
+      margin: 0px;
+      padding: 0px;
+      inset: 0px;
+
       span {
         overflow: visible !important;
       }
@@ -50,6 +62,25 @@ $gray: lighten($black, 80%);
       @include media-breakpoint-down(sm) {
         margin-top: 4rem;
       }
+
+      // while not using next/Image component
+      position: absolute;
+      inset: 0px;
+      box-sizing: border-box;
+      padding: 0px;
+      border: none;
+      margin: auto;
+      display: block;
+      width: 0px;
+      height: 0px;
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      max-height: 100%;
+      filter: none;
+      background-size: cover;
+      background-image: none;
+      background-position: 0% 0%;
     }
 
     header {

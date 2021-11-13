@@ -13,7 +13,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "static": "yarn build && yarn next export",
-    "deploy": "gh-pages -d out"
+    "deploy": "gh-pages -s '**/*' --dotfiles -d out"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",

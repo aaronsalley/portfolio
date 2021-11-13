@@ -12,31 +12,30 @@ import { ReactComponent as IntryLogo } from "@svgr/webpack?!url-loader?modules!.
 const FeaturedClients = ({
   files = require.context("./assets", false, /\.(svg)$/),
 }) => {
-  const clients = useAppSelector((state: RootState) => state.featuredClients);
-
-  const [logos, setLogos] = useState();
-  useEffect(() => {
-    let images: any = {};
-
-    files.keys().map((image: any) => {
-      const match = /.\/Aaron-Salley-Disruptv-NYC-([\w\+]+)-logo.svg/g;
-      images[image.replace(match, "$1")] = files(image).default;
-    });
-
-    setLogos(images);
-  }, [files]);
-
   // TODO: Handle auto import of SVG files from assets directory
-  const items = clients.map((client: any) => {
-    return (
-      <li key={client}>
-        {logos && logos[client] ? (
-          <Image src={logos[client]} alt={`${client} logo`} />
-        ) : null}
-      </li>
-    );
-  });
-  items;
+  // const clients = useAppSelector((state: RootState) => state.featuredClients);
+
+  // const [logos, setLogos] = useState();
+  // useEffect(() => {
+  //   let images: any = {};
+
+  //   files.keys().map((image: any) => {
+  //     const match = /.\/Aaron-Salley-Disruptv-NYC-([\w\+]+)-logo.svg/g;
+  //     images[image.replace(match, "$1")] = files(image).default;
+  //   });
+
+  //   setLogos(images);
+  // }, [files]);
+  // const items = clients.map((client: any) => {
+  //   console.log(client);
+  //   return (
+  //     <li key={client}>
+  //       {logos && logos[client] ? (
+  //         <Image src={logos[client]} alt={`${client} logo`} />
+  //       ) : null}
+  //     </li>
+  //   );
+  // });
 
   return (
     <ul className={style["container"]}>

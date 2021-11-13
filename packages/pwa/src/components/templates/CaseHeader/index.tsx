@@ -154,17 +154,17 @@ const CaseHeader = ({
     try {
       return image ? (
         <div className={style["deviceImage"]}>
-          <Image
+          <img
             src={image}
-            placeholder={"blur"}
-            blurDataURL={`${image}?lqip`}
             alt={`${project.client} on ${device.replace(
               /\.(\w+)/,
               " in $1 mode"
             )}`}
             loading={"eager"}
-            layout={"fill"}
-            priority
+            // placeholder={"blur"}
+            // blurDataURL={`${image}?lqip`}
+            // layout={"fill"}
+            // priority
           />
         </div>
       ) : null;

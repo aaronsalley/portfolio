@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { RootStateOrAny } from "react-redux";
 import { RootState } from "../viewModel/store";
 
 export const detectColorScheme = () => {
@@ -50,20 +49,7 @@ export const detectBrowser = () => {
   };
 };
 
-export const getProject = (state: RootState) => {
-  const router = useRouter();
-  const { slug: currentPage } = router.query;
-
-  for (let project of state.projects) {
-    if (currentPage === project["slug"]) {
-      return project;
-    }
-  }
-
-  return null;
-};
-
-export const loadState = async (dispatch: any, state: any) => {
+export const loadPortfolio = async (dispatch: any, state: any) => {
   const portfolio =
     window.location.hostname == "disruptv"
       ? await import("../../data/viewModel/deployments/disruptv")
@@ -81,6 +67,8 @@ export const getPage = (state: RootState) => {
 
   for (let page of state.pages) {
     if (currentPage === page.href) {
+      return page;
+    } else if (currentPage === "/" && page.title === "Home") {
       return page;
     }
   }

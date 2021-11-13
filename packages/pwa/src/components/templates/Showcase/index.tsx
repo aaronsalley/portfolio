@@ -35,12 +35,12 @@ const Showcase = ({ max }: React.ComponentProps<any>): React.ReactElement => {
             }}
           >
             <a>
-              <Image
+              <img
                 src={image}
                 alt={`${project.client} project on a device`}
-                placeholder={"blur"}
-                blurDataURL={`${image}?lqip`}
-                layout={"fill"}
+                // placeholder={"blur"}
+                // blurDataURL={`${image}?lqip`}
+                // layout={"fill"}
               />
             </a>
           </Link>

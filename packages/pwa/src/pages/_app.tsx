@@ -4,9 +4,12 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useEffect } from "react";
 import { Provider } from "react-redux";
-import store from "../../data/viewModel/store";
-import { detectColorScheme, loadState } from "../../data/controllers/actions";
+import {
+  detectColorScheme,
+  loadPortfolio,
+} from "../../data/controllers/actions";
 import reportWebVitals from "../reportWebVitals";
+import { useStore } from "../../data/viewModel/store";
 
 import HeaderMeta from "../components/templates/HeaderMeta";
 import SiteFooter from "../components/organisms/SiteFooter";
@@ -14,10 +17,16 @@ import SiteHeader from "../components/organisms/SiteHeader";
 import "../../public/styles/global.scss";
 
 function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
+  const store = useStore(pageProps.initialReduxState);
   const router = useRouter();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      /**
+       * Initalize the right portfolio state.
+       */
+      store.dispatch(loadPortfolio);
+
       /**
        * Make pages scroll to the top on route change.
        */
@@ -25,11 +34,6 @@ function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
         document.body.scrollTo(0, 0);
       };
       router.events.on("routeChangeComplete", scrollToTop);
-
-      /**
-       * Initalize the right portfolio state.
-       */
-      store.dispatch(loadState);
 
       /**
        * Initalize and watch for viewport height changes.
@@ -60,7 +64,7 @@ function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
         portfolio.removeEventListener("change", theme);
       };
     }
-  }, [router.events]);
+  }, [router.events, store]);
 
   return (
     <Provider store={store}>

@@ -1,37 +1,66 @@
-import type { NextPage } from "next";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { getProject } from "../../../data/controllers/actions";
+import React from "react";
 import { RootState, useAppSelector } from "../../../data/viewModel/store";
 import CaseHeader from "../../components/templates/CaseHeader";
 import CaseSidebar from "../../components/templates/CaseSidebar";
 import CaseContent from "../../components/templates/CaseContent";
 import CaseFooter from "../../components/templates/CaseFooter";
 
-const Page: NextPage = (): React.ReactElement => {
-  const project = useAppSelector((state: RootState) => getProject(state));
-  const siteTitle = useAppSelector((state: RootState) => state.siteTitle);
-  const router = useRouter();
+export const getStaticPaths: GetStaticPaths = async () => {
+  // TODO: get projects from store
+  const projects = [
+    "bhphotovideo",
+    "davincian",
+    "intry",
+    "lumifi",
+    // "mtfmusicals",
+  ];
 
-  useEffect(() => {
-    if (router.isReady && project === null) {
-      router.push("/404");
-    }
-  }, [router, project]);
+  const paths = projects.map((project: string) => ({
+    params: { slug: project },
+  }));
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+  const res = await import(`../../../data/viewModel/projects/${params.slug}`);
+  const project = res.default;
+
+  if (!project) {
+    return {
+      redirect: {
+        destination: "/404",
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {
+      project,
+    },
+  };
+};
+
+const Page: NextPage = ({
+  project,
+}: React.ComponentProps<any>): React.ReactElement => {
+  const siteTitle = useAppSelector((state: RootState) => state.siteTitle);
 
   return (
     <article>
       <Head>
         <title>
-          {project ? `${project.title} - ` : null}
+          {project.title}
           {siteTitle}
         </title>
       </Head>
-      {project ? <CaseHeader {...project} /> : null}
+      <CaseHeader {...project} />
       {/* <main>
-        {project ? <CaseSidebar outline={project.content} /> : null}
-        {project ? <CaseContent content={project.content} /> : null}
+        <CaseSidebar outline={project.content} />
+        <CaseContent content={project.content} />
       </main> */}
       <CaseFooter></CaseFooter>
     </article>

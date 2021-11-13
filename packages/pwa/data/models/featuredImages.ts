@@ -1,13 +1,13 @@
 import { Device } from "./devices";
 
 export interface FeaturedImageSet {
-  MacbookPro?: StaticImageData | String;
-  iMac?: StaticImageData | String;
-  iPhone?: StaticImageData | String;
-  iPhones?: StaticImageData | String;
+  MacbookPro?: String;
+  iMac?: String;
+  iPhone?: String;
+  iPhones?: String;
   iPad?: {
-    landscape?: StaticImageData | String;
-    portrait?: StaticImageData | String;
+    landscape?: String;
+    portrait?: String;
   };
   // TODO: Move methods to be part of interface
   // toKeys(): any;

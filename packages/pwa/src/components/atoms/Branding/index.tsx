@@ -24,7 +24,7 @@ const Branding = (): React.ReactElement => {
     <Link href={"/"}>
       <a>
         {logo ? (
-          <Image
+          <img
             src={logo}
             width={78}
             height={56}

@@ -126,7 +126,7 @@ export const initialState: RootStateOrAny = {
       "Aaron Salley — Digital Product Executive & EDI Advocate | Portfolio",
     url: "https://aaronsalley.com",
     description: `I work with people and firms on thoughtful, innovative projects in UI/UX design, technical development &amp; product management, and leadership capacities. Contact me today to build something disruptive.`,
-    image: SocialCard.src,
+    image: SocialCard,
   },
   twitter: {
     type: "summary",
@@ -134,6 +134,6 @@ export const initialState: RootStateOrAny = {
       "Aaron Salley — Digital Product Executive & EDI Advocate | Portfolio",
     url: "https://aaronsalley.com",
     description: `I work with people and firms on thoughtful, innovative projects in UI/UX design, technical development &amp; product management, and leadership capacities. Contact me today to build something disruptive.`,
-    image: SocialCard.src,
+    image: SocialCard,
   },
 };
