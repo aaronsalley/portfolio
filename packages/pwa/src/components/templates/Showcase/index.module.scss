@@ -32,6 +32,10 @@ $gray: lighten($black, 80%);
     & > a {
       position: relative;
 
+      span {
+        overflow: visible !important;
+      }
+
       @include media-breakpoint-down(md) {
         box-sizing: border-box;
         display: inline-block;

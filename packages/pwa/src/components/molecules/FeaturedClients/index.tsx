@@ -27,15 +27,16 @@ const FeaturedClients = ({
   }, [files]);
 
   // TODO: Handle auto import of SVG files from assets directory
-  // const items = clients.map((client: any) => {
-  //   return (
-  //     <li key={client}>
-  //       {logos && logos[client] ? (
-  //         <Image src={logos[client]} alt={`${client} logo`} />
-  //       ) : null}
-  //     </li>
-  //   );
-  // });
+  const items = clients.map((client: any) => {
+    return (
+      <li key={client}>
+        {logos && logos[client] ? (
+          <Image src={logos[client]} alt={`${client} logo`} />
+        ) : null}
+      </li>
+    );
+  });
+  items;
 
   return (
     <ul className={style["container"]}>

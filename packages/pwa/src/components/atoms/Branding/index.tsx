@@ -24,7 +24,13 @@ const Branding = (): React.ReactElement => {
     <Link href={"/"}>
       <a>
         {logo ? (
-          <Image src={logo} height={56} alt={siteTitle} loading={"eager"} />
+          <Image
+            src={logo}
+            width={78}
+            height={56}
+            alt={siteTitle}
+            loading={"eager"}
+          />
         ) : null}
       </a>
     </Link>

@@ -144,6 +144,9 @@
     height: 60vh;
   }
 
+  span {
+    overflow: visible !important;
+  }
   img {
     object-fit: contain;
   }

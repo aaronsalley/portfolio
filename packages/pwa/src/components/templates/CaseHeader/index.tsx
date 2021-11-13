@@ -155,14 +155,16 @@ const CaseHeader = ({
       return image ? (
         <div className={style["deviceImage"]}>
           <Image
-            {...image}
+            src={image}
             placeholder={"blur"}
+            blurDataURL={`${image}?lqip`}
             alt={`${project.client} on ${device.replace(
               /\.(\w+)/,
               " in $1 mode"
             )}`}
             loading={"eager"}
             layout={"fill"}
+            priority
           />
         </div>
       ) : null;

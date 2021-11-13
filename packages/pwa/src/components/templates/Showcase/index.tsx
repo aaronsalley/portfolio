@@ -24,7 +24,7 @@ const Showcase = ({ max }: React.ComponentProps<any>): React.ReactElement => {
     const theme = useAppSelector((state) => state.colorScheme);
 
     try {
-      const image: ImageProps = toKeys(project.images[theme], project.device);
+      const image = toKeys(project.images[theme], project.device);
 
       if (image) {
         return (
@@ -36,9 +36,10 @@ const Showcase = ({ max }: React.ComponentProps<any>): React.ReactElement => {
           >
             <a>
               <Image
-                {...image}
+                src={image}
                 alt={`${project.client} project on a device`}
                 placeholder={"blur"}
+                blurDataURL={`${image}?lqip`}
                 layout={"fill"}
               />
             </a>
