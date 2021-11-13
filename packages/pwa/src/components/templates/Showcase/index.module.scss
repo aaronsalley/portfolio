@@ -29,9 +29,16 @@ $gray: lighten($black, 80%);
       flex-wrap: nowrap;
     }
 
-    & > span {
-      flex: 0 1 100%;
-      overflow: visible !important;
+    & > a {
+      position: relative;
+
+      @include media-breakpoint-down(md) {
+        box-sizing: border-box;
+        display: inline-block;
+        height: 50vw;
+        max-width: 100%;
+        min-width: 100%;
+      }
     }
 
     img {

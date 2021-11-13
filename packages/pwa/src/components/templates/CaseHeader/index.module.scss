@@ -130,7 +130,7 @@
   @include make-container();
   @include make-col(12);
   position: relative;
-  display: flex;
+  display: block;
   align-items: center;
   height: 36vh;
   overflow: visible;
@@ -142,14 +142,6 @@
   }
   @include media-breakpoint-up(md) {
     height: 60vh;
-  }
-  // @include media-breakpoint-up(4k) {
-  //   height: 60vh;
-  // }
-
-  & > span {
-    overflow: visible !important;
-    height: 100% !important;
   }
 
   img {

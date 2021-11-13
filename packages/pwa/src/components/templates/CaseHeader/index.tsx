@@ -145,19 +145,24 @@ const CaseHeader = ({
   const DeviceImage = ({
     images = toString(project.images[theme]),
   }: any): React.ReactElement | null => {
-    let image: ImageProps = images[device];
+    const [image, setImage] = useState(images[device]);
+
+    useEffect(() => {
+      setImage(images[device]);
+    }, [images]);
 
     try {
-      useEffect(() => {
-        image = images[device];
-      }, [device]);
-
       return image ? (
         <div className={style["deviceImage"]}>
           <Image
             {...image}
             placeholder={"blur"}
-            alt={`${project.client} on ${device}`}
+            alt={`${project.client} on ${device.replace(
+              /\.(\w+)/,
+              " in $1 mode"
+            )}`}
+            loading={"eager"}
+            layout={"fill"}
           />
         </div>
       ) : null;
