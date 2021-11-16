@@ -1,0 +1,25 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.case {
+  @include make-row();
+  @include make-container();
+  display: block;
+}
+
+.showcase {
+  display: block;
+}
+
+.container {
+  h1 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    opacity: 0.5;
+  }
+
+  p {
+    opacity: 0.5;
+  }
+}

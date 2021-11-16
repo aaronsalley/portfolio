@@ -1,0 +1,90 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/buttons";
+
+$dark: #000c1a;
+$gray: lighten($black, 80%);
+
+.container {
+  @include list-unstyled();
+
+  li {
+    @include make-row();
+    @include make-container();
+    position: relative;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    color: inherit;
+    text-decoration: inherit;
+    flex-wrap: wrap-reverse;
+
+    @each $breakpoint, $container-max-width in $container-max-widths {
+      @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+        max-width: $container-max-width;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      @include row-cols(2);
+      flex-wrap: nowrap;
+    }
+
+    & > a {
+      position: relative;
+
+      // while not using next/Image component
+      box-sizing: border-box;
+      display: block;
+      overflow: hidden;
+      height: initial;
+      background: none;
+      opacity: 1;
+      border: 0px;
+      margin: 0px;
+      padding: 0px;
+      inset: 0px;
+
+      span {
+        overflow: visible !important;
+      }
+
+      @include media-breakpoint-down(md) {
+        box-sizing: border-box;
+        display: inline-block;
+        height: 50vw;
+        max-width: 100%;
+        min-width: 100%;
+      }
+    }
+
+    img {
+      object-fit: contain;
+      @include media-breakpoint-down(sm) {
+        margin-top: 4rem;
+      }
+
+      // while not using next/Image component
+      position: absolute;
+      inset: 0px;
+      box-sizing: border-box;
+      padding: 0px;
+      border: none;
+      margin: auto;
+      display: block;
+      width: 0px;
+      height: 0px;
+      min-width: 100%;
+      max-width: 100%;
+      min-height: 100%;
+      max-height: 100%;
+      filter: none;
+      background-size: cover;
+      background-image: none;
+      background-position: 0% 0%;
+    }
+
+    header {
+      margin-bottom: 4rem;
+    }
+  }
+}
