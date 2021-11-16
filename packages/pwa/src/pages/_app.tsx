@@ -21,49 +21,47 @@ function Portfolio({ Component, pageProps }: AppProps): React.ReactElement {
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      /**
-       * Initalize the right portfolio state.
-       */
-      store.dispatch(loadPortfolio);
+    /**
+     * Initalize the right portfolio state.
+     */
+    store.dispatch(loadPortfolio);
 
-      /**
-       * Make pages scroll to the top on route change.
-       */
-      const scrollToTop = () => {
-        document.body.scrollTo(0, 0);
-      };
-      router.events.on("routeChangeComplete", scrollToTop);
+    /**
+     * Make pages scroll to the top on route change.
+     */
+    const scrollToTop = () => {
+      document.body.scrollTo(0, 0);
+    };
+    router.events.on("routeChangeComplete", scrollToTop);
 
-      /**
-       * Initalize and watch for viewport height changes.
-       */
-      const vh = () => {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty("--vh", `${vh}px`);
-      };
-      window.addEventListener("load", vh);
-      window.addEventListener("resize", vh);
+    /**
+     * Initalize and watch for viewport height changes.
+     */
+    const vh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+    window.addEventListener("load", vh);
+    window.addEventListener("resize", vh);
 
-      /**
-       * Initalize and watch for color scheme changes.
-       */
-      const portfolio = window.matchMedia("(prefers-color-scheme: dark)");
-      const theme = () => {
-        store.dispatch(detectColorScheme());
-      };
+    /**
+     * Initalize and watch for color scheme changes.
+     */
+    const portfolio = window.matchMedia("(prefers-color-scheme: dark)");
+    const theme = () => {
       store.dispatch(detectColorScheme());
-      portfolio.addEventListener("change", theme);
+    };
+    store.dispatch(detectColorScheme());
+    portfolio.addEventListener("change", theme);
 
-      return () => {
-        router.events.off("routeChangeComplete", scrollToTop);
+    return () => {
+      router.events.off("routeChangeComplete", scrollToTop);
 
-        window.removeEventListener("load", vh);
-        window.removeEventListener("resize", vh);
+      window.removeEventListener("load", vh);
+      window.removeEventListener("resize", vh);
 
-        portfolio.removeEventListener("change", theme);
-      };
-    }
+      portfolio.removeEventListener("change", theme);
+    };
   }, [router.events, store]);
 
   return (

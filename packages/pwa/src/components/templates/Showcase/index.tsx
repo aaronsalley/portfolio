@@ -1,4 +1,3 @@
-import React from "react";
 import Image, { ImageProps } from "next/image";
 import { Project } from "../../../../data/models/Project";
 import { RootState, useAppSelector } from "../../../../data/viewModel/store";

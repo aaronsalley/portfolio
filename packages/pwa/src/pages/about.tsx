@@ -1,4 +1,3 @@
-import React from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { getPage } from "../../data/controllers/actions";
@@ -10,14 +9,14 @@ const Page: NextPage = (): React.ReactElement => {
   const siteTitle = useAppSelector((state: RootState) => state.siteTitle);
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <title>
           {page.title} - {siteTitle}
         </title>
       </Head>
       <Intro includeFeatured {...page} />
-    </React.Fragment>
+    </>
   );
 };
 

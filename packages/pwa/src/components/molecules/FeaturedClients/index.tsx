@@ -1,44 +1,50 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { RootState, useAppSelector } from "../../../../data/viewModel/store";
 import Image from "next/image";
 import style from "./index.module.scss";
 
-import { ReactComponent as BHPhotoLogo } from "@svgr/webpack?!url-loader?modules!./assets/Aaron-Salley-Disruptv-NYC-bhphoto-logo.svg";
-import { ReactComponent as MTFLogo } from "@svgr/webpack?!url-loader?modules!./assets/Aaron-Salley-Disruptv-NYC-mtf-logo.svg";
-import { ReactComponent as BNYMellonLogo } from "@svgr/webpack?!url-loader?modules!./assets/Aaron-Salley-Disruptv-NYC-bnymellon-logo.svg";
-import { ReactComponent as RMCompassLogo } from "@svgr/webpack?!url-loader?modules!./assets/Aaron-Salley-Disruptv-NYC-rm+compass-logo.svg";
-import { ReactComponent as IntryLogo } from "@svgr/webpack?!url-loader?modules!./assets/Aaron-Salley-Disruptv-NYC-intry-logo.svg";
+import { ReactComponent as BHPhotoLogo } from "@svgr/webpack?!url-loader?modules!./assets/bhphoto.svg";
+import { ReactComponent as MTFLogo } from "@svgr/webpack?!url-loader?modules!./assets/mtf.svg";
+import { ReactComponent as BNYMellonLogo } from "@svgr/webpack?!url-loader?modules!./assets/bnymellon.svg";
+import { ReactComponent as RMCompassLogo } from "@svgr/webpack?!url-loader?modules!./assets/rm+compass.svg";
+import { ReactComponent as IntryLogo } from "@svgr/webpack?!url-loader?modules!./assets/intry.svg";
 
-const FeaturedClients = ({
-  files = require.context("./assets", false, /\.(svg)$/),
-}) => {
+const FeaturedClients = (): React.ReactElement => {
   // TODO: Handle auto import of SVG files from assets directory
   // const clients = useAppSelector((state: RootState) => state.featuredClients);
+  // const files = require.context("./assets", false, /\.(svg)$/);
 
-  // const [logos, setLogos] = useState();
+  // const [logos, setLogos]: [any, Dispatch<SetStateAction<any>>] = useState();
   // useEffect(() => {
   //   let images: any = {};
 
   //   files.keys().map((image: any) => {
-  //     const match = /.\/Aaron-Salley-Disruptv-NYC-([\w\+]+)-logo.svg/g;
+  //     const match = /.\/([\w\+]+).svg/g;
+  //     console.log(files(image));
   //     images[image.replace(match, "$1")] = files(image).default;
   //   });
 
   //   setLogos(images);
   // }, [files]);
+  // console.log(logos);
+
   // const items = clients.map((client: any) => {
-  //   console.log(client);
-  //   return (
-  //     <li key={client}>
-  //       {logos && logos[client] ? (
-  //         <Image src={logos[client]} alt={`${client} logo`} />
-  //       ) : null}
-  //     </li>
-  //   );
+  //   try {
+  //     console.log(client);
+
+  //     const svg = atob(
+  //       logos[client].replace(/data:image\/svg\+xml;base64,/, "")
+  //     );
+
+  //     return <li key={client} dangerouslySetInnerHTML={{ __html: svg }} />;
+  //   } catch (error) {
+  //     return null;
+  //   }
   // });
 
   return (
     <ul className={style["container"]}>
+      {/* {items} */}
       <li>
         <BHPhotoLogo />
       </li>
