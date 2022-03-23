@@ -8,6 +8,7 @@ import { ReactComponent as MTFLogo } from "@svgr/webpack?!url-loader?modules!./a
 import { ReactComponent as BNYMellonLogo } from "@svgr/webpack?!url-loader?modules!./assets/bnymellon.svg";
 import { ReactComponent as RMCompassLogo } from "@svgr/webpack?!url-loader?modules!./assets/rm+compass.svg";
 import { ReactComponent as IntryLogo } from "@svgr/webpack?!url-loader?modules!./assets/intry.svg";
+import { ReactComponent as MSKLogo } from "@svgr/webpack?!url-loader?modules!./assets/mskcc.svg";
 
 const FeaturedClients = (): React.ReactElement => {
   // TODO: Handle auto import of SVG files from assets directory
@@ -46,19 +47,22 @@ const FeaturedClients = (): React.ReactElement => {
     <ul className={style["container"]}>
       {/* {items} */}
       <li>
+        <MSKLogo />
+      </li>
+      <li>
         <BHPhotoLogo />
       </li>
       <li>
         <MTFLogo />
       </li>
       <li>
-        <BNYMellonLogo />
-      </li>
-      <li>
         <RMCompassLogo />
       </li>
       <li>
         <IntryLogo />
+      </li>
+      <li>
+        <BNYMellonLogo />
       </li>
     </ul>
   );

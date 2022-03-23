@@ -25,13 +25,13 @@ export const initialState: RootStateOrAny = {
           <section>
             <p>
               I'm Aaron. My philosophy draws connections between diverse
-              experiences. Currently I lead the mobile product team at{" "}
+              experiences. Currently I manage Product &amp; Business Delivery at{" "}
               <a
-                href="https://bhphotovideo.com"
+                href="https://www.mskcc.org/"
                 target="_blank"
                 rel="noreferrer nofollow external"
               >
-                B&amp;H Photo
+                MSK Cancer Center
               </a>
               .
             </p>

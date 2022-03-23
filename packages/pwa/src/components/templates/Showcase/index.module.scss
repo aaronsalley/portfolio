@@ -59,9 +59,6 @@ $gray: lighten($black, 80%);
 
     img {
       object-fit: contain;
-      @include media-breakpoint-down(sm) {
-        margin-top: 4rem;
-      }
 
       // while not using next/Image component
       position: absolute;
