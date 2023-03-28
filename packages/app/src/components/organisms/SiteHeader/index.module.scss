@@ -1,0 +1,10 @@
+.container {
+  nav > div {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: calc(var(--max-width) * 1px);
+    margin: auto;
+    justify-content: space-between;
+  }
+}

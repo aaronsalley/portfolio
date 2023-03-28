@@ -14,7 +14,7 @@ services:
       WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
       WORDPRESS_DEBUG: 1
       WORDPRESS_CONFIG_EXTRA: |
-        define( 'WP_ENVIRONMENT_TYPE', ${NODE_ENV} );
+        define( 'WP_ENVIRONMENT_TYPE', '${NODE_ENV}' );
 
         @ini_set( 'error_log', '/home/logs/php_error.log' );
         @ini_set( 'log_errors', 'On' );

@@ -3,3 +3,4 @@
 .wp/
 
 *.env
+node_modules

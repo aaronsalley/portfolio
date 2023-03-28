@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["husky", "npm:8.0.3"],\
             ["lerna", "npm:6.4.1"],\
             ["lint-staged", "npm:13.1.0"],\
-            ["prettier", "npm:2.8.3"],\
+            ["prettier", "npm:2.8.4"],\
             ["stylelint", "npm:14.16.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
             ["webpack", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:5.75.0"]\
@@ -1774,6 +1774,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/node", "npm:18.11.19"],\
             ["@types/react", "npm:18.0.27"],\
             ["@types/react-dom", "npm:18.0.10"],\
+            ["bootstrap", "virtual:45616944b34da768c2c1b68fd5dcfa097475ec1715d471c8fec0d77ecf3d654f3d1a962be3b284effd09c22e5a987f35c5c269280180adffd214f31867d1e01e#npm:5.2.3"],\
             ["eslint", "npm:8.33.0"],\
             ["eslint-config-next", "virtual:45616944b34da768c2c1b68fd5dcfa097475ec1715d471c8fec0d77ecf3d654f3d1a962be3b284effd09c22e5a987f35c5c269280180adffd214f31867d1e01e#npm:13.1.6"],\
             ["next", "virtual:45616944b34da768c2c1b68fd5dcfa097475ec1715d471c8fec0d77ecf3d654f3d1a962be3b284effd09c22e5a987f35c5c269280180adffd214f31867d1e01e#npm:13.1.6"],\
@@ -2799,6 +2800,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["buffer", "npm:5.7.1"],\
             ["inherits", "npm:2.0.4"],\
             ["readable-stream", "npm:3.6.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["bootstrap", [\
+        ["npm:5.2.3", {\
+          "packageLocation": "./.yarn/cache/bootstrap-npm-5.2.3-7458283a23-0211805dec.zip/node_modules/bootstrap/",\
+          "packageDependencies": [\
+            ["bootstrap", "npm:5.2.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:45616944b34da768c2c1b68fd5dcfa097475ec1715d471c8fec0d77ecf3d654f3d1a962be3b284effd09c22e5a987f35c5c269280180adffd214f31867d1e01e#npm:5.2.3", {\
+          "packageLocation": "./.yarn/__virtual__/bootstrap-virtual-764ad929e7/0/cache/bootstrap-npm-5.2.3-7458283a23-0211805dec.zip/node_modules/bootstrap/",\
+          "packageDependencies": [\
+            ["bootstrap", "virtual:45616944b34da768c2c1b68fd5dcfa097475ec1715d471c8fec0d77ecf3d654f3d1a962be3b284effd09c22e5a987f35c5c269280180adffd214f31867d1e01e#npm:5.2.3"],\
+            ["@popperjs/core", null],\
+            ["@types/popperjs__core", null]\
+          ],\
+          "packagePeers": [\
+            "@popperjs/core",\
+            "@types/popperjs__core"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -7972,7 +7995,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["husky", "npm:8.0.3"],\
             ["lerna", "npm:6.4.1"],\
             ["lint-staged", "npm:13.1.0"],\
-            ["prettier", "npm:2.8.3"],\
+            ["prettier", "npm:2.8.4"],\
             ["stylelint", "npm:14.16.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"],\
             ["webpack", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:5.75.0"]\
@@ -8072,10 +8095,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["prettier", [\
-        ["npm:2.8.3", {\
-          "packageLocation": "./.yarn/cache/prettier-npm-2.8.3-2c5624c4ca-92f2ceb522.zip/node_modules/prettier/",\
+        ["npm:2.8.4", {\
+          "packageLocation": "./.yarn/cache/prettier-npm-2.8.4-ba64a351d1-c173064bf3.zip/node_modules/prettier/",\
           "packageDependencies": [\
-            ["prettier", "npm:2.8.3"]\
+            ["prettier", "npm:2.8.4"]\
           ],\
           "linkType": "HARD"\
         }]\
