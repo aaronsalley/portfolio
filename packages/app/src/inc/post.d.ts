@@ -1,6 +1,7 @@
 export type post = {
-  title: { rendered: string };
-  excerpt?: { rendered: string };
-  link?: string;
+  title: string;
+  excerpt?: string;
+  uri?: string;
+  firm?: string;
   meta?: any[];
 };

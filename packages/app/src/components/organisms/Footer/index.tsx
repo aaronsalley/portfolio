@@ -1,5 +1,5 @@
-import { post } from '@/src/inc/post';
 import Link from 'next/link';
+import BlogList from '../BlogList';
 import styles from './index.module.scss';
 
 interface SiteFooter {
@@ -45,43 +45,23 @@ Illumination.`,
     uri: '',
   },
 }: SiteFooter) {
-  const Blog = (posts: any) => {
-    if (!posts) return null;
-
-    const items = [];
-    const maxItems = Object.entries(posts).length;
-
-    for (let i = 0; i < maxItems; i++) {
-      items.push(
-        <li>
-          <Link href={posts[i].uri}>{posts[i].title}</Link>
-        </li>
-      );
-    }
-
-    return (
-      <section id='blog'>
-        <h2>Leadership</h2>
-        <ul>{items}</ul>
-      </section>
-    );
-  };
-
   const AboutMe = () => (
     <section id='about'>
       <h2>About me</h2>
       <p>{bio}</p>
       <h2>Contact</h2>
-      <Link href={'#'}>{email}</Link>
-      <Link href={'#'}>{phone}</Link>
+      <Link href={'mailto:' + email}>{email}</Link>
+      <Link href={'tel:' + phone}>{phone}</Link>
       <address>{address}</address>
-      <Link href={resume.uri}>{resume.label}</Link>
+      <Link href={resume.uri} target='_blank'>
+        {resume.label}
+      </Link>
     </section>
   );
 
   return (
     <footer className={styles['container']}>
-      <Blog {...blog} />
+      <BlogList {...blog} />
       <AboutMe />
     </footer>
   );

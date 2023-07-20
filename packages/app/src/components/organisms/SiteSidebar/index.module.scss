@@ -6,4 +6,16 @@
   @include media-breakpoint-up(xl) {
     position: absolute;
   }
+
+  menu {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    list-style: none;
+    gap: 0.5rem;
+
+    label {
+      display: none;
+    }
+  }
 }

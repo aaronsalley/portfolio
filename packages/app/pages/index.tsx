@@ -1,9 +1,18 @@
 import Home from '@/src/components/templates/Home';
+import { fetchData } from '@/src/lib/wordpress';
 import Head from 'next/head';
 // import { Inter } from '@next/font/google';
 // import styles from '@/styles/Home.module.css';
 
 // const inter = Inter({ subsets: ['latin'] });
+
+export const getStaticProps = async (context: any) => {
+  const res = await fetchData();
+  const data = await res.data;
+
+  const props = { work: data.work?.nodes, cases: data.cases?.nodes };
+  return { props };
+};
 
 export default function Index(props: any) {
   return (

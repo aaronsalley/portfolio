@@ -1,0 +1,11 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.container {
+  min-width: 100%;
+
+  @include media-breakpoint-up('md') {
+    min-width: unset;
+  }
+}

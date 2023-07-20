@@ -1,22 +1,26 @@
+import Link from 'next/link';
 import Button from '../../atoms/Button';
 
 interface WorkItem {
-  title: { rendered: string };
+  title: string;
+  uri: string;
   firm: string;
-  excerpt: { rendered: string };
+  excerpt: string;
 }
 
-export default function WorkItem({ title, firm, excerpt }: WorkItem) {
+export default function WorkItem({ title, uri, firm, excerpt }: WorkItem) {
   return (
     <li>
-      <h3>
-        {title.rendered}
-        <small>{firm}</small>
-      </h3>
-      <div>
-        {excerpt.rendered}
-        <Button>Read the case study</Button>
-      </div>
+      <Link href={uri}>
+        <h3>
+          {title}
+          <small>{firm}</small>
+        </h3>
+        <div>
+          <div dangerouslySetInnerHTML={{ __html: excerpt }} />
+          <Button>Read the case study</Button>
+        </div>
+      </Link>
     </li>
   );
 }
