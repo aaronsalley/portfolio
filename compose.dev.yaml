@@ -30,7 +30,6 @@ services:
           define( 'SAVEQUERIES', true );
         }
     volumes:
-      - ./packages/theme:/var/www/html/wp-content/themes/aaronsalley
       - .wp/plugins:/var/www/html/wp-content/plugins
       - .wp/uploads:/var/www/html/wp-content/uploads
       - .logs:/home/logs
