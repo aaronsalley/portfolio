@@ -1,4 +1,4 @@
-import SiteFooter from '../components/organisms/Footer';
+import SiteFooter from '../components/organisms/SiteFooter';
 import SiteHeader from '../components/organisms/SiteHeader';
 
 export default function RootLayout({

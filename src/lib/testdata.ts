@@ -12,11 +12,17 @@ export const site = {
     { label: 'Mentorship', uri: '/mentorship' },
     { label: 'Connect', uri: '/connect' },
   ],
+  socials: [
+    { label: 'email', uri: '/', cssClasses: [''], target: '' },
+    { label: 'LinkedIn', uri: '/', cssClasses: [''], target: '' },
+    { label: 'Apple Music', uri: '/', cssClasses: [''], target: '' },
+    { label: 'Instagram', uri: '/', cssClasses: [''], target: '' },
+  ],
   contact: {
     address: '12-15 Broadway',
     city: 'New York',
     state: 'NY',
-    zip: 11106,
+    zip: '11106',
     email: 'me@aaronsalley.com',
     phone: '1 (212) 287-5859',
   },

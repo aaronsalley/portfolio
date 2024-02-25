@@ -3,13 +3,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './index.module.scss';
 
+interface NavItem {
+  label: string;
+  uri: string;
+}
 export interface SiteHeader {
   title: string;
   site_logo: string;
-  menu_items: {
-    label: string;
-    uri: string;
-  }[];
+  menu_items: NavItem[];
 }
 
 export default function SiteHeader({
@@ -17,14 +18,18 @@ export default function SiteHeader({
   site_logo = site.logo,
   menu_items = site.nav,
 }: SiteHeader) {
-  const Nav = (props: any) => {
-    const list = props.menu_items?.map((item: any, key: any) => {
+  const SiteNav = ({ items }: { items: NavItem[] }) => {
+    if (!items) return null;
+
+    let list;
+    list = items.map(({ uri, label }, i) => {
       return (
-        <Link className='nav-link' href={item.uri} key={key}>
-          {item.label}
+        <Link className='nav-link' href={uri} key={i}>
+          {label}
         </Link>
       );
     });
+
     return <nav className='navbar-nav'>{list}</nav>;
   };
 
@@ -50,8 +55,7 @@ export default function SiteHeader({
             className='collapse navbar-collapse justify-content-end'
             id='navbarNavAltMarkup'
           >
-            {/* site nav - http://aarons-macbook-pro.local/wp-json/wp/v2/menu-items */}
-            <Nav menu_items={menu_items} />
+            <SiteNav items={menu_items} />
           </div>
         </div>
       </nav>
