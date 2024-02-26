@@ -4,8 +4,9 @@ export default function Intro() {
   return (
     <section className={styles['container']}>
       <h1>
-        <p>Hi, I’m Aaron.</p>
-        <p>I craft solutions that delight and engage people.</p>
+        Hi, I’m Aaron.
+        <br />
+        <br />I craft solutions that delight and engage people.
       </h1>
       <h2>
         With a strong record of leading cross-functional teams, I bridge the

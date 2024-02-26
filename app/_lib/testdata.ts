@@ -1,42 +1,49 @@
-import waving_memoji from '../../public/memoji.svg';
+import memoji_waving from '../../public/memoji_waving.svg';
+import memoji_shruging from '../../public/memoji_shrug.svg';
 import MSKDirect from '../../public/MSKDirect.jpg';
 import Intry from '../../public/Intry.jpg';
 import BHPhoto from '../../public/B&HPhoto.jpg';
 
-export const SITE_TITLE = 'SITE_TITLE';
-export const SITE_LOGO = 'SITE_LOGO';
-export const SITE_NAV = 'SITE_NAV';
-
 export const site = {
   title: 'Aaron Salley',
-  logo: waving_memoji,
+  logo: memoji_waving,
   nav: [
     { label: 'Work', uri: '/' },
     { label: 'Resume', uri: '/resume' },
-    { label: 'About', uri: '/about' },
-    { label: 'Mentorship', uri: '/mentorship' },
-    { label: 'Connect', uri: '/connect' },
+    // { label: 'About', uri: '/about' },
+    // { label: 'Mentorship', uri: '/mentorship' },
+    { label: 'Connect', uri: 'mailto:me@aaronsalley.com' },
   ],
   socials: [
-    {
-      label: 'email',
-      uri: 'mailto:me@aaronsalley.com',
-      cssClasses: ['fa-solid fa-envelope'],
-    },
     {
       label: 'LinkedIn',
       uri: 'https://linkedin.com/in/aaronsalley',
       cssClasses: ['fa-brands fa-linkedin'],
     },
     {
-      label: 'Apple Music',
-      uri: 'https://music.apple.com/profile/aaronsalley',
-      cssClasses: ['fa-brands fa-apple'],
+      label: 'Medium',
+      uri: 'https://medium.com/@aaronsalley',
+      cssClasses: ['fa-brands fa-medium'],
     },
+    {
+      label: 'Github',
+      uri: 'https://github.com/aaronsalley',
+      cssClasses: ['fa-brands fa-github'],
+    },
+    // {
+    //   label: 'Behance',
+    //   uri: 'https://www.behance.net/aaronsalley',
+    //   cssClasses: ['fa-brands fa-behance'],
+    // },
     {
       label: 'Instagram',
       uri: 'https://instagram.com/aaronsalleyhim',
       cssClasses: ['fa-brands fa-instagram'],
+    },
+    {
+      label: 'Apple Music',
+      uri: 'https://music.apple.com/profile/aaronsalley',
+      cssClasses: ['fa-brands fa-apple'],
     },
   ],
   contact: {
@@ -50,18 +57,21 @@ export const site = {
 };
 
 export const memoji = {
-  waving: waving_memoji,
+  waving: memoji_waving,
+  shruging: memoji_shruging,
 };
-export const pages = {};
+
 export const work = [
   {
     title: 'Bringing MSK Direct to life',
     excerpt:
       'Developed and executed the product strategy for MSK Direct — a national digital program benefiting 4.8 million people affected by cancer consisting of multiple products — taking the product from 0 to 1, within budget and on time.',
     skills: ['0 > 1 innovation strategy', 'Product visioning', 'GTM'],
-    press: [
-      { title: 'article A', uri: '' },
-      { title: 'article B', uri: '' },
+    links: [
+      {
+        title: 'MSKCC Broadens Access to Expertise With Expanded Services',
+        uri: 'https://www.mskcc.org/news-releases/mskcc-broadens-access-to-its-cancer-care-expertise-with-launch-of-expanded-services-for-msk-direct-members',
+      },
     ],
     image: {
       src: MSKDirect,
@@ -77,13 +87,12 @@ export const work = [
       'Strategic roadmapping',
       'Architecture & engineering',
     ],
-    press: [
-      { title: 'article A', uri: '' },
-      { title: 'article B', uri: '' },
+    links: [
+      // {title: 'Case Study', uri: ''}
     ],
     image: {
       src: BHPhoto,
-      alt: '',
+      alt: 'B&H Photo iOS app',
     },
   },
   {
@@ -95,9 +104,12 @@ export const work = [
       'Product visioning & design',
       'Architecture & engineering',
     ],
-    press: [
-      { title: 'article A', uri: '' },
-      { title: 'article B', uri: '' },
+    links: [
+      // { title: 'Case Study', uri: '' },
+      {
+        title: 'Austin-American Statesman',
+        uri: 'https://www.statesman.com/story/business/technology/2020/02/12/can-austin-startup-get-your-resume-to-top-of-pile/1720482007/',
+      },
     ],
     image: {
       src: Intry,

@@ -1,7 +1,7 @@
 import Image, { ImageProps } from 'next/image';
 import styles from './index.module.scss';
 
-interface Press {
+interface Links {
   title: string;
   uri: string;
 }
@@ -10,7 +10,7 @@ export interface Feature {
   title: string;
   excerpt: string;
   skills: string[];
-  press: Press[];
+  links: Links[];
   image: ImageProps;
 }
 
@@ -18,27 +18,43 @@ export default function Feature({
   title,
   excerpt,
   skills,
-  press,
+  links,
   image,
 }: Feature) {
   const SkillsList = ({ items }: { items: string[] }) => {
-    if (!items) return null;
+    if (!items || items.length < 1) return null;
 
     let list = items.map((item: string, i: number) => {
       return <li key={i}>{item}</li>;
     });
 
-    return <ul>{list}</ul>;
+    return (
+      <aside>
+        <h3>Skills</h3>
+        <ul>{list}</ul>
+      </aside>
+    );
   };
 
-  const PressList = ({ items }: { items: Press[] }) => {
-    if (!items) return null;
+  const ReadingList = ({ items }: { items: Links[] }) => {
+    if (!items || items.length < 1) return null;
 
-    let list = items.map(({ title, uri }: Press, i: number) => {
-      return <li key={i}>{title}</li>;
+    let list = items.map(({ title, uri }: Links, i: number) => {
+      return (
+        <li key={i}>
+          <a href={uri} target='_blank'>
+            {title}
+          </a>
+        </li>
+      );
     });
 
-    return <ul>{list}</ul>;
+    return (
+      <aside>
+        <h3>Read More</h3>
+        <ul>{list}</ul>
+      </aside>
+    );
   };
 
   return (
@@ -48,14 +64,8 @@ export default function Feature({
           <h3>{title}</h3>
           <p>{excerpt}</p>
         </header>
-        <aside>
-          <h3>Skills</h3>
-          <SkillsList items={skills} />
-        </aside>
-        <aside>
-          <h3>Press</h3>
-          <PressList items={press} />
-        </aside>
+        <SkillsList items={skills} />
+        <ReadingList items={links} />
       </div>
       <Image src={image?.src} alt={image?.alt} />
     </article>
