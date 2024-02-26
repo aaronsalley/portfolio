@@ -1,4 +1,4 @@
-import { site } from '@/src/lib/testdata';
+import { site } from '@/app/_lib/testdata';
 import Link from 'next/link';
 import styles from './index.module.scss';
 

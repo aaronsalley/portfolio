@@ -1,7 +1,7 @@
 import Script from 'next/script';
-import SiteFooter from '../components/organisms/SiteFooter';
-import SiteHeader from '../components/organisms/SiteHeader';
-import { memoji, site } from '../lib/testdata';
+import SiteFooter from './_components/organisms/SiteFooter';
+import SiteHeader from './_components/organisms/SiteHeader';
+import { memoji, site } from './_lib/testdata';
 import { Mulish } from 'next/font/google';
 import './globals.scss';
 
