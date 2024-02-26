@@ -1,0 +1,46 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.container {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--accent--light);
+
+  > div {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      max-width: 75%;
+      column-gap: 2rem;
+    }
+    @include media-breakpoint-up(xl) {
+      max-width: 50%;
+    }
+  }
+
+  header {
+    flex: 1 1 0%;
+  }
+
+  aside {
+    @include media-breakpoint-up(md) {
+      width: 25%;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}

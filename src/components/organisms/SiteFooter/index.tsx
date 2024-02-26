@@ -5,7 +5,6 @@ import styles from './index.module.scss';
 interface SocialItem {
   uri: string;
   label: string;
-  target: string;
   cssClasses: string[];
 }
 export interface SiteFooter {
@@ -15,18 +14,18 @@ export interface SiteFooter {
 }
 
 export default function SiteFooter({
-  title = site.title,
-  contact = site.contact,
-  social_items = site.socials,
+  title,
+  contact,
+  social_items,
 }: SiteFooter) {
   const SocialMenu = ({ items }: { items: SocialItem[] }) => {
     if (!items) return null;
 
     let list;
-    list = items.map(({ uri, label, target, cssClasses: icon }, i) => {
+    list = items.map(({ uri, label, cssClasses: icon }, i) => {
       return (
         <li key={i}>
-          <Link href={uri} target={target}>
+          <Link href={uri} target='_blank'>
             <i className={icon.join(' ')}></i>
             <label>{label}</label>
           </Link>
@@ -40,10 +39,10 @@ export default function SiteFooter({
   return (
     <footer className={styles['container']}>
       <SocialMenu items={social_items} />
-      <small>
-        © {new Date().getFullYear()} {title}. All Rights Reserved. Designed and
-        developed by me with 🖤 in {contact.city}.
-      </small>
+      <p>
+        © {new Date().getFullYear()} {title}. Designed and developed by me with
+        🖤 in {contact.city}.
+      </p>
     </footer>
   );
 }

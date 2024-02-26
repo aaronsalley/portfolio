@@ -1,13 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 
 :root {
-  --max-width: 1190;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-  --font-body: 'New York', 'Tenor Sans', serif;
 
   --light: #f9f6f2;
   --dark: #000c1a;
@@ -38,16 +32,17 @@ body {
 
 body {
   background-color: var(--material);
-  font-family: var(--font-body);
   color: var(--text);
-}
 
-h2 {
-  line-height: 0.9em;
-  font-size: 4.3rem;
-  font-weight: bold;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @include media-breakpoint-up(sm) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
   @include media-breakpoint-up(md) {
-    font-size: 7.5rem; // 120
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
 }
 

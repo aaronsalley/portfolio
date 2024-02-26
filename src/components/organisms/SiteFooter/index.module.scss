@@ -1,17 +1,23 @@
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
-
 .container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: calc(var(--max-width) * 1px);
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 0.7rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 
-  @include media-breakpoint-up(lg) {
-    justify-content: flex-end;
+  nav {
+    display: flex;
+    margin-bottom: 0.5rem;
+    justify-content: center;
+    list-style: none;
+    column-gap: 1em;
+
+    li {
+      label {
+        display: none;
+      }
+    }
+  }
+
+  p {
+    font-size: 0.6em;
+    text-align: center;
   }
 }
