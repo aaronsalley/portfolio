@@ -1,6 +1,5 @@
-import { site } from '@/app/_lib/testdata';
-import Link from 'next/link';
-import styles from './index.module.scss';
+import Link from "next/link";
+import styles from "./index.module.scss";
 
 interface SocialItem {
   uri: string;
@@ -25,8 +24,8 @@ export default function SiteFooter({
     list = items.map(({ uri, label, cssClasses: icon }, i) => {
       return (
         <li key={i}>
-          <Link href={uri} target='_blank'>
-            <i className={icon.join(' ')}></i>
+          <Link href={uri} target="_blank">
+            <i className={icon.join(" ")}></i>
             <label>{label}</label>
           </Link>
         </li>
@@ -37,7 +36,7 @@ export default function SiteFooter({
   };
 
   return (
-    <footer className={styles['container']}>
+    <footer className={styles["container"]}>
       <SocialMenu items={social_items} />
       <p>
         © {new Date().getFullYear()} {title}. Designed and developed by me with
