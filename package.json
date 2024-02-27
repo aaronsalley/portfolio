@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -s '**/*' --dotfiles -d out",
+    "deploy": "gh-pages -s '**/*' --dotfiles --nojekyll --cname aaronsalley.com -d out",
     "publish": "yarn build && yarn deploy",
     "docker:dev": "docker compose -f compose.dev.yaml up -d"
   },
