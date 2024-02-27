@@ -1,0 +1,11 @@
+.container {
+  flex: 1 1 100%;
+  position: relative;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+  }
+}

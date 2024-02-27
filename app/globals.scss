@@ -1,0 +1,86 @@
+@import '~bootstrap/scss/bootstrap';
+
+:root {
+  --border-radius: 12px;
+
+  --light: #f9f6f2;
+  --dark: #000c1a;
+  --accent--dark: #0f2916;
+  --accent--light: #eabe81;
+  --material: #f9f6f2;
+  --text: #000c1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --material: var(--dark);
+    --text: var(--light);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: var(--material);
+  color: var(--text);
+
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @include media-breakpoint-up(sm) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  @include media-breakpoint-up(md) {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+a {
+  color: inherit;
+}
+
+.next-error-h1 {
+  display: inline-block;
+  margin: 0px 20px 0px 0px;
+  padding: 0px 23px 0px 0px;
+  font-size: 24px;
+  font-weight: 500;
+  vertical-align: top;
+  line-height: 49px;
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  @media (prefers-color-scheme: dark) {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  & + div {
+    display: inline-flex;
+    align-items: center;
+
+    h2 {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 49px;
+      margin: 0px;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
