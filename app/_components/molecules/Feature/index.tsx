@@ -42,7 +42,7 @@ export default function Feature({
     let list = items.map(({ title, uri }: Links, i: number) => {
       return (
         <li key={i}>
-          <a href={uri} target='_blank'>
+          <a href={uri} target='_blank' rel='noreferrer'>
             {title}
           </a>
         </li>

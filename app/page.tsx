@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <main>
       <Intro />
-      <FeaturesList children={work} />
+      <FeaturesList>{work}</FeaturesList>
     </main>
   );
 }
