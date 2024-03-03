@@ -24,7 +24,7 @@ export default function manifest(): MetadataRoute.Manifest {
         url: "/contact",
         icons: [
           {
-            src: "/memoji_computer.svg",
+            src: "/memoji_computer.png",
             sizes: "420x420",
           },
         ],
