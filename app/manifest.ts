@@ -10,11 +10,15 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     icons: [
       {
+        src: "/memoji_computer.png",
+        sizes: "192x192",
+      },
+      {
         src: "/memoji_computer.svg",
         sizes: "any",
       },
     ],
-    theme_color: "#f8f9fa",
+    theme_color: "black-translucent",
     background_color: "#f8f9fa",
     shortcuts: [
       {
@@ -25,7 +29,7 @@ export default function manifest(): MetadataRoute.Manifest {
         icons: [
           {
             src: "/memoji_computer.png",
-            sizes: "420x420",
+            sizes: "192x192",
           },
         ],
       },
