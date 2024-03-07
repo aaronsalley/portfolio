@@ -26,14 +26,19 @@ export const site = {
       cssClasses: ["fa-brands fa-medium"],
     },
     {
-      label: "Github",
-      uri: "https://github.com/aaronsalley",
-      cssClasses: ["fa-brands fa-github"],
-    },
-    {
       label: "Behance",
       uri: "https://www.behance.net/aaronsalley",
       cssClasses: ["fa-brands fa-behance"],
+    },
+    {
+      label: "Upwork",
+      uri: "https://www.upwork.com/freelancers/~012fac7e4d12244388?mp_source=share",
+      cssClasses: ["fa-brands fa-upwork"],
+    },
+    {
+      label: "Github",
+      uri: "https://github.com/aaronsalley",
+      cssClasses: ["fa-brands fa-github"],
     },
     {
       label: "Instagram",
