@@ -1,6 +1,6 @@
 {
   "name": "@aaronsalley/portfolio",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "author": "Aaron Salley <aaron@aaronsalley.com>",
   "private": true,
   "workspaces": [
@@ -39,5 +39,5 @@
     "stylelint": "^14.16.1",
     "webpack": "^5.75.0"
   },
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@2.4.3"
 }

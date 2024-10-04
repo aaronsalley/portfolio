@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  margin: 0 var(--global-margin);
+  flex-direction: column;
+
+  section {
+    min-height: 100vh;
+  }
+}
