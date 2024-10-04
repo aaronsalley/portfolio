@@ -1,9 +1,76 @@
 .container {
   display: flex;
-  margin: 0 var(--global-margin);
   flex-direction: column;
+}
 
-  section {
-    min-height: 100vh;
+.hero {
+  min-height: 100vh;
+  margin: 0 var(--global-margin);
+  padding-left: var(--column-left);
+
+  h1 {
+    color: var(--text);
+
+    small {
+      font-size: 2rem;
+    }
+  }
+}
+
+.work {
+  min-height: 100vh;
+
+  > div {
+    padding-left: var(--column-left);
+  }
+}
+
+.offerings {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0 var(--global-margin);
+
+  > div {
+    display: flex;
+    position: relative;
+    margin-left: var(--global-margin);
+
+    > div {
+      margin-left: var(--global-margin);
+    }
+
+    ul {
+      display: flex;
+      margin-top: 5.75rem;
+      margin-bottom: 5.75rem;
+      flex-direction: column;
+      padding-left: 0;
+      list-style: none;
+      gap: 6.5rem;
+    }
+  }
+
+  > aside {
+    display: flex;
+    flex-direction: column;
+    max-width: var(--column-left);
+    width: 100%;
+    margin-top: 9.375rem;
+
+    p {
+      margin-bottom: 2rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  h3 small {
+    font-family: var(--font-Mulish);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
   }
 }

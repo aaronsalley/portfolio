@@ -1,0 +1,18 @@
+.container {
+  ul {
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+  }
+
+  li {
+    color: #383a3a;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+}

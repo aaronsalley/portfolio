@@ -2,14 +2,14 @@
 
 :root {
   --border-radius: 12px;
-  --column-left: 360px;
+  --column-left: calc(360 / 1366 * 100vw);
 
-  --global-margin: 1rem;
+  --global-margin: calc(16 / 1366 * 100vw);
   @include media-breakpoint-up(sm) {
-    --global-margin: 2rem;
+    --global-margin: calc(32 / 1366 * 100vw);
   }
   @include media-breakpoint-up(md) {
-    --global-margin: 3rem;
+    --global-margin: calc(48 / 1366 * 100vw);
   }
 
   --light: #fcfcfb;
@@ -37,6 +37,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-size: 16px;
 }
 
 body {
@@ -50,10 +51,6 @@ body {
 
 main {
   display: flex;
-}
-
-a {
-  color: inherit;
 }
 
 .next-error-h1 {
@@ -86,4 +83,47 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+/**
+ *  Typography
+ */
+h1 {
+  font-family: var(--font-Mulish);
+  font-size: 3.8125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+h2 {
+  font-family: var(--font-DM_Sans);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+h3 {
+  font-family: var(--font-DM_Sans);
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+h4 {
+  font-family: var(--font-DM_Sans);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+p {
+  font-family: var(--font-Petrona);
+}
+
+a {
+  color: inherit;
 }

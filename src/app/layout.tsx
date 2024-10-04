@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import Script from "next/script";
-
-import { Mulish, Petrona } from "next/font/google";
+import { DM_Sans, Mulish, Petrona } from "next/font/google";
 import "../assets/globals.scss";
-import FooterComponent from "./footer";
-import HeaderComponent from "./header";
+
+import FooterComponent from "./FooterComponent";
+import HeaderComponent from "./HeaderComponent";
 
 export const metadata: Metadata = {
   title: {
@@ -34,13 +34,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   );
 };
 
+const dm_sans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-DM_Sans",
+  display: "swap",
+});
+
 const mulish = Mulish({
   subsets: ["latin"],
+  variable: "--font-Mulish",
   display: "swap",
 });
 
 const petrona = Petrona({
   subsets: ["latin"],
+  variable: "--font-Petrona",
   display: "swap",
 });
 
@@ -50,11 +58,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${dm_sans.variable} ${mulish.variable} ${petrona.variable}`}
+    >
       <head>
         <Scripts />
       </head>
-      <body className={petrona.className}>
+      <body>
         {/* <!-- Google Tag Manager (noscript) --> */}
         <noscript>
           <iframe

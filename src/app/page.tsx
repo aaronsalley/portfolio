@@ -1,7 +1,5 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { memoji, site } from "../context/testdata";
 import styles from "./home.module.scss";
 
 export const metadata: Metadata = {
@@ -13,77 +11,75 @@ export const metadata: Metadata = {
 
 const CaseStudy = () => (
   <article>
-    <h3></h3>
-    <p></p>
+    <h3>Title</h3>
+    <p>Lede</p>
   </article>
 );
 
-const ServiceItems = ({ services }: { services: any[] }) => {
-  const items = [];
-
-  const ServiceItem = ({ title, number }: any) => (
-    <li>
-      <h3>
-        <small>{number.toString().padStart(2, "0")} </small>
-        {title}
-      </h3>
-    </li>
-  );
-
-  services.map((service: any, i: number) => {
-    const { title } = service;
-    items.push(<ServiceItem title={title} number={i + 1} key={i} />);
-  });
-
-  return <ul>{items}</ul>;
-};
-
 export default function Page() {
-  const memojiSize = 150;
+  const ServiceItems = ({ services }: { services: any[] }) => {
+    const items = [];
+
+    const ServiceItem = ({ title, number }: any) => (
+      <li>
+        <h3>
+          <small>{number.toString().padStart(2, "0")} </small>
+          {title}
+        </h3>
+      </li>
+    );
+
+    services.map((service: any, i: number) => {
+      const { title } = service;
+      items.push(<ServiceItem title={title} number={i + 1} key={i} />);
+    });
+
+    return <ul>{items}</ul>;
+  };
+
+  const Services = () => (
+    <div className={styles.services}>
+      <h2>{`Services`}</h2>
+      <div>
+        <p>{`I shepherd ideas from mind to market through an integrated approach, translating complex needs into actionable strategies and delivering solutions for people-centric problems.`}</p>
+        <ServiceItems
+          services={[
+            { title: "Research & Discovery" },
+            { title: "Project Management" },
+            { title: "Solution Engineering" },
+            { title: "Go-to-Market Strategy" },
+            { title: "Organizational Transformation" },
+          ]}
+        />
+      </div>
+    </div>
+  );
 
   return (
     <main className={styles.container}>
-      <section>
+      <section id="hero" className={styles.hero}>
         <h1>
           <small>{`Hi, I’m Aaron`}</small>
           <br />
           {`I craft solutions for your business that delight and
           engage.`}
         </h1>
-        <Image
-          src={memoji.waving}
-          alt={`${site.title} memoji`}
-          width={memojiSize}
-          height={memojiSize}
-        />
       </section>
-      <section>
+      <section id="work" className={styles.work}>
         <aside>
           <h2>{`Some brands I’ve had the pleasure to work with`}</h2>
-          <ul></ul>
+          <div>
+            <ul></ul>
+          </div>
         </aside>
         <div>
           <CaseStudy />
           <CaseStudy />
-          <Link href={""}>{`View all cases`}</Link>
+          <Link href={"#"}>{`View all cases`}</Link>
         </div>
       </section>
-      <section>
-        <div>
-          <header>
-            <h2>{`Services`}</h2>
-            <p>{`I shepherd ideas from mind to market through an integrated approach, translating complex needs into actionable strategies and delivering solutions for people-centric problems.`}</p>
-          </header>
-          <ServiceItems
-            services={[
-              { title: "Research & Discovery" },
-              { title: "Project Management" },
-              { title: "Solution Engineering" },
-              { title: "Go-to-Market Strategy" },
-              { title: "Organizational Transformation" },
-            ]}
-          />
-        </div>
+      <section className={styles.offerings}>
+        <Services />
         <aside>
           <h4>{`About me`}</h4>
           <p>
@@ -97,15 +93,12 @@ export default function Page() {
             and businesses.`}
           </p>
           <h4>{`Contact`}</h4>
-          <p>
-            <Link href={"mailto:me@aaronsalley.com"}>me@aaronsalley.com</Link>
-            <br />
-            <Link href={"tel:"}>(212) 287-5859</Link>
-            <br />
-            New York, NY
-            <br />
-            <Link href={""}>Download Resume (PDF)</Link>
-          </p>
+          <Link href={"mailto:me@aaronsalley.com"}>me@aaronsalley.com</Link>
+          <Link href={"tel:2122875859"}>(212) 287-5859</Link>
+          <address>New York, NY</address>
+          <Link href={process.env.NEXT_PUBLIC_RESUME_URL}>
+            Download Resume (PDF)
+          </Link>
         </aside>
       </section>
     </main>

@@ -1,9 +1,5 @@
-import memoji_waving from "../../public/memoji_waving.svg";
-import memoji_shruging from "../../public/memoji_shrug.svg";
-
 export const site = {
   title: "Aaron Salley",
-  logo: memoji_waving,
   nav: [
     { label: "Work", uri: "/" },
     { label: "Resume", uri: "/resume" },
@@ -56,9 +52,4 @@ export const site = {
     email: "me@aaronsalley.com",
     phone: "1 (212) 287-5859",
   },
-};
-
-export const memoji = {
-  waving: memoji_waving,
-  shruging: memoji_shruging,
 };

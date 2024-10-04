@@ -6,7 +6,7 @@
   background-color: var(--accent--dark);
 
   a {
-    font-family: Petrona;
+    font-family: var(--font-Petrona);
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 600;
@@ -34,12 +34,16 @@
     padding-left: 0;
     list-style: none;
     justify-content: space-between;
+
+    li {
+      color: var(--light);
+    }
   }
 
   > div:last-of-type {
     color: var(--accent--light);
     text-align: center;
-    font-family: Mulish;
+    font-family: var(--font-Mulish);
     font-size: 0.5rem;
     font-style: normal;
     font-weight: 300;
