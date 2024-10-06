@@ -1,6 +1,6 @@
 import Image from "next/image";
-import memoji_waving from "../assets/images/memoji_waving.svg";
-import memoji_shruging from "../assets/images/memoji_shrug.svg";
+import memoji_waving from "../assets/images/memoji_waving.svg?url";
+import memoji_shruging from "../assets/images/memoji_shrug.svg?url";
 
 export enum memoji {
   waving,

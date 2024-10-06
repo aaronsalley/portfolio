@@ -32,7 +32,6 @@
 
   > aside {
     display: flex;
-    overflow: hidden;
     width: 100%;
     max-width: 100vw;
     justify-content: center;
@@ -44,6 +43,11 @@
       gap: 2.5rem 3rem;
       justify-items: center;
       align-items: center;
+    }
+
+    svg *,
+    svg {
+      fill: var(--text);
     }
 
     h2 {

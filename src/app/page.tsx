@@ -1,65 +1,35 @@
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./home.module.scss";
 
-import AmarisWorksLogo from "../assets/images/brand--AmarisWorks.png";
-import BHLogo from "../assets/images/brand--B&H.png";
-import BNYMellonLogo from "../assets/images/brand--BNYMellon.png";
-import BKCharterLogo from "../assets/images/brand--Brooklyn_Charter_School.png";
-import ColeHaanLogo from "../assets/images/brand--Cole_Haan.png";
-import CrewcialLogo from "../assets/images/brand--Crewcial.png";
-import DavincianLogo from "../assets/images/brand--DaVincian_Healthcare.png";
-import IntryLogo from "../assets/images/brand--Intry.png";
-import ITWFoundLogo from "../assets/images/brand--Isaac_T_Watson_Foundation.png";
-import laFondazioneLogo from "../assets/images/brand--laFondazione_NY.png";
-import LandmarkLogo from "../assets/images/brand--Landmark_venues.png";
-import LumifiLogo from "../assets/images/brand--LumiFi.png";
-import MSKLogo from "../assets/images/brand--MSK.png";
-import MTFJoesPubLogo from "../assets/images/brand--MTF_at_JoesPub.png";
-import MTFLogo from "../assets/images/brand--Musical_Theatre_Factory.png";
-import RaoStudiosLogo from "../assets/images/brand--Rao_Studios.png";
-import RhinoLogo from "../assets/images/brand--Rhino_Transfers.png";
-import RipcordLogo from "../assets/images/brand--Ripcord.png";
-import CompassLogo from "../assets/images/brand--RM+Compass.png";
-import RubiconLogo from "../assets/images/brand--RubiconMD.png";
-import SportnduckLogo from "../assets/images/brand--Sportnduck.png";
-import StoneHouseLogo from "../assets/images/brand--Stone_House.png";
-import UnzippedTruthLogo from "../assets/images/brand--The_Unzipped_Truth.png";
-import TRNLogo from "../assets/images/brand--TRN-alpha.png";
-import URGLogo from "../assets/images/brand--URG_Corporation.png";
-import WildchildLogo from "../assets/images/brand--Wildchild.png";
+import AmarisWorksLogo from "../assets/images/brand--AmarisWorks.svg";
+import ANMLogo from "../assets/images/brand--Asa_Nisi_Masa_Films.svg";
+import BHLogo from "../assets/images/brand--B&H.svg";
+import BNYMellonLogo from "../assets/images/brand--BNYMellon.svg";
+import BKCharterLogo from "../assets/images/brand--Brooklyn_Charter_School.png"; // TODO: replace
+import ColeHaanLogo from "../assets/images/brand--Cole_Haan.svg";
+import CrewcialLogo from "../assets/images/brand--Crewcial.svg";
+import DavincianLogo from "../assets/images/brand--DaVincian_Healthcare.svg";
+import IntryLogo from "../assets/images/brand--Intry.svg";
+import ITWFoundLogo from "../assets/images/brand--Isaac_T_Watson_Foundation.svg";
+import LaFondazioneLogo from "../assets/images/brand--laFondazione_NY.svg";
+import LandmarkLogo from "../assets/images/brand--Landmark_venues.svg";
+import LumifiLogo from "../assets/images/brand--LumiFi.svg";
+import MSKLogo from "../assets/images/brand--MSK.svg";
+import MTFLogo from "../assets/images/brand--MTF.svg";
+import MTFJoesPubLogo from "../assets/images/brand--MTF_at_JoesPub.png"; // TODO: replace
+import RaoStudiosLogo from "../assets/images/brand--Rao_Studios.svg";
+import RhinoLogo from "../assets/images/brand--Rhino_Transfers.svg";
+import RipcordLogo from "../assets/images/brand--Ripcord.svg";
+import CompassLogo from "../assets/images/brand--Compass.svg";
+import RubiconLogo from "../assets/images/brand--RubiconMD.svg";
+import SportnduckLogo from "../assets/images/brand--Sportnduck.svg";
+import StoneHouseLogo from "../assets/images/brand--Stone_House.svg";
+import UnzippedTruthLogo from "../assets/images/brand--The_Unzipped_Truth.svg";
+import URGLogo from "../assets/images/brand--URG_Corporation.png"; // TODO: replace
+import WildchildLogo from "../assets/images/brand--Wildchild.svg";
 
 export default function Page() {
-  const brands = [
-    { name: "Stone House", logo: StoneHouseLogo }, // 1
-    { name: "Rao Studios", logo: RaoStudiosLogo }, // 1
-    { name: "TRN", logo: TRNLogo }, // 2
-    { name: "Sportnduck", logo: SportnduckLogo }, // 2
-    { name: "la Fondazione NY", logo: laFondazioneLogo }, // 3
-    { name: "Crewcial Partners", logo: CrewcialLogo }, // 3
-    { name: "DaVincian Healthcare", logo: DavincianLogo }, // 4
-    { name: "Intry", logo: IntryLogo }, // 4
-    { name: "Memorial Sloan Kettering Cancer Center", logo: MSKLogo }, // 5
-    { name: "Rubicon MD", logo: RubiconLogo }, // 5
-    { name: "B&H Photo Video Pro Audio", logo: BHLogo }, // 6
-    { name: "Compass", logo: CompassLogo }, // 6
-    { name: "BNY Mellon", logo: BNYMellonLogo }, // 7
-    { name: "Cole Haan", logo: ColeHaanLogo }, // 7
-    { name: "Wildchild", logo: WildchildLogo }, // 8
-    { name: "Isaac T Watson Foundation", logo: ITWFoundLogo }, // 8
-    { name: "MTF @ Joe's Pub", logo: MTFJoesPubLogo }, // 9
-    { name: "LumiFi", logo: LumifiLogo }, // 9
-    { name: "The Unzipped Truth", logo: UnzippedTruthLogo }, // 10
-    { name: "Landmark Venues", logo: LandmarkLogo }, // 10
-    { name: "Ripcord Creative", logo: RipcordLogo }, // 11
-    { name: "Rhino Transfers", logo: RhinoLogo }, // 11
-    { name: "AmarisWorks", logo: AmarisWorksLogo }, // 12
-    { name: "URG Corporation", logo: URGLogo }, // 12
-    { name: "Musical Theatre Factory", logo: MTFLogo }, // 13
-    { name: "The Brooklyn Charter School", logo: BKCharterLogo }, // 13
-  ];
-
   const services = [
     { title: "Research & Discovery" },
     { title: "Project Management" },
@@ -117,18 +87,44 @@ export default function Page() {
     </div>
   );
 
-  function Brands({ list }: { list: any[] }) {
-    const items = [];
-
-    list.map((brand, i) => {
-      const { name, logo } = brand;
-      items.push(<Image src={logo} alt={name} key={i} />);
-    });
+  function Brands() {
+    const props = {
+      height: 32,
+      width: "auto",
+      fill: "black",
+    };
 
     return (
       <aside>
         <h2>{`Some brands I’ve had the pleasure to work with`}</h2>
-        <div>{items}</div>
+        <div>
+          <StoneHouseLogo {...props} />
+          <RaoStudiosLogo {...props} />
+          <SportnduckLogo {...props} />
+          <LaFondazioneLogo {...props} />
+          <CrewcialLogo {...props} />
+          <DavincianLogo {...props} />
+          <IntryLogo {...props} />
+          <MSKLogo {...props} />
+          <RubiconLogo {...props} />
+          <BHLogo {...props} />
+          <CompassLogo {...props} />
+          <BNYMellonLogo {...props} />
+          <ColeHaanLogo {...props} />
+          <WildchildLogo {...props} />
+          <ITWFoundLogo {...props} />
+          <ANMLogo {...props} />
+          {/* <MTFJoesPubLogo {...props} /> */}
+          <MTFLogo {...props} />
+          <LumifiLogo {...props} />
+          <UnzippedTruthLogo {...props} />
+          <LandmarkLogo {...props} />
+          <RipcordLogo {...props} />
+          <RhinoLogo {...props} />
+          <AmarisWorksLogo {...props} />
+          {/* <URGLogo {...props} /> */}
+          {/* <BKCharterLogo {...props} /> */}
+        </div>
       </aside>
     );
   }
@@ -203,7 +199,7 @@ export default function Page() {
         </h1>
       </section>
       <section id="work" className={styles.work}>
-        <Brands list={brands} />
+        <Brands />
         <CaseStudies list={studies} />
       </section>
       <section className={styles.offerings}>
