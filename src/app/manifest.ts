@@ -2,9 +2,10 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Aaron Salley",
-    short_name: "Portfolio",
-    description: "Portfolio for Aaron Salley",
+    name: "Aaron Salley, Digital Creative",
+    short_name: "Aaron Salley",
+    description:
+      "Passionate about crafting user-centric solutions that delight and engage, deliver exceptional results, and make a positive impact on both users and businesses. Known for translating complex business needs into clear, actionable strategies — taking ideas from mind to market.",
     start_url: "/",
     id: "?source=pwa",
     display: "standalone",

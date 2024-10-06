@@ -1,18 +1,21 @@
 import { Metadata } from "next";
 import Script from "next/script";
 import { DM_Sans, Mulish, Petrona } from "next/font/google";
-import "../assets/globals.scss";
+import "../assets/styles/globals.scss";
 
-import FooterComponent from "./FooterComponent";
-import HeaderComponent from "./HeaderComponent";
+import FooterComponent from "../components/FooterComponent";
+import HeaderComponent from "../components/HeaderComponent";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Aaron Salley, Aaron Salley, MBA, POPM, JEDI Master",
-    default: "Aaron Salley, MBA, POPM, JEDI Master",
+    template: "%s | Aaron Salley, Digital Creative",
+    default:
+      "Aaron Salley, Digital Creative | Intention. Integration. Illumination.",
   },
-  description:
-    "NYU Stern MBA specializing in Innovation and Management of Technology and certified SAFe® Product Owner / Product Manager. More than a decade in customer and enterprise digital products across healthcare, e-commerce, nonprofit, and human resource management industries. A strong, cross-functional leader of diverse teams recognized for creating delightful solutions for real-world human problems.",
+  description: `Passionate about crafting user-centric solutions that delight and engage, 
+  deliver exceptional results, and make a positive impact on both users and businesses.
+  Known for translating complex business needs into clear, actionable strategies
+   — taking ideas from mind to market.`,
 };
 
 const Scripts = () => {

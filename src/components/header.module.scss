@@ -1,18 +1,26 @@
 .container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: var(--material);
+
   ul {
     display: inline-flex;
     align-items: center;
-    gap: 24px;
+    gap: 1.5rem;
     list-style: none;
   }
 
   li {
-    color: #383a3a;
-    font-family: "DM Sans";
-    font-size: 16px;
+    font-family: var(--font-DM_Sans);
     font-style: normal;
     font-weight: 200;
     line-height: normal;
     text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
