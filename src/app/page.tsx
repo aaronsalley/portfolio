@@ -2,34 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./home.module.scss";
 
-import AmarisWorksLogo from "../assets/images/brand--AmarisWorks.svg";
-import ANMLogo from "../assets/images/brand--Asa_Nisi_Masa_Films.svg";
-import BHLogo from "../assets/images/brand--B&H.svg";
-import BNYMellonLogo from "../assets/images/brand--BNYMellon.svg";
-import BKCharterLogo from "../assets/images/brand--Brooklyn_Charter_School.png"; // TODO: replace
-import ColeHaanLogo from "../assets/images/brand--Cole_Haan.svg";
-import CrewcialLogo from "../assets/images/brand--Crewcial.svg";
-import DavincianLogo from "../assets/images/brand--DaVincian_Healthcare.svg";
-import IntryLogo from "../assets/images/brand--Intry.svg";
-import ITWFoundLogo from "../assets/images/brand--Isaac_T_Watson_Foundation.svg";
-import LaFondazioneLogo from "../assets/images/brand--laFondazione_NY.svg";
-import LandmarkLogo from "../assets/images/brand--Landmark_venues.svg";
-import LumifiLogo from "../assets/images/brand--LumiFi.svg";
-import MSKLogo from "../assets/images/brand--MSK.svg";
-import MTFLogo from "../assets/images/brand--MTF.svg";
-import MTFJoesPubLogo from "../assets/images/brand--MTF_at_JoesPub.png"; // TODO: replace
-import RaoStudiosLogo from "../assets/images/brand--Rao_Studios.svg";
-import RhinoLogo from "../assets/images/brand--Rhino_Transfers.svg";
-import RipcordLogo from "../assets/images/brand--Ripcord.svg";
-import CompassLogo from "../assets/images/brand--Compass.svg";
-import RubiconLogo from "../assets/images/brand--RubiconMD.svg";
-import SportnduckLogo from "../assets/images/brand--Sportnduck.svg";
-import StoneHouseLogo from "../assets/images/brand--Stone_House.svg";
-import UnzippedTruthLogo from "../assets/images/brand--The_Unzipped_Truth.svg";
-import URGLogo from "../assets/images/brand--URG_Corporation.png"; // TODO: replace
-import WildchildLogo from "../assets/images/brand--Wildchild.svg";
+import Brands from "../components/Brands";
+import { fetchPosts } from "../services/Medium";
+import { fetchProjects } from "../services/Behance";
 
-export default function Page() {
+export default async function Page() {
+  const posts = await fetchPosts();
+
   const services = [
     { title: "Research & Discovery" },
     { title: "Project Management" },
@@ -38,21 +17,7 @@ export default function Page() {
     { title: "Organizational Transformation" },
   ];
 
-  const studies = [
-    {
-      title: "MSK Direct",
-      summary:
-        "Transforming enhanced access to oncology expertise, improved care coordination, and personalized support for members.",
-      permalink: "",
-      // thumbnail: "/MSKDirect.jpg",
-    },
-    {
-      title: "Intry",
-      summary: `Patented AI-powered "Hybrid Resume Process" to help job seekers overcome the limitations of Applicant Tracking Systems (ATS).`,
-      permalink: "",
-      // thumbnail: "/Intry.jpg",
-    },
-  ];
+  const studies = await fetchProjects();
 
   const AboutMe = () => (
     <aside>
@@ -71,7 +36,7 @@ export default function Page() {
       <Link href={"mailto:me@aaronsalley.com"}>me@aaronsalley.com</Link>
       <Link href={"tel:2122875859"}>(212) 287-5859</Link>
       <address>New York, NY</address>
-      <Link href={process.env.NEXT_PUBLIC_RESUME_URL}>
+      <Link href={process.env.NEXT_PUBLIC_RESUME_URL} target={"_blank"}>
         Download Resume (PDF)
       </Link>
     </aside>
@@ -87,77 +52,61 @@ export default function Page() {
     </div>
   );
 
-  function Brands() {
-    const props = {
-      height: 32,
-      width: "auto",
-      fill: "black",
-    };
-
-    return (
-      <aside>
-        <h2>{`Some brands I’ve had the pleasure to work with`}</h2>
-        <div>
-          <StoneHouseLogo {...props} />
-          <RaoStudiosLogo {...props} />
-          <SportnduckLogo {...props} />
-          <LaFondazioneLogo {...props} />
-          <CrewcialLogo {...props} />
-          <DavincianLogo {...props} />
-          <IntryLogo {...props} />
-          <MSKLogo {...props} />
-          <RubiconLogo {...props} />
-          <BHLogo {...props} />
-          <CompassLogo {...props} />
-          <BNYMellonLogo {...props} />
-          <ColeHaanLogo {...props} />
-          <WildchildLogo {...props} />
-          <ITWFoundLogo {...props} />
-          <ANMLogo {...props} />
-          {/* <MTFJoesPubLogo {...props} /> */}
-          <MTFLogo {...props} />
-          <LumifiLogo {...props} />
-          <UnzippedTruthLogo {...props} />
-          <LandmarkLogo {...props} />
-          <RipcordLogo {...props} />
-          <RhinoLogo {...props} />
-          <AmarisWorksLogo {...props} />
-          {/* <URGLogo {...props} /> */}
-          {/* <BKCharterLogo {...props} /> */}
-        </div>
-      </aside>
-    );
-  }
-
   function CaseStudies({ list }: { list: any[] }) {
+    if (list.length < 1) return;
+
     const items = [];
 
     const CaseStudy = ({
       title,
-      summary,
-      permalink,
+      description,
+      link,
       thumbnail,
     }: {
       title: string;
-      summary: string;
-      permalink: string;
+      description: string;
+      link: string;
       thumbnail: string;
     }) => (
       <article>
-        <Image src={thumbnail} alt={`${title} case study`} />
-        <h3>{title}</h3>
-        <p>{summary}</p>
+        <Link href={link} target={"_blank"}>
+          <Image
+            src={thumbnail}
+            width={282}
+            height={181}
+            alt={`${title} case study`}
+            style={{
+              objectFit: "cover",
+            }}
+          />
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </Link>
       </article>
     );
 
-    list.map((study: any, i: number) => {
+    list.slice(0, 2).map((study: any, i: number) => {
+      const __html = new RegExp(/(<([^>]+)>)/gi);
+      const description = study.description.replace(__html, "");
+      let thumbnail = study.description
+        .match(__html)[0]
+        .match(
+          /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi
+        )[0];
+
+      study.description = description;
+      study.thumbnail = thumbnail;
+
       items.push(<CaseStudy {...study} key={i} />);
     });
 
     return (
       <div>
         {items}
-        <Link href={"#"}>{`View all cases`}</Link>
+        <Link
+          href={process.env.NEXT_PUBLIC_MEDIUM_URL}
+          target={"_blank"}
+        >{`View all cases`}</Link>
       </div>
     );
   }

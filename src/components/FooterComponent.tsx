@@ -43,7 +43,7 @@ export default function FooterComponent() {
             { url: process.env.NEXT_PUBLIC_LINKEDIN_URL, label: "LinkedIn" },
             { url: process.env.NEXT_PUBLIC_GITHUB_URL, label: "GitHub" },
             { url: process.env.NEXT_PUBLIC_RESUME_URL, label: "Resume" },
-            { url: process.env.NEXT_PUBLIC_EMAIL, label: "Email" },
+            { url: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`, label: "Email" },
             {
               url: process.env.NEXT_PUBLIC_APPLE_MUSIC_URL,
               label: "Apple Music",

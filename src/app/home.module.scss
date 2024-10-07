@@ -61,7 +61,14 @@
     padding-left: calc(var(--column-left) + var(--global-margin));
     grid-template-columns: repeat(3, 1fr);
     column-gap: 0.5rem;
-    align-items: center;
+
+    :last-child {
+      align-self: center;
+    }
+  }
+
+  a {
+    text-decoration: none;
   }
 
   h2 {
@@ -69,6 +76,8 @@
   }
 
   h3 {
+    margin-top: 1em;
+    margin-bottom: 0.1em;
     font-family: var(--font-DM_Sans);
     font-size: 1rem;
     font-weight: 600;
