@@ -1,5 +1,5 @@
-export default (property) => {
-  const element = document.documentElement;
+export default (property: string, _document = document) => {
+  const element = _document.documentElement;
   const styles = getComputedStyle(element);
 
   return styles.getPropertyValue(property);

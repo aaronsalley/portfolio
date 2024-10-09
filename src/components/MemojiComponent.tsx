@@ -1,9 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import memoji_waving from "../assets/images/memoji_waving.svg?url";
-import memoji_shruging from "../assets/images/memoji_shrug.svg?url";
-import memoji_computer from "../assets/images/memoji_computer.svg?url";
 import {
   CSSProperties,
   Dispatch,
@@ -11,8 +7,13 @@ import {
   useEffect,
   useState,
 } from "react";
+import Image from "next/image";
+import { strings } from "../data/constants";
 import calculatedCSS from "../utils/calculatedCSS";
 import scaleFactor from "../utils/scaleFactor";
+import memoji_waving from "../assets/images/memoji_waving.svg?url";
+import memoji_shruging from "../assets/images/memoji_shrug.svg?url";
+import memoji_computer from "../assets/images/memoji_computer.svg?url";
 
 export enum memoji {
   waving,
@@ -72,7 +73,7 @@ export default function MemojiComponent({ action = memoji.waving, size = 72 }) {
   return (
     <Image
       src={image[action]}
-      alt={`My memoji`}
+      alt={strings.text_memoji}
       width={scale}
       height={scale}
       style={style}

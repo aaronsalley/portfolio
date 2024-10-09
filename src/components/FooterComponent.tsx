@@ -1,9 +1,12 @@
+"use server";
+
 import Link from "next/link";
 import styles from "./footer.module.scss";
 
+import { links, socials, strings } from "../data/constants";
 import ButtonComponent from "./ButtonComponent";
 
-export default function FooterComponent() {
+export default async function FooterComponent() {
   const LinkItems = ({ links }: { links: any[] }) => {
     const items = [];
     const size = links.length;
@@ -27,31 +30,14 @@ export default function FooterComponent() {
     <footer className={styles.container}>
       <div>
         <ButtonComponent
-          url={process.env.NEXT_PUBLIC_BEHANCE_URL}
-          label={"Read case studies for my previous work"}
+          url={links.behance.url}
+          label={strings.READ_CASE_STUDIES}
         />
-        <ButtonComponent
-          url={process.env.NEXT_PUBLIC_MEDIUM_URL}
-          label={"Checkout my thoughts on Medium"}
-        />
-        <ButtonComponent
-          url={process.env.NEXT_PUBLIC_UPWORK_URL}
-          label={"Hire me on UpWork"}
-        />
-        <LinkItems
-          links={[
-            { url: process.env.NEXT_PUBLIC_LINKEDIN_URL, label: "LinkedIn" },
-            { url: process.env.NEXT_PUBLIC_GITHUB_URL, label: "GitHub" },
-            { url: process.env.NEXT_PUBLIC_RESUME_URL, label: "Resume" },
-            { url: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`, label: "Email" },
-            {
-              url: process.env.NEXT_PUBLIC_APPLE_MUSIC_URL,
-              label: "Apple Music",
-            },
-          ]}
-        />
+        <ButtonComponent url={links.medium.url} label={strings.READ_THOUGHTS} />
+        <ButtonComponent url={links.upwork.url} label={strings.HIRE_ME} />
+        <LinkItems links={socials} />
       </div>
-      <div>{`© 2024 Aaron Salley LLC. All rights reserved. Made with 🖤 in NYC.`}</div>
+      <div>{strings.copyright()}</div>
     </footer>
   );
 }

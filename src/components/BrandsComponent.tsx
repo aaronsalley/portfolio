@@ -1,3 +1,5 @@
+import { strings } from "../data/constants";
+
 import AmarisWorksLogo from "../assets/images/brand--AmarisWorks.svg";
 import ANMLogo from "../assets/images/brand--Asa_Nisi_Masa_Films.svg";
 import BHLogo from "../assets/images/brand--B&H.svg";
@@ -34,7 +36,7 @@ export default function BrandsComponent() {
 
   return (
     <aside>
-      <h2>{`Some brands I’ve had the pleasure to work with`}</h2>
+      <h2>{strings.brands_intro}</h2>
       <div>
         <StoneHouseLogo {...props} />
         <RaoStudiosLogo {...props} />

@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { site_nav } from "../data/constants";
 import calculatedCSS from "../utils/calculatedCSS";
-import styles from "./header.module.scss";
-
 import MemojiComponent from "./MemojiComponent";
+import styles from "./header.module.scss";
 
 export default function HeaderComponent() {
   let [windowWidth, setWindowWidth] = useState(0);
@@ -40,15 +40,7 @@ export default function HeaderComponent() {
       <MemojiComponent />
       {/* Hiding until additional pages are created */}
       {/* {windowWidth > mediaBreakpoint ? (
-        <MenuItems
-          menuItems={[
-            { url: "", title: "About" },
-            { url: "", title: "Work" },
-            { url: "", title: "Services" },
-            { url: "", title: "Thinking" },
-            { url: "", title: "Connect" },
-          ]}
-        />
+        <MenuItems menuItems={site_nav} />
       ) : null} */}
     </header>
   );

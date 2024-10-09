@@ -1,24 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const CaseStudy = ({
-  title,
-  description,
-  link,
-  thumbnail,
-}: {
+import { links, strings } from "../data/constants";
+
+type CaseStudy = {
   title: string;
   description: string;
   link: string;
   thumbnail: string;
-}) => (
+};
+
+const CaseStudy = ({ title, description, link, thumbnail }: CaseStudy) => (
   <article>
     <Link href={link} target={"_blank"}>
       <Image
         src={thumbnail}
         width={282}
         height={181}
-        alt={`${title} case study`}
+        alt={`${title} ${strings.CASE_STUDY}`}
         style={{
           objectFit: "cover",
         }}
@@ -29,12 +28,12 @@ const CaseStudy = ({
   </article>
 );
 
-export default function CaseStudiesComponent({ list }: { list: any[] }) {
+export default function CaseStudiesComponent({ list }: { list: CaseStudy[] }) {
   if (!list || list.length < 1) return;
 
   const items = [];
 
-  list.slice(0, 2).map((study: any, i: number) => {
+  list.slice(0, 2).map((study: CaseStudy, i: number) => {
     const __html = new RegExp(/(<([^>]+)>)/gi);
     const description = study.description.replace(__html, "");
     let thumbnail = study.description
@@ -52,9 +51,12 @@ export default function CaseStudiesComponent({ list }: { list: any[] }) {
   return (
     <div>
       {items}
-      <Link href={process.env.NEXT_PUBLIC_MEDIUM_URL} target={"_blank"}>
-        {`View all cases `}
-        <i className="fa-solid fa-arrow-right"></i>
+      <Link href={links.medium.url} target={"_blank"}>
+        {strings.VIEW_ALL_CASES}
+        <i
+          className="fa-solid fa-arrow-right"
+          style={{ marginLeft: "1em" }}
+        ></i>
       </Link>
     </div>
   );
