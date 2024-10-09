@@ -21,8 +21,12 @@
 
     @include media-breakpoint-up(md) {
       max-width: 37rem;
-      margin-top: 13rem;
+      margin-top: unset;
       margin-left: var(--global-margin);
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 13rem;
     }
 
     small {
@@ -37,9 +41,6 @@
   margin-top: 6rem;
   flex-direction: column;
   justify-content: space-between;
-
-  @include media-breakpoint-up(md) {
-  }
 
   &::after {
     display: block;
@@ -73,7 +74,7 @@
 
   > div {
     display: grid;
-    margin: 0 var(--global-margin);
+    margin: 12rem var(--global-margin);
     gap: 0.5rem;
 
     @include media-breakpoint-up(md) {
@@ -81,8 +82,18 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
-    :last-child {
+    > :last-child {
       align-self: center;
+
+      @include media-breakpoint-down(lg) {
+        display: none;
+      }
+    }
+  }
+
+  img {
+    @include media-breakpoint-down(md) {
+      width: 100%;
     }
   }
 
@@ -105,9 +116,11 @@
 
 .offerings {
   margin: 0 var(--global-margin);
+  margin-bottom: 12rem;
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     display: flex;
+    margin-bottom: unset;
     flex-direction: row-reverse;
   }
 
@@ -140,7 +153,7 @@
     width: 100%;
     margin-top: 9.375rem;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       max-width: var(--column-left);
     }
 

@@ -35,7 +35,7 @@ export default function MemojiComponent({ action = memoji.waving, size = 72 }) {
   const image = [memoji_waving, memoji_shruging, memoji_computer];
 
   useEffect(() => {
-    const mediaBreakpointMd = calculatedCSS("--bs-breakpoint-md");
+    const mediaBreakpoint = calculatedCSS("--bs-breakpoint-lg");
 
     const handleScroll = () => {
       let height = window.innerHeight;
@@ -48,9 +48,9 @@ export default function MemojiComponent({ action = memoji.waving, size = 72 }) {
 
       setMemojiTop(Math.max(height * scaleFactor - scale, 0));
       setMemojiLeft(Math.min(-38 * scaleFactor, globalMargin - 16)); // TODO: fix left edge tracking lag on large screens
-      setMemojiScale(Math.max(size * ((450 / size) * scaleFactor), size));
 
-      if (width > parseInt(mediaBreakpointMd)) {
+      if (width > parseInt(mediaBreakpoint)) {
+        setMemojiScale(Math.max(size * ((450 / size) * scaleFactor), size));
         setStyle({
           top: top,
           left: left,

@@ -95,7 +95,7 @@ h1 {
   font-weight: 700;
   line-height: normal;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     scale: 80%;
   }
 }

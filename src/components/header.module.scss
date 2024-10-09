@@ -9,10 +9,13 @@
   align-items: center;
 
   @include media-breakpoint-up(md) {
+    background-color: var(--material);
+  }
+
+  @include media-breakpoint-up(lg) {
     position: fixed;
     top: 0;
     width: 100vw;
-    background-color: var(--material);
   }
 
   ul {
@@ -40,10 +43,15 @@
   img {
     position: relative;
     max-width: 4.5rem;
-  }
 
-  @include media-breakpoint-up(md) {
-    img {
+    @include media-breakpoint-only(md) {
+      position: absolute;
+      top: calc(100vh - 450px);
+      left: -38px;
+      max-width: unset;
+    }
+
+    @include media-breakpoint-up(lg) {
       position: absolute;
       max-width: unset;
       opacity: 0;

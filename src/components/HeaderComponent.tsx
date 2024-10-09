@@ -12,7 +12,7 @@ export default function HeaderComponent() {
   const [mediaBreakpoint, setMediaBreakpoint]: any = useState(0);
 
   useEffect(() => {
-    setMediaBreakpoint(parseInt(calculatedCSS("--bs-breakpoint-md")));
+    setMediaBreakpoint(parseInt(calculatedCSS("--bs-breakpoint-lg")));
 
     const handleResize = () => setWindowWidth(window.innerWidth);
     handleResize();
