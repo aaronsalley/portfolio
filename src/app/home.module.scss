@@ -1,3 +1,7 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,13 +9,21 @@
 }
 
 .hero {
-  min-height: 100vh;
-  margin: 0 var(--global-margin);
-  padding-left: var(--column-left);
+  @include media-breakpoint-up(md) {
+    min-height: 100vh;
+    margin: 0 var(--global-margin);
+    padding-left: var(--column-left);
+  }
 
   h1 {
-    margin-top: 13rem;
+    margin-top: 5rem;
     color: var(--text);
+
+    @include media-breakpoint-up(md) {
+      max-width: 37rem;
+      margin-top: 13rem;
+      margin-left: var(--global-margin);
+    }
 
     small {
       font-size: 2rem;
@@ -22,8 +34,12 @@
 .work {
   display: flex;
   min-height: 100vh;
+  margin-top: 6rem;
   flex-direction: column;
   justify-content: space-between;
+
+  @include media-breakpoint-up(md) {
+  }
 
   &::after {
     display: block;
@@ -58,9 +74,12 @@
   > div {
     display: grid;
     margin: 0 var(--global-margin);
-    padding-left: calc(var(--column-left) + var(--global-margin));
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 0.5rem;
+    gap: 0.5rem;
+
+    @include media-breakpoint-up(md) {
+      padding-left: calc(var(--column-left) + var(--global-margin));
+      grid-template-columns: repeat(3, 1fr);
+    }
 
     :last-child {
       align-self: center;
@@ -85,17 +104,23 @@
 }
 
 .offerings {
-  display: flex;
-  flex-direction: row-reverse;
   margin: 0 var(--global-margin);
 
-  > div {
+  @include media-breakpoint-up(md) {
     display: flex;
-    position: relative;
-    margin-left: var(--global-margin);
+    flex-direction: row-reverse;
+  }
 
-    > div {
+  > div {
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      display: flex;
       margin-left: var(--global-margin);
+
+      > div {
+        margin-left: var(--global-margin);
+      }
     }
 
     ul {
@@ -112,9 +137,12 @@
   > aside {
     display: flex;
     flex-direction: column;
-    max-width: var(--column-left);
     width: 100%;
     margin-top: 9.375rem;
+
+    @include media-breakpoint-up(md) {
+      max-width: var(--column-left);
+    }
 
     p {
       margin-bottom: 2rem;

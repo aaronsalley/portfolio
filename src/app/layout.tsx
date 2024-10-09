@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Script from "next/script";
-import { DM_Sans, Mulish, Petrona } from "next/font/google";
+import { dm_sans, mulish, petrona } from "../services/GoogleFonts";
 import "../assets/styles/globals.scss";
 
 import FooterComponent from "../components/FooterComponent";
@@ -32,28 +32,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         src="https://kit.fontawesome.com/07e616e69d.js"
         crossOrigin="anonymous"
       />
-      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" />
+      <Script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        crossOrigin="anonymous"
+      />
     </>
   );
 };
-
-const dm_sans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-DM_Sans",
-  display: "swap",
-});
-
-const mulish = Mulish({
-  subsets: ["latin"],
-  variable: "--font-Mulish",
-  display: "swap",
-});
-
-const petrona = Petrona({
-  subsets: ["latin"],
-  variable: "--font-Petrona",
-  display: "swap",
-});
 
 export default function RootLayout({
   children,
@@ -61,14 +46,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${dm_sans.variable} ${mulish.variable} ${petrona.variable}`}
-    >
+    <html lang="en">
       <head>
         <Scripts />
       </head>
-      <body>
+      <body
+        className={`${dm_sans.variable} ${mulish.variable} ${petrona.variable}`}
+      >
         {/* <!-- Google Tag Manager (noscript) --> */}
         <noscript>
           <iframe

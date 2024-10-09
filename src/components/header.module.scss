@@ -1,12 +1,25 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
 .container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  background-color: var(--material);
+  display: flex;
+  height: 4.5rem;
+  padding-left: var(--global-margin);
+  align-items: center;
+
+  @include media-breakpoint-up(md) {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: var(--material);
+  }
 
   ul {
     display: inline-flex;
+    margin-left: 8.25rem;
+    margin-bottom: 0;
+    padding: 0;
     align-items: center;
     gap: 1.5rem;
     list-style: none;
@@ -22,5 +35,19 @@
 
   a {
     text-decoration: none;
+  }
+
+  img {
+    position: relative;
+    max-width: 4.5rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    img {
+      position: absolute;
+      max-width: unset;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
   }
 }

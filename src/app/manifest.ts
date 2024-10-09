@@ -20,7 +20,7 @@ export default function manifest(): MetadataRoute.Manifest {
       },
     ],
     theme_color: "black-translucent",
-    background_color: "#f8f9fa",
+    background_color: "#383a3a",
     shortcuts: [
       {
         name: "Contact me",

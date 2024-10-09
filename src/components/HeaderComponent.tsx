@@ -1,9 +1,24 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import calculatedCSS from "../utils/calculatedCSS";
 import styles from "./header.module.scss";
 
 import MemojiComponent from "./MemojiComponent";
 
 export default function HeaderComponent() {
+  let [windowWidth, setWindowWidth] = useState(0);
+  const [mediaBreakpoint, setMediaBreakpoint]: any = useState(0);
+
+  useEffect(() => {
+    setMediaBreakpoint(parseInt(calculatedCSS("--bs-breakpoint-md")));
+
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+  });
+
   const MenuItems = ({ menuItems }: { menuItems: any[] }) => {
     const items = [];
 
@@ -23,15 +38,17 @@ export default function HeaderComponent() {
   return (
     <header className={styles.container}>
       <MemojiComponent />
-      <MenuItems
-        menuItems={[
-          { url: "", title: "About" },
-          { url: "", title: "Work" },
-          { url: "", title: "Services" },
-          { url: "", title: "Thinking" },
-          { url: "", title: "Connect" },
-        ]}
-      />
+      {windowWidth > mediaBreakpoint ? (
+        <MenuItems
+          menuItems={[
+            { url: "", title: "About" },
+            { url: "", title: "Work" },
+            { url: "", title: "Services" },
+            { url: "", title: "Thinking" },
+            { url: "", title: "Connect" },
+          ]}
+        />
+      ) : null}
     </header>
   );
 }

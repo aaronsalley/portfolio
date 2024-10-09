@@ -18,7 +18,7 @@ export default function FooterComponent() {
           </Link>
         </li>
       );
-      if (i + 1 < size) items.push(<li key={i}>{`//`}</li>);
+      if (i + 1 < size) items.push(<li key={`${i}.5`}>{`//`}</li>);
     });
     return <ul>{items}</ul>;
   };
