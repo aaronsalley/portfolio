@@ -3,10 +3,10 @@ import parse from "rss-to-json";
 export const fetchPosts = async () => {
   try {
     const response = await parse("https://medium.com/feed/@aaronsalley");
-    const items = (await response.items) || [];
+    const data = await response.items;
 
-    return items;
+    return data;
   } catch (error) {
-    console.error("Error with Medium");
+    console.error("Error with Medium", error.message);
   }
 };

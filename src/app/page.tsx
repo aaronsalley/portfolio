@@ -1,13 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
 import styles from "./home.module.scss";
 
-import Brands from "../components/Brands";
-import { fetchPosts } from "../services/Medium";
+import Brands from "../components/BrandsComponent";
 import { fetchProjects } from "../services/Behance";
+import CaseStudies from "../components/CaseStudiesComponent";
+import JumpButton from "../components/JumpButtonComponent";
 
 export default async function Page() {
-  const posts = await fetchPosts();
+  const studies = await fetchProjects();
 
   const services = [
     { title: "Research & Discovery" },
@@ -16,8 +16,6 @@ export default async function Page() {
     { title: "Go-to-Market Strategy" },
     { title: "Organizational Transformation" },
   ];
-
-  const studies = await fetchProjects();
 
   const AboutMe = () => (
     <aside>
@@ -51,65 +49,6 @@ export default async function Page() {
       </div>
     </div>
   );
-
-  function CaseStudies({ list }: { list: any[] }) {
-    if (list.length < 1) return;
-
-    const items = [];
-
-    const CaseStudy = ({
-      title,
-      description,
-      link,
-      thumbnail,
-    }: {
-      title: string;
-      description: string;
-      link: string;
-      thumbnail: string;
-    }) => (
-      <article>
-        <Link href={link} target={"_blank"}>
-          <Image
-            src={thumbnail}
-            width={282}
-            height={181}
-            alt={`${title} case study`}
-            style={{
-              objectFit: "cover",
-            }}
-          />
-          <h3>{title}</h3>
-          <p>{description}</p>
-        </Link>
-      </article>
-    );
-
-    list.slice(0, 2).map((study: any, i: number) => {
-      const __html = new RegExp(/(<([^>]+)>)/gi);
-      const description = study.description.replace(__html, "");
-      let thumbnail = study.description
-        .match(__html)[0]
-        .match(
-          /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi
-        )[0];
-
-      study.description = description;
-      study.thumbnail = thumbnail;
-
-      items.push(<CaseStudy {...study} key={i} />);
-    });
-
-    return (
-      <div>
-        {items}
-        <Link
-          href={process.env.NEXT_PUBLIC_MEDIUM_URL}
-          target={"_blank"}
-        >{`View all cases`}</Link>
-      </div>
-    );
-  }
 
   function ServiceItems({ list }: { list: any[] }) {
     const items = [];
@@ -146,6 +85,7 @@ export default async function Page() {
           {`I craft solutions for your business that delight and
           engage.`}
         </h1>
+        <JumpButton />
       </section>
       <section id="work" className={styles.work}>
         <Brands />

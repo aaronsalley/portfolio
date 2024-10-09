@@ -38,7 +38,8 @@ export default function HeaderComponent() {
   return (
     <header className={styles.container}>
       <MemojiComponent />
-      {windowWidth > mediaBreakpoint ? (
+      {/* Hiding until additional pages are created */}
+      {/* {windowWidth > mediaBreakpoint ? (
         <MenuItems
           menuItems={[
             { url: "", title: "About" },
@@ -48,7 +49,7 @@ export default function HeaderComponent() {
             { url: "", title: "Connect" },
           ]}
         />
-      ) : null}
+      ) : null} */}
     </header>
   );
 }

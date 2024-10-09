@@ -1,14 +1,21 @@
 import parse from "rss-to-json";
 
-export const fetchProjects = async () => {
+export const fetchProjects = async (callback?) => {
   try {
     const response = await parse(
-      "https://www.behance.net/feeds/user?username=aaronsalley"
+      "https://www.behance.net/feeds/user?username=aaronsalley",
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
-    const items = (await response.items) || [];
+    const data = await response.items;
 
-    return items;
+    if (callback) callback(data);
+
+    return data;
   } catch (error) {
-    console.error("Error with Behance");
+    console.error("Error with Behance:", error.message);
   }
 };

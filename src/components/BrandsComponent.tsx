@@ -25,7 +25,7 @@ import UnzippedTruthLogo from "../assets/images/brand--The_Unzipped_Truth.svg";
 // import URGLogo from "../assets/images/brand--URG_Corporation.png"; // TODO: replace
 import WildchildLogo from "../assets/images/brand--Wildchild.svg";
 
-export default function Brands() {
+export default function BrandsComponent() {
   const props = {
     height: 32,
     width: 150,

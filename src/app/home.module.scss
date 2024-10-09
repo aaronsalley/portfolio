@@ -33,6 +33,13 @@
       font-size: 2rem;
     }
   }
+
+  i {
+    position: absolute;
+    bottom: var(--global-margin);
+    right: var(--global-margin);
+    font-size: 3rem;
+  }
 }
 
 .work {

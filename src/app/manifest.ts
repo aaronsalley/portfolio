@@ -19,7 +19,7 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: "any",
       },
     ],
-    theme_color: "black-translucent",
+    theme_color: "#383a3a",
     background_color: "#383a3a",
     shortcuts: [
       {

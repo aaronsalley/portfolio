@@ -12,6 +12,7 @@ import {
   useState,
 } from "react";
 import calculatedCSS from "../utils/calculatedCSS";
+import scaleFactor from "../utils/scaleFactor";
 
 export enum memoji {
   waving,
@@ -41,16 +42,14 @@ export default function MemojiComponent({ action = memoji.waving, size = 72 }) {
       let height = window.innerHeight;
       let width = window.innerWidth;
 
-      const scrollTop = window.scrollY;
-      const scaleFactor = (height - scrollTop * 2) / height;
-
+      const factor = scaleFactor(window);
       const globalMargin = parseInt(calculatedCSS("--global-margin"));
 
-      setMemojiTop(Math.max(height * scaleFactor - scale, 0));
-      setMemojiLeft(Math.min(-38 * scaleFactor, globalMargin - 16)); // TODO: fix left edge tracking lag on large screens
+      setMemojiTop(Math.max(height * factor - scale, 0));
+      setMemojiLeft(Math.min(-38 * factor, globalMargin - 16)); // TODO: fix left edge tracking lag on large screens
 
       if (width > parseInt(mediaBreakpoint)) {
-        setMemojiScale(Math.max(size * ((450 / size) * scaleFactor), size));
+        setMemojiScale(Math.max(size * ((450 / size) * factor), size));
         setStyle({
           top: top,
           left: left,
@@ -77,6 +76,7 @@ export default function MemojiComponent({ action = memoji.waving, size = 72 }) {
       width={scale}
       height={scale}
       style={style}
+      priority
     />
   );
 }
