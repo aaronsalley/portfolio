@@ -91,8 +91,8 @@ export const services = [
       <>
         <p>
           Bridge the gap between vision and value by integrating creative with
-          technical expertise. Go beyond beautifully designed interfaces and
-          engaging experiences, and engineer solutions that deliver tangible
+          technical expertise. Go beyond beautifully designed interfaces to
+          engineer solutions and engaging experiences that deliver tangible
           results.
         </p>
         <ul>
@@ -101,7 +101,8 @@ export const services = [
           <li>Product Engineering</li>
           <li>Product Management</li>
           <li>New Product & Service Development</li>
-          <li>UX & UI</li>
+          <li>UX & UI Design</li>
+          <li>Web & Mobile App Development</li>
         </ul>
       </>
     ),
@@ -122,8 +123,8 @@ export const services = [
           <li>Demand Acceleration</li>
           <li>Journey Creation</li>
           <li>Commercial Strategy</li>
-          <li>Content & Channel</li>
-          <li>Strategy Campaign Planning and Activation</li>
+          <li>Content & Channel Strategy</li>
+          <li>Campaign Planning and Activation</li>
         </ul>
       </>
     ),

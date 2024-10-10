@@ -3,14 +3,14 @@ import Image from "next/image";
 
 import { links, strings } from "../data/constants";
 
-type CaseStudy = {
+export type CaseStudy = {
   title: string;
-  description: string;
+  content: string;
   link: string;
   thumbnail: string;
 };
 
-const CaseStudy = ({ title, description, link, thumbnail }: CaseStudy) => (
+const CaseStudy = ({ title, content, link, thumbnail }: CaseStudy) => (
   <article>
     <Link href={link} target={"_blank"}>
       <Image
@@ -23,7 +23,7 @@ const CaseStudy = ({ title, description, link, thumbnail }: CaseStudy) => (
         }}
       />
       <h3>{title}</h3>
-      <p>{description}</p>
+      <p>{content}</p>
     </Link>
   </article>
 );
@@ -35,14 +35,14 @@ export default function CaseStudiesComponent({ list }: { list: CaseStudy[] }) {
 
   list.slice(0, 2).map((study: CaseStudy, i: number) => {
     const __html = new RegExp(/(<([^>]+)>)/gi);
-    const description = study.description.replace(__html, "");
-    let thumbnail = study.description
+    const content = study.content.replace(__html, "");
+    let thumbnail = study.content
       .match(__html)[0]
       .match(
         /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi
       )[0];
 
-    study.description = description;
+    study.content = content;
     study.thumbnail = thumbnail;
 
     items.push(<CaseStudy {...study} key={i} />);
