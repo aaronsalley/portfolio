@@ -17,7 +17,7 @@ export default function HeaderComponent() {
     const handleResize = () => setWindowWidth(window.innerWidth);
     handleResize();
     window.addEventListener("resize", handleResize);
-  });
+  }, []);
 
   const MenuItems = ({ menuItems }: { menuItems: any[] }) => {
     const items = [];

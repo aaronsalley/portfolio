@@ -70,10 +70,11 @@ export const services = [
     children: (
       <>
         <p>
+          {`
           Unlock your team's creative potential and deliver exceptional results.
           Maximize your creative output with a tailored approach to project
           management, designed to streamline workflows, enhance collaboration,
-          and deliver on-time and on-budget.
+          and deliver on-time and on-budget.`}
         </p>
         <ul>
           <li>Iterative Project Scoping</li>
@@ -132,9 +133,9 @@ export const services = [
     children: (
       <>
         <p>
-          Navigate the complexities of today's rapidly evolving landscape.
+          {`Navigate the complexities of today's rapidly evolving landscape.
           Organizations need to adapt quickly to thrive through a holistic
-          approach, helping you not just survive, but truly flourish.
+          approach, helping you not just survive, but truly flourish.`}
         </p>
         <ul>
           <li>DEI & ESG Strategy</li>

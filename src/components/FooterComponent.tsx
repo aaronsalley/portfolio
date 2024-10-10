@@ -1,12 +1,10 @@
-"use server";
-
 import Link from "next/link";
 import styles from "./footer.module.scss";
 
 import { links, socials, strings } from "../data/constants";
 import ButtonComponent from "./ButtonComponent";
 
-export default async function FooterComponent() {
+export default function FooterComponent() {
   const LinkItems = ({ links }: { links: any[] }) => {
     const items = [];
     const size = links.length;

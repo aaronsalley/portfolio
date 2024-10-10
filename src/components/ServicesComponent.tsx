@@ -22,7 +22,9 @@ export default function ServiceItems({ list }: { list: Service[] }) {
   list.map((service: Service, i: number) => {
     const { title, children } = service;
     items.push(
-      <ServiceItem title={title} children={children} number={i + 1} key={i} />
+      <ServiceItem title={title} number={i + 1} key={i}>
+        {children}
+      </ServiceItem>
     );
   });
 

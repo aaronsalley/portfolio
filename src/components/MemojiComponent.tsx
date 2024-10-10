@@ -68,7 +68,7 @@ export default function MemojiComponent({ action = memoji.waving, size = 72 }) {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, [scale, top, left]);
+  }, [scale, top, left, size]);
 
   return (
     <Image
