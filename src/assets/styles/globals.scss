@@ -114,6 +114,10 @@ h3 {
   font-style: normal;
   font-weight: 200;
   line-height: normal;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 1.75rem;
+  }
 }
 
 h4 {

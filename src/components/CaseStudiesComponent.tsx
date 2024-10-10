@@ -51,7 +51,7 @@ export default function CaseStudiesComponent({ list }: { list: CaseStudy[] }) {
   return (
     <div>
       {items}
-      <Link href={links.medium.url} target={"_blank"}>
+      <Link href={links.behance.url} target={"_blank"}>
         {strings.VIEW_ALL_CASES}
         <i
           className="fa-solid fa-arrow-right"

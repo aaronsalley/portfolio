@@ -23,6 +23,7 @@ export default async function Page() {
     <aside>
       <h4>{strings.ABOUT_ME}</h4>
       <p>{strings.biography}</p>
+      <p>{strings.tagline}</p>
       <h4>{strings.CONTACT}</h4>
       <Link href={`mailto:${strings.email}`}>{strings.email}</Link>
       <Link href={`tel:${strings.telephone}`}>
