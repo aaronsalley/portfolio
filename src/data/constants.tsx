@@ -14,21 +14,25 @@ export const strings = {
     full: (): string => `${strings.name.first} ${strings.name.last}`,
   },
   tagline: "Intention. Integration. Illumination.",
-  biography: `A passionate product leader with a proven track record of building
-            and scaling digital products. Over 10 years leading collaborative,
-            cross-functional teams, managing budgets, and driving innovation
-            across healthcare, e-commerce, nonprofits and tech industries. Known
-            translating complex business needs into clear, actionable
-            strategies. Passionate about crafting user-centric solutions that
-            deliver exceptional results and make a positive impact on both users
-            and businesses.`,
+  biography: (
+    <>
+      A passionate product leader with a proven track record of building and
+      scaling digital products for startup SMBs to well-established enterprises.
+      Over 10 years leading collaborative, cross-functional teams, managing
+      budgets, and driving innovation across healthcare, e-commerce, real
+      estate, hospitality, finance, nonprofits and tech industries. Known
+      translating complex business needs into clear, actionable strategies.
+      Passionate about crafting user-centric solutions that deliver exceptional
+      results and make a positive impact on both users and businesses.
+    </>
+  ),
   brands_intro: `Some brands I’ve had the pleasure to work with`,
   telephone: "2122875859",
   email: "me@aaronsalley.com",
   text_memoji: "My memoji",
   current_city: "New York, NY",
   copyright: () =>
-    `© ${new Date().getFullYear()} Aaron Salley LLC. All rights reserved. Made with 🖤 in NYC.`,
+    `© ${new Date().getFullYear()} Aaron Salley LLC d/b/a Salley & Co. All rights reserved. Made with 🖤 in NYC.`,
 };
 
 export const positioning_statement = {

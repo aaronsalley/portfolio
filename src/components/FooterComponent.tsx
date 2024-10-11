@@ -3,6 +3,7 @@ import styles from "./footer.module.scss";
 
 import { links, socials, strings } from "../data/constants";
 import ButtonComponent from "./ButtonComponent";
+import SalleyCoLogo from "../assets/images/salley_icon.svg";
 
 export default function FooterComponent() {
   const LinkItems = ({ links }: { links: any[] }) => {
@@ -35,7 +36,10 @@ export default function FooterComponent() {
         <ButtonComponent url={links.upwork.url} label={strings.HIRE_ME} />
         <LinkItems links={socials} />
       </div>
-      <div>{strings.copyright()}</div>
+      <div>
+        <SalleyCoLogo height={64} width={64} />
+        {strings.copyright()}
+      </div>
     </footer>
   );
 }
