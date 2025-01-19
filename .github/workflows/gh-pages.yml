@@ -32,4 +32,4 @@ jobs:
     - name: Build Next.js
       run: yarn build
     - name: Push to GitHub Pages
-      run: gh-pages -s '**/*' --dotfiles --nojekyll --cname aaronsalley.com -d out
+      run: yarn gh-pages -s '**/*' --dotfiles --nojekyll --cname aaronsalley.com -d out
