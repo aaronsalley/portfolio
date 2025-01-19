@@ -20,11 +20,6 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
@@ -35,6 +30,6 @@ jobs:
     - name: Install Dependencies
       run: yarn --frozen-lockfile
     - name: Build Next.js
-      run: yarn build --if-present
+      run: yarn build
     - name: Push to GitHub Pages
       run: gh-pages -s '**/*' --dotfiles --nojekyll --cname aaronsalley.com -d out
