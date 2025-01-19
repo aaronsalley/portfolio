@@ -30,7 +30,6 @@ jobs:
     - name: Install Dependencies
       run: yarn --frozen-lockfile
     - name: Build Next.js
-      run: yarn build
-    - run: ls
+      run: yarn build & ls -a
     - name: Push to GitHub Pages
       run: yarn gh-pages -s '**/*' --dotfiles --nojekyll --cname aaronsalley.com -d ./out
