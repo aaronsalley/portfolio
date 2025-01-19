@@ -6,9 +6,20 @@ run-name: Publishing to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 env:
   MEDIUM_TOKEN: ${{ secrets.MEDIUM_TOKEN }}
@@ -16,21 +27,32 @@ env:
   NEXT_PUBLIC_GTM_ID: ${{ secrets.GTM_ID }}
 
 jobs:
-  deploy:
-    name: Deploy to GitHub Pages
+  build:
+    name: Build Next.js site
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Yarn install and build
-      run: |
-        yarn --immutable
-        yarn build
-        ls -a
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./out
-    - name: Push to GitHub Pages
-      run: yarn gh-pages -s '**/*' --dotfiles --nojekyll --cname aaronsalley.com -d ./out
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: yarn
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Install dependencies
+        run: yarn --immutable
+
+      - name: Build with Next.js
+        run: yarn build
+
+      - run: ls -a
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
