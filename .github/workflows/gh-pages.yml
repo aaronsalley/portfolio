@@ -21,15 +21,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Yarn install and build
+      run: |
+        yarn --immutable
+        yarn build
+        ls -a
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'yarn'
-    - name: Install Dependencies
-      run: yarn --frozen-lockfile
-    - name: Build Next.js
-      run: yarn build & ls -a
+        path: ./out
     - name: Push to GitHub Pages
       run: yarn gh-pages -s '**/*' --dotfiles --nojekyll --cname aaronsalley.com -d ./out
