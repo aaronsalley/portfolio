@@ -39,7 +39,7 @@
   ul {
     display: flex;
     margin-top: 3.5rem;
-    margin-bottom: 4.5rem;
+    margin-bottom: 2rem;
     padding-left: 0;
     list-style: none;
     justify-content: space-between;
@@ -55,6 +55,10 @@
   }
 
   > div:last-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     color: var(--accent--light);
     text-align: center;
     font-family: var(--font-Mulish);

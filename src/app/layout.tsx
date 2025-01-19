@@ -5,17 +5,20 @@ import "../assets/styles/globals.scss";
 
 import FooterComponent from "../components/FooterComponent";
 import HeaderComponent from "../components/HeaderComponent";
+import { strings } from "../data/constants";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aaronsalley.com"),
   title: {
     template: "%s | Aaron Salley, Digital Creative",
-    default:
-      "Aaron Salley, Digital Creative | Intention. Integration. Illumination.",
+    default: "Aaron Salley, Digital Creative | " + strings.tagline,
   },
-  description: `Passionate about crafting user-centric solutions that delight and engage, 
-  deliver exceptional results, and make a positive impact on both users and businesses.
-  Known for translating complex business needs into clear, actionable strategies
-   — taking ideas from mind to market.`,
+  description: strings.description,
+  openGraph: {
+    title: "Aaron Salley, Digital Creative | " + strings.tagline,
+    description: strings.description,
+    images: [{ url: "./og-image.jpg", width: "1200", height: "630" }],
+  },
 };
 
 const Scripts = () => {

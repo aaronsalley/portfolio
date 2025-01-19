@@ -1,20 +1,18 @@
-import parse from "rss-to-json";
+import Parser from "rss-parser";
+import { CaseStudy } from "../components/CaseStudiesComponent";
 
-export const fetchProjects = async (callback?) => {
+export const fetchProjects = async () => {
+  const parser = new Parser();
+
   try {
-    const response = await parse(
-      "https://www.behance.net/feeds/user?username=aaronsalley",
-      {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
+    const response = await fetch(
+      "https://www.behance.net/feeds/user?username=aaronsalley"
     );
-    const data = await response.items;
+    const xml = await response.text();
+    const feed = await parser.parseString(xml);
+    const data = await feed.items;
 
-    if (callback) callback(data);
-
-    return data;
+    return data as CaseStudy[];
   } catch (error) {
     console.error("Error with Behance:", error.message);
   }

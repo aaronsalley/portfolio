@@ -1,6 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: "export",
+  // basePath: "/aaronsalley.github.io",
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "mir-s3-cdn-cf.behance.net",
+      },
+    ],
+  },
   webpack: (config, options) => {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.(".svg")
@@ -26,14 +37,6 @@ const nextConfig = {
     fileLoaderRule.exclude = /\.svg$/i;
 
     return config;
-  },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "mir-s3-cdn-cf.behance.net",
-      },
-    ],
   },
 };
 

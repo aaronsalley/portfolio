@@ -14,21 +14,27 @@ export const strings = {
     full: (): string => `${strings.name.first} ${strings.name.last}`,
   },
   tagline: "Intention. Integration. Illumination.",
-  biography: `A passionate product leader with a proven track record of building
-            and scaling digital products. Over 10 years leading collaborative,
-            cross-functional teams, managing budgets, and driving innovation
-            across healthcare, e-commerce, nonprofits and tech industries. Known
-            translating complex business needs into clear, actionable
-            strategies. Passionate about crafting user-centric solutions that
-            deliver exceptional results and make a positive impact on both users
-            and businesses.`,
+  description:
+    "Passionate about crafting user-centric solutions that delight and engage, deliver exceptional results, and make a positive impact on both users and businesses. Known for translating complex business needs into clear, actionable strategies — taking ideas from mind to market™.",
+  biography: (
+    <>
+      A passionate product leader with a proven track record of building and
+      scaling digital products for startup SMBs to well-established enterprises.
+      Over 10 years leading collaborative, cross-functional teams, managing
+      budgets, and driving innovation across healthcare, e-commerce, real
+      estate, hospitality, finance, nonprofits and tech industries. Known
+      translating complex business needs into clear, actionable strategies.
+      Passionate about crafting user-centric solutions that deliver exceptional
+      results and make a positive impact on both users and businesses.
+    </>
+  ),
   brands_intro: `Some brands I’ve had the pleasure to work with`,
   telephone: "2122875859",
   email: "me@aaronsalley.com",
   text_memoji: "My memoji",
   current_city: "New York, NY",
   copyright: () =>
-    `© ${new Date().getFullYear()} Aaron Salley LLC. All rights reserved. Made with 🖤 in NYC.`,
+    `© ${new Date().getFullYear()} Aaron Salley LLC d/b/a Salley & Co. All rights reserved. Made with 🖤 in NYC.`,
 };
 
 export const positioning_statement = {
@@ -36,7 +42,7 @@ export const positioning_statement = {
   problem: "",
   product: (): string => `Hi, I’m ${strings.name.first}`,
   solution: `I craft solutions for your business that delight and engage.`,
-  uvp: `I shepherd ideas from mind to market through an integrated approach, translating complex needs into actionable strategies and delivering solutions for people-centric problems.`,
+  uvp: `I shepherd ideas from mind to market™ through an integrated approach, translating complex needs into actionable strategies and delivering solutions for people-centric problems.`,
 };
 
 export const site_nav = [
@@ -91,8 +97,8 @@ export const services = [
       <>
         <p>
           Bridge the gap between vision and value by integrating creative with
-          technical expertise. Go beyond beautifully designed interfaces and
-          engaging experiences, and engineer solutions that deliver tangible
+          technical expertise. Go beyond beautifully designed interfaces to
+          engineer solutions and engaging experiences that deliver tangible
           results.
         </p>
         <ul>
@@ -101,7 +107,8 @@ export const services = [
           <li>Product Engineering</li>
           <li>Product Management</li>
           <li>New Product & Service Development</li>
-          <li>UX & UI</li>
+          <li>UX & UI Design</li>
+          <li>Web & Mobile App Development</li>
         </ul>
       </>
     ),
@@ -122,8 +129,8 @@ export const services = [
           <li>Demand Acceleration</li>
           <li>Journey Creation</li>
           <li>Commercial Strategy</li>
-          <li>Content & Channel</li>
-          <li>Strategy Campaign Planning and Activation</li>
+          <li>Content & Channel Strategy</li>
+          <li>Campaign Planning and Activation</li>
         </ul>
       </>
     ),
