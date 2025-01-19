@@ -10,12 +10,12 @@ import { strings } from "../data/constants";
 export const metadata: Metadata = {
   metadataBase: new URL("https://aaronsalley.com"),
   title: {
-    template: "%s | Aaron Salley, Digital Creative",
-    default: "Aaron Salley, Digital Creative | " + strings.tagline,
+    template: "%s | Aaron Salley, MBA",
+    default: "Aaron Salley | " + strings.tagline,
   },
   description: strings.description,
   openGraph: {
-    title: "Aaron Salley, Digital Creative | " + strings.tagline,
+    title: "Aaron Salley | " + strings.tagline,
     description: strings.description,
     images: [{ url: "./og-image.jpg", width: "1200", height: "630" }],
   },
