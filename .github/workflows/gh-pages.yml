@@ -31,5 +31,6 @@ jobs:
       run: yarn --frozen-lockfile
     - name: Build Next.js
       run: yarn build
+    - run: ls
     - name: Push to GitHub Pages
       run: yarn gh-pages -s '**/*' --dotfiles --nojekyll --cname aaronsalley.com -d ./out
