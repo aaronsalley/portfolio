@@ -14,6 +14,8 @@ export const strings = {
     full: (): string => `${strings.name.first} ${strings.name.last}`,
   },
   tagline: "Intention. Integration. Illumination.",
+  description:
+    "Passionate about crafting user-centric solutions that delight and engage, deliver exceptional results, and make a positive impact on both users and businesses. Known for translating complex business needs into clear, actionable strategies — taking ideas from mind to market™.",
   biography: (
     <>
       A passionate product leader with a proven track record of building and
@@ -40,7 +42,7 @@ export const positioning_statement = {
   problem: "",
   product: (): string => `Hi, I’m ${strings.name.first}`,
   solution: `I craft solutions for your business that delight and engage.`,
-  uvp: `I shepherd ideas from mind to market through an integrated approach, translating complex needs into actionable strategies and delivering solutions for people-centric problems.`,
+  uvp: `I shepherd ideas from mind to market™ through an integrated approach, translating complex needs into actionable strategies and delivering solutions for people-centric problems.`,
 };
 
 export const site_nav = [
