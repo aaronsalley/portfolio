@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme static {
+  --color-*: initial;
+  --default-*: initial;
+  --font-*: initial;
+  --shadow-*: initial;
+  --ease-*: initial;
+  --text-*: initial;
+  --spacing-*: initial;
+
+  --base-font-size: 16px;
+
+  --large-text-size: 1.5rem;
+  --large-text-size-value: 1.5;
+  --normal-text-size: 1rem;
+  --normal-text-size-value: 1;
+  --small-text-size: 0.9rem;
+  --small-text-size-value: 0.9;
+
+  --heading-1-size: 1rem;
+  --heading-1-size-value: 1;
+  --heading-2-size: 1rem;
+  --heading-2-size-value: 1;
+  --heading-3-size: 1rem;
+  --heading-3-size-value: 1;
+  --heading-4-size: 1rem;
+  --heading-4-size-value: 1;
+  --heading-5-size: 1rem;
+  --heading-5-size-value: 1;
+  --heading-6-size: 1rem;
+  --heading-6-size-value: 1;
+
+  --color-main-light: #ffffff;
+  --color-main-light--rgb: 255, 255, 255;
+  --color-main-dark: #000000;
+  --color-main-dark--rgb: 0, 0, 0;
+  --color-accent-primary: #da7541;
+  --color-accent-secondary: #f8f4f0;
+  --color-accent-tertiary: #2b4637;
+  --color-accent-quaternary: #53727c;
+
+  --border-width: 1px;
+}
+
+@layer base {
+  @media (prefers-color-scheme: dark) {
+    html {
+      color-scheme: dark;
+    }
+  }
+
+  a {
+    transition: color 0.5s ease-in-out;
+  }
+
+  a:hover {
+    color: var(--color-accent-primary);
+  }
+
+  p {
+    line-height: var(--paragraph-font-line-height);
+    font-family: var(--paragraph-font-family);
+    letter-spacing: var(--paragraph-font-letter-spacing);
+
+    /* Scale font size based on screen width */
+    /* Variant if device is in landscape mode */
+  }
+}
+
+@utility font-serif {
+  font-family: "Editor's Note Display", var(--font-serif);
+}
+@utility font-display {
+  font-family: var(--font-display);
+}
+@utility font-sans {
+  font-family: var(--font-sans);
+}
+@utility font-mono {
+  font-family: var(--font-mono);
+}
+
+@layer components {
+  .headline {
+    @apply font-display;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1em;
+    text-transform: uppercase;
+    letter-spacing: 0em;
+  }
+  .subheading {
+    @apply font-sans;
+    text-transform: uppercase;
+    line-height: 1.6em;
+    letter-spacing: 0.1em;
+  }
+  .body {
+    @apply font-sans;
+    line-height: 1.6em;
+    letter-spacing: 0em;
+  }
+  .intro {
+    @apply font-serif;
+    line-height: 1.6em;
+  }
+  .pullquote {
+    @apply font-serif;
+    line-height: 1.1em;
+    letter-spacing: 0em;
+  }
+  .caption {
+    @apply font-mono;
+    text-transform: uppercase;
+    line-height: 1.6em;
+    letter-spacing: 0.1em;
+  }
+}

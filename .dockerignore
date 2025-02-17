@@ -1,0 +1,10 @@
+/.idea
+/.next
+/.vscode
+/node_modules
+.dockerignore
+.editorconfig
+.gitignore
+compose.yaml
+README.md
+yarn.lock

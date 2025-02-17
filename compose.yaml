@@ -1,0 +1,65 @@
+name: portfolio
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM node
+        WORKDIR /var/aaronsalley
+        COPY package.json .yarn .yarnrc.yml .
+        COPY . / .
+        RUN corepack enable \
+        && yarn set version stable \
+        && yarn install
+        EXPOSE 3000
+        CMD ["next", "dev", "--experimental-https"]
+        ENTRYPOINT ["yarn"]
+    # command: yarn next dev --experimental-https
+    volumes:
+      - ./src:/var/aaronsalley/src
+      - ./public:/var/aaronsalley/public
+    ports:
+      - 443:3000
+    depends_on:
+      - cms
+
+  cms:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: mariadb
+      WORDPRESS_DB_USER: ${SQL_DB_USER}
+      WORDPRESS_DB_PASSWORD: ${SQL_DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${SQL_DB_NAME}
+    volumes:
+      - bucket:/var/www/html
+      - ./.wp/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_USER: ${SQL_DB_USER}
+      MARIADB_PASSWORD: ${SQL_DB_PASSWORD}
+      MARIADB_DATABASE: ${SQL_DB_NAME}
+    volumes:
+      - sql:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8081:80
+    depends_on:
+      - mariadb
+    environment:
+      - PMA_HOST=mariadb
+
+volumes:
+  bucket:
+  sql:
