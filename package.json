@@ -1,45 +1,28 @@
 {
-  "name": "@aaronsalley/portfolio",
-  "version": "10.0.0",
-  "author": "Aaron Salley <aaron@aaronsalley.com>",
+  "name": "aaronsalley.github.io",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "docker compose -f compose.yaml up -d",
-    "next:dev": "next dev",
+    "dev": "next dev --turbopack --experimental-https -p 443",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "rss-parser": "^3.13.0",
-    "typescript": "^5.7.3"
+    "next": "15.3.3"
   },
   "devDependencies": {
-    "@svgr/webpack": "^8.1.0",
-    "@tailwindcss/postcss": "^4.0.8",
-    "@types/node": "^22.13.10",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "autoprefixer": "^10.4.20",
-    "eslint": "8.33.0",
-    "eslint-config-next": "13.1.6",
-    "import-fresh": "^3.3.1",
-    "lint-staged": "^13.1.0",
-    "postcss": "^8.5.3",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "sass": "^1.85.1",
-    "stylelint": "^16.16.0",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-recommended-scss": "^14.1.0",
-    "stylelint-config-standard": "^37.0.0",
-    "stylelint-config-standard-scss": "^14.0.0",
-    "stylelint-prettier": "^5.0.3",
-    "tailwindcss": "^4.0.9",
-    "webpack": "^5.98.0"
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "@eslint/eslintrc": "^3"
   },
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
 }
