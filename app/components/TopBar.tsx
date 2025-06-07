@@ -1,8 +1,16 @@
 'use client';
-import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
-export default function TopBar() {
+import { useEffect, useState } from 'react';
+import NavMenu from './NavMenu';
+
+export interface TopBar {
+  pages: any[];
+  links: any[];
+  insights: any[];
+  socials: Record<string, { href: string; icon: string }>;
+}
+
+export default function TopBar(props: TopBar) {
   const [isMenuOpen, setMenu] = useState(false);
 
   const [isSticky, setSticky] = useState(false);
@@ -38,29 +46,37 @@ export default function TopBar() {
   };
 
   return (
-    <header
-      className={[
-        'flex justify-between w-full pt-5 pb-6 px-5',
-        isSticky
-          ? 'fixed top-0 z-50'
-          : 'absolute border-b border-slate-50 text-slate-50',
-      ].join(' ')}
-    >
-      <button
-        onClick={() => setMenu(!isMenuOpen)}
-        className={'size-[1.875rem]'}
+    <>
+      <header
+        className={[
+          'flex justify-between items-center w-full py-4 lg:pt-5 lg:pb-6 px-5 z-10',
+          isMenuOpen ? 'bg-salley-black' : 'bg-transparent',
+          isSticky || isMenuOpen ? 'fixed top-0 z-50' : 'absolute',
+          !isSticky || isMenuOpen
+            ? 'border-b border-salley-white text-salley-white'
+            : null,
+        ].join(' ')}
       >
-        <i
-          className={[
-            iconStyles.base,
-            isMenuOpen ? iconStyles.open : undefined,
-          ].join(' ')}
-        ></i>
-      </button>
-      {!isSticky ? (
-        <p className='font-[Oswald] text-3xl uppercase'>Aaron Salley</p>
-      ) : null}
-      <span></span>
-    </header>
+        <button
+          onClick={() => setMenu(!isMenuOpen)}
+          className={'size-[1.875rem] z-50 scale-60 lg:scale-100'}
+        >
+          <i
+            className={[
+              iconStyles.base,
+              isMenuOpen ? iconStyles.open : undefined,
+              isSticky && !isMenuOpen ? 'text-salley-accent' : undefined,
+            ].join(' ')}
+          ></i>
+        </button>
+        {!isSticky || isMenuOpen ? (
+          <p className='font-[Oswald] text-xl lg:text-3xl font-medium uppercase z-50'>
+            Aaron Salley
+          </p>
+        ) : null}
+        <span></span>
+        {isMenuOpen ? <NavMenu {...props} /> : null}
+      </header>
+    </>
   );
 }
