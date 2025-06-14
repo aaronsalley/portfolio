@@ -4,8 +4,6 @@ import SocialLinks from './SocialLinks';
 import Image from 'next/image';
 
 export default function NavMenu({ pages, links, insights, socials }: TopBar) {
-  const styles = getComputedStyle(document.documentElement);
-
   const Browse = () =>
     pages.length > 0 ? (
       <ul className='flex flex-col gap-3 text-xs lg:gap-4 lg:text-base'>

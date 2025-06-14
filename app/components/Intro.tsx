@@ -11,8 +11,8 @@ export default function Intro() {
         Strategy-Driven Design & Delivery
       </p>
       <p className='max-w-xs font-sans font-light sm:text-lg lg:max-w-lg lg:text-3xl'>
-        We're a digital creative studio offering tailored solutions for clients
-        needing digital product services.
+        We&apos;re a digital creative studio offering tailored solutions for
+        clients needing digital product services.
       </p>
     </section>
   );

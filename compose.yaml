@@ -6,15 +6,14 @@ services:
       dockerfile_inline: |
         FROM node
         WORKDIR /var/aaronsalley
-        COPY package.json .yarn .yarnrc.yml .
-        COPY . / .
+        COPY package.json .
         RUN corepack enable \
-        && yarn set version stable \
         && yarn install
+        COPY . / .
         EXPOSE 3000
-        CMD ["next", "dev", "--experimental-https"]
+        CMD ["dev"]
         ENTRYPOINT ["yarn"]
-    # command: yarn next dev --experimental-https
+    command: next dev --experimental-https
     volumes:
       - ./src:/var/aaronsalley/src
       - ./public:/var/aaronsalley/public

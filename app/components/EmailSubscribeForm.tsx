@@ -11,7 +11,7 @@ declare global {
 }
 
 export default function EmailSubscribeForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [, setIsSubmitted] = useState(false);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

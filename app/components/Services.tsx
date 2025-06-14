@@ -31,8 +31,9 @@ export default function Services() {
           ))}
         </ul>
         <p className='font-sans xl:text-lg font-light lg:max-w-sm xl:max-w-xl'>
-          Elevate your product's potential with our expert consulting services.
-          Drive growth and optimize performance with our data-driven approach.
+          Elevate your product&apos;s potential with our expert consulting
+          services. Drive growth and optimize performance with our data-driven
+          approach.
         </p>
         <Link
           href={'/services'}

@@ -7,6 +7,7 @@ import { GoogleTagManagerScript, GTM_no_script } from './lib/GTM';
 
 import './globals.css';
 import fetchPosts from './lib/fetchPosts';
+import { CaseStudy } from './components/CaseStudies';
 
 export const metadata: Metadata = {
   title: 'Aaron Salley | Digital Creative Studio',
@@ -23,6 +24,7 @@ const oswald = Oswald({
   subsets: ['latin'],
 });
 const IBMPlexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700'],
 });
 
@@ -50,10 +52,7 @@ interface LayoutProps {
     href: string;
   }[];
   socials: Record<string, { href: string; icon: string }>;
-  insights: {
-    title: string;
-    description: string;
-  }[];
+  insights: CaseStudy[];
   images: {
     src: string;
     alt: string;

@@ -2,11 +2,18 @@
 
 import { useEffect, useState } from 'react';
 import NavMenu from './NavMenu';
+import { CaseStudy } from './CaseStudies';
 
 export interface TopBar {
-  pages: any[];
-  links: any[];
-  insights: any[];
+  pages: {
+    name: string;
+    href: string;
+  }[];
+  links: {
+    name: string;
+    href: string;
+  }[];
+  insights: CaseStudy[];
   socials: Record<string, { href: string; icon: string }>;
 }
 
