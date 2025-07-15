@@ -1,63 +1,42 @@
-import Link from "next/link";
-import styles from "./home.module.scss";
+import { Metadata } from 'next';
+import backgroundImage from '@/assets/images/aaron-salley-office-poster.jpg';
+import Link from 'next/link';
 
-import {
-  links,
-  positioning_statement,
-  services,
-  strings,
-} from "../data/constants";
-import { fetchProjects } from "../services/Behance";
-import Brands from "../components/BrandsComponent";
-import CaseStudies from "../components/CaseStudiesComponent";
-import JumpButton from "../components/JumpButtonComponent";
-import ServiceItems from "../components/ServicesComponent";
-import formatPhoneNumber from "../utils/formatPhoneNumber";
+export const metadata: Metadata = {
+  title: 'Aaron Salley – Your Partner for Innovation | Digital Creative Studio',
+  description:
+    'Boutique studio crafting tailored solutions via high-end creative, execution, and strategy services. We specialize in meeting client needs with unique digital products.',
+};
 
-export default async function Page() {
-  const studies = await fetchProjects();
-
-  const AboutMe = () => (
-    <aside>
-      <h4>{strings.ABOUT_ME}</h4>
-      <p>{strings.biography}</p>
-      <p>{strings.tagline}</p>
-      <h4>{strings.CONTACT}</h4>
-      <Link href={`mailto:${strings.email}`}>{strings.email}</Link>
-      <Link href={`tel:${strings.telephone}`}>
-        {formatPhoneNumber(strings.telephone)}
-      </Link>
-      <address>{strings.current_city}</address>
-      <Link href={links.resume.url} target={"_blank"}>
-        {strings.DOWNLOAD_RESUME}
-      </Link>
-    </aside>
-  );
-
+export default async function Start() {
   return (
-    <main className={styles.container}>
-      <section id="hero" className={styles.hero}>
-        <h1>
-          <small>{positioning_statement.product()}</small>
-          <br />
-          {positioning_statement.solution}
+    <>
+      <main
+        className='flex flex-col items-center justify-center min-h-screen text-salley-white'
+        style={{
+          backgroundImage: `url(${backgroundImage.src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundColor: 'rgba(0, 0, 0, 0.2)',
+          backgroundBlendMode: 'darken',
+        }}
+      >
+        <p className='mb-4 font-sans text-center'>
+          Your Partner for Digital Innovation
+        </p>
+        <h1 className='text-[11vi]/[11vi] lg:text-8xl uppercase text-center'>
+          <pre className='font-[Oswald] font-semibold'>Bespoke Strategic</pre>
+          Solutions
         </h1>
-        <JumpButton />
-      </section>
-      <section id="work" className={styles.work}>
-        <Brands />
-        <CaseStudies list={studies} />
-      </section>
-      <section className={styles.offerings}>
-        <div className={styles.services}>
-          <h2>{strings.SERVICES}</h2>
-          <div>
-            <p>{positioning_statement.uvp}</p>
-            <ServiceItems list={services} />
-          </div>
-        </div>
-        <AboutMe />
-      </section>
-    </main>
+        <p className='max-w-lg mt-5 mb-8 font-sans text-center'>
+          A boutique studio crafting tailored solutions via high-end creative,
+          execution, and strategy services. We specialize in meeting client
+          needs with unique digital products.
+        </p>
+        {/* <Link href='/portfolio' className='btn'>
+          Our Work
+        </Link> */}
+      </main>
+    </>
   );
 }
