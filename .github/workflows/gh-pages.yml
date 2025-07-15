@@ -5,14 +5,14 @@ name: Publish to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ['main']
   pull_request:
-    branches: ["main"]
+    branches: ['main']
 
   workflow_dispatch:
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 env:
@@ -32,7 +32,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
           cache: yarn
 
       - name: Setup Pages
