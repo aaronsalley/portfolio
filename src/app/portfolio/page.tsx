@@ -1,4 +1,6 @@
-export default function PortfolioPage() {
+import Image from 'next/image';
+
+export default function Portfolio() {
   return (
     <div>
       <h1>Portfolio</h1>

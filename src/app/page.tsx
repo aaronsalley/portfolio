@@ -33,9 +33,9 @@ export default async function Start() {
           execution, and strategy services. We specialize in meeting client
           needs with unique digital products.
         </p>
-        {/* <Link href='/portfolio' className='btn'>
+        <Link href='/portfolio' className='btn'>
           Our Work
-        </Link> */}
+        </Link>
       </main>
     </>
   );

@@ -37,7 +37,7 @@ export default function Footer() {
           and production, while bridging the gap between strategy and creation.
         </p>
       </div>
-      {/* <NavLinks className={style.nav} /> */}
+      <NavLinks className={style.nav} />
       {/* Instagram className={style.instagram} */}
       <div className={style.email}>
         <EmailSubscribeForm className='lg:max-w-xl lg:mr-auto lg:ml-16' />

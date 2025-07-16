@@ -41,11 +41,11 @@ export default function TopBar() {
   return (
     <header className={style}>
       <div className='flex items-center gap-4 lg:gap-6'>
-        {/* <MenuButton
+        <MenuButton
           isSticky={isSticky}
           isMenuOpen={isMenuOpen}
           setMenu={setMenu}
-        /> */}
+        />
         {!isSticky || isMenuOpen ? <Brand /> : null}
       </div>
       {isMenuOpen ? <NavMenu /> : null}
