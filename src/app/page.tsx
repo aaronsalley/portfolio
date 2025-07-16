@@ -12,7 +12,7 @@ export default async function Start() {
   return (
     <>
       <main
-        className='flex flex-col items-center justify-center min-h-screen text-salley-white'
+        className='will-stick flex flex-col items-center justify-center min-h-screen text-salley-white'
         style={{
           backgroundImage: `url(${backgroundImage.src})`,
           backgroundSize: 'cover',
