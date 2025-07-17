@@ -6,6 +6,7 @@ import Icon from '@/app/icon.svg';
 import EmailSubscribeForm from './EmailSubscribeForm';
 import NavLinks from './NavLinks';
 import SocialLinks from './SocialLinks';
+import Link from 'next/link';
 
 export default function TopBar() {
   const [isMenuOpen, setMenu] = useState(false);
@@ -55,13 +56,15 @@ export default function TopBar() {
 
 function Brand() {
   return (
-    <div className='z-50 flex items-center gap-2'>
-      <Image src={Icon} alt='Aaron Salley' width={24} />
-      {Icon.svg}
-      <p className='hidden sm:block font-[Oswald] uppercase z-50'>
-        Aaron Salley
-      </p>
-    </div>
+    <Link href='/'>
+      <div className='z-50 flex items-center gap-2'>
+        <Image src={Icon} alt='Aaron Salley' width={24} />
+        {Icon.svg}
+        <p className='hidden sm:block font-[Oswald] uppercase z-50'>
+          Aaron Salley
+        </p>
+      </div>
+    </Link>
   );
 }
 
@@ -92,7 +95,7 @@ function MenuButton({
   return (
     <button
       onClick={() => setMenu(!isMenuOpen)}
-      className={'size-[1.875rem] z-50 scale-60 lg:scale-100'}
+      className={'size-[1.875rem] z-50 scale-60 lg:scale-80'}
     >
       <i className={style}></i>
     </button>
@@ -122,7 +125,11 @@ function NavMenu() {
   }, []);
 
   return (
-    <menu className={'fixed top-[63px] left-0 size-full bg-salley-black/50'}>
+    <menu
+      className={
+        'fixed top-[63px] lg:top-[75px] left-0 size-full bg-salley-black/50'
+      }
+    >
       <div className='flex flex-wrap sm:flex-row justify-between p-7 sm:p-15 pb-17 bg-salley-black'>
         {isMobile ? (
           <>

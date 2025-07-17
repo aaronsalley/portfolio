@@ -1,11 +1,12 @@
 import Image from 'next/image';
-import laptop from '@/assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg';
-import sketch from '@/assets/images/kelly-sikkema-wdnpaTNwOEQ-unsplash.jpg';
-import plants from '@/assets/images/malte-michels-s4wGZw3UuLk-unsplash.jpg';
-import lights from '@/assets/images/riccardo-annandale-7e2pe9wjL9M-unsplash.jpg';
-import desktop from '@/assets/images/aaron-salley-office-poster.jpg';
 import Link from 'next/link';
 import FloatingImagesSection from '@/components/FloatingImagesSection';
+import laptop from '@/assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg';
+import sketch from '@/assets/images/kelly-sikkema-wdnpaTNwOEQ-unsplash.jpg';
+import lights from '@/assets/images/riccardo-annandale-7e2pe9wjL9M-unsplash.jpg';
+import desktop from '@/assets/images/aaron-salley-office-poster.jpg';
+import wireframe from '@/assets/images/iphone_wireframing-1024x682.jpg';
+import plants from '@/assets/images/malte-michels-s4wGZw3UuLk-unsplash.jpg';
 import MSKDirect from '@/assets/images/MSKDirect.jpg';
 import BHPhoto from '@/assets/images/B&HPhoto.jpg';
 import Intry from '@/assets/images/Intry.jpg';
@@ -14,7 +15,9 @@ import Lumifi from '@/assets/images/lumifi.png';
 export default function Portfolio() {
   return (
     <>
-      <FloatingImagesSection images={[laptop, sketch, plants, lights, desktop]}>
+      <FloatingImagesSection
+        images={[lights, sketch, desktop, wireframe, laptop]}
+      >
         <h1 className='font-[Oswald] font-semibold uppercase text-5xl text-center'>
           Showcase of Work
         </h1>
@@ -85,21 +88,25 @@ const caseStudies = [
     image: MSKDirect,
     category: 'Web Design',
     title: 'Guided Access to Expert Care',
+    url: '',
   },
   {
     image: BHPhoto,
     category: 'Branding',
     title: 'Omnichannel eCommerce',
+    url: '',
   },
   {
     image: Intry,
     category: 'Illustration',
     title: 'AI-powered SaaS Hybrid Resume™',
+    url: '',
   },
   {
     image: Lumifi,
     category: 'Photography',
     title: 'IoT lighting control software',
+    url: '',
   },
 ];
 
@@ -110,7 +117,7 @@ function CaseStudies() {
 
   return (
     <div className='md:grid md:grid-cols-2 md:mx-[8vi] md:gap-[8vi] items-center'>
-      {caseStudies.map(({ image, category, title }, index: number) => {
+      {caseStudies.map(({ image, category, title, url }, index: number) => {
         const width = 'w-[calc(243/320*100vi)] max-w-full';
         const style = [
           'object-cover',
@@ -119,24 +126,23 @@ function CaseStudies() {
             : `aspect-246/291 ${width}`,
         ].join(' ');
         return (
-          <article
-            key={index}
-            className='flex flex-col items-center gap-4 pb-20'
-          >
-            <Image
-              src={image}
-              alt={`Project Image ${index + 1}`}
-              className={style}
-            />
-            <p className={`${width} font-sans uppercase tracking-widest`}>
-              {category}
-            </p>
-            <p
-              className={`${width} font-[Oswald] uppercase text-3xl font-medium`}
-            >
-              {title}
-            </p>
-          </article>
+          <Link href={url} key={index}>
+            <article className='flex flex-col items-center gap-4 pb-20'>
+              <Image
+                src={image}
+                alt={`Project Image ${index + 1}`}
+                className={style}
+              />
+              <p className={`${width} font-sans uppercase tracking-widest`}>
+                {category}
+              </p>
+              <p
+                className={`${width} font-[Oswald] uppercase text-3xl font-medium`}
+              >
+                {title}
+              </p>
+            </article>
+          </Link>
         );
       })}
     </div>
