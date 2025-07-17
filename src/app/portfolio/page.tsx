@@ -1,16 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import FloatingImagesSection from '@/components/FloatingImagesSection';
+// Floating images
 import laptop from '@/assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg';
 import sketch from '@/assets/images/kelly-sikkema-wdnpaTNwOEQ-unsplash.jpg';
 import lights from '@/assets/images/riccardo-annandale-7e2pe9wjL9M-unsplash.jpg';
 import desktop from '@/assets/images/aaron-salley-office-poster.jpg';
 import wireframe from '@/assets/images/iphone_wireframing-1024x682.jpg';
 import plants from '@/assets/images/malte-michels-s4wGZw3UuLk-unsplash.jpg';
+// Case Studies
 import MSKDirect from '@/assets/images/MSKDirect.jpg';
 import BHPhoto from '@/assets/images/B&HPhoto.jpg';
 import Intry from '@/assets/images/Intry.jpg';
 import Lumifi from '@/assets/images/lumifi.png';
+import Brands from '@/components/Brands';
 
 export default function Portfolio() {
   return (
@@ -30,7 +33,7 @@ export default function Portfolio() {
       </FloatingImagesSection>
       <FeaturedWork />
       <CaseStudies />
-      <Gallery />
+      {/* <Gallery /> */}
       <Inquire />
     </>
   );
@@ -48,7 +51,7 @@ function FeaturedWork() {
         Our featured projects include a diverse range of industries and design
         challenges, showcasing our ability to adapt and innovate.
       </p>
-      {/* Brands */}
+      <Brands />
     </div>
   );
 }
