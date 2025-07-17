@@ -17,11 +17,11 @@ const IBMPlexSans = IBM_Plex_Sans({
 const EditorsNoteDisplay = localFont({
   src: [
     {
-      path: '../assets/font/editorsnotedisplay-medium-webfont.woff2',
+      path: '../assets/fonts/editorsnotedisplay-medium-webfont.woff2',
       weight: '500',
     },
     {
-      path: '../assets/font/editorsnotedisplay-semibold-webfont.woff2',
+      path: '../assets/fonts/editorsnotedisplay-semibold-webfont.woff2',
       weight: '600',
     },
   ],
