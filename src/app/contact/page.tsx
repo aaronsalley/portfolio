@@ -8,7 +8,7 @@ const listItems = [
     headline: 'The Blog',
     bodyCopy: 'Check out our blog for the latest insights.',
     link: 'https://aaronsalley.medium.com/',
-    target: 'self',
+    target: '_blank',
   },
   {
     headline: 'Instagram',
