@@ -8,16 +8,19 @@ const listItems = [
     headline: 'The Blog',
     bodyCopy: 'Check out our blog for the latest insights.',
     link: 'https://aaronsalley.medium.com/',
+    target: '_blank',
   },
   {
     headline: 'Instagram',
     bodyCopy: 'Follow us on Instagram for behind-the-scenes content.',
-    link: 'https://www.instagram.com/aaronsalley/',
+    link: 'https://www.instagram.com/aaronsalleyhim/',
+    target: '_blank',
   },
   {
     headline: 'LinkedIn',
     bodyCopy: 'Connect with us on LinkedIn for professional updates.',
-    link: 'https://www.linkedin.com/company/aaronsalley/',
+    link: 'https://www.linkedin.com/in/aaronsalley/',
+    target: '_blank',
   },
 ];
 
@@ -38,9 +41,13 @@ export default function Contact() {
         <div className={style.asideLinks}>
           <h2 className='uppercase font-mono'>Until we&apos;re in touch:</h2>
           <ul>
-            {listItems.map(({ headline, bodyCopy, link }, index) => (
+            {listItems.map(({ headline, bodyCopy, link, target }, index) => (
               <li key={index} className={style.listItem}>
-                <Link href={link} target='_blank' rel='noopener noreferrer'>
+                <Link
+                  href={link}
+                  target={target}
+                  rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+                >
                   <h3 className='uppercase font-[Oswald] text-4xl font-semibold'>
                     {headline}
                   </h3>
