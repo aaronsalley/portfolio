@@ -138,9 +138,9 @@ function NavMenu() {
               <NavLinks className={style.navLinks} />
             </div>
             <div className={style.quickLinks}>
-              <p className={style.linksHeader}>Quick Links</p>
+              {/* <p className={style.linksHeader}>Quick Links</p> */}
             </div>
-            <Articles />
+            {/* <Articles /> */}
             <EmailSubscribeForm className={style.email} />
             <SocialLinks className={style.socialLinks} />
           </>

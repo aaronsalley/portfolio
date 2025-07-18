@@ -86,30 +86,31 @@ function Inquire() {
   );
 }
 
+// TODO: Create case studies on the site instead of Behance links
 const caseStudies = [
   {
     image: MSKDirect,
     category: 'Web Design',
     title: 'Guided Access to Expert Care',
-    url: '',
+    url: 'https://www.behance.net/gallery/192976527/Bringing-MSK-Direct-to-life',
   },
   {
     image: BHPhoto,
     category: 'Branding',
     title: 'Omnichannel eCommerce',
-    url: '',
+    url: 'https://www.behance.net/gallery/192948481/Omichannel-e-commerce',
   },
   {
     image: Intry,
     category: 'Illustration',
     title: 'AI-powered SaaS Hybrid Resume™',
-    url: '',
+    url: 'https://www.behance.net/gallery/192948467/AI-powered-SaaS-Hybrid-Resume',
   },
   {
     image: Lumifi,
     category: 'Photography',
     title: 'IoT lighting control software',
-    url: '',
+    url: 'https://www.behance.net/gallery/35016837/IoT-lighting-control-software',
   },
 ];
 
@@ -129,7 +130,12 @@ function CaseStudies() {
             : `aspect-246/291 ${width}`,
         ].join(' ');
         return (
-          <Link href={url} key={index}>
+          <Link
+            key={index}
+            href={url}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <article className='flex flex-col items-center gap-4 pb-20'>
               <Image
                 src={image}

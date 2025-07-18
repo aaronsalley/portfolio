@@ -7,7 +7,7 @@ const listItems = [
   {
     headline: 'The Blog',
     bodyCopy: 'Check out our blog for the latest insights.',
-    link: '/blog',
+    link: 'https://aaronsalley.medium.com/',
   },
   {
     headline: 'Instagram',
@@ -23,51 +23,24 @@ const listItems = [
 
 export default function Contact() {
   return (
-    <div className={['flex flex-col flex-wrap', 'md:flex-row'].join(' ')}>
-      <div
-        className={[
-          'w-full aspect-[320/224] bg-salley-black bg-[url(../assets/images/malte-michels-s4wGZw3UuLk-unsplash.jpg)] bg-cover',
-          'md:flex-1',
-        ].join(' ')}
-      ></div>
-      <div
-        className={[
-          'mx-3 my-12',
-          'md:flex-1 md:mx-7 md:my-20',
-          'lg:mx-15',
-        ].join(' ')}
-      >
-        <h1
-          className={[
-            'font-medium text-[13vi]/[13vi] uppercase max-w-lg',
-            'md:text-5xl',
-            'lg:text-6xl',
-          ].join(' ')}
-        >
-          Let's Collaborate
-        </h1>
-        <p className={['font-sans py-6 max-w-lg'].join(' ')}>
+    <div className={style.container}>
+      <div className={style.image}></div>
+      <div className={style.contactForm}>
+        <h1 className={style.headline}>Let's Collaborate</h1>
+        <p className='font-sans py-6 max-w-lg'>
           We're eager to learn about your business and explore how our tailored
           digital solutions can help you achieve your goals. Please fillout the
           below form or email us directly at hello@aaronsalley.com.
         </p>
-        <ContactForm className={['max-w-lg'].join(' ')} />
+        <ContactForm className='max-w-lg' />
       </div>
-      <aside
-        className={[
-          'flex w-full px-8 py-20 bg-green-950 text-salley-white',
-          'md:gap-20 md:p-20',
-        ].join(' ')}
-      >
-        <div className={['max-w-lg ml-auto', 'md:w-1/2'].join(' ')}>
+      <aside className={style.aside}>
+        <div className={style.asideLinks}>
           <h2 className='uppercase font-mono'>Until we're in touch:</h2>
           <ul>
             {listItems.map(({ headline, bodyCopy, link }, index) => (
-              <li
-                key={index}
-                className='border-salley-white py-8 not-last:border-b-1 last:pb-0'
-              >
-                <Link href={link}>
+              <li key={index} className={style.listItem}>
+                <Link href={link} target='_blank' rel='noopener noreferrer'>
                   <h3 className='uppercase font-[Oswald] text-4xl font-semibold'>
                     {headline}
                   </h3>
@@ -77,15 +50,44 @@ export default function Contact() {
             ))}
           </ul>
         </div>
-        <div className={['flex relative', 'md:w-1/2'].join(' ')}>
+        <div className={style.asideImageWrapper}>
           <Image
             src={desk}
             alt=''
             objectFit='cover'
-            className='hidden md:block w-full max-w-lg object-cover object-left'
+            className={style.asideImage}
           />
         </div>
       </aside>
     </div>
   );
 }
+
+const style = {
+  container: ['flex flex-col flex-wrap', 'md:flex-row'].join(' '),
+  image: [
+    'w-full aspect-[320/224] bg-salley-black bg-[url(../assets/images/malte-michels-s4wGZw3UuLk-unsplash.jpg)] bg-cover',
+    'md:flex-1',
+  ].join(' '),
+  contactForm: ['mx-3 my-12', 'md:flex-1 md:mx-7 md:my-20', 'lg:mx-15'].join(
+    ' '
+  ),
+  headline: [
+    'font-medium text-[13vi]/[13vi] uppercase max-w-lg',
+    'md:text-5xl',
+    'lg:text-6xl',
+  ].join(' '),
+  aside: [
+    'flex w-full px-8 py-20 bg-green-950 text-salley-white',
+    'md:gap-20 md:p-20',
+  ].join(' '),
+  asideLinks: ['max-w-lg ml-auto', 'md:w-1/2'].join(' '),
+  listItem: ['border-salley-white py-8 not-last:border-b-1 last:pb-0'].join(
+    ' '
+  ),
+  asideImageWrapper: ['flex relative', 'md:w-1/2'].join(' '),
+  asideImage: [
+    'hidden w-full max-w-lg object-cover object-left',
+    'md:block',
+  ].join(' '),
+};
