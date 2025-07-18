@@ -7,8 +7,8 @@ const listItems = [
   {
     headline: 'The Blog',
     bodyCopy: 'Check out our blog for the latest insights.',
-    link: 'https://aaronsalley.medium.com/',
-    target: '_blank',
+    link: '/blog',
+    target: 'self',
   },
   {
     headline: 'Instagram',
@@ -26,17 +26,20 @@ const listItems = [
 
 export default function Contact() {
   return (
-    <div className={style.container}>
-      <div className={style.image}></div>
-      <div className={style.contactForm}>
-        <h1 className={style.headline}>Let&apos;s Collaborate</h1>
-        <p className='font-sans py-6 max-w-lg'>
-          We&apos;re eager to learn about your business and explore how our
-          tailored digital solutions can help you achieve your goals. Please
-          fillout the below form or email us directly at hello@aaronsalley.com.
-        </p>
-        <ContactForm className='max-w-lg' />
-      </div>
+    <>
+      <main className={style.container}>
+        <div className={style.image}></div>
+        <div className={style.contactForm}>
+          <h1 className={style.headline}>Let&apos;s Collaborate</h1>
+          <p className='font-sans py-6 max-w-lg'>
+            We&apos;re eager to learn about your business and explore how our
+            tailored digital solutions can help you achieve your goals. Please
+            fillout the below form or email us directly at
+            hello@aaronsalley.com.
+          </p>
+          <ContactForm className='max-w-lg' />
+        </div>
+      </main>
       <aside className={style.aside}>
         <div className={style.asideLinks}>
           <h2 className='uppercase font-mono'>Until we&apos;re in touch:</h2>
@@ -66,7 +69,7 @@ export default function Contact() {
           />
         </div>
       </aside>
-    </div>
+    </>
   );
 }
 

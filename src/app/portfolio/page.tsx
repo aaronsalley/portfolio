@@ -18,22 +18,24 @@ import Brands from '@/components/Brands';
 export default function Portfolio() {
   return (
     <>
-      <FloatingImagesSection
-        images={[lights, sketch, desktop, wireframe, laptop]}
-      >
-        <h1 className='font-[Oswald] font-semibold uppercase text-5xl text-center'>
-          Showcase of Work
-        </h1>
-        <p className='text-center font-sans max-w-xs'>
-          Explore our portfolio and discover how we&apos;ve helped clients
-          achieve their business goals through innovative design and strategic
-          thinking. Our work spans various industries and showcases our
-          expertise in crafting tailored digital solutions.
-        </p>
-      </FloatingImagesSection>
-      <FeaturedWork />
-      <CaseStudies />
-      {/* <Gallery /> */}
+      <main>
+        <FloatingImagesSection
+          images={[lights, sketch, desktop, wireframe, laptop]}
+        >
+          <h1 className='font-[Oswald] font-semibold uppercase text-5xl text-center'>
+            Showcase of Work
+          </h1>
+          <p className='text-center font-sans max-w-xs'>
+            Explore our portfolio and discover how we&apos;ve helped clients
+            achieve their business goals through innovative design and strategic
+            thinking. Our work spans various industries and showcases our
+            expertise in crafting tailored digital solutions.
+          </p>
+        </FloatingImagesSection>
+        <FeaturedWork />
+        <CaseStudies />
+        {/* <Gallery /> */}
+      </main>
       <Inquire />
     </>
   );
@@ -41,7 +43,7 @@ export default function Portfolio() {
 
 function FeaturedWork() {
   return (
-    <div className='flex flex-col justify-center items-center py-14'>
+    <section className='flex flex-col justify-center items-center py-14'>
       <h2 className='font-sans uppercase text-center mx-3'>Featured Work</h2>
       <p className='font-[Oswald] font-medium uppercase text-3xl text-center my-6 mx-3 max-w-xl'>
         Check out some of our most notable projects that demonstrate our
@@ -52,7 +54,7 @@ function FeaturedWork() {
         challenges, showcasing our ability to adapt and innovate.
       </p>
       <Brands />
-    </div>
+    </section>
   );
 }
 
@@ -62,7 +64,7 @@ function Gallery() {
 
 function Inquire() {
   return (
-    <div
+    <aside
       className='flex flex-col gap-8 items-center justify-center min-h-screen bg-salley-black/70 text-salley-white'
       style={{
         backgroundImage: `url(${plants.src})`,
@@ -82,7 +84,7 @@ function Inquire() {
       <Link href='/contact' className='btn filled'>
         Get in Touch
       </Link>
-    </div>
+    </aside>
   );
 }
 
@@ -92,25 +94,25 @@ const caseStudies = [
     image: MSKDirect,
     category: 'Web Design',
     title: 'Guided Access to Expert Care',
-    url: 'https://www.behance.net/gallery/192976527/Bringing-MSK-Direct-to-life',
+    url: '/',
   },
   {
     image: BHPhoto,
     category: 'Branding',
     title: 'Omnichannel eCommerce',
-    url: 'https://www.behance.net/gallery/192948481/Omichannel-e-commerce',
+    url: '/',
   },
   {
     image: Intry,
     category: 'Illustration',
     title: 'AI-powered SaaS Hybrid Resume™',
-    url: 'https://www.behance.net/gallery/192948467/AI-powered-SaaS-Hybrid-Resume',
+    url: '/',
   },
   {
     image: Lumifi,
     category: 'Photography',
     title: 'IoT lighting control software',
-    url: 'https://www.behance.net/gallery/35016837/IoT-lighting-control-software',
+    url: '/',
   },
 ];
 
@@ -120,7 +122,7 @@ function CaseStudies() {
   }
 
   return (
-    <div className='md:grid md:grid-cols-2 md:mx-[8vi] md:gap-[8vi] items-center'>
+    <section className='md:grid md:grid-cols-2 md:mx-[8vi] md:gap-[8vi] items-center'>
       {caseStudies.map(({ image, category, title, url }, index: number) => {
         const width = 'w-[calc(243/320*100vi)] max-w-full';
         const style = [
@@ -130,12 +132,7 @@ function CaseStudies() {
             : `aspect-246/291 ${width}`,
         ].join(' ');
         return (
-          <Link
-            key={index}
-            href={url}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <Link key={index} href={url}>
             <article className='flex flex-col items-center gap-4 pb-20'>
               <Image
                 src={image}
@@ -154,6 +151,6 @@ function CaseStudies() {
           </Link>
         );
       })}
-    </div>
+    </section>
   );
 }

@@ -138,9 +138,9 @@ function NavMenu() {
               <NavLinks className={style.navLinks} />
             </div>
             <div className={style.quickLinks}>
-              {/* <p className={style.linksHeader}>Quick Links</p> */}
+              <p className={style.linksHeader}>Quick Links</p>
             </div>
-            {/* <Articles /> */}
+            <Articles />
             <EmailSubscribeForm className={style.email} />
             <SocialLinks className={style.socialLinks} />
           </>
@@ -152,12 +152,14 @@ function NavMenu() {
                 <NavLinks className={style.navLinks} />
               </div>
               <div className={style.quickLinks}>
-                {/* <p className={style.linksHeader}>Quick Links</p> */}
+                <p className={style.linksHeader}>Quick Links</p>
               </div>
               <EmailSubscribeForm className={style.email} />
               <SocialLinks className={style.socialLinks} />
             </div>
-            <div className='flex grow-1'>{/* <Articles /> */}</div>
+            <div className='flex grow-1'>
+              <Articles />
+            </div>
           </>
         )}
       </div>
