@@ -26,17 +26,17 @@ export default function Contact() {
     <div className={style.container}>
       <div className={style.image}></div>
       <div className={style.contactForm}>
-        <h1 className={style.headline}>Let's Collaborate</h1>
+        <h1 className={style.headline}>Let&apos;s Collaborate</h1>
         <p className='font-sans py-6 max-w-lg'>
-          We're eager to learn about your business and explore how our tailored
-          digital solutions can help you achieve your goals. Please fillout the
-          below form or email us directly at hello@aaronsalley.com.
+          We&apos;re eager to learn about your business and explore how our
+          tailored digital solutions can help you achieve your goals. Please
+          fillout the below form or email us directly at hello@aaronsalley.com.
         </p>
         <ContactForm className='max-w-lg' />
       </div>
       <aside className={style.aside}>
         <div className={style.asideLinks}>
-          <h2 className='uppercase font-mono'>Until we're in touch:</h2>
+          <h2 className='uppercase font-mono'>Until we&apos;re in touch:</h2>
           <ul>
             {listItems.map(({ headline, bodyCopy, link }, index) => (
               <li key={index} className={style.listItem}>
