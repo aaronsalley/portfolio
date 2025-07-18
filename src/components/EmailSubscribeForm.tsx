@@ -1,15 +1,14 @@
 'use client';
 
+import * as crm from '@/lib/freshsales';
+
 export default function EmailSubscribeForm({
   className,
 }: {
   className?: string;
 }) {
   return (
-    <form
-      className={`flex flex-col gap-4 ${className}`}
-      action={handleSubscribe}
-    >
+    <form className={`flex flex-col gap-4 ${className}`} action={handleSubmit}>
       <h2 className='text-2xl font-bold'>
         Let&apos;s keep in touch. Get on the list.
       </h2>
@@ -41,21 +40,6 @@ export default function EmailSubscribeForm({
   );
 }
 
-declare const fwcrm: {
-  identify: (identifier: string, contact: unknown) => void;
-};
-
-const handleSubscribe = (formData: FormData) => {
-  const email = formData.get('email') as string;
-
-  const new_contact = {
-    Email: email,
-  };
-  const identifier = email;
-
-  if (typeof fwcrm !== 'undefined' && typeof fwcrm.identify === 'function') {
-    fwcrm.identify(identifier, new_contact);
-  } else {
-    console.warn('fwcrm is not available');
-  }
+const handleSubmit = (formData: FormData) => {
+  crm.createContact(formData);
 };

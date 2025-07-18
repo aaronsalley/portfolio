@@ -42,12 +42,12 @@ export default function Portfolio() {
 function FeaturedWork() {
   return (
     <div className='flex flex-col justify-center items-center py-14'>
-      <h2 className='font-sans uppercase text-center mx-4'>Featured Work</h2>
-      <p className='font-[Oswald] font-medium uppercase text-3xl text-center my-6 mx-4 max-w-xl'>
+      <h2 className='font-sans uppercase text-center mx-3'>Featured Work</h2>
+      <p className='font-[Oswald] font-medium uppercase text-3xl text-center my-6 mx-3 max-w-xl'>
         Check out some of our most notable projects that demonstrate our
         expertise and creativity.
       </p>
-      <p className='font-sans text-center my-6 mx-4 max-w-xl'>
+      <p className='font-sans text-center my-6 mx-3 max-w-xl'>
         Our featured projects include a diverse range of industries and design
         challenges, showcasing our ability to adapt and innovate.
       </p>
@@ -71,10 +71,10 @@ function Inquire() {
       }}
     >
       <p className='font-sans uppercase text-center'>Let&apos;s do this.</p>
-      <h2 className='font-[Oswald] font-medium uppercase text-5xl text-center mx-4'>
+      <h2 className='font-[Oswald] font-medium uppercase text-5xl text-center mx-3'>
         Inquire about your project
       </h2>
-      <p className='font-sans text-center mx-4 max-w-xl'>
+      <p className='font-sans text-center mx-3 max-w-xl'>
         Ready to bring your vision to life? Get in touch with us today to
         discuss your project and discover how we can help you achieve your
         goals.

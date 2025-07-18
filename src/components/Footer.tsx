@@ -4,10 +4,10 @@ import EmailSubscribeForm from './EmailSubscribeForm';
 
 export default function Footer() {
   return (
-    <footer className='relative flex flex-wrap bg-salley-black text-salley-white gap-y-12 lg:gap-y-16'>
+    <footer className='relative flex flex-wrap bg-salley-black text-salley-white gap-y-12 md:gap-y-16'>
       <p className={style.name}>Aaron Salley</p>
       <div className={style.paragraph}>
-        <p className='lg:max-w-xl lg:ml-auto lg:mr-16'>
+        <p className='md:max-w-xl md:ml-auto md:mr-8 lg:mr-16'>
           We&apos;re a digital creative studio offering tailored solutions for
           clients needing digital product services. Unlike studios that focus on
           a single specific creative discipline, we emphasize high-end design
@@ -17,11 +17,11 @@ export default function Footer() {
       <NavLinks className={style.nav} />
       {/* Instagram className={style.instagram} */}
       <div className={style.email}>
-        <EmailSubscribeForm className='lg:max-w-xl lg:mr-auto lg:ml-16' />
+        <EmailSubscribeForm className='md:max-w-xl sm:mr-auto md:mr-8 lg:ml-16' />
       </div>
       <SocialLinks className={style.socialLinks} />
       <div className={style.divider} />
-      <p className='w-full text-center lg:order-last font-sans text-xs mb-12 opacity-30'>
+      <p className='w-full text-center md:order-last font-sans text-xs mb-12 opacity-30'>
         © {new Date().getFullYear()} Aaron Salley LLC. All rights reserved.
       </p>
     </footer>
@@ -31,22 +31,23 @@ export default function Footer() {
 const style = {
   nav: [
     'grid grid-cols-2 gap-6 w-full text-center uppercase font-sans text-sm tracking-widest',
-    'lg:order-1 lg:flex lg:gap-15 lg:flex-1 lg:columns-1 lg:items-center lg:ml-9',
+    'md:order-1 md:flex md:flex-1 md:columns-1 md:items-center md:ml-9',
+    'lg:gap-15',
   ].join(' '),
   socialLinks: [
     'flex justify-center gap-4 mx-3',
-    'lg:order-2 lg:justify-end lg:py-7 lg:items-center lg:mr-9',
+    'md:order-2 md:justify-end md:py-7 md:items-center md:mr-9',
   ].join(' '),
   divider:
-    'hidden absolute top-[80px] w-full border-t border-salley-white opacity-30 lg:block lg:order-3',
+    'hidden absolute top-[80px] w-full border-t border-salley-white opacity-30 md:block md:order-3',
   name: [
     'w-full uppercase text-[11vi] text-center mt-12',
-    'lg:order-4 xl:text-[180px] lg:mt-0',
+    'md:order-4 xl:text-[180px] md:mt-0',
   ].join(' '),
   paragraph: [
     'w-full text-center font-sans mx-3',
-    'lg:order-5 lg:flex-1 lg:text-left lg:ml-9',
+    'md:order-5 md:flex-1 md:text-left md:ml-9',
   ].join(' '),
-  email: ['flex-1 mx-3', 'lg:order-6 lg:mr-9'].join(' '),
-  instagram: ['lg:order-7'].join(' '),
+  email: ['flex-1 mx-3', 'md:order-6 md:mr-9'].join(' '),
+  instagram: ['md:order-7'].join(' '),
 };
