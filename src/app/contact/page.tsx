@@ -66,7 +66,7 @@ export default function Contact() {
 const style = {
   container: ['flex flex-col flex-wrap', 'md:flex-row'].join(' '),
   image: [
-    'w-full aspect-[320/224] bg-salley-black bg-[url(../assets/images/malte-michels-s4wGZw3UuLk-unsplash.jpg)] bg-cover',
+    'will-stick w-full aspect-[320/224] bg-salley-black bg-[url(../assets/images/malte-michels-s4wGZw3UuLk-unsplash.jpg)] bg-cover',
     'md:flex-1',
   ].join(' '),
   contactForm: ['mx-3 my-12', 'md:flex-1 md:mx-7 md:my-20', 'lg:mx-15'].join(
