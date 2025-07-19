@@ -92,27 +92,27 @@ function Inquire() {
 const caseStudies = [
   {
     image: MSKDirect,
-    category: 'Web Design',
+    category: 'GTM Strategy',
     title: 'Guided Access to Expert Care',
-    url: '/',
+    url: 'https://www.behance.net/gallery/192976527/Bringing-MSK-Direct-to-life', //TODO: Make local
   },
   {
     image: BHPhoto,
-    category: 'Branding',
+    category: 'Product Strategy',
     title: 'Omnichannel eCommerce',
-    url: '/',
+    url: 'https://www.behance.net/gallery/192948481/Omichannel-e-commerce', //TODO: Make local
   },
   {
     image: Intry,
-    category: 'Illustration',
+    category: 'AI Product Development',
     title: 'AI-powered SaaS Hybrid Resume™',
-    url: '/',
+    url: 'https://www.behance.net/gallery/192948467/AI-powered-SaaS-Hybrid-Resume', //TODO: Make local
   },
   {
     image: Lumifi,
-    category: 'Photography',
+    category: 'Mobile UI/UX Design',
     title: 'IoT lighting control software',
-    url: '/',
+    url: 'https://www.behance.net/gallery/35016837/IoT-lighting-control-software', //TODO: Make local
   },
 ];
 
@@ -132,7 +132,13 @@ function CaseStudies() {
             : `aspect-246/291 ${width}`,
         ].join(' ');
         return (
-          <Link key={index} href={url}>
+          <Link
+            key={index}
+            href={url}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            {/** TODO: Remove target, rel when local */}
             <article className='flex flex-col items-center gap-4 pb-20'>
               <Image
                 src={image}

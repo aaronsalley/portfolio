@@ -133,37 +133,44 @@ function NavMenu() {
       <div className='flex flex-wrap sm:flex-row justify-between p-7 sm:p-15 pb-17 bg-salley-black'>
         {isMobile ? (
           <>
-            <div className={style.browse}>
-              <p className={style.linksHeader}>Browse</p>
-              <NavLinks className={style.navLinks} />
-            </div>
-            <div className={style.quickLinks}>
-              <p className={style.linksHeader}>Quick Links</p>
-            </div>
-            <Articles />
+            <BrowseLinks />
+            {/* <QuickLinks /> // TODO: restore */}
+            {/* <Articles /> // TODO: restore */}
             <EmailSubscribeForm className={style.email} />
             <SocialLinks className={style.socialLinks} />
           </>
         ) : (
           <>
             <div className='flex flex-wrap max-w-1/2'>
-              <div className={style.browse}>
-                <p className={style.linksHeader}>Browse</p>
-                <NavLinks className={style.navLinks} />
-              </div>
-              <div className={style.quickLinks}>
-                <p className={style.linksHeader}>Quick Links</p>
-              </div>
+              <BrowseLinks />
+              {/* <QuickLinks /> // TODO: restore */}
               <EmailSubscribeForm className={style.email} />
               <SocialLinks className={style.socialLinks} />
             </div>
             <div className='flex grow-1'>
-              <Articles />
+              {/* <Articles /> // TODO: restore */}
             </div>
           </>
         )}
       </div>
     </menu>
+  );
+}
+
+function BrowseLinks() {
+  return (
+    <div className={style.browse}>
+      <p className={style.linksHeader}>Browse</p>
+      <NavLinks className={style.navLinks} />
+    </div>
+  );
+}
+
+function QuickLinks() {
+  return (
+    <div className={style.quickLinks}>
+      <p className={style.linksHeader}>Quick Links</p>
+    </div>
   );
 }
 

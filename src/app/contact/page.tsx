@@ -7,8 +7,8 @@ const listItems = [
   {
     headline: 'The Blog',
     bodyCopy: 'Check out our blog for the latest insights.',
-    link: '/blog',
-    target: 'self',
+    link: 'https://aaronsalley.medium.com/', // TODO: Make local
+    target: '_blank', // TODO: Set target to self when local
   },
   {
     headline: 'Instagram',

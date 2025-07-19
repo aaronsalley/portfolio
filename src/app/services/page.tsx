@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import placeholder from '@/assets/images/aaron-salley-office-poster.jpg';
 
 export default function Services() {
   return (
     <>
-      <section className='flex flex-col justify-center items-center min-h-screen'>
+      <section className='will-stick flex flex-col justify-center items-center min-h-screen bg-[url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg")] bg-cover bg-center text-salley-white'>
         <h1 className='text-[11vi]/[11vi] lg:text-8xl uppercase text-center'>
           <pre className='font-[Oswald] font-semibold'>Creative & GTM</pre>{' '}
           Strategy
@@ -32,19 +33,19 @@ const valueProps = [
     title: 'End-to-End Product Design',
     description:
       'From concept to launch, we ensure that your product is not only functional but also user-friendly and visually appealing. Our team is dedicated to delivering high-quality products that exceed your expectations.',
-    images: ['/path/to/image1.jpg', '/path/to/image2.jpg'],
+    images: [placeholder, placeholder],
   },
   {
     title: 'Collaborative Development Process',
     description:
       'We believe in a collaborative approach, working hand-in-hand with you throughout the entire process. Our goal is to not only meet your expectations but to exceed them, delivering a product that truly stands out in the market.',
-    images: ['/path/to/image1.jpg'],
+    images: [placeholder],
   },
   {
     title: 'Comprehensive Product Development',
     description:
       'Whether you need a new product developed from scratch or an existing product enhanced, we have the skills and experience to help you succeed. Let us help you create a product that your customers will love and that will drive your business forward.',
-    images: ['/path/to/image1.jpg'],
+    images: [placeholder],
   },
 ];
 function ValueProposition() {
@@ -64,7 +65,7 @@ function ValueProposition() {
         Digital Products so good they can&apos;t ignore you.
       </h2>
       <Image
-        src='/path/to/image.jpg'
+        src={placeholder}
         alt='Description of the image'
         width={500}
         height={300}
