@@ -49,12 +49,16 @@ const valueProps = [
 ];
 function ValueProposition() {
   return (
-    <section className={['mx-3 my-20', ''].join(' ')}>
-      {/* TODO: reorder and col style intro on med screens + */}
+    <section
+      className={[
+        'mx-3 my-20 gap-y-20 gap-x-10',
+        'md:grid md:grid-cols-2 md:grid-rows-auto',
+      ].join(' ')}
+    >
       <h2
         className={[
           'font-[Oswald] text-4xl font-medium uppercase text-center',
-          'md:order-2',
+          'md:order-2 md:max-w-md',
         ].join(' ')}
       >
         Digital Products so good they can&apos;t ignore you.
@@ -64,18 +68,22 @@ function ValueProposition() {
         alt='Description of the image'
         width={500}
         height={300}
-        className={['m-auto w-full max-w-md py-10', 'md:order-1'].join(' ')}
+        className={[
+          'm-auto w-full max-w-md py-10',
+          'md:order-1 md:row-span-2',
+        ].join(' ')}
       />
-      <p className={['font-sans', 'md:order-3'].join(' ')}>
+      <p className={['font-sans', 'md:order-3 md:max-w-md'].join(' ')}>
         Our product development services focus on turning your ideas into
         reality. We work closely with you to understand your vision, and then we
         leverage our expertise in design and engineering to create innovative
         solutions that meet your needs.
       </p>
       <ol
-        className={['flex flex-col clear-both', 'md:gap-20 md:order-last'].join(
-          ' '
-        )}
+        className={[
+          'flex flex-col clear-both',
+          'md:gap-20 md:order-last md:col-span-full',
+        ].join(' ')}
       >
         {valueProps.map(({ title, description, images }, index) => (
           <li
