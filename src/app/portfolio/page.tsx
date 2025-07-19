@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import FloatingImagesSection from '@/components/FloatingImagesSection';
 // Floating images
 import laptop from '@/assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg';
@@ -14,6 +15,11 @@ import BHPhoto from '@/assets/images/B&HPhoto.jpg';
 import Intry from '@/assets/images/Intry.jpg';
 import Lumifi from '@/assets/images/lumifi.png';
 import Brands from '@/components/Brands';
+
+export const metadata: Metadata = {
+  title: 'Portfolio | Aaron Salley',
+  description: ``,
+};
 
 export default function Portfolio() {
   return (

@@ -1,6 +1,6 @@
 const links = [
   {
-    href: 'https://www.instagram.com/aaronsalleyhim/',
+    href: 'https://www.instagram.com/salleyandco/',
     label: 'Instagram',
     icon: () => (
       <svg
@@ -25,7 +25,7 @@ const links = [
     ),
   },
   {
-    href: 'https://linkedin.com/in/aaronsalley',
+    href: 'https://www.linkedin.com/company/salleyandco',
     label: 'LinkedIn',
     icon: () => (
       <svg
@@ -63,7 +63,7 @@ const links = [
     ),
   },
   {
-    href: 'https://github.com/aaronsalley',
+    href: 'https://github.com/salleyandco',
     label: 'GitHub',
     icon: () => (
       <svg

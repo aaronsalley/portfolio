@@ -8,10 +8,11 @@ export default function Footer() {
       <p className={style.name}>Aaron Salley</p>
       <div className={style.paragraph}>
         <p className='md:max-w-xl md:ml-auto md:mr-8 lg:mr-16'>
-          We&apos;re a digital creative studio offering tailored solutions for
-          clients needing digital product services. Unlike studios that focus on
-          a single specific creative discipline, we emphasize high-end design
-          and production, while bridging the gap between strategy and creation.
+          We&apos;re a studio offering tailored solutions for clients requiring
+          effective and user-centered digital experiences. Unlike studios that
+          focus on a single, specific creative discipline, we emphasize high-end
+          design and production, while bridging the gap between strategy and
+          delivery.
         </p>
       </div>
       <NavLinks className={style.nav} />

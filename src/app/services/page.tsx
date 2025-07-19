@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import placeholder from '@/assets/images/aaron-salley-office-poster.jpg';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Digital Product Services | Aaron Salley',
+  description: `Illuminate your potential with our expert consulting services. We specialize in design, development, and lifecycle management of intentional digital products.`,
+};
 
 export default function Services() {
   return (
@@ -16,11 +22,10 @@ export default function Services() {
             'md:max-w-md',
           ].join(' ')}
         >
-          Elevate your product&apos;s potential with our expert consulting
-          services. We specialize in strategic roadmapping, crafting and
-          developing your product, and executing successful go-to-market
-          strategies. Drive growth and optimize performance with our data-driven
-          approach.
+          Illuminate your potential with our expert consulting services. We
+          specialize in design, development, launch, and lifecycle management of
+          intentional digital products. Drive growth and optimize performance
+          with our integrated approach.
         </p>
       </section>
       <ValueProposition />
@@ -35,21 +40,21 @@ export default function Services() {
 
 const valueProps = [
   {
-    title: 'End-to-End Product Design',
+    title: 'Intentional Strategy',
     description:
-      'From concept to launch, we ensure that your product is not only functional but also user-friendly and visually appealing. Our team is dedicated to delivering high-quality products that exceed your expectations.',
+      "Every impactful digital product begins with a clear, intentional strategy. Our Product Strategy & Research services are designed to illuminate your path, ensuring your product resonates with your audience and achieves your business goals. Whether you're a startup, SMB, or enterprise, we provide the expertise to navigate the complexities of the digital landscape.",
     images: [placeholder, placeholder],
   },
   {
-    title: 'Collaborative Development Process',
+    title: 'Integrated Design & Engineering',
     description:
-      'We believe in a collaborative approach, working hand-in-hand with you throughout the entire process. Our goal is to not only meet your expectations but to exceed them, delivering a product that truly stands out in the market.',
+      'A brilliant strategy deserves flawless execution. Our Integrated Design & Engineering services bridge the gap between concept and reality, delivering digital products that are not only functional but also intuitive, beautiful, and robust. From initial sketches to full-scale deployment, we handle every aspect of the build, delivering high-quality products that exceed your expectations.',
     images: [placeholder],
   },
   {
-    title: 'Comprehensive Product Development',
+    title: 'Illuminated Results',
     description:
-      'Whether you need a new product developed from scratch or an existing product enhanced, we have the skills and experience to help you succeed. Let us help you create a product that your customers will love and that will drive your business forward.',
+      "Launch is just the beginning. Our launch and growth services are dedicated to ensuring your digital product not only succeeds at launch but continues to evolve, grow, and deliver lasting value. We're here to help you sustain momentum and achieve measurable success, whether you're a startup, SMB, or enterprise.",
     images: [placeholder],
   },
 ];
@@ -67,7 +72,7 @@ function ValueProposition() {
           'md:order-2 md:max-w-md',
         ].join(' ')}
       >
-        Digital Products so good they can&apos;t ignore you.
+        Digital experiences so good they can&apos;t ignore you.
       </h2>
       <Image
         src={placeholder}
@@ -80,10 +85,13 @@ function ValueProposition() {
         ].join(' ')}
       />
       <p className={['font-sans', 'md:order-3 md:max-w-md'].join(' ')}>
-        Our product development services focus on turning your ideas into
-        reality. We work closely with you to understand your vision, and then we
-        leverage our expertise in design and engineering to create innovative
-        solutions that meet your needs.
+        Whether you need a new product developed from scratch or an existing
+        product enhanced, we have the skills and experience to help you succeed.
+        Let us help you create a product that your customers will love and that
+        will drive your business forward. We believe in a collaborative
+        approach, working hand-in-hand with you throughout the entire process.
+        From concept to launch, we ensure that your product is not only
+        functional but also user-friendly and visually appealing.
       </p>
       <ol
         className={[

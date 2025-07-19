@@ -2,6 +2,12 @@ import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
 import Image from 'next/image';
 import desk from '@/assets/images/aaron-salley-office-poster.jpg';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact | Aaron Salley',
+  description: ``,
+};
 
 const listItems = [
   {
@@ -13,13 +19,13 @@ const listItems = [
   {
     headline: 'Instagram',
     bodyCopy: 'Follow us on Instagram for behind-the-scenes content.',
-    link: 'https://www.instagram.com/aaronsalleyhim/',
+    link: 'https://www.instagram.com/salleyandco/',
     target: '_blank',
   },
   {
     headline: 'LinkedIn',
     bodyCopy: 'Connect with us on LinkedIn for professional updates.',
-    link: 'https://www.linkedin.com/in/aaronsalley/',
+    link: 'https://www.linkedin.com/company/salleyandco',
     target: '_blank',
   },
 ];
