@@ -1,3 +1,3 @@
 export default function About() {
-  return <></>;
+  return <div className='flex grow-1 bg-salley-black'></div>;
 }

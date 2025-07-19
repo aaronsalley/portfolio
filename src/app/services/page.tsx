@@ -10,7 +10,12 @@ export default function Services() {
           <pre className='font-[Oswald] font-semibold'>Creative & GTM</pre>{' '}
           Strategy
         </h1>
-        <p className='max-w-2xs mt-5 mb-8 font-sans text-center'>
+        <p
+          className={[
+            'max-w-2xs mt-5 mb-8 font-sans text-center',
+            'md:max-w-md',
+          ].join(' ')}
+        >
           Elevate your product&apos;s potential with our expert consulting
           services. We specialize in strategic roadmapping, crafting and
           developing your product, and executing successful go-to-market

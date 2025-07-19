@@ -53,7 +53,7 @@ export default async function RootLayout({
   return (
     <html lang='en' className={style}>
       <GoogleTagManagerScript />
-      <body>
+      <body className='flex flex-col min-h-screen'>
         <GTM_no_script />
         <TopBar />
         {children}
