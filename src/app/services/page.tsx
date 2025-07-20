@@ -1,7 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import placeholder from '@/assets/images/aaron-salley-office-poster.jpg';
 import { Metadata } from 'next';
+
+import placeholder from '@/assets/images/aaron-salley-office-poster.jpg';
+import diversity from '@/assets/images/Firefly_Diverse people working on product strategy and research to create clear, intentional  388919.jpg';
+import roadmap from "@/assets/images/Firefly_Black person's hand working with a product roadmap. 864901.jpg";
+import wireframes from '@/assets/images/Firefly_Black person developing a website using VS Code from a Figma mockup. 388919.jpg';
+import flow from '@/assets/images/kelly-sikkema-wdnpaTNwOEQ-unsplash.jpg';
 
 export const metadata: Metadata = {
   title: 'Digital Product Services | Aaron Salley',
@@ -43,18 +48,18 @@ const valueProps = [
     title: 'Intentional Strategy',
     description:
       "Every impactful digital product begins with a clear, intentional strategy. Our Product Strategy & Research services are designed to illuminate your path, ensuring your product resonates with your audience and achieves your business goals. Whether you're a startup, SMB, or enterprise, we provide the expertise to navigate the complexities of the digital landscape.",
-    images: [placeholder, placeholder],
+    images: [roadmap, flow],
   },
   {
     title: 'Integrated Design & Engineering',
     description:
       'A brilliant strategy deserves flawless execution. Our Integrated Design & Engineering services bridge the gap between concept and reality, delivering digital products that are not only functional but also intuitive, beautiful, and robust. From initial sketches to full-scale deployment, we handle every aspect of the build, delivering high-quality products that exceed your expectations.',
-    images: [placeholder],
+    images: [wireframes],
   },
   {
     title: 'Illuminated Results',
     description:
-      "Launch is just the beginning. Our launch and growth services are dedicated to ensuring your digital product not only succeeds at launch but continues to evolve, grow, and deliver lasting value. We're here to help you sustain momentum and achieve measurable success, whether you're a startup, SMB, or enterprise.",
+      "Launch is just the beginning. Our launch and growth services are dedicated to ensuring your digital product not only succeeds at launch but continues to evolve, grow, and deliver lasting value. We're here to help you sustain momentum and achieve measurable success.",
     images: [placeholder],
   },
 ];
@@ -75,13 +80,13 @@ function ValueProposition() {
         Digital experiences so good they can&apos;t ignore you.
       </h2>
       <Image
-        src={placeholder}
+        src={diversity}
         alt='Description of the image'
         width={500}
         height={300}
         className={[
           'm-auto w-full max-w-md py-10',
-          'md:order-1 md:row-span-2',
+          'md:order-1 md:row-span-2 md:h-full md:object-cover md:mr-0',
         ].join(' ')}
       />
       <p className={['font-sans', 'md:order-3 md:max-w-md'].join(' ')}>
@@ -153,17 +158,20 @@ const style = {
     {
       container: 'md:flex-row-reverse',
       text: ['text-start', 'md:text-end'].join(' '),
-      image: ['', 'absolute bottom-0 right-0 translate-y-1/2 max-w-1/3'],
+      image: [
+        'aspect-[3/2] md:h-full md:object-cover',
+        'aspect-[3/2] absolute bottom-0 right-0 translate-y-1/2 max-w-1/3 md:max-w-2/3 md:translate-x-1/4',
+      ],
     },
     {
       container: '',
       text: ['text-end', 'md:text-start'].join(' '),
-      image: ['ml-auto'],
+      image: ['ml-auto md:h-full md:object-cover'],
     },
     {
       container: 'md:flex-row-reverse',
       text: ['text-end', ''].join(' '),
-      image: ['mx-auto'],
+      image: ['mx-auto md:h-full md:object-cover'],
     },
   ],
 };
