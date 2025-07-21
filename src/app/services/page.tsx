@@ -19,8 +19,8 @@ export default function Services() {
     <>
       <section className='will-stick flex flex-col justify-center items-center min-h-screen bg-[url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg")] bg-cover bg-center text-salley-white'>
         <h1 className='text-[11vi]/[11vi] lg:text-8xl uppercase text-center'>
-          <pre className='font-[Oswald] font-semibold'>Creative & GTM</pre>{' '}
-          Strategy
+          <pre className='font-[Oswald] font-semibold'>Digital Product</pre>{' '}
+          Services
         </h1>
         <p
           className={[
@@ -46,21 +46,21 @@ export default function Services() {
 
 const valueProps = [
   {
-    title: 'Intentional Strategy',
+    title: 'Strategic Clarity & Intentionality',
     description:
-      "Every impactful digital product begins with a clear, intentional strategy. Our Product Strategy & Research services are designed to illuminate your path, ensuring your product resonates with your audience and achieves your business goals. Whether you're a startup, SMB, or enterprise, we provide the expertise to navigate the complexities of the digital landscape.",
+      "Unlike studios that focus solely on execution, we begin with your 'why.' We don't just build; we strategically partner with you to define, refine, and intentionally craft every aspect of your digital product. This deep dive into your vision and market ensures that your product isn't just functional, but purpose-driven, poised for growth, and truly resonant with your audience from day one.",
     images: [roadmap, flow],
   },
   {
-    title: 'Integrated Design & Engineering',
+    title: 'Your Team, Elevated',
     description:
-      'A brilliant strategy deserves flawless execution. Our Integrated Design & Engineering services bridge the gap between concept and reality, delivering digital products that are not only functional but also intuitive, beautiful, and robust. From initial sketches to full-scale deployment, we handle every aspect of the build, delivering high-quality products that exceed your expectations.',
+      'We bridge the gap between concept and delivery with an integrated approach that’s truly collaborative. We’re not just a vendor; we seamlessly become an extension of your team, working hand-in-hand to bring high-end design and robust engineering to life. This ensures not only flawless execution but also a process that’s transparent, efficient, and tailored to your unique needs, whether you need outsourced leadership or staff augmentation.',
     images: [wireframes],
   },
   {
-    title: 'Illuminated Results',
+    title: 'Holistic Lifecycle Partnership',
     description:
-      "Launch is just the beginning. Our launch and growth services are dedicated to ensuring your digital product not only succeeds at launch but continues to evolve, grow, and deliver lasting value. We're here to help you sustain momentum and achieve measurable success.",
+      "Many providers consider launch the finish line. For us, it's just the beginning. We partner with you through the entire product lifecycle, from initial strategy and development to sustained growth and optimization. Our commitment extends beyond the build, offering comprehensive support to ensure your digital product continues to adapt, innovate, and deliver lasting value in an ever-evolving market.",
     images: [placeholder],
   },
 ];
@@ -91,13 +91,13 @@ function ValueProposition() {
   return (
     <section
       className={[
-        'mx-3 my-20 gap-y-20 gap-x-10',
+        'mx-3 my-20 gap-10',
         'md:grid md:grid-cols-2 md:grid-rows-auto',
       ].join(' ')}
     >
       <h2
         className={[
-          'font-[Oswald] text-4xl font-medium uppercase text-center',
+          'font-[Oswald] text-4xl font-medium uppercase',
           'md:order-2 md:max-w-md',
         ].join(' ')}
       >
@@ -109,18 +109,19 @@ function ValueProposition() {
         width={500}
         height={300}
         className={[
-          'm-auto w-full max-w-md py-10',
-          'md:order-1 md:row-span-2 md:h-full md:object-cover md:mr-0',
+          'm-auto w-full max-w-md my-10',
+          'md:order-1 md:row-span-2 md:h-full md:object-cover md:mr-0 md:mt-0',
         ].join(' ')}
       />
-      <p className={['font-sans', 'md:order-3 md:max-w-md'].join(' ')}>
-        Whether you need a new product developed from scratch or an existing
-        product enhanced, we have the skills and experience to help you succeed.
-        Let us help you create a product that your customers will love and that
-        will drive your business forward. We believe in a collaborative
-        approach, working hand-in-hand with you throughout the entire process.
-        From concept to launch, we ensure that your product is not only
-        functional but also user-friendly and visually appealing.
+      <p className={['font-sans mb-10', 'md:order-3 md:max-w-md'].join(' ')}>
+        In today&apos;s dynamic digital landscape, bringing a product to life –
+        or elevating an existing one – demands more than just execution. It
+        requires a partner who understands your strategic intent, integrates
+        seamlessly into your world, and illuminates the path to lasting success.
+        While many offer digital product services, our approach is fundamentally
+        different. That’s why we don&apos;t just build products; we forge
+        partnerships that transform your ideas into exceptional digital
+        experiences that truly resonate.
       </p>
       <ol
         className={[
@@ -180,31 +181,31 @@ function ValueProposition() {
 
 const offerings = [
   {
-    title: 'UI/UX Design & Web Development',
+    title: 'Strategy Services',
     description: [
-      'Elevate Your Digital Experience',
-      'Enhance your online presence with our expert UI/UX design and web development services. We specialize in creating stunning, user-friendly websites and mobile apps, backed by thorough UX research and testing.',
+      'Intentional Product Strategy: From Mind to Market™ with Purpose',
+      `Every great product begins with a clear "why." We dive deep into your vision, market, and audience to craft an intentional strategy that illuminates your potential and ensures every feature, every design choice, and every line of code serves a purpose. Whether you're a startup defining your first product or an enterprise refining a portfolio, we provide the strategic foresight to navigate complexities and achieve your business goals.`,
     ],
   },
   {
-    title: 'Product Design & Prototyping',
+    title: 'Development Services',
     description: [
-      'Bring Your Digital Vision to Life',
-      'Transform your product ideas into reality with our expert product design and prototyping services. We specialize in creating intuitive and visually appealing digital products, interactive prototypes, wireframes, and comprehensive design systems for SaaS, fintech, and healthtech industries.',
+      'Integrated Design & Engineering: Flawless Execution, Seamless Collaboration',
+      'A brilliant strategy deserves nothing less than flawless execution. Our integrated approach bridges the gap between concept and reality, bringing together high-end design and robust engineering. We work hand-in-hand with you, ensuring a collaborative process that delivers digital products that are not only functional and intuitive but also visually captivating and built to scale.',
     ],
   },
   {
-    title: 'Content Creation & Digital Marketing',
+    title: 'Content Services',
     description: [
-      'Captivate Your Audience',
-      `Elevate your brand's online presence with our compelling content creation and digital marketing services. We specialize in crafting engaging social media content, campaign assets, and persuasive copywriting that drives results.`,
+      'Impactful Content Services: Engaging Narratives, Compelling Communication',
+      `Beyond the structure and design, the heart of a compelling digital experience lies in its content. Our content services focus on crafting engaging narratives and impactful communication that resonates with your audience and drives desired actions. From website copy that converts to strategic messaging that builds brand loyalty, we ensure your story is told effectively across all digital touchpoints.`,
     ],
   },
   {
-    title: 'GTM Strategy & consulting',
+    title: 'Launch Services',
     description: [
-      'Launch Your Product with Confidence',
-      'Achieve successful product launches with our expert GTM strategy consulting. We provide comprehensive market research, competitive analysis, positioning and messaging, sales and distribution strategies, and marketing & demand generation to ensure your product reaches its full potential.',
+      'Illuminated Growth & Lifecycle Management: Sustained Success Beyond Launch',
+      `Launch is just the beginning of your product's journey. We partner with you through every phase of the lifecycle, offering comprehensive launch and growth services designed for sustained success. From optimizing performance to adapting to market shifts, we help you maintain momentum and continue to deliver lasting value, ensuring your digital experience consistently shines.`,
     ],
   },
 ];
@@ -249,7 +250,7 @@ function Offerings() {
             key={index}
             className={[
               `sticky top-1/2 -translate-y-1/2 px-12 pb-12 pt-6 ${style[index]?.bg} text-${style[index]?.text} rounded-b-2xl`,
-              'flex flex-col justify-start items-start h-[60vb]',
+              'flex flex-col justify-start items-start h-[70vb]',
               'md:flex-row md:flex-wrap md:max-w-3xl md:h-[50vb] md:content-start',
             ].join(' ')}
           >
@@ -303,9 +304,9 @@ function FAQs() {
 function CTA() {
   return (
     <div className='flex flex-col items-center gap-4 p-20 bg-[url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg")] bg-cover bg-center text-salley-white'>
-      <h2 className='font-[Oswald] uppercase max-w-sm text-5xl font-semibold text-center'>
+      <p className='font-[Oswald] uppercase max-w-sm text-5xl font-semibold text-center'>
         Shall we begin?
-      </h2>
+      </p>
       <p className='text-center font-sans max-w-sm'>
         Contact us today to learn more about our product development services
         and how we can help you achieve your goals.
