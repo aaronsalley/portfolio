@@ -7,6 +7,7 @@ import diversity from '@/assets/images/Firefly_Diverse people working on product
 import roadmap from "@/assets/images/Firefly_Black person's hand working with a product roadmap. 864901.jpg";
 import wireframes from '@/assets/images/Firefly_Black person developing a website using VS Code from a Figma mockup. 388919.jpg';
 import flow from '@/assets/images/kelly-sikkema-wdnpaTNwOEQ-unsplash.jpg';
+import plants from '@/assets/images/malte-michels-s4wGZw3UuLk-unsplash.jpg';
 
 export const metadata: Metadata = {
   title: 'Digital Product Services | Aaron Salley',
@@ -64,6 +65,29 @@ const valueProps = [
   },
 ];
 function ValueProposition() {
+  const style = {
+    listItems: [
+      {
+        container: 'md:flex-row-reverse',
+        text: ['text-start', 'md:text-end'].join(' '),
+        image: [
+          'aspect-[3/2] md:h-full md:object-cover',
+          'aspect-[3/2] absolute bottom-0 right-0 translate-y-1/2 max-w-1/3 md:max-w-2/3 md:translate-x-1/4',
+        ],
+      },
+      {
+        container: '',
+        text: ['text-end', 'md:text-start'].join(' '),
+        image: ['ml-auto md:h-full md:object-cover'],
+      },
+      {
+        container: 'md:flex-row-reverse',
+        text: ['text-end', ''].join(' '),
+        image: ['mx-auto md:h-full md:object-cover'],
+      },
+    ],
+  };
+
   return (
     <section
       className={[
@@ -153,28 +177,6 @@ function ValueProposition() {
     </section>
   );
 }
-const style = {
-  listItems: [
-    {
-      container: 'md:flex-row-reverse',
-      text: ['text-start', 'md:text-end'].join(' '),
-      image: [
-        'aspect-[3/2] md:h-full md:object-cover',
-        'aspect-[3/2] absolute bottom-0 right-0 translate-y-1/2 max-w-1/3 md:max-w-2/3 md:translate-x-1/4',
-      ],
-    },
-    {
-      container: '',
-      text: ['text-end', 'md:text-start'].join(' '),
-      image: ['ml-auto md:h-full md:object-cover'],
-    },
-    {
-      container: 'md:flex-row-reverse',
-      text: ['text-end', ''].join(' '),
-      image: ['mx-auto md:h-full md:object-cover'],
-    },
-  ],
-};
 
 const offerings = [
   {
@@ -207,20 +209,75 @@ const offerings = [
   },
 ];
 function Offerings() {
+  const style = [
+    {
+      bg: 'bg-salley-accent rounded-tr-2xl',
+      tab: 'left-0',
+      text: 'salley-black',
+    },
+    {
+      bg: 'bg-salley-white rounded-t-2xl',
+      tab: 'left-1/4',
+      text: 'salley-black',
+    },
+    {
+      bg: 'bg-green-950 rounded-t-2xl',
+      tab: 'left-2/4',
+      text: 'salley-white',
+    },
+    {
+      bg: 'bg-slate-400 rounded-tl-2xl',
+      tab: 'left-3/4',
+      text: 'salley-white',
+    },
+  ];
+
   return (
-    <main>
-      <ol>
+    <main className='relative'>
+      <Image
+        src={plants}
+        alt=''
+        className='sticky top-0 w-screen h-screen object-cover'
+      />
+      <ol
+        className={[
+          'flex flex-col items-center justify-center gap-[50vb] p-3 pb-[25vb] max-h-1/2',
+        ].join(' ')}
+      >
         {offerings.map(({ title, description }, index) => (
-          // Style to cards
-          <li key={index} className='m-3 p-6'>
-            <h2 className='font-[Oswald] text-2xl font-medium uppercase my-4 pb-4 border-b-1 border-salley-black'>
+          <li
+            key={index}
+            className={[
+              `sticky top-1/2 -translate-y-1/2 px-12 pb-12 pt-6 ${style[index]?.bg} text-${style[index]?.text} rounded-b-2xl`,
+              'flex flex-col justify-start items-start h-[60vb]',
+              'md:flex-row md:flex-wrap md:max-w-3xl md:h-[50vb] md:content-start',
+            ].join(' ')}
+          >
+            <span
+              className={`absolute top-0 ${style[index]?.tab} w-1/4 -translate-y-1/1 rounded-t-2xl ${style[index]?.bg} px-6 pt-3 font-[Oswald] font-medium uppercase`}
+            >
+              {'0' + (index + 1)}
+            </span>
+            <h2
+              className={[
+                `font-[Oswald] text-2xl font-medium uppercase my-4 pb-4 border-b-1 border-${style[index]?.text}`,
+                'w-full',
+              ].join(' ')}
+            >
               {title}
             </h2>
             {description.map((desc, i) => (
-              <p key={i} className='my-2 last-of-type:font-sans'>
+              <p
+                key={i}
+                className={[
+                  'my-2 last-of-type:font-sans',
+                  'md:first-of-type:w-1/3 md:last-of-type:w-2/3',
+                ].join(' ')}
+              >
                 {desc}
               </p>
             ))}
+            <span className='grow-1' />
             <Link href='/contact' className='btn'>
               Contact Us
             </Link>
