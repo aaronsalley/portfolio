@@ -40,7 +40,7 @@ export default function Contact() {
           <p className='font-sans py-6 max-w-lg'>
             We&apos;re eager to learn about your business and explore how our
             tailored digital solutions can help you achieve your goals. Please
-            fillout the below form or email us directly at
+            fill out the below form or email us directly at
             hello@aaronsalley.com.
           </p>
           <ContactForm className='max-w-lg' />
@@ -48,7 +48,7 @@ export default function Contact() {
       </main>
       <aside className={style.aside}>
         <div className={style.asideLinks}>
-          <h2 className='uppercase font-mono'>Until we&apos;re in touch:</h2>
+          <p className='uppercase font-mono'>Until we&apos;re in touch:</p>
           <ul>
             {listItems.map(({ headline, bodyCopy, link, target }, index) => (
               <li key={index} className={style.listItem}>
