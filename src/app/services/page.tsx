@@ -11,7 +11,7 @@ import plants from '@/assets/images/malte-michels-s4wGZw3UuLk-unsplash.jpg';
 
 export const metadata: Metadata = {
   title: 'Digital Product Services | Aaron Salley',
-  description: `Illuminate your potential with our expert consulting services. We specialize in design, development, and lifecycle management of intentional digital products.`,
+  description: `Partner with Aaron Salley for intentional digital product services. From strategic clarity and integrated design to holistic lifecycle management and compelling content, we transform your vision into exceptional digital experiences for sustained growth.`,
 };
 
 export default function Services() {
@@ -303,7 +303,12 @@ function FAQs() {
 
 function CTA() {
   return (
-    <div className='flex flex-col items-center gap-4 p-20 bg-[url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg")] bg-cover bg-center text-salley-white'>
+    <div
+      className={[
+        'flex flex-col items-center gap-4 p-20 text-salley-white',
+        'bg-[url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg")] bg-salley-black/70 bg-cover bg-blend-darken bg-center',
+      ].join(' ')}
+    >
       <p className='font-[Oswald] uppercase max-w-sm text-5xl font-semibold text-center'>
         Shall we begin?
       </p>
