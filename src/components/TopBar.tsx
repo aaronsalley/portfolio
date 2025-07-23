@@ -59,7 +59,6 @@ function Brand() {
     <Link href='/'>
       <div className='z-50 flex items-center gap-2'>
         <Image src={Icon} alt='Aaron Salley' width={24} />
-        {Icon.svg}
         <p className='hidden sm:block font-[Oswald] uppercase z-50'>
           Aaron Salley
         </p>
