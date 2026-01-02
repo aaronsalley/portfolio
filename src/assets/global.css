@@ -1,13 +1,15 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'IBM Plex Sans', sans-serif;
-  --font-serif: var(----font-editors-note-display), serif;
+  --font-sans: 'CerebriSans', sans-serif;
+  --font-serif: 'IvyMode', serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
-  --color-salley-white: var(--color-slate-50);
-  --color-salley-black: var(--color-slate-950);
-  --color-salley-accent: var(--color-amber-600);
+  --color-warm-ivory: #faf8f4;
+  --color-soft-charcol: #1f1f1d;
+  --color-warm-gray: #6e6a63;
+  --color-burnt-umber: #6b4a3a;
+  --color-moss: #4f5d50;
 }
 
 @layer components {

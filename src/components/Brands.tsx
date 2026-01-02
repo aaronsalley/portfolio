@@ -50,12 +50,12 @@ export default function Brands() {
         }}
       >
         {allLogos.map(([name, Logo], index) => (
-          <li key={index} className='flex items-center gap-4'>
+          <li key={index} className='flex items-center gap-8'>
             <Image
               src={Logo}
               alt={name}
               height={height}
-              className='saturate-0 grayscale-100'
+              className='saturate-0 grayscale-100 opacity-60'
               loading='lazy'
             />
           </li>

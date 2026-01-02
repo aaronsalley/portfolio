@@ -6,7 +6,7 @@ import FloatingImagesSection from '@/components/FloatingImagesSection';
 import laptop from '@/assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg';
 import sketch from '@/assets/images/kelly-sikkema-wdnpaTNwOEQ-unsplash.jpg';
 import lights from '@/assets/images/riccardo-annandale-7e2pe9wjL9M-unsplash.jpg';
-import desktop from '@/assets/images/aaron-salley-office-poster.jpg';
+import desktop from '@/assets/images/site_wireframing.jpg';
 import wireframe from '@/assets/images/iphone_wireframing-1024x682.jpg';
 // Case Studies
 import MSKDirect from '@/assets/images/MSKDirect.jpg';
