@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import * as crm from '@/lib/freshsales';
+import * as crm from "@/lib/freshsales";
 
-const style = ['w-full border-salley-black py-4 focus:outline-none'].join(' ');
+const style = ["w-full border-soft-charcol py-4 focus:outline-none"].join(" ");
 
 export default function ContactForm({ className }: { className?: string }) {
   return (
@@ -11,45 +11,45 @@ export default function ContactForm({ className }: { className?: string }) {
       action={handleSubmit}
     >
       <input
-        type='text'
-        id='name'
-        name='name'
-        autoComplete='name'
-        placeholder='Your Name'
+        type="text"
+        id="name"
+        name="name"
+        autoComplete="name"
+        placeholder="Your Name"
         required
         className={`${style} border-b-1`}
       />
       <input
-        type='email'
-        id='email'
-        name='email'
-        autoComplete='email'
-        placeholder='Email Address'
+        type="email"
+        id="email"
+        name="email"
+        autoComplete="email"
+        placeholder="Email Address"
         required
         className={`${style} border-b-1`}
       />
       <input
-        id='subject'
-        name='subject'
-        placeholder='Subject of Inquiry'
+        id="subject"
+        name="subject"
+        placeholder="Subject of Inquiry"
         required
         className={`${style} border-b-1`}
       />
       <input
-        type='text'
-        id='referrer'
-        placeholder='Referred By'
-        name='referrer'
+        type="text"
+        id="referrer"
+        placeholder="Referred By"
+        name="referrer"
         className={`${style} border-b-1`}
       />
       <textarea
-        id='message'
-        name='message'
+        id="message"
+        name="message"
         placeholder={`Any other details you'd like to provide?`}
         rows={5}
         className={style}
       ></textarea>
-      <button type='submit' className='btn filled'>
+      <button type="submit" className="btn filled">
         Send
       </button>
     </form>

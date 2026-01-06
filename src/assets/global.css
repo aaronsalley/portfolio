@@ -1,11 +1,12 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+@import "./fonts/Cerebri/style.css";
 
 @theme {
-  --font-sans: 'CerebriSans', sans-serif;
-  --font-serif: 'IvyMode', serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: "Cerebri", sans-serif;
+  --font-serif: "IvyMode", serif;
+  --font-mono: "IBM Plex Mono", monospace;
 
-  --color-warm-ivory: #faf8f4;
+  --color-warm-ivory: #ffffff;
   --color-soft-charcol: #1f1f1d;
   --color-warm-gray: #6e6a63;
   --color-burnt-umber: #6b4a3a;
@@ -14,35 +15,35 @@
 
 @layer components {
   .btn {
-    @apply inline-flex justify-center items-center gap-3.5 px-7 py-4 bg-(--color-salley-white) font-sans text-(--color-salley-black) uppercase;
+    @apply inline-flex justify-center items-center gap-3.5 px-7 py-4 bg-(--color-warm-ivory) font-sans text-(--color-soft-charcol) uppercase;
 
     &.filled {
-      @apply bg-(--color-salley-accent) text-amber-50;
+      @apply bg-(--color-burnt-umber) text-amber-50;
     }
 
     &.hollow {
-      @apply bg-transparent border-1 border-(--color-salley-black) text-current;
+      @apply bg-transparent border-1 border-(--color-soft-charcol) text-current;
     }
 
     &.ghost {
-      @apply bg-transparent border-1 border-(--color-salley-white) text-(--color-salley-white);
+      @apply bg-transparent border-1 border-(--color-warm-ivory) text-(--color-warm-ivory);
     }
 
     a& {
       &.filled {
-        @apply after:bg-(--color-salley-white);
+        @apply after:bg-(--color-warm-ivory);
       }
 
       &.hollow {
-        @apply after:bg-(--color-salley-accent);
+        @apply after:bg-(--color-burnt-umber);
       }
 
       &.ghost {
-        @apply after:bg-(--color-salley-white);
+        @apply after:bg-(--color-warm-ivory);
       }
 
       & {
-        @apply after:size-3.5 after:inline-block after:bg-(--color-salley-accent);
+        @apply after:size-3.5 after:inline-block after:bg-(--color-burnt-umber);
         &:after {
           mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 11 11" style="fill:var(--color-red-800)"><path d="M10.16 0h-7.4c-.39 0-.7.31-.7.7s.31.7.7.7h5.85L0 10.01l1.01 1.01 8.61-8.61v5.85c0 .39.31.7.7.7.19 0 .37-.08.5-.21s.21-.3.21-.5V.86c0-.47-.39-.85-.86-.86Z"></path></svg>');
         }
