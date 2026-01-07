@@ -10,7 +10,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = await params;
 
   return (
-    <article className=''>
+    <article className="">
       <header className={[].join(' ')}></header>
       <main className={[].join(' ')}>
         {/* Content goes here */}

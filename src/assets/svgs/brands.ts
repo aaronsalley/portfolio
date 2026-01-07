@@ -1,9 +1,9 @@
-export { default as BNYMellon } from '@/assets/svgs/brand--BNYMellon.svg';
-export { default as ColeHaan } from '@/assets/svgs/brand--Cole_Haan.svg';
-export { default as MSKDirect } from '@/assets/svgs/brand--MSK.svg';
-export { default as RubiconMD } from '@/assets/svgs/brand--RubiconMD.svg';
-export { default as BAndHPhoto } from '@/assets/svgs/brand--B&H.svg';
-export { default as Compass } from '@/assets/svgs/brand--Compass.svg';
+export { default as BNYMellon } from "@/assets/svgs/brand--BNYMellon.svg";
+export { default as ColeHaan } from "@/assets/svgs/brand--Cole_Haan.svg";
+export { default as MSK } from "@/assets/svgs/brand--MSK.svg";
+export { default as RubiconMD } from "@/assets/svgs/brand--RubiconMD.svg";
+export { default as BAndHPhoto } from "@/assets/svgs/brand--B&H.svg";
+export { default as Compass } from "@/assets/svgs/brand--Compass.svg";
 
 // export { default as AmarisWorks } from '@/assets/svgs/brand--AmarisWorks.svg';
 // export { default as AsaNisiMasa } from '@/assets/svgs/brand--Asa_Nisi_Masa_Films.svg';

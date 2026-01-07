@@ -13,7 +13,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
     <article className="flex flex-col">
       <header
         className={[
-          "relative w-full bg-soft-charcol text-warm-ivory pt-50 pb-20",
+          "relative w-full bg-salley-dark pt-50 pb-20 text-salley-light",
           "",
         ].join(" ")}
       >
@@ -24,16 +24,16 @@ export default async function Post({ params }: { params: { slug: string } }) {
           height={400}
           className={[
             "",
-            "md:absolute md:top-0 md:-bottom-10 md:right-0 md:w-1/2",
+            "md:absolute md:top-0 md:right-0 md:-bottom-10 md:w-1/2",
           ].join(" ")}
         />
-        <div className="max-w-5xl mx-auto">
+        <div className="mx-auto max-w-5xl">
           <p className="font-mono uppercase">Category</p>
-          <h1 className="font-[Oswald] uppercase text-7xl">Post Title</h1>
+          <h1 className="font-[Oswald] text-7xl uppercase">Post Title</h1>
           <p className="text-xl">Date</p>
         </div>
       </header>
-      <div className="flex flex-wrap gap-10 w-full max-w-5xl mx-auto">
+      <div className="mx-auto flex w-full max-w-5xl flex-wrap gap-10">
         <main
           className={[
             "w-full flex-1 font-sans",

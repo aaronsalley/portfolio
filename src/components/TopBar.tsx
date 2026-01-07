@@ -1,7 +1,7 @@
 "use client";
 
 import { use, useEffect, useState } from "react";
-import EmailSubscribeForm from "./EmailSubscribeForm";
+import EmailSubscribeForm from "./FormEmailSubscribe";
 import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";
 import Brand from "./Brand";
@@ -22,6 +22,7 @@ export default function TopBar() {
     if (navbar && hero)
       setSticky(scrollPosition >= hero.scrollHeight - navbar.scrollHeight);
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleNav);
 
@@ -33,14 +34,14 @@ export default function TopBar() {
   useEffect(() => {
     document.documentElement.style.setProperty(
       "--color-logo",
-      !isMenuOpen ? "var(--color-soft-charcol)" : "var(--color-warm-ivory)",
+      !isMenuOpen ? "var(--color-salley-dark)" : "var(--color-salley-light)",
     );
   }, [isMenuOpen]);
 
   const classNames = [
     "flex justify-between w-full py-4 lg:pt-5 lg:pb-6 px-8 z-10",
     isMenuOpen
-      ? "bg-black/95 border-b border-warm-ivory text-warm-ivory"
+      ? "bg-black/95 border-b border-salley-light text-salley-light"
       : "bg-transparent",
     isSticky || isMenuOpen ? "fixed top-0 z-50" : "absolute",
   ].join(" ");
@@ -48,11 +49,12 @@ export default function TopBar() {
   return (
     <header className={classNames}>
       <Brand />
-      <MenuButton
+      {/* TODO: Reactivate once pages are rebuilt */}
+      {/* <MenuButton
         isSticky={isSticky}
         isMenuOpen={isMenuOpen}
         setMenu={setMenu}
-      />
+      /> */}
       {isMenuOpen ? <NavMenu /> : null}
     </header>
   );
@@ -79,13 +81,13 @@ function MenuButton({
           "before:mb-[0] before:rotate-[45deg] before:translate-y-[1px]",
           "after:mt-[0] after:rotate-[-45deg] after:translate-y-[-1px]",
         ].join(" "),
-    isSticky && !isMenuOpen ? "text-burnt-umber" : undefined,
+    isSticky && !isMenuOpen ? "text-salley-accent" : undefined,
   ].join(" ");
 
   return (
     <button
       onClick={() => setMenu(!isMenuOpen)}
-      className={"size-[1.875rem] z-50 scale-60 lg:scale-80"}
+      className={"z-50 size-[1.875rem] scale-60 lg:scale-80"}
     >
       <i className={style}></i>
     </button>
@@ -95,7 +97,7 @@ function MenuButton({
 const style = {
   browse: ["flex flex-col gap-4 w-1/2", "lg:gap-6 md:w-auto"].join(" "),
   quickLinks: ["flex flex-col gap-4 w-1/2", "lg:gap-6 md:w-auto"].join(" "),
-  articles: ["w-1/2 h-50 bg-warm-ivory/50 mt-8", "lg:mt-0"].join(" "),
+  articles: ["w-1/2 h-50 bg-salley-light/50 mt-8", "lg:mt-0"].join(" "),
   email: ["w-full my-8 max-w-lg", "lg:mt-16"].join(" "),
   socialLinks: ["flex gap-4 w-full"].join(" "),
   navLinks: [
@@ -116,9 +118,9 @@ function NavMenu() {
 
   return (
     <menu
-      className={"fixed top-[65px] lg:top-[77px] left-0 size-full bg-black/50"}
+      className={"fixed top-[65px] left-0 size-full bg-black/50 lg:top-[77px]"}
     >
-      <div className="flex flex-wrap sm:flex-row justify-between p-7 sm:p-15 pb-17 bg-black/90">
+      <div className="flex flex-wrap justify-between bg-black/90 p-7 pb-17 sm:flex-row sm:p-15">
         {isMobile ? (
           <>
             <BrowseLinks />
@@ -129,7 +131,7 @@ function NavMenu() {
           </>
         ) : (
           <>
-            <div className="flex flex-wrap max-w-1/2">
+            <div className="flex max-w-1/2 flex-wrap">
               <BrowseLinks />
               {/* <QuickLinks /> // TODO: restore */}
               <EmailSubscribeForm className={style.email} />

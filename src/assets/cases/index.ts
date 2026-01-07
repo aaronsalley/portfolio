@@ -1,8 +1,11 @@
 // Case Studies
-import MSKDirect from "@/assets/images/MSKDirect.jpg";
-import BHPhoto from "@/assets/images/B&HPhoto.jpg";
-import Intry from "@/assets/images/Intry.jpg";
-import Lumifi from "@/assets/images/lumifi.png";
+import MSKDirect from "./MSKDirect.jpg";
+import BHPhoto from "./B&HPhoto.jpg";
+import Intry from "./Intry.jpg";
+import Lumifi from "./lumifi.png";
+import { MSK as MSKLogo, BAndHPhoto as BHPhotoLogo } from "../svgs/brands";
+import IntryLogo from "@/assets/svgs/brand--Intry.svg";
+import LumifiLogo from "@/assets/svgs/brand--LumiFi.svg";
 
 export type CaseStudy = {
   id: number;
@@ -13,9 +16,11 @@ export type CaseStudy = {
   url: string;
   excerpt: string;
   client: string;
+  clientLogo?: typeof MSKLogo;
+  featured?: boolean;
 };
 
-export const caseStudies: CaseStudy[] = [
+export const posts: CaseStudy[] = [
   {
     id: 1,
     image: MSKDirect,
@@ -26,6 +31,8 @@ export const caseStudies: CaseStudy[] = [
     excerpt:
       "A scalable, digital-first care navigation platform that extended MSK’s clinical expertise beyond its physical footprint.",
     client: "MSK Direct",
+    clientLogo: MSKLogo,
+    featured: true,
   },
   {
     id: 5,
@@ -37,6 +44,8 @@ export const caseStudies: CaseStudy[] = [
     excerpt:
       "Unify the mobile experience into a single, sustainable platform for faster, more consistent delivery.",
     client: "B&H Photo Video",
+    clientLogo: BHPhotoLogo,
+    featured: true,
   },
   {
     id: 6,
@@ -48,16 +57,19 @@ export const caseStudies: CaseStudy[] = [
     excerpt:
       "Bridge human storytelling and machine screening—making resumes work for both people and ATS-driven hiring systems.",
     client: "Intry",
+    clientLogo: IntryLogo,
+    featured: true,
   },
   {
     id: 7,
     image: Lumifi,
     category: "Mobile UI/UX Design",
     tags: [],
-    title: "IoT lighting control software UI/UX optimization",
+    title: "IoT lighting control UI/UX",
     url: "https://www.behance.net/gallery/35016837/IoT-lighting-control-software", //TODO: Make local
     excerpt:
       "Make complex smart lighting intuitive and approachable for everyday home users.",
+    clientLogo: LumifiLogo,
     client: "LumiFi",
   },
   {

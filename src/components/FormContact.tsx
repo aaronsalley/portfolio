@@ -2,7 +2,7 @@
 
 import * as crm from "@/lib/freshsales";
 
-const style = ["w-full border-soft-charcol py-4 focus:outline-none"].join(" ");
+const style = ["w-full border-salley-dark py-4 focus:outline-none"].join(" ");
 
 export default function ContactForm({ className }: { className?: string }) {
   return (

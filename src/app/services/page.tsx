@@ -18,14 +18,14 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className='will-stick flex flex-col justify-center items-center min-h-screen bg-[url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg")] bg-cover bg-center text-warm-ivory'>
-        <h1 className="text-[11vi]/[11vi] lg:text-8xl uppercase text-center">
+      <section className='will-stick flex min-h-screen flex-col items-center justify-center bg-[url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg")] bg-cover bg-center text-salley-light'>
+        <h1 className="text-center text-[11vi]/[11vi] uppercase lg:text-8xl">
           <pre className="font-serif font-semibold">Digital Product</pre>{" "}
           Services
         </h1>
         <p
           className={[
-            "max-w-2xs mt-5 mb-8 font-sans text-center",
+            "mt-5 mb-8 max-w-2xs text-center font-sans",
             "md:max-w-md",
           ].join(" ")}
         >
@@ -93,7 +93,7 @@ function ValueProposition() {
     <section
       className={[
         "mx-3 my-20 gap-10",
-        "md:grid md:grid-cols-2 md:grid-rows-auto",
+        "md:grid-rows-auto md:grid md:grid-cols-2",
       ].join(" ")}
     >
       <h2
@@ -110,11 +110,11 @@ function ValueProposition() {
         width={500}
         height={300}
         className={[
-          "m-auto w-full max-w-md my-10",
-          "md:order-1 md:row-span-2 md:h-full md:object-cover md:mr-0 md:mt-0",
+          "m-auto my-10 w-full max-w-md",
+          "md:order-1 md:row-span-2 md:mt-0 md:mr-0 md:h-full md:object-cover",
         ].join(" ")}
       />
-      <p className={["font-sans mb-10", "md:order-3 md:max-w-md"].join(" ")}>
+      <p className={["mb-10 font-sans", "md:order-3 md:max-w-md"].join(" ")}>
         In today&apos;s dynamic digital landscape, bringing a product to life –
         or elevating an existing one – demands more than just execution. It
         requires a partner who understands your strategic intent, integrates
@@ -126,16 +126,16 @@ function ValueProposition() {
       </p>
       <ol
         className={[
-          "flex flex-col clear-both",
-          "md:gap-20 md:order-last md:col-span-full",
+          "clear-both flex flex-col",
+          "md:order-last md:col-span-full md:gap-20",
         ].join(" ")}
       >
         {valueProps.map(({ title, description, images }, index) => (
           <li
             key={index}
             className={[
-              "flex flex-col my-4 gap-10",
-              "md:flex-row md:gap-20 md:m-auto",
+              "my-4 flex flex-col gap-10",
+              "md:m-auto md:flex-row md:gap-20",
               style.listItems[index].container,
             ].join(" ")}
           >
@@ -151,10 +151,10 @@ function ValueProposition() {
                 />
               ))}
             </div>
-            <div className="flex flex-col gap-3 max-w-md">
+            <div className="flex max-w-md flex-col gap-3">
               <span
                 className={[
-                  "text-6xl font-serif",
+                  "font-serif text-6xl",
                   style.listItems[index]?.text,
                 ].join(" ")}
               >
@@ -218,22 +218,22 @@ function Offerings() {
     {
       bg: "bg-[#DA7541] rounded-tr-2xl",
       tab: "left-0",
-      text: "soft-charcol",
+      text: "salley-dark",
     },
     {
-      bg: "bg-warm-ivory rounded-t-2xl",
+      bg: "bg-salley-light rounded-t-2xl",
       tab: "left-1/4",
-      text: "soft-charcol",
+      text: "salley-dark",
     },
     {
       bg: "bg-green-950 rounded-t-2xl",
       tab: "left-2/4",
-      text: "warm-ivory",
+      text: "salley-light",
     },
     {
       bg: "bg-slate-400 rounded-tl-2xl",
       tab: "left-3/4",
-      text: "warm-ivory",
+      text: "salley-light",
     },
   ];
 
@@ -242,20 +242,20 @@ function Offerings() {
       <Image
         src={plants}
         alt=""
-        className="sticky top-0 w-screen h-screen object-cover"
+        className="sticky top-0 h-screen w-screen object-cover"
       />
       <ol
         className={[
-          "flex flex-col items-center justify-center gap-[50vb] p-3 pb-[25vb] max-h-1/2",
+          "flex max-h-1/2 flex-col items-center justify-center gap-[50vb] p-3 pb-[25vb]",
         ].join(" ")}
       >
         {offerings.map(({ title, description }, index) => (
           <li
             key={index}
             className={[
-              `sticky top-1/2 -translate-y-1/2 px-12 pb-12 pt-6 ${style[index]?.bg} text-${style[index]?.text} rounded-b-2xl`,
-              "flex flex-col justify-start items-start h-[70vb]",
-              "md:flex-row md:flex-wrap md:max-w-3xl md:h-[50vb] md:content-start",
+              `sticky top-1/2 -translate-y-1/2 px-12 pt-6 pb-12 ${style[index]?.bg} text-${style[index]?.text} rounded-b-2xl`,
+              "flex h-[70vb] flex-col items-start justify-start",
+              "md:h-[50vb] md:max-w-3xl md:flex-row md:flex-wrap md:content-start",
             ].join(" ")}
           >
             <span
@@ -265,7 +265,7 @@ function Offerings() {
             </span>
             <h2
               className={[
-                `font-serif text-2xl font-medium uppercase my-4 pb-4 border-b-1 border-${style[index]?.text}`,
+                `my-4 border-b-1 pb-4 font-serif text-2xl font-medium uppercase border-${style[index]?.text}`,
                 "w-full",
               ].join(" ")}
             >
@@ -309,14 +309,14 @@ function CTA() {
   return (
     <div
       className={[
-        "flex flex-col items-center gap-4 p-20 text-warm-ivory",
-        'bg-[url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg")] bg-soft-charcol/70 bg-cover bg-blend-darken bg-center',
+        "flex flex-col items-center gap-4 p-20 text-salley-light",
+        'bg-salley-dark/70 bg-[url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg")] bg-cover bg-center bg-blend-darken',
       ].join(" ")}
     >
-      <p className="font-serif uppercase max-w-sm text-5xl font-semibold text-center">
+      <p className="max-w-sm text-center font-serif text-5xl font-semibold uppercase">
         Shall we begin?
       </p>
-      <p className="text-center font-sans max-w-sm">
+      <p className="max-w-sm text-center font-sans">
         Contact us today to learn more about our product development services
         and how we can help you achieve your goals.
       </p>

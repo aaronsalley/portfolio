@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import CaseStudies from "@/components/CaseStudies";
+import CaseStudyGrid from "@/components/CaseStudyGrid";
 
 export const metadata: Metadata = {
   title: "Portfolio | Aaron Salley",
@@ -10,7 +10,7 @@ export default function PortfolioPage() {
   return (
     <>
       <main>
-        <CaseStudies />
+        <CaseStudyGrid />
       </main>
     </>
   );

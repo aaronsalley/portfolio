@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import * as BrandLogos from '@/assets/svgs/brands';
-import { useEffect } from 'react';
+import Image from "next/image";
+import * as BrandLogos from "@/assets/svgs/brands";
+import { useEffect } from "react";
 
-export default function Brands() {
+export default function CredibilityStrip() {
   const height = 36;
   const gap = 40;
   const logos = Object.entries(BrandLogos);
@@ -31,7 +31,7 @@ export default function Brands() {
 
   // Inject keyframes into the document
   useEffect(() => {
-    const styleTag = document.createElement('style');
+    const styleTag = document.createElement("style");
     styleTag.innerHTML = scrollStyle;
     document.head.appendChild(styleTag);
     return () => {
@@ -40,9 +40,9 @@ export default function Brands() {
   }, [scrollStyle]);
 
   return (
-    <div className='w-full overflow-hidden relative my-15'>
+    <div className="relative my-15 w-full overflow-hidden">
       <ul
-        className='flex items-center'
+        className="flex items-center"
         style={{
           width: `${totalWidth * 2}px`,
           gap: `${gap}px`,
@@ -50,13 +50,13 @@ export default function Brands() {
         }}
       >
         {allLogos.map(([name, Logo], index) => (
-          <li key={index} className='flex items-center gap-8'>
+          <li key={index} className="flex items-center gap-8">
             <Image
               src={Logo}
               alt={name}
               height={height}
-              className='saturate-0 grayscale-100 opacity-60'
-              loading='lazy'
+              className="opacity-60 grayscale-100 saturate-0"
+              loading="lazy"
             />
           </li>
         ))}

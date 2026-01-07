@@ -1,7 +1,7 @@
 const links = [
   {
-    href: "https://www.instagram.com/salleyandco/",
-    label: "Instagram",
+    href: 'https://www.instagram.com/salleyandco/',
+    label: 'Instagram',
     icon: () => (
       <svg
         width="24"
@@ -25,8 +25,8 @@ const links = [
     ),
   },
   {
-    href: "https://www.linkedin.com/company/salleyandco",
-    label: "LinkedIn",
+    href: 'https://www.linkedin.com/company/salleyandco',
+    label: 'LinkedIn',
     icon: () => (
       <svg
         width="24"
@@ -63,8 +63,8 @@ const links = [
     ),
   },
   {
-    href: "https://github.com/salleyandco",
-    label: "GitHub",
+    href: 'https://github.com/salleyandco',
+    label: 'GitHub',
     icon: () => (
       <svg
         width="24"
@@ -95,8 +95,8 @@ const links = [
     ),
   },
   {
-    href: "https://music.apple.com/profile/aaronsalley",
-    label: "Apple Music",
+    href: 'https://music.apple.com/profile/aaronsalley',
+    label: 'Apple Music',
     icon: () => (
       <svg
         width="24"
@@ -110,9 +110,9 @@ const links = [
             <path
               className="st0"
               style={{
-                fillRule: "evenodd",
-                clipRule: "evenodd",
-                fill: "currentcolor",
+                fillRule: 'evenodd',
+                clipRule: 'evenodd',
+                fill: 'currentcolor',
               }}
               d="M72,19.94c0-0.72-0.01-1.45-0.03-2.17c-0.04-1.58-0.14-3.17-0.42-4.73c-0.28-1.58-0.75-3.06-1.48-4.5
 			c-0.72-1.41-1.66-2.71-2.78-3.83c-1.12-1.12-2.42-2.06-3.83-2.78c-1.44-0.73-2.91-1.2-4.49-1.48c-1.56-0.28-3.15-0.37-4.73-0.42

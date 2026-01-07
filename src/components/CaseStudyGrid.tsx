@@ -3,11 +3,11 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { caseStudies } from "@/assets/cases";
+import { posts } from "@/assets/cases";
 
-export default function CaseStudies() {
+export default function CaseStudyGrid() {
   const categories = useMemo(() => {
-    const unique = new Set(caseStudies.map((item) => item.category));
+    const unique = new Set(posts.map((item) => item.category));
     return ["All", ...unique];
   }, []);
 
@@ -16,8 +16,8 @@ export default function CaseStudies() {
 
   const filteredCaseStudies =
     activeCategory === "All"
-      ? caseStudies
-      : caseStudies.filter((item) => item.category === activeCategory);
+      ? posts
+      : posts.filter((item) => item.category === activeCategory);
 
   const renderFilters = () => (
     <div className="text-center">
@@ -36,11 +36,11 @@ export default function CaseStudies() {
               fontSize: "clamp(1rem, 2.5vi, 6rem)",
             }}
             className={[
-              "transition font-serif not-last:after:content-[', ']",
+              "font-serif transition not-last:after:content-[', ']",
               isDimmed ? "opacity-40" : "opacity-100",
               isActive
-                ? "text-soft-charcol"
-                : "text-soft-charcol/60 hover:text-soft-charcol",
+                ? "text-salley-dark"
+                : "text-salley-dark/60 hover:text-salley-dark",
             ].join(" ")}
           >
             {category}
@@ -51,7 +51,7 @@ export default function CaseStudies() {
   );
 
   const renderCaseStudiesList = () => (
-    <ul className="grid gap-4 my-20 mx-4 md:mx-14 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    <ul className="mx-4 my-20 grid grid-cols-2 gap-4 md:mx-14 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
       {filteredCaseStudies.map(
         ({ image, category, title, url }, index: number) => {
           return (
@@ -65,9 +65,9 @@ export default function CaseStudies() {
                 <Image
                   src={image}
                   alt={`Project Image ${index + 1}`}
-                  className={"object-cover aspect-[2/3] w-full h-auto pb-2"}
+                  className={"aspect-[2/3] h-auto w-full object-cover pb-2"}
                 />
-                <p className={`font-sans text-sm pb-4`}>{category}</p>
+                <p className={`pb-4 font-sans text-sm`}>{category}</p>
                 <h3 className={`font-sans text-xl`}>{title}</h3>
               </article>
             </Link>
@@ -77,7 +77,7 @@ export default function CaseStudies() {
     </ul>
   );
 
-  if (caseStudies.length === 0) {
+  if (posts.length === 0) {
     return <p className="text-center">No projects available at the moment.</p>;
   }
 

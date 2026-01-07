@@ -27,8 +27,8 @@ export const GoogleTagManagerScript = ({
 
   return (
     <>
-      <Script id='gtm-dataLayer'>{`${dataLayerName} = window.dataLayer || [];`}</Script>
-      <Script id='GoogleTagManager'>
+      <Script id="gtm-dataLayer">{`${dataLayerName} = window.dataLayer || [];`}</Script>
+      <Script id="GoogleTagManager">
         {`
         (function (w, d, s, l, i) {
           w[l] = w[l] || [];
@@ -65,8 +65,8 @@ export const GTM_no_script = ({
     <noscript>
       <iframe
         src={src}
-        height='0'
-        width='0'
+        height="0"
+        width="0"
         style={{ display: 'none', visibility: 'hidden' }}
       />
     </noscript>
