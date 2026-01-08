@@ -1,6 +1,7 @@
+import { CaseStudy } from "@/assets/cases";
 import Button from "./Button";
 
-export default function CaseStudyRow(caseStudy: any) {
+export default function CaseStudyRow(caseStudy: CaseStudy) {
   // TODO: Redesign case
   return (
     <article

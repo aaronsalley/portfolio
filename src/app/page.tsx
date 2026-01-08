@@ -85,16 +85,17 @@ const About = () => (
         <header className="lg:w-[36%]">
           <h2 className="font-sans text-3xl/loose">About Me</h2>
           <p className="mb-8 font-sans text-lg text-pretty text-salley-primary">
-            I'm Aaron Salley, a{" "}
+            I&apos;m Aaron Salley, a{" "}
             <b className="text-salley-accent-2">product leader</b> blending deep
             technical fluency with strategic thinking — turning complexity into
             clarity and momentum.
           </p>
         </header>
-        <section className="grow-1 rounded-2xl "></section>
+        {/* TODO: make bg-salley-light */}
+        <section className="grow-1 rounded-2xl"></section>
         <ul className="lg:w-[36%] sparkle-list flex flex-col items-end text-salley-primary">
           <li>
-            For the past decade, I’ve led cross-functional teams navigating
+            For the past decade, I&apos;ve led cross-functional teams navigating
             complex{" "}
             <b className="text-salley-accent-2">product, platform, and AI</b>{" "}
             decisions for organizations operating at scale—where judgment
@@ -137,7 +138,7 @@ const WorkHighlights = () => {
             create momentum that holds once the room clears.
           </p>
           <Button href="mailto:hello@aaronsalley.com" variant="text">
-            Let's Connect
+            Let&apos;s Connect
           </Button>
         </div>
       </div>

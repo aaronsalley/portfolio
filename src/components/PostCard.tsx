@@ -1,7 +1,8 @@
+import { Post } from "@/helpers/fetchPosts";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function PostCard(post: any) {
+export default function PostCard(post: Post) {
   return (
     <li key={post.id} className="rounded-2xl bg-salley-light">
       <Link href={post.url} target="_blank">

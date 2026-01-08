@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import link_out from "@/assets/svgs/link_out.svg";
+import { CaseStudy } from "@/assets/cases";
 
-export default function CarouselCard({ item }: { item: any }) {
+export default function CarouselCard({ item }: { item: CaseStudy }) {
   return (
     <li className="w-full max-w-[800px] flex flex-col items-start z-0">
       <Link href={item.url} className="w-full">
