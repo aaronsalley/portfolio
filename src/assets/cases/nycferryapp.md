@@ -1,0 +1,1 @@
+Like many New Yorkers, I take public transit anytime I head into Manhattan. My preferred mode of transportation is the ferry. Since NYC launched its East River service several years ago, the ferry is a beautiful and speedy alternative to oftentimes hot and congested subway.

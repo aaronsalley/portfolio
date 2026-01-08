@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-Light.woff2') format('woff2-variations'),
+    url('./CerebriSans-Light.woff') format('woff-variations');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-Book.woff2') format('woff2-variations'),
+    url('./CerebriSans-Book.woff') format('woff-variations');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-Regular.woff2') format('woff2-variations'),
+    url('./CerebriSans-Regular.woff') format('woff-variations');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-Medium.woff2') format('woff2-variations'),
+    url('./CerebriSans-Medium.woff') format('woff-variations');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-SemiBold.woff2') format('woff2-variations'),
+    url('./CerebriSans-SemiBold.woff') format('woff-variations');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-Bold.woff2') format('woff2-variations'),
+    url('./CerebriSans-Bold.woff') format('woff-variations');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-ExtraBold.woff2') format('woff2-variations'),
+    url('./CerebriSans-ExtraBold.woff') format('woff-variations');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-Heavy.woff2') format('woff2-variations'),
+    url('./CerebriSans-Heavy.woff') format('woff-variations');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-LightItalic.woff2') format('woff2-variations'),
+    url('./CerebriSans-LightItalic.woff') format('woff-variations');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-BookItalic.woff2') format('woff2-variations'),
+    url('./CerebriSans-BookItalic.woff') format('woff-variations');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-Italic.woff2') format('woff2-variations'),
+    url('./CerebriSans-Italic.woff') format('woff-variations');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-MediumItalic.woff2') format('woff2-variations'),
+    url('./CerebriSans-MediumItalic.woff') format('woff-variations');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-SemiBoldItalic.woff2') format('woff2-variations'),
+    url('./CerebriSans-SemiBoldItalic.woff') format('woff-variations');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-BoldItalic.woff2') format('woff2-variations'),
+    url('./CerebriSans-BoldItalic.woff') format('woff-variations');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-ExtraBoldItalic.woff2') format('woff2-variations'),
+    url('./CerebriSans-ExtraBoldItalic.woff') format('woff-variations');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src:
+    url('./CerebriSans-HeavyItalic.woff2') format('woff2-variations'),
+    url('./CerebriSans-HeavyItalic.woff') format('woff-variations');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
