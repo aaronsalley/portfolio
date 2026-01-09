@@ -11,8 +11,8 @@ import plants from "@/assets/images/malte-michels-s4wGZw3UuLk-unsplash.jpg";
 import formatOrderedList from "@/helpers/formatOrderedList";
 
 export const metadata: Metadata = {
-  title: "Digital Product Services | Aaron Salley",
-  description: `Partner with Aaron Salley for intentional digital product services. From strategic clarity and integrated design to holistic lifecycle management and compelling content, we transform your vision into exceptional digital experiences for sustained growth.`,
+  title: "Capabilities & Services",
+  description: `Partner with Aaron Salley for intentional digital product services. From strategic clarity and integrated design to holistic lifecycle management and compelling content, we transform your vision into exceptional experiences.`,
 };
 
 export default function ServicesPage() {

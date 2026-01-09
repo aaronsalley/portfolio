@@ -4,7 +4,7 @@ import Image from "next/image";
 import formatOrderedList from "@/helpers/formatOrderedList";
 
 export const metadata: Metadata = {
-  title: "Who We Are | Aaron Salley",
+  title: "About",
   description: ``,
 };
 

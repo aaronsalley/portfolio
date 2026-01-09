@@ -10,9 +10,8 @@ import { fetchPosts, Post } from "@/helpers/fetchPosts";
 import PostList from "@/components/PostList";
 
 export const metadata: Metadata = {
-  title: "Aaron Salley – Digital Creative Studio",
   description:
-    "A boutique studio crafting tailored solutions via high-end creative, execution, and strategy services. We specialize in meeting client needs with unique digital products.",
+    "Product Creator and Builder based in New York City. Combining strategic vision with technical expertise to create momentum.",
 };
 
 export default async function HomePage() {

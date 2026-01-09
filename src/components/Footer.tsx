@@ -8,11 +8,15 @@ export default function Footer() {
       <p className={style.name}>Aaron Salley</p>
       <div className={style.paragraph}>
         <p className="md:mr-8 md:ml-auto md:max-w-xl lg:mr-16">
-          We&apos;re a studio offering tailored solutions for clients requiring
+          I help organizations turn complex problems into clear, scalable
+          products—aligning strategy, design, and technology to build systems
+          that last. The work favors clarity over noise, intention over urgency,
+          and durability over trends.
+          {/* We&apos;re a studio offering tailored solutions for clients requiring
           effective and user-centered digital experiences. Unlike studios that
           focus on a single, specific creative discipline, we emphasize high-end
           design and production, while bridging the gap between strategy and
-          delivery.
+          delivery. */}
         </p>
       </div>
       {/* TODO: Reactivate once pages are rebuilt */}

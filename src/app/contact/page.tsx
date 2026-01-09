@@ -5,7 +5,7 @@ import desk from "@/assets/images/aaron-salley-office-poster.jpg";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact | Aaron Salley",
+  title: "Contact",
   description: `Ready to collaborate? Contact Aaron Salley for tailored digital solutions. Fill out our form or email us directly to start transforming your vision into exceptional digital experiences.`,
 };
 
