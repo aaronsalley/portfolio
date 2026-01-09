@@ -5,13 +5,12 @@ import Footer from "@/components/Footer";
 import { GoogleTagManagerScript, GTM_no_script } from "@/lib/gtm";
 
 export const metadata: Metadata = {
-  title: "Aaron Salley | Digital Creative Studio",
-  description:
-    "Boutique studio crafting client-tailored digital solutions via high-end creative, execution, and strategy services. Intention. Integration. Illumination.",
+  title: { template: "%s — Aaron Salley", default: "Aaron Salley" },
   keywords: [
-    "Go-to-market Strategy",
-    "End-to-end Product Management",
-    "UI/UX Design & Development services",
+    "Product Manager",
+    "Product Builder",
+    "Product Creator",
+    "Product Leader",
   ],
 };
 

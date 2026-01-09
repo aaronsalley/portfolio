@@ -3,10 +3,9 @@ import icon from "@/app/icon.svg";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Aaron Salley | Digital Creative Studio",
+    name: "Aaron Salley",
     short_name: "Aaron Salley",
-    description:
-      "A Digital Creative Studio specializing in innovative solutions.",
+    description: "Product Creator and Builder based in New York City.",
     start_url: "/",
     display: "standalone",
     theme_color: "#000000",
