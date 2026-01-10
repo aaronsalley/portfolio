@@ -1,4 +1,4 @@
-import { Post } from "@/helpers/fetchPosts";
+import { Post } from "@/data/fetchPosts";
 import PostCard from "./PostCard";
 
 export default function PostList({ posts }: { posts: Post[] }) {

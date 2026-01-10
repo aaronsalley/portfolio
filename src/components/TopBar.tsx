@@ -81,7 +81,7 @@ function MenuButton({
           "before:mb-[0] before:rotate-[45deg] before:translate-y-[1px]",
           "after:mt-[0] after:rotate-[-45deg] after:translate-y-[-1px]",
         ].join(" "),
-    isSticky && !isMenuOpen ? "text-salley-accent" : undefined,
+    isSticky && !isMenuOpen ? "text-salley-secondary" : undefined,
   ].join(" ");
 
   return (

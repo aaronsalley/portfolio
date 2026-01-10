@@ -1,4 +1,4 @@
-import { Post } from "@/helpers/fetchPosts";
+import { Post } from "@/data/fetchPosts";
 import Image from "next/image";
 import Link from "next/link";
 

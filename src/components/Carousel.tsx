@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { posts } from "@/assets/cases";
+import { posts } from "@/data/cases";
 import CarouselCard from "./CarouselCard";
 
 const featuredCases = posts.slice(0, 4);

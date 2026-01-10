@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import link_out from "@/assets/svgs/link_out.svg";
-import { CaseStudy } from "@/assets/cases";
+import { CaseStudy } from "@/data/cases";
 
 export default function CarouselCard({ item }: { item: CaseStudy }) {
   return (
