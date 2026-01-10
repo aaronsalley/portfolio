@@ -1,4 +1,4 @@
-import { CaseStudy } from "@/assets/cases";
+import { CaseStudy } from "@/data/cases";
 import Button from "./Button";
 
 export default function CaseStudyRow(caseStudy: CaseStudy) {
@@ -6,7 +6,7 @@ export default function CaseStudyRow(caseStudy: CaseStudy) {
   return (
     <article
       key={caseStudy.id}
-      className="grid grid-cols-1 md:grid-cols-3 gap-4 not-last:border-b border-salley-accent py-6"
+      className="grid grid-cols-1 md:grid-cols-3 gap-4 not-last:border-b border-salley-secondary py-6"
     >
       <header>
         <h3 className="text-2xl font-light tracking-tighter">

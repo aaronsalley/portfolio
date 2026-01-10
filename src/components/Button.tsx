@@ -14,9 +14,9 @@ export default function Button({
   target?: string;
 }) {
   const classNames = [
-    "px-4 py-2 bg-salley-accent text-salley-light rounded transition",
+    "px-4 py-2 bg-salley-secondary text-salley-light rounded transition",
     variant === "hollow" &&
-      "bg-transparent border border-salley-accent text-salley-accent!",
+      "bg-transparent border border-salley-secondary text-salley-secondary!",
   ]
     .filter(Boolean)
     .join(" ");

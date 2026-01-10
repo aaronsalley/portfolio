@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { posts } from "@/assets/cases";
+import { posts } from "@/data/cases";
 
 export default function CaseStudyGrid() {
   const categories = useMemo(() => {

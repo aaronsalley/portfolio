@@ -1,57 +1,103 @@
 import { Metadata } from "next";
 import Headshot from "@/assets/images/Aaron_Salley_LLC.jpg";
+import Office from "@/assets/images/aaron-salley-office-poster.jpg";
 import Image from "next/image";
 import formatOrderedList from "@/helpers/formatOrderedList";
+import Carousel from "@/components/Carousel";
+import PostList from "@/components/PostList";
+import { fetchPosts } from "@/data/fetchPosts";
+import Experience from "@/components/Experience";
 
 export const metadata: Metadata = {
   title: "About",
   description: ``,
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const posts = await fetchPosts();
+
   return (
-    <main className="relative mx-4 my-40 max-w-7xl gap-4 md:mx-14 md:gap-8 xl:mx-auto">
-      <h1 className="mb-4 font-serif text-4xl">About Me</h1>
+    <>
+      <article className="flex flex-col pt-40">
+        <Hero />
+        <About />
+        <Experience />
+        <Workflow />
+      </article>
+      <aside className="bg-salley-primary/10">
+        <Carousel />
+      </aside>
+      <PostList posts={posts} />
+    </>
+  );
+}
+
+const Hero = () => (
+  <header className="flex flex-col min-h-screen gap-20">
+    <div className="flex flex-col lg:flex-row mx-4 gap-20 max-w-7xl xl:mx-auto">
+      <h1
+        className="lg:w-5/12 about-name"
+        // style={{ fontSize: "clamp(3rem, 9.55vi, 9rem)" }}
+      >
+        <small className="lg:block text-2xl tracking-normal font-sans">
+          Hello There 👋🏽 I&apos;m
+        </small>{" "}
+        Aaron.
+      </h1>
+      <div className="lg:w-7/12">
+        <p className="text-pretty">
+          I work with organizations navigating complexity—where the stakes are
+          high, systems are layered, and clarity is hard-won. My focus is on
+          turning ambiguity into direction, and direction into products that
+          scale without losing their edge.
+        </p>
+      </div>
+    </div>
+    <div className="about-headshot w-full max-w-[1728px] mx-auto">
       <Image
         src={Headshot}
         alt="Aaron Salley"
-        style={{ objectFit: "cover" }}
-        className="md:float-right md:ml-8 md:max-w-1/2"
+        fill
+        className="object-cover landscape:object-[50%_-12cqmax] portrait:object-[50%_-12cqmin]"
       />
-      <p className="my-4 text-balance">
-        I build products that make complex work simple. As a seasoned
-        entrepreneurial leader with over 15 years of experience driving digital
-        transformation and scaling digital products from concept to market
-        across a wide array of sectors, I combine strategic vision with
-        technical expertise to create meaningful impact.
-      </p>
-      <p className="my-4 text-balance">
-        For the past decade, I’ve led cross-functional teams to create
-        AI-enabled platforms, modernize enterprise systems, and transform
-        operations at scale. Whether it’s improving healthcare workflows,
-        scaling ecommerce platforms, or designing patented AI tools, I focus on
-        solving real problems with meaningful impact.
-      </p>
-      <p className="my-4 text-balance">
-        My unique blend of technical proficiency and business acumen is
-        complemented by my commitment to purposeful innovation. I thrive in
-        environments where product thinking, systems design, and technical depth
-        are essential. I specialize in turning complex workflows into scalable
-        SaaS products that drive measurable business outcomes. My work
-        consistently accelerates productivity, improves user experience, and
-        unlocks new revenue opportunities.
-      </p>
-      <p className="my-4 text-balance">
-        I hold an MBA from NYU Stern School of Business, and have completed
-        advanced coursework at Harvard, Stanford, Yale, and UNC Chapel Hill. My
-        expertise spans the full product lifecycle—from strategic planning and
-        stakeholder alignment to cross-functional team leadership and
-        performance optimization.
-      </p>
-      {/* <Workflow /> */}
-    </main>
-  );
-}
+    </div>
+  </header>
+);
+
+const About = () => (
+  <main className="py-20 bg-salley-primary/10">
+    <div className="flex flex-col lg:flex-row-reverse mx-4 gap-20 max-w-7xl xl:mx-auto items-center-safe">
+      <section className="lg:w-7/12">
+        <h2 className="text-4xl">My Philosophy</h2>
+        <p className="my-4 text-balance">
+          My background spans entertainment, healthcare, commerce, and platform
+          businesses, from 0→1 products to systems used by millions. I’ve built
+          new models, introduced new interfaces, and challenged inherited
+          assumptions, then carried those ideas through design, engineering, and
+          launch. The work balances creative ambition with operational
+          discipline, so what’s imagined can scale.
+        </p>
+        <p className="my-4 text-balance">
+          I believe innovation happens when strong ideas meet decisive
+          leadership. When teams are aligned on what matters—and confident
+          enough to say no—there’s room to build products that feel original,
+          inevitable, and built to last.
+        </p>
+        {/* <p className="my-4 text-balance">
+                I partner closely with founders, executives, and product teams
+                who value taste, rigor, and long-term thinking. Engagements are
+                collaborative and deliberate, but never timid. The result is
+                work that’s distinctive, enduring, and quietly ambitious.
+              </p> */}
+      </section>
+      <Image
+        src={Office}
+        alt="Aaron Salley Office Poster"
+        className="lg:w-5/12 aspect-square object-cover object-left rounded-2xl"
+      />
+    </div>
+  </main>
+);
 
 const Workflow = () => {
   const steps = [
@@ -65,11 +111,11 @@ const Workflow = () => {
       description:
         "From there, the focus shifts to clarity. We surface assumptions and name trade-offs that have gone unspoken. Progress begins once the problem is framed honestly enough to hold.",
     },
-    {
-      phase: "Develop",
-      description:
-        "Only then does direction emerge. A small set of decisions that create momentum. What to prioritize. What to stop. What can wait. A shared conviction—so teams can move without revisiting the same debates.",
-    },
+    // {
+    //   phase: "Develop",
+    //   description:
+    //     "Only then does direction emerge. A small set of decisions that create momentum. What to prioritize. What to stop. What can wait. A shared conviction—so teams can move without revisiting the same debates.",
+    // },
     {
       phase: "Deliver",
       description:
@@ -79,32 +125,48 @@ const Workflow = () => {
 
   const renderSteps = () => {
     return steps.map((step, i) => {
-      const classNames = [
-        "aspect-square p-8 bg-salley-primary/10 flex flex-wrap justify-between",
-        i === 0 && "col-start-2",
-      ].join(" ");
       return (
-        <li key={i} className={classNames}>
-          <span className="font-sans font-bold text-salley-accent">
-            {formatOrderedList(i + 1)}
+        <li key={i} className="grid grid-cols-[5rem_auto] gap-10">
+          <span className="flex justify-center items-center font-sans text-4xl bg-salley-dark text-salley-light rounded-full h-[2em] w-[2em]">
+            {i + 1}
           </span>
-          <h3 className="font-sans text-4xl font-semibold text-salley-accent">
-            {step.phase}
-          </h3>
-          <p className="w-full self-baseline-last text-sm text-pretty text-salley-primary lg:mr-7">
-            {step.description}
-          </p>
+          <div>
+            <h3 className="font-sans text-3xl">{step.phase}</h3>
+            <p className="w-full self-baseline-last text-pretty text-salley-primary lg:mr-7">
+              {step.description}
+            </p>
+          </div>
         </li>
       );
     });
   };
 
   return (
-    <section className="mx-4 md:mx-14 w-full max-w-7xl xl:mx-auto">
-      <div className="relative md:items-end md:justify-between lg:flex"></div>
-      <ul className="mt-12 flex w-full flex-col gap-4 max-md:px-15 md:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-        {renderSteps()}
-      </ul>
+    <section className="bg-salley-primary/10 py-40">
+      <div className="flex flex-col lg:flex-row mx-4 md:mx-14 max-w-7xl xl:mx-auto">
+        <div className="lg:w-1/2">
+          <h2 className="lg:pr-[25%] text-4xl mb-20">
+            My Process in Three Steps
+          </h2>
+        </div>
+        <ol className="flex flex-col gap-20 lg:w-1/2 relative">
+          {renderSteps()}
+          <span
+            className="absolute top-0 bottom-1/6 -z-10 left-[calc(2.25rem-0.5px)]"
+            style={{
+              width: "1px",
+              border: "1px dashed #000",
+              borderStyle: "none",
+              backgroundImage:
+                "linear-gradient(to bottom, black 50%, rgba(255, 255, 255, 0) 0%)",
+              backgroundPosition: "bottom, top",
+              backgroundSize:
+                "1px 10px" /* 10px total size: 5px dash + 5px space */,
+              backgroundRepeat: "repeat-y" /* Repeat horizontally */,
+            }}
+          ></span>
+        </ol>
+      </div>
     </section>
   );
 };

@@ -3,7 +3,10 @@ import MSKDirect from "./MSKDirect.jpg";
 import BHPhoto from "./B&HPhoto.jpg";
 import Intry from "./Intry.jpg";
 import Lumifi from "./lumifi.png";
-import { MSK as MSKLogo, BAndHPhoto as BHPhotoLogo } from "../svgs/brands";
+import {
+  MSK as MSKLogo,
+  BAndHPhoto as BHPhotoLogo,
+} from "@/assets/svgs/brands";
 import IntryLogo from "@/assets/svgs/brand--Intry.svg";
 import LumifiLogo from "@/assets/svgs/brand--LumiFi.svg";
 
