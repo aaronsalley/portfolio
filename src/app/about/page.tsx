@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Headshot from "@/assets/images/Aaron_Salley_LLC.jpg";
 import Office from "@/assets/images/aaron-salley-office-poster.jpg";
 import Image from "next/image";
-import formatOrderedList from "@/helpers/formatOrderedList";
 import Carousel from "@/components/Carousel";
 import PostList from "@/components/PostList";
 import { fetchPosts } from "@/data/fetchPosts";
@@ -35,10 +34,7 @@ export default async function AboutPage() {
 const Hero = () => (
   <header className="flex flex-col min-h-screen gap-20">
     <div className="flex flex-col lg:flex-row mx-4 gap-20 max-w-7xl xl:mx-auto">
-      <h1
-        className="lg:w-5/12 about-name"
-        // style={{ fontSize: "clamp(3rem, 9.55vi, 9rem)" }}
-      >
+      <h1 className="lg:w-5/12 about-name">
         <small className="lg:block text-2xl tracking-normal font-sans">
           Hello There 👋🏽 I&apos;m
         </small>{" "}
@@ -83,12 +79,6 @@ const About = () => (
           enough to say no—there’s room to build products that feel original,
           inevitable, and built to last.
         </p>
-        {/* <p className="my-4 text-balance">
-                I partner closely with founders, executives, and product teams
-                who value taste, rigor, and long-term thinking. Engagements are
-                collaborative and deliberate, but never timid. The result is
-                work that’s distinctive, enduring, and quietly ambitious.
-              </p> */}
       </section>
       <Image
         src={Office}
@@ -111,11 +101,6 @@ const Workflow = () => {
       description:
         "From there, the focus shifts to clarity. We surface assumptions and name trade-offs that have gone unspoken. Progress begins once the problem is framed honestly enough to hold.",
     },
-    // {
-    //   phase: "Develop",
-    //   description:
-    //     "Only then does direction emerge. A small set of decisions that create momentum. What to prioritize. What to stop. What can wait. A shared conviction—so teams can move without revisiting the same debates.",
-    // },
     {
       phase: "Deliver",
       description:
@@ -160,9 +145,8 @@ const Workflow = () => {
               backgroundImage:
                 "linear-gradient(to bottom, black 50%, rgba(255, 255, 255, 0) 0%)",
               backgroundPosition: "bottom, top",
-              backgroundSize:
-                "1px 10px" /* 10px total size: 5px dash + 5px space */,
-              backgroundRepeat: "repeat-y" /* Repeat horizontally */,
+              backgroundSize: "1px 10px",
+              backgroundRepeat: "repeat-y",
             }}
           ></span>
         </ol>

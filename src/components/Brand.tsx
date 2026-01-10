@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Brand() {
   return (
@@ -11,7 +11,6 @@ export default function Brand() {
           width={32}
           height={32}
         >
-          {/* Styles moved to inline attributes below. */}
           <g id="Layer_4">
             <polygon
               points="409.96 344.46 409.96 165.48 254.96 76 99.97 165.48 99.97 344.46 254.96 433.94 409.96 344.46"
