@@ -1,35 +1,114 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { posts } from "@/data/cases";
+import CaseStudyCard from "./CaseStudyCard";
 
 export default function CaseStudyGrid() {
+  // Get search params
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("cat") ?? "";
+  const tagParam = searchParams.get("tag") ?? "";
+
+  // List of unique categories and tags
   const categories = useMemo(() => {
     const unique = new Set(posts.map((item) => item.category));
     return ["All", ...unique];
   }, []);
+  const tags = useMemo(() => {
+    const unique = new Set(
+      posts.reduce((acc, item) => {
+        item.tags.forEach((tag) => acc.push(tag));
+        return acc;
+      }, [] as string[]),
+    );
+    return ["All", ...unique];
+  }, []);
 
-  const [activeCategory, setActiveCategory] = useState(categories[0]);
+  // Normalized maps for categories and tags
+  const normalizedCategories = useMemo(() => {
+    return new Map(
+      categories.map((category) => [category.toLowerCase().trim(), category]),
+    );
+  }, [categories]);
+  const normalizedTags = useMemo(() => {
+    return new Map(tags.map((tag) => [tag.toLowerCase().trim(), tag]));
+  }, [tags]);
+
+  // Initial active category and tag based on URL params
+  const initialCategory = useMemo(() => {
+    const normalized = categoryParam.toLowerCase().trim();
+    if (!normalized) return categories[0];
+    if (normalized === "all") return "All";
+    return normalizedCategories.get(normalized) ?? categories[0];
+  }, [categoryParam, categories, normalizedCategories]);
+  const initialTag = useMemo(() => {
+    const normalized = tagParam.toLowerCase().trim();
+    if (!normalized) return tags[0];
+    if (normalized === "all") return "All";
+    return normalizedTags.get(normalized) ?? tags[0];
+  }, [tagParam, tags, normalizedTags]);
+
+  // Active category and tag states
+  const [activeCategory, setActiveCategory] = useState(initialCategory);
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
+  const [activeTag, setActiveTag] = useState(initialTag);
 
-  const filteredCaseStudies =
-    activeCategory === "All"
-      ? posts
-      : posts.filter((item) => item.category === activeCategory);
+  // Sync active category and tag with URL param changes
+  useEffect(() => {
+    if (!categoryParam) return;
+    const normalized = categoryParam.toLowerCase().trim();
+    const nextCategory =
+      normalized === "all" ? "All" : normalizedCategories.get(normalized);
+    if (nextCategory && nextCategory !== activeCategory) {
+      setActiveCategory(nextCategory);
+    }
+  }, [activeCategory, categoryParam, normalizedCategories]);
+  useEffect(() => {
+    const normalized = tagParam.toLowerCase().trim();
+    if (!normalized) {
+      if (activeTag !== "All") {
+        setActiveTag("All");
+      }
+      return;
+    }
+    const nextTag =
+      normalized === "all" ? "All" : normalizedTags.get(normalized);
+    if (nextTag && nextTag !== activeTag) {
+      setActiveTag(nextTag);
+    }
+  }, [activeTag, tagParam, normalizedTags]);
+
+  // Filtered case studies based on active category and tag
+  const filteredCaseStudies = posts.filter((item) => {
+    const matchesCategory =
+      activeCategory === "All" || item.category === activeCategory;
+    const matchesTag =
+      activeTag === "All" ||
+      item.tags.some((tag) => tag.toLowerCase() === activeTag.toLowerCase());
+    return matchesCategory && matchesTag;
+  });
 
   const renderFilters = () => (
     <div className="text-center">
       {categories.map((category) => {
-        const isActive = category === activeCategory;
+        const isActive = activeTag === "All" && category === activeCategory;
         const isDimmed =
           hoveredCategory !== null && hoveredCategory !== category;
         return (
           <button
             key={category}
             type="button"
-            onClick={() => setActiveCategory(category)}
+            onClick={() => {
+              if (activeTag !== "All") {
+                setActiveTag("All");
+                router.replace(pathname);
+              }
+              setActiveCategory(category);
+            }}
             onMouseEnter={() => setHoveredCategory(category)}
             onMouseLeave={() => setHoveredCategory(null)}
             style={{
@@ -52,28 +131,9 @@ export default function CaseStudyGrid() {
 
   const renderCaseStudiesList = () => (
     <ul className="mx-4 my-20 grid grid-cols-2 gap-4 md:mx-14 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-      {filteredCaseStudies.map(
-        ({ image, category, title, url }, index: number) => {
-          return (
-            <Link
-              key={title}
-              href={url}
-              target="_blank" // TODO: Remove target when local
-              rel="noopener noreferrer" // TODO: Remove rel when local
-            >
-              <article className="pb-20">
-                <Image
-                  src={image}
-                  alt={`Project Image ${index + 1}`}
-                  className={"aspect-[2/3] h-auto w-full object-cover pb-2"}
-                />
-                <p className={`pb-4 font-sans text-sm`}>{category}</p>
-                <h3 className={`font-sans text-xl`}>{title}</h3>
-              </article>
-            </Link>
-          );
-        },
-      )}
+      {filteredCaseStudies.map((caseStudy, index: number) => (
+        <CaseStudyCard key={index} {...caseStudy} />
+      ))}
     </ul>
   );
 
