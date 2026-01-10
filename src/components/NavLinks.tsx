@@ -1,13 +1,13 @@
 const links = [
-  { href: '/about', label: 'About' },
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/services', label: 'Services' },
+  { href: "/about", label: "About" },
+  { href: "/portfolio", label: "Portfolio" },
+  { href: "/capabilities", label: "Capabilities" },
   {
-    href: 'https://aaronsalley.medium.com/',
-    label: 'Insights',
-    target: '_blank',
+    href: "https://aaronsalley.medium.com/",
+    label: "Insights",
+    target: "_blank",
   }, // TODO: Make local and remove target
-  { href: '/contact', label: 'Contact' },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function NavLinks({ className }: { className?: string }) {
@@ -18,7 +18,7 @@ export default function NavLinks({ className }: { className?: string }) {
           <a
             href={link.href}
             target={link.target}
-            rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
+            rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
           >
             {link.label}
           </a>

@@ -14,8 +14,8 @@ export const CaseStudyHighlights = () => {
       <div className="flex flex-col lg:flex-row gap-10 justify-evenly">
         <header className="lg:w-1/2 lg:pr-[25%] text-4xl">
           {/* TODO: Update to "Top Hits" */}
-          <p className="text-base mb-[1em]">Portfolio</p>
-          <h2>Strategy Meets Momentum</h2>
+          <h2 className="text-base mb-[1em]">Portfolio</h2>
+          <p>Strategy Meets Momentum</p>
         </header>
         <div className="lg:w-1/2">
           <p className="mb-[1.5em] text-lg text-salley-primary">
