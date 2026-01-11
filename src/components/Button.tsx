@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+// TODO: Add text only style
 export default function Button({
   children,
   onClick,

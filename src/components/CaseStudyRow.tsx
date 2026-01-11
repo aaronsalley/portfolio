@@ -12,7 +12,6 @@ export default function CaseStudyRow(caseStudy: CaseStudy) {
         <h3 className="text-2xl font-light tracking-tighter">
           {caseStudy.client}
         </h3>
-        {/* <p>{caseStudy.date}</p> */}
       </header>
       <p className="text-salley-primary">{caseStudy.excerpt}</p>
       <div className="flex justify-end items-center">

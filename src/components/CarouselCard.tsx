@@ -25,7 +25,9 @@ export default function CarouselCard({ item }: { item: CaseStudy }) {
         </div>
         <h3 className="flex items-center text-[3.2cqmin]/[.8em] font-light tracking-tighter my-[1em]">
           {item.title}{" "}
-          <small className="h-[1em] text-[50%] mx-[.4em]">for </small>
+          <small className="h-[1em] text-[50%] mx-[.4em]">
+            for <span className="hidden">{item.client}</span>
+          </small>
           <Image
             src={item.clientLogo}
             alt={item.client}
