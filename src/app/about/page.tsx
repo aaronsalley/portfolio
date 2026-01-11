@@ -33,7 +33,7 @@ export default async function AboutPage() {
 
 const Hero = () => (
   <header className="flex flex-col min-h-screen gap-20">
-    <div className="flex flex-col lg:flex-row mx-4 gap-20 max-w-7xl xl:mx-auto">
+    <div className="flex flex-col lg:flex-row gap-20 mx-4 max-w-7xl xl:mx-auto">
       <h1 className="lg:w-5/12 about-name">
         <small className="lg:block text-2xl tracking-normal font-sans">
           Hello There 👋🏽 I&apos;m

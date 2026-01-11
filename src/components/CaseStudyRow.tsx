@@ -9,9 +9,9 @@ export default function CaseStudyRow(caseStudy: CaseStudy) {
       className="grid grid-cols-1 md:grid-cols-3 gap-4 not-last:border-b border-salley-secondary py-6"
     >
       <header>
-        <h3 className="text-2xl font-light tracking-tighter">
+        <p className="text-2xl font-light tracking-tighter">
           {caseStudy.client}
-        </h3>
+        </p>
       </header>
       <p className="text-salley-primary">{caseStudy.excerpt}</p>
       <div className="flex justify-end items-center">

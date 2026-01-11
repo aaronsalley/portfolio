@@ -3,7 +3,7 @@ import PostList from "@/components/PostList";
 import { fetchPosts } from "@/data/fetchPosts";
 
 export const metadata: Metadata = {
-  title: "Capabilities & Services",
+  title: "Services",
   description: `Partner with Aaron Salley for intentional digital product services. From strategic clarity and integrated design to holistic lifecycle management and compelling content, we transform your vision into exceptional experiences.`,
 };
 
@@ -34,7 +34,7 @@ export default async function ServicesPage() {
       <main className="bg-salley-primary/10">
         <div className="flex flex-col gap-15 mx-4 max-w-7xl lg:mx-auto mt-40">
           <header className="text-center mx-4 lg:max-w-3/4 lg:mx-auto">
-            <h1 className="text-5xl pb-[.5em]">
+            <h1 className="text-5xl font-serif pb-[.5em]">
               Bespoke Solutions Tailored to Your Needs
             </h1>
             <p>
