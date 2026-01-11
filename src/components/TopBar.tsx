@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import EmailSubscribeForm from "./FormEmailSubscribe";
 import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";
@@ -50,11 +50,11 @@ export default function TopBar() {
     <header className={classNames}>
       <Brand />
       {/* TODO: Reactivate once pages are rebuilt */}
-      <MenuButton
+      {/* <MenuButton
         isSticky={isSticky}
         isMenuOpen={isMenuOpen}
         setMenu={setMenu}
-      />
+      /> */}
       {isMenuOpen ? <NavMenu /> : null}
     </header>
   );
@@ -124,8 +124,8 @@ function NavMenu() {
         {isMobile ? (
           <>
             <BrowseLinks />
-            <QuickLinks />
-            <Articles />
+            {/* <QuickLinks /> // TODO: restore */}
+            {/* <Articles /> // TODO: restore */}
             <EmailSubscribeForm className={style.email} />
             <SocialLinks className={style.socialLinks} />
           </>
@@ -133,12 +133,12 @@ function NavMenu() {
           <>
             <div className="flex max-w-1/2 flex-wrap">
               <BrowseLinks />
-              <QuickLinks />
+              {/* <QuickLinks /> // TODO: restore */}
               <EmailSubscribeForm className={style.email} />
               <SocialLinks className={style.socialLinks} />
             </div>
             <div className="flex grow-1">
-              <Articles />
+              {/* <Articles /> // TODO: restore */}
             </div>
           </>
         )}
