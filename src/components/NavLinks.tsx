@@ -1,6 +1,6 @@
 const links = [
   { href: "/about", label: "About" },
-  { href: "/portfolio", label: "Portfolio" },
+  // { href: "/portfolio", label: "Portfolio" },
   { href: "/services", label: "Services" },
   {
     href: "https://aaronsalley.medium.com/",
