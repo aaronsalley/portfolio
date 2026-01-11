@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import PostList from "@/components/PostList";
 import { fetchPosts } from "@/data/fetchPosts";
+import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -45,13 +46,6 @@ export default async function ServicesPage() {
               actually made, allowing ideas to move cleanly from intent to
               implementation.
             </p>
-            {/* <p>
-          Across engagements, the goal is consistent: establish a clear point of
-          view, reduce unnecessary complexity, and build products and platforms
-          that scale without losing coherence. The work is deliberate,
-          collaborative, and grounded in real constraints—not templates or
-          playbooks.
-        </p> */}
           </header>
           {renderServices()}
           <p className="text-center mx-4 lg:max-w-3/4 lg:mx-auto">
@@ -65,6 +59,7 @@ export default async function ServicesPage() {
       <aside>
         <PostList posts={posts} />
       </aside>
+      <CTA />
     </>
   );
 }
@@ -178,40 +173,6 @@ const services: Service[] = [
           strokeLinecap="round"
         />
       </svg>
-      // <svg
-      //   width="28"
-      //   height="28"
-      //   viewBox="0 0 28 28"
-      //   fill="none"
-      //   xmlns="http://www.w3.org/2000/svg"
-      // >
-      //   <circle
-      //     cx="14"
-      //     cy="14"
-      //     r="8"
-      //     stroke="currentColor"
-      //     strokeWidth="2"
-      //     fill="none"
-      //   />
-      //   <path
-      //     d="M14 2V6M14 22V26M2 14H6M22 14H26"
-      //     stroke="currentColor"
-      //     strokeWidth="2"
-      //     strokeLinecap="round"
-      //   />
-      //   <path
-      //     d="M8.22 8.22L5.4 5.4M19.78 8.22L22.6 5.4M8.22 19.78L5.4 22.6M19.78 19.78L22.6 22.6"
-      //     stroke="currentColor"
-      //     strokeWidth="2"
-      //     strokeLinecap="round"
-      //   />
-      //   <path
-      //     d="M14 10V14L16.5 16.5"
-      //     stroke="currentColor"
-      //     strokeWidth="2"
-      //     strokeLinecap="round"
-      //   />
-      // </svg>
     ),
   },
   {

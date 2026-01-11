@@ -22,7 +22,7 @@ export default function Experience() {
             wide range of projects, collaborating with diverse teams and clients
             to bring creative visions to life.
           </p>
-          <Button href="mailto:hello@aaronsalley.com" variant="text">
+          <Button href="/contact" variant="text">
             Let&apos;s Connect
           </Button>
         </div>

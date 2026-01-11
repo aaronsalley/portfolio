@@ -22,7 +22,7 @@ export const CaseStudyHighlights = () => {
             I help clarify the real problem, make the decisions that matter, and
             create momentum that holds once the room clears.
           </p>
-          <Button href="mailto:hello@aaronsalley.com" variant="text">
+          <Button href="/contact" variant="text">
             Let&apos;s Connect
           </Button>
         </div>
