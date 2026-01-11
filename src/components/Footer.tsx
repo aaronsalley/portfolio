@@ -12,16 +12,9 @@ export default function Footer() {
           products—aligning strategy, design, and technology to build systems
           that last. The work favors clarity over noise, intention over urgency,
           and durability over trends.
-          {/* We&apos;re a studio offering tailored solutions for clients requiring
-          effective and user-centered digital experiences. Unlike studios that
-          focus on a single, specific creative discipline, we emphasize high-end
-          design and production, while bridging the gap between strategy and
-          delivery. */}
         </p>
       </div>
-      {/* TODO: Reactivate once pages are rebuilt */}
-      {/* <NavLinks className={style.nav} /> */}
-      <span className="grow-1"></span>
+      <NavLinks className={style.nav} />
       {/* Instagram className={style.instagram} */}
       <div className={style.email}>
         <EmailSubscribeForm className="sm:mr-auto md:mr-8 md:max-w-xl lg:ml-16" />
