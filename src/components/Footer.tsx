@@ -35,7 +35,7 @@ const style = {
     "lg:gap-15",
   ].join(" "),
   socialLinks: [
-    "flex justify-center gap-4 mx-3",
+    "flex justify-center gap-4 mx-auto",
     "md:order-2 md:justify-end md:py-7 md:items-center md:mr-9",
   ].join(" "),
   divider:
@@ -45,9 +45,9 @@ const style = {
     "md:order-4 xl:text-[180px] md:mt-0",
   ].join(" "),
   paragraph: [
-    "w-full max-w-7xl text-center font-sans mx-3",
+    "w-full max-w-7xl text-center font-sans mx-10",
     "md:order-5 md:flex-1 md:text-left md:ml-9",
   ].join(" "),
-  email: ["flex-1 mx-3", "md:order-6 md:mr-9"].join(" "),
+  email: ["flex-1 mx-10", "md:order-6 md:mr-9"].join(" "),
   instagram: ["md:order-7"].join(" "),
 };

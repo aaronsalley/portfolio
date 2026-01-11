@@ -33,8 +33,8 @@ export default async function ServicesPage() {
   return (
     <>
       <main className="bg-salley-primary/10">
-        <div className="flex flex-col gap-15 mx-4 max-w-7xl lg:mx-auto mt-40">
-          <header className="text-center mx-4 lg:max-w-3/4 lg:mx-auto">
+        <div className="flex flex-col gap-15 mx-10 max-w-7xl lg:mx-auto mt-40">
+          <header className="text-center lg:max-w-3/4 lg:mx-auto">
             <h1 className="text-5xl font-serif pb-[.5em]">
               Bespoke Solutions Tailored to Your Needs
             </h1>
@@ -48,7 +48,7 @@ export default async function ServicesPage() {
             </p>
           </header>
           {renderServices()}
-          <p className="text-center mx-4 lg:max-w-3/4 lg:mx-auto">
+          <p className="text-center lg:max-w-3/4 lg:mx-auto">
             I work best with teams who value clarity, restraint, and long-term
             thinking. Engagements are selective by design, shaped by context
             rather than scope. The aim is not more output—but better decisions,

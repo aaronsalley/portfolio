@@ -33,7 +33,7 @@ export default async function AboutPage() {
 
 const Hero = () => (
   <header className="flex flex-col min-h-screen gap-20">
-    <div className="flex flex-col lg:flex-row gap-20 mx-4 max-w-7xl xl:mx-auto">
+    <div className="flex flex-col lg:flex-row gap-20 mx-10 max-w-7xl xl:mx-auto">
       <h1 className="lg:w-5/12 about-name">
         <small className="lg:block text-2xl tracking-normal font-sans">
           Hello There 👋🏽 I&apos;m
@@ -62,7 +62,7 @@ const Hero = () => (
 
 const About = () => (
   <main className="py-20 bg-salley-primary/10">
-    <div className="flex flex-col lg:flex-row-reverse mx-4 gap-20 max-w-7xl xl:mx-auto items-center-safe">
+    <div className="flex flex-col lg:flex-row-reverse mx-10 gap-20 max-w-7xl xl:mx-auto items-center-safe">
       <section className="lg:w-7/12">
         <h2 className="text-4xl">My Philosophy</h2>
         <p className="my-4 text-balance">
@@ -128,7 +128,7 @@ const Workflow = () => {
 
   return (
     <section className="bg-salley-primary/10 py-40">
-      <div className="flex flex-col lg:flex-row mx-4 md:mx-14 max-w-7xl xl:mx-auto">
+      <div className="flex flex-col lg:flex-row mx-10 md:mx-14 max-w-7xl xl:mx-auto">
         <div className="lg:w-1/2">
           <h2 className="lg:pr-[25%] text-4xl mb-20">
             My Process in Three Steps
