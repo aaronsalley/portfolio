@@ -9,7 +9,7 @@ import { CaseStudyHighlights } from "@/components/CaseStudyHighlights";
 
 export const metadata: Metadata = {
   description:
-    "Product Creator and Builder based in New York City. Combining strategic vision with technical expertise to create momentum.",
+    "Product Creator and Builder based in New York City. Product invention, strategy, and execution for organizations navigating complexity, scale, and moments that demand clarity.",
 };
 
 export default async function HomePage() {

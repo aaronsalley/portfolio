@@ -9,7 +9,7 @@ import Experience from "@/components/Experience";
 
 export const metadata: Metadata = {
   title: "About",
-  description: ``,
+  description: `Product leader and builder helping organizations navigate complexity—turning ambiguity into clear, scalable systems built to endure.`,
 };
 
 export default async function AboutPage() {

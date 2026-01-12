@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Ready to collaborate? Contact Aaron Salley for tailored digital solutions. Fill out our form or email us directly to start transforming your vision into exceptional digital experiences.`,
+  description: `A simple way to start a thoughtful conversation about complex product challenges and what comes next.`,
 };
 
 export default function ContactPage() {

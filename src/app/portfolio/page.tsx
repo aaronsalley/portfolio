@@ -4,7 +4,7 @@ import CaseStudyGrid from "@/components/CaseStudyGrid";
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: `Explore our portfolio of impactful digital products. See how we partner with diverse clients, applying strategic clarity, integrated design, and holistic lifecycle management to drive tangible results and sustained growth.`,
+  description: `Selected work spanning product invention, platform strategy, and systems built to scale with clarity and intent.`,
 };
 
 export default function PortfolioPage() {

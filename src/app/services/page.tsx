@@ -5,7 +5,7 @@ import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: `Partner with Aaron Salley for intentional digital product services. From strategic clarity and integrated design to holistic lifecycle management and compelling content, we transform your vision into exceptional experiences.`,
+  description: `Capabilities and services focused on product invention, strategic clarity, and building systems that scale without losing coherence.`,
 };
 
 export default async function ServicesPage() {
