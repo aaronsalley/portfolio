@@ -137,7 +137,7 @@ const Workflow = () => {
         <ol className="flex flex-col gap-20 lg:w-1/2 relative">
           {renderSteps()}
           <span
-            className="absolute top-0 bottom-1/6 -z-10 left-[calc(2.25rem-0.5px)]"
+            className="absolute top-0 bottom-1/5 -z-10 left-[calc(2.25rem-0.5px)]"
             style={{
               width: "1px",
               border: "1px dashed #000",
