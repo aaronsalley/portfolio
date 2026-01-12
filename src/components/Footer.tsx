@@ -1,6 +1,8 @@
 import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";
 import EmailSubscribeForm from "./FormEmailSubscribe";
+import Copyright from "@/components/Copyright";
+import { Suspense } from "react";
 
 export default function Footer() {
   return (
@@ -21,9 +23,9 @@ export default function Footer() {
       </div>
       <SocialLinks className={style.socialLinks} />
       <div className={style.divider} />
-      <p className="mb-12 w-full text-center font-sans text-xs opacity-30 md:order-last">
-        © {new Date().getFullYear()} Aaron Salley LLC. All rights reserved.
-      </p>
+      <Suspense>
+        <Copyright />
+      </Suspense>
     </footer>
   );
 }
