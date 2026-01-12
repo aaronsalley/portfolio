@@ -30,6 +30,8 @@ const extractImageFromContent = (content?: string) => {
 };
 
 export const fetchPosts = async (): Promise<Post[]> => {
+  "use cache";
+
   const { default: Parser } = await import("rss-parser");
   const parser = new Parser({
     customFields: {
