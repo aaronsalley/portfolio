@@ -1,6 +1,6 @@
 const links = [
   { href: '/about', label: 'About' },
-  { href: '/portfolio', label: 'Portfolio' }, // TODO: Reactivate once case studies are rebuilt
+  { href: '/portfolio', label: 'Portfolio' },
   { href: '/services', label: 'Services' },
   {
     href: 'https://aaronsalley.medium.com/',

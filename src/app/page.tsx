@@ -45,6 +45,7 @@ const Hero = () => {
         src={headshot}
         alt="Aaron Salley's headshot"
         className="absolute right-0 bottom-0 z-10 h-screen w-max transform-[scaleX(-1)] object-contain object-bottom-right saturate-70"
+        loading="eager"
       />
       <div
         className="absolute top-1/2 left-11 flex w-[90cqmin] min-w-sm -translate-x-1/2 -rotate-90 items-center opacity-40"

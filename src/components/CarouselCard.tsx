@@ -14,7 +14,7 @@ export default function CarouselCard({ item }: { item: CaseStudy }) {
               alt={item.client_name}
               width={800}
               height={400}
-              className="aspect-7/5 w-full rounded-2xl object-cover"
+              className="aspect-7/5 h-auto w-full rounded-2xl object-cover"
             />
           )}
           {item.slug && !item.slug.startsWith('/') && (
