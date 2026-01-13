@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import CaseStudyCard from './CaseStudyCard';
-import { CaseStudy, getCaseStudies } from '@/data/getMDX';
+import { CaseStudy } from '@/data/getMDX';
 
 export default function CaseStudyGrid({ posts }: { posts: CaseStudy[] }) {
   // Get search params

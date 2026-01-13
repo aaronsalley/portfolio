@@ -7,6 +7,10 @@ export default function EmailSubscribeForm({
 }: {
   className?: string;
 }) {
+  const handleSubmit = (formData: FormData) => {
+    crm.createContact(formData);
+  };
+
   return (
     <form className={`flex flex-col gap-4 ${className}`} action={handleSubmit}>
       <p className="text-xl font-bold">
@@ -39,7 +43,3 @@ export default function EmailSubscribeForm({
     </form>
   );
 }
-
-const handleSubmit = (formData: FormData) => {
-  crm.createContact(formData);
-};
