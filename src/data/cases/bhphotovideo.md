@@ -1,3 +1,19 @@
+---
+title: 'PWA Mobile Strategy'
+feature_image: '/B&HPhoto.jpg'
+feature_image_alt:
+feature_image_caption:
+featured: true
+visibility:
+published_at:
+excerpt: 'Unify the mobile experience into a single, sustainable platform for faster, more consistent delivery.'
+reading_time:
+category: 'Commerce'
+tags: ['Design']
+client_name: 'B&H Photo'
+client_logo: '/svgs/brand--B&H.svg'
+---
+
 Case Study: Transforming B&H Photo Video Pro Audio's Mobile Experience for Revenue Growth
 
 B&H Photo Video Pro Audio, a renowned institution in New York City, has set industry standards for retail sales in consumer electronics. Initially hired to maintain mobile app offerings, the project evolved to address underlying user experience issues despite winning the App of the Year at the Mobile Shopping Summit and the first ever Material Design Award for Immersive Imagery in 2015. This case study explores the transformation that occurred over six years, making the mobile suite a substantial revenue generator and an integral part of B&H's eCommerce strategy.

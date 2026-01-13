@@ -1,18 +1,20 @@
-"use client";
+'use client';
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { posts } from "@/data/cases";
-import CarouselCard from "./CarouselCard";
+import { useEffect, useMemo, useRef, useState } from 'react';
+import CarouselCard from './CarouselCard';
+import { CaseStudy } from '@/data/getMDX';
 
-const featuredCases = posts.slice(0, 4);
+export default function Carousel({ posts }: { posts: CaseStudy[] }) {
+  const featuredCases = posts
+    .filter((caseStudy) => caseStudy.featured)
+    .slice(0, 4);
 
-export default function Carousel() {
   const slides = useMemo(() => {
     if (featuredCases.length === 0) return [];
     const first = featuredCases[0];
     const last = featuredCases[featuredCases.length - 1];
     return [last, ...featuredCases, first];
-  }, []);
+  }, [featuredCases]);
 
   const [index, setIndex] = useState(slides.length > 1 ? 1 : 0);
   const [dragOffset, setDragOffset] = useState(0);
@@ -74,7 +76,7 @@ export default function Carousel() {
   };
 
   const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "mouse") return;
+    if (event.pointerType !== 'mouse') return;
     if (event.button !== 0) return;
     activePointerId.current = event.pointerId;
     pointerStartX.current = event.clientX;
@@ -84,14 +86,14 @@ export default function Carousel() {
   };
 
   const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "mouse") return;
+    if (event.pointerType !== 'mouse') return;
     if (activePointerId.current !== event.pointerId) return;
     if (pointerStartX.current === null) return;
     setDragOffset(event.clientX - pointerStartX.current);
   };
 
   const handlePointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "mouse") return;
+    if (event.pointerType !== 'mouse') return;
     if (activePointerId.current !== event.pointerId) return;
     if (pointerStartX.current === null) return;
     const deltaX = event.clientX - pointerStartX.current;
@@ -142,7 +144,7 @@ export default function Carousel() {
   return (
     <div className="relative w-full">
       <div
-        className="overflow-hidden select-none cursor-grab active:cursor-grabbing touch-pan-y [--slide-size:min(800px,60vw)] [--slide-gap:6%] md:[--slide-gap:4%]"
+        className="cursor-grab touch-pan-y overflow-hidden select-none [--slide-gap:6%] [--slide-size:min(800px,60vw)] active:cursor-grabbing md:[--slide-gap:4%]"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -154,18 +156,18 @@ export default function Carousel() {
         onPointerCancel={handlePointerCancel}
       >
         <div
-          className="flex gap-[var(--slide-gap)]"
+          className="flex gap-(--slide-gap)"
           style={{
             transform: translateX,
             transition:
-              isDragging || isJumping ? "none" : "transform 300ms ease",
+              isDragging || isJumping ? 'none' : 'transform 300ms ease',
           }}
           onTransitionEnd={handleTransitionEnd}
         >
           {slides.map((item, itemIndex) => (
             <ul
-              key={`${item.client}-${itemIndex}`}
-              className="w-[var(--slide-size)] shrink-0 flex justify-center"
+              key={`${item.client_name}-${itemIndex}`}
+              className="flex w-(--slide-size) shrink-0 justify-center"
             >
               <CarouselCard item={item} />
             </ul>

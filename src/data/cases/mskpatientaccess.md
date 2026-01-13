@@ -1,3 +1,19 @@
+---
+title: 'ENVR AI Automation'
+feature_image: '/MSKDirect.jpg'
+feature_image_alt:
+feature_image_caption:
+featured: true
+visibility:
+published_at:
+excerpt: ''
+reading_time:
+category: 'Healthcare'
+tags: []
+client_name: 'MSK'
+client_logo: '/svgs/brand--MSK.svg'
+---
+
 Rewiring Patient Access: How MSK Is Automating the Front Door to Cancer Care
 By Aaron Salley, Director-level Product Leader at MSK
 

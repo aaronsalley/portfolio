@@ -1,0 +1,105 @@
+import fs from 'fs';
+import path from 'path';
+
+enum Tags {
+  Strategy = 'Strategy',
+  Design = 'Design',
+  AI = 'AI',
+  Leadership = 'Leadership',
+  Mobile = 'Mobile',
+  Engineering = 'Engineering',
+}
+
+enum Categories {
+  Healthcare = 'Healthcare',
+  Commerce = 'Commerce',
+  SaaS = 'SaaS',
+  IoT = 'IoT',
+  Platform = 'Platform',
+}
+
+type Metadata = {
+  title: string;
+  feature_image?: string;
+  feature_image_alt?: string;
+  feature_image_caption?: string;
+  featured?: boolean;
+  visibility?: string;
+  published_at: string;
+  excerpt: string;
+  reading_time?: string;
+  category?: Categories;
+  tags?: string[];
+};
+
+type Post = Metadata & {
+  slug: string;
+};
+
+export type CaseStudy = Post & {
+  client_name: string;
+  client_logo?: string;
+};
+
+function parseFrontmatter(fileContent: string) {
+  let frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
+  let match = frontmatterRegex.exec(fileContent);
+  let frontMatterBlock = match![1];
+  let content = fileContent.replace(frontmatterRegex, '').trim();
+  let frontMatterLines = frontMatterBlock.trim().split('\n');
+  let metadata: Partial<Metadata> = {};
+
+  frontMatterLines.forEach((line) => {
+    let [key, ...valueArr] = line.split(': ');
+    let value = valueArr.join(': ').trim();
+    value = value.replace(/^['"](.*)['"]$/, '$1'); // Remove quotes
+    let parsedValue: string | string[] = value;
+    if (value.startsWith('[') && value.endsWith(']')) {
+      parsedValue = value
+        .slice(1, -1)
+        .split(',')
+        .map((item) => item.trim())
+        .filter(Boolean)
+        .map((item) => item.replace(/^['"](.*)['"]$/, '$1'));
+    }
+    const trimmedKey = key.trim() as keyof Metadata;
+    if (trimmedKey === 'tags') {
+      metadata[trimmedKey] = Array.isArray(parsedValue)
+        ? parsedValue
+        : typeof parsedValue === 'string' && parsedValue.length > 0
+          ? [parsedValue]
+          : [];
+    } else {
+      metadata[trimmedKey] = parsedValue as any;
+    }
+  });
+
+  return { metadata: metadata, content };
+}
+
+function getMDXFiles(dir: any) {
+  return fs.readdirSync(dir).filter((file) => path.extname(file) === '.md');
+}
+
+function readMDXFile(filePath: any) {
+  let rawContent = fs.readFileSync(filePath, 'utf-8');
+  return parseFrontmatter(rawContent);
+}
+
+function getMDXData(dir: any) {
+  let mdxFiles = getMDXFiles(dir);
+  return mdxFiles.map((file) => {
+    let { metadata, content } = readMDXFile(path.join(dir, file));
+    let slug = path.basename(file, path.extname(file));
+
+    return {
+      ...metadata,
+      slug,
+      content,
+    };
+  });
+}
+
+export function getCaseStudies(): Partial<CaseStudy>[] {
+  return getMDXData(path.join(process.cwd(), 'src', 'data', 'cases'));
+}

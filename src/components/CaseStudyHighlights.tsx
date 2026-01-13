@@ -1,20 +1,23 @@
-import { posts as caseStudies } from "@/data/cases";
-import CaseStudyRow from "./CaseStudyRow";
-import Button from "./Button";
+import CaseStudyRow from './CaseStudyRow';
+import Button from './Button';
+import { getCaseStudies } from '@/data/getMDX';
 
 export const CaseStudyHighlights = () => {
+  const caseStudies = getCaseStudies();
+
   const renderCaseItems = () => {
     return caseStudies
+      .filter((caseStudy) => caseStudy.featured)
       .slice(0, 4)
-      .map((caseStudy) => <CaseStudyRow key={caseStudy.id} {...caseStudy} />);
+      .map((caseStudy) => <CaseStudyRow key={caseStudy.slug} {...caseStudy} />);
   };
 
   return (
     <section className="mx-10 my-20 max-w-7xl xl:mx-auto">
-      <div className="flex flex-col lg:flex-row gap-10 justify-evenly">
-        <header className="lg:w-1/2 lg:pr-[25%] text-4xl">
+      <div className="flex flex-col justify-evenly gap-10 lg:flex-row">
+        <header className="text-4xl lg:w-1/2 lg:pr-[25%]">
           {/* TODO: Update to "Top Hits" */}
-          <h2 className="text-base mb-[1em]">Portfolio</h2>
+          <h2 className="mb-[1em] text-base">Portfolio</h2>
           <p>Strategy Meets Momentum</p>
         </header>
         <div className="lg:w-1/2">

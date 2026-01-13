@@ -1,10 +1,10 @@
-import { Metadata } from "next";
-import PostList from "@/components/PostList";
-import { fetchPosts } from "@/data/fetchPosts";
-import CTA from "@/components/CTA";
+import { Metadata } from 'next';
+import PostList from '@/components/PostList';
+import { fetchPosts } from '@/data/fetchPosts';
+import CTA from '@/components/CTA';
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: 'Services',
   description: `Capabilities and services focused on product invention, strategic clarity, and building systems that scale without losing coherence.`,
 };
 
@@ -13,16 +13,16 @@ export default async function ServicesPage() {
 
   const renderServices = () => {
     return (
-      <ul className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <ul className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {services.map((service) => (
           <li
             key={service.title}
-            className="p-8 rounded-2xl bg-salley-light/50 border border-salley-primary/30"
+            className="rounded-2xl border border-salley-primary/30 bg-salley-light/50 p-8"
           >
-            <div className="flex justify-center items-center h-[5rem] aspect-square bg-salley-dark rounded-full mb-[2rem] *:h-[3rem] *:w-auto *:text-salley-light">
+            <div className="mb-[2rem] flex aspect-square h-[5rem] items-center justify-center rounded-full bg-salley-dark *:h-[3rem] *:w-auto *:text-salley-light">
               {service.image}
             </div>
-            <h2 className="text-2xl my-[.5em]">{service.title}</h2>
+            <h2 className="my-[.5em] text-2xl">{service.title}</h2>
             <p>{service.description}</p>
           </li>
         ))}
@@ -33,9 +33,9 @@ export default async function ServicesPage() {
   return (
     <>
       <main className="bg-salley-primary/10">
-        <div className="flex flex-col gap-15 mx-10 max-w-7xl lg:mx-auto mt-40">
-          <header className="text-center lg:max-w-3/4 lg:mx-auto">
-            <h1 className="text-5xl font-serif pb-[.5em]">
+        <div className="mx-10 mt-40 flex max-w-7xl flex-col gap-15 lg:mx-auto">
+          <header className="text-center lg:mx-auto lg:max-w-3/4">
+            <h1 className="pb-[.5em] font-serif text-5xl">
               Bespoke Solutions Tailored to Your Needs
             </h1>
             <p>
@@ -48,7 +48,7 @@ export default async function ServicesPage() {
             </p>
           </header>
           {renderServices()}
-          <p className="text-center lg:max-w-3/4 lg:mx-auto">
+          <p className="text-center lg:mx-auto lg:max-w-3/4">
             I work best with teams who value clarity, restraint, and long-term
             thinking. Engagements are selective by design, shaped by context
             rather than scope. The aim is not more output—but better decisions,
@@ -73,9 +73,9 @@ type Service = {
 
 const services: Service[] = [
   {
-    title: "Product Strategy & Advisory",
+    title: 'Product Strategy & Advisory',
     description:
-      "For founders and executives navigating high-stakes decisions. I help shape product direction, portfolio choices, and roadmap priorities—surfacing the decisions that matter most and creating alignment before momentum is lost.",
+      'For founders and executives navigating high-stakes decisions. I help shape product direction, portfolio choices, and roadmap priorities—surfacing the decisions that matter most and creating alignment before momentum is lost.',
     image: (
       <svg
         width="28"
@@ -104,9 +104,9 @@ const services: Service[] = [
     ),
   },
   {
-    title: "0→1 Product Leadership",
+    title: '0→1 Product Leadership',
     description:
-      "For moments when something new needs to exist. I lead early-stage product definition through launch, pairing original thinking with disciplined execution so new products can move from concept to reality without friction.",
+      'For moments when something new needs to exist. I lead early-stage product definition through launch, pairing original thinking with disciplined execution so new products can move from concept to reality without friction.',
     image: (
       <svg
         width="28"
@@ -176,9 +176,9 @@ const services: Service[] = [
     ),
   },
   {
-    title: "Platform & Experience Modernization",
+    title: 'Platform & Experience Modernization',
     description:
-      "For organizations outgrowing their systems. I reframe fragmented platforms and experiences into cohesive, scalable products—simplifying architecture, workflows, and interfaces while preserving what already works.",
+      'For organizations outgrowing their systems. I reframe fragmented platforms and experiences into cohesive, scalable products—simplifying architecture, workflows, and interfaces while preserving what already works.',
     image: (
       <svg
         width="27"
@@ -206,9 +206,9 @@ const services: Service[] = [
     ),
   },
   {
-    title: "Decision Facilitation",
+    title: 'Decision Facilitation',
     description:
-      "For teams at an inflection point. I step in when progress has stalled, assumptions need to be challenged, or clarity has eroded—helping teams reset direction and move forward with confidence.",
+      'For teams at an inflection point. I step in when progress has stalled, assumptions need to be challenged, or clarity has eroded—helping teams reset direction and move forward with confidence.',
     image: (
       <svg
         width="20"
@@ -236,9 +236,9 @@ const services: Service[] = [
     ),
   },
   {
-    title: "Interim / Embedded Leadership",
+    title: 'Interim / Embedded Leadership',
     description:
-      "For periods of transition or growth. I partner closely with teams as embedded leadership, bringing senior product judgment, technical fluency, and steady momentum where it’s needed most.",
+      'For periods of transition or growth. I partner closely with teams as embedded leadership, bringing senior product judgment, technical fluency, and steady momentum where it’s needed most.',
     image: (
       <svg
         width="28"
