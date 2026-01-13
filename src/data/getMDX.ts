@@ -100,6 +100,6 @@ function getMDXData(dir: any) {
   });
 }
 
-export function getCaseStudies(): Partial<CaseStudy>[] {
+export function getCaseStudies(): any[] {
   return getMDXData(path.join(process.cwd(), 'src', 'data', 'cases'));
 }

@@ -19,7 +19,7 @@ export default async function ServicesPage() {
             key={service.title}
             className="rounded-2xl border border-salley-primary/30 bg-salley-light/50 p-8"
           >
-            <div className="mb-[2rem] flex aspect-square h-[5rem] items-center justify-center rounded-full bg-salley-dark *:h-[3rem] *:w-auto *:text-salley-light">
+            <div className="mb-8 flex aspect-square h-20 items-center justify-center rounded-full bg-salley-dark *:h-12 *:w-auto *:text-salley-light">
               {service.image}
             </div>
             <h2 className="my-[.5em] text-2xl">{service.title}</h2>
