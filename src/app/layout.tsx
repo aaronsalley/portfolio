@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import '@/assets/global.css';
-import TopBar from '@/components/topbar';
 import Footer from '@/components/Footer';
 import { GoogleTagManagerScript, GTM_no_script } from '@/lib/gtm';
+import TopBar from '@/components/topbar';
 
 export const metadata: Metadata = {
   title: { template: '%s — Aaron Salley', default: 'Aaron Salley' },
