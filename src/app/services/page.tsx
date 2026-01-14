@@ -33,7 +33,7 @@ export default async function ServicesPage() {
   return (
     <>
       <main className="bg-salley-primary/10">
-        <div className="mx-10 mt-40 flex max-w-7xl flex-col gap-15 lg:mx-auto">
+        <div className="mx-10 mt-40 flex max-w-7xl flex-col gap-15 xl:mx-auto">
           <header className="text-center lg:mx-auto lg:max-w-3/4">
             <h1 className="pb-[.5em] font-serif text-5xl">
               Bespoke Solutions Tailored to Your Needs

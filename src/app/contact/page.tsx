@@ -11,7 +11,7 @@ export default function ContactPage() {
   return (
     <>
       <main className="bg-salley-primary/10">
-        <div className="mx-10 my-40 max-w-7xl lg:mx-auto">
+        <div className="mx-10 my-40 max-w-7xl xl:mx-auto">
           <h1 className="text-center font-serif text-5xl">
             Schedule a Product Consultation
           </h1>
