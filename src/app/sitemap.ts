@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: 'https://aaronsalley.com/portfolio',
+      url: 'https://aaronsalley.com/work',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,

@@ -1,21 +1,21 @@
-import CTA from "@/components/CTA";
-import ContactForm from "@/components/FormContact";
-import { Metadata } from "next";
+import CTA from '@/components/CTA';
+import ContactForm from '@/components/FormContact';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Ready to collaborate? Contact Aaron Salley for tailored digital solutions. Fill out our form or email us directly to start transforming your vision into exceptional digital experiences.`,
+  title: 'Contact',
+  description: `A simple way to start a thoughtful conversation about complex product challenges and what comes next.`,
 };
 
 export default function ContactPage() {
   return (
     <>
       <main className="bg-salley-primary/10">
-        <div className="mx-10 max-w-7xl lg:mx-auto my-40">
-          <h1 className="text-5xl font-serif text-center">
+        <div className="mx-10 my-40 max-w-7xl xl:mx-auto">
+          <h1 className="text-center font-serif text-5xl">
             Schedule a Product Consultation
           </h1>
-          <p className="text-center my-4 mb-10">
+          <p className="my-4 mb-10 text-center">
             I take on a small number of engagements at a time. The best first
             step is a short note with a few lines on what you’re building,
             what’s not working, and what outcome you’re aiming for. If it’s a

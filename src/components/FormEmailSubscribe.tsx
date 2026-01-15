@@ -1,15 +1,19 @@
-"use client";
+'use client';
 
-import * as crm from "@/lib/freshsales";
+import * as crm from '@/lib/freshsales';
 
 export default function EmailSubscribeForm({
   className,
 }: {
   className?: string;
 }) {
+  const handleSubmit = (formData: FormData) => {
+    crm.createContact(formData);
+  };
+
   return (
     <form className={`flex flex-col gap-4 ${className}`} action={handleSubmit}>
-      <p className="text-2xl font-bold">
+      <p className="text-xl font-bold">
         Let&apos;s keep in touch. Get on the list.
       </p>
       <div className="flex justify-between border border-gray-300 p-5">
@@ -39,7 +43,3 @@ export default function EmailSubscribeForm({
     </form>
   );
 }
-
-const handleSubmit = (formData: FormData) => {
-  crm.createContact(formData);
-};

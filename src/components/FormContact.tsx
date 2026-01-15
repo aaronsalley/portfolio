@@ -1,9 +1,13 @@
-"use client";
+'use client';
 
-import * as crm from "@/lib/freshsales";
-import Button from "./Button";
+import * as crm from '@/lib/freshsales';
+import Button from './Button';
 
 export default function ContactForm() {
+  const handleSubmit = (formData: FormData) => {
+    crm.createDeal(formData);
+  };
+
   return (
     <form className="flex flex-wrap gap-4" action={handleSubmit}>
       <div className="grow">
@@ -17,7 +21,7 @@ export default function ContactForm() {
           autoComplete="given-name"
           placeholder="First Name"
           required
-          className="bg-salley-light w-full border border-salley-primary/30 rounded-xl px-[1em] py-[.5em]"
+          className="w-full rounded-xl border border-salley-primary/30 bg-salley-light px-[1em] py-[.5em]"
         />
       </div>
       <div className="grow">
@@ -31,7 +35,7 @@ export default function ContactForm() {
           autoComplete="family-name"
           placeholder="Last Name"
           required
-          className="bg-salley-light w-full border border-salley-primary/30 rounded-xl px-[1em] py-[.5em]"
+          className="w-full rounded-xl border border-salley-primary/30 bg-salley-light px-[1em] py-[.5em]"
         />
       </div>
       <div className="w-full">
@@ -45,7 +49,7 @@ export default function ContactForm() {
           autoComplete="email"
           placeholder="Email Address"
           required
-          className="bg-salley-light w-full border border-salley-primary/30 rounded-xl px-[1em] py-[.5em]"
+          className="w-full rounded-xl border border-salley-primary/30 bg-salley-light px-[1em] py-[.5em]"
         />
       </div>
       <div className="w-full">
@@ -57,14 +61,10 @@ export default function ContactForm() {
           name="message"
           placeholder={`Any other details you'd like to provide?`}
           rows={5}
-          className="bg-salley-light w-full border border-salley-primary/30 rounded-xl px-[1em] py-[.5em]"
+          className="w-full rounded-xl border border-salley-primary/30 bg-salley-light px-[1em] py-[.5em]"
         />
       </div>
       <Button variant="text">Send</Button>
     </form>
   );
 }
-
-const handleSubmit = (formData: FormData) => {
-  crm.createDeal(formData);
-};

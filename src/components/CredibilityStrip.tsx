@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import * as BrandLogos from "@/assets/svgs/brands";
-import { useEffect } from "react";
+import Image from 'next/image';
+import * as BrandLogos from '../../public/svgs/brands';
+import { useEffect } from 'react';
 
 export default function CredibilityStrip() {
   const height = 36;
@@ -31,7 +31,7 @@ export default function CredibilityStrip() {
 
   // Inject keyframes into the document
   useEffect(() => {
-    const styleTag = document.createElement("style");
+    const styleTag = document.createElement('style');
     styleTag.innerHTML = scrollStyle;
     document.head.appendChild(styleTag);
     return () => {
