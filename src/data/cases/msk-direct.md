@@ -4,7 +4,7 @@ feature_image: '/MSKDirect_mobile_splash.jpg'
 feature_image_alt:
 feature_image_caption:
 featured: true
-visibility:
+visibility: public
 published_at: 2023
 excerpt: 'Access alone doesn’t guarantee impact. This case shows how MSK Direct made it easier for members to engage while proactively surfacing cancer expertise earlier—without compromising trust or clinical rigor.'
 reading_time:

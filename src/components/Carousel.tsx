@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import CarouselCard from './CarouselCard';
 import { CaseStudy } from '@/data/getMDX';
 
-export default function Carousel({ posts }: { posts: CaseStudy[] }) {
+export default function Carousel({ posts }: { posts: Partial<CaseStudy>[] }) {
   const featuredCases = posts
     .filter((caseStudy) => caseStudy.featured)
     .slice(0, 4);

@@ -3,15 +3,15 @@ import Link from 'next/link';
 import link_out from '../../public/svgs/link_out.svg';
 import { CaseStudy } from '@/data/getMDX';
 
-export default function CarouselCard({ item }: { item: CaseStudy }) {
+export default function CarouselCard({ item }: { item: Partial<CaseStudy> }) {
   return (
     <li className="z-0 flex w-full max-w-200 flex-col items-start">
-      <Link href={item.slug && `/portfolio/${item.slug}`} className="w-full">
+      <Link href={(item.slug && `/work/${item.slug}`) ?? ''} className="w-full">
         <div className="relative flex items-center justify-center">
           {item.feature_image && (
             <Image
               src={item.feature_image}
-              alt={item.client_name}
+              alt={item.client_name ?? 'Case Study Image'}
               width={800}
               height={400}
               className="aspect-7/5 h-auto w-full rounded-2xl object-cover"
@@ -32,7 +32,7 @@ export default function CarouselCard({ item }: { item: CaseStudy }) {
           </small>
           <Image
             src={item.client_logo ?? ''}
-            alt={item.client_name}
+            alt={item.client_name ?? 'Client Logo'}
             width={100}
             height={50}
             className="inline-block h-[1em] w-auto saturate-0"

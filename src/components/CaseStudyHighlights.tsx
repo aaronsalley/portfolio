@@ -16,8 +16,7 @@ export const CaseStudyHighlights = () => {
     <section className="mx-10 my-20 max-w-7xl xl:mx-auto">
       <div className="flex flex-col justify-evenly gap-10 lg:flex-row">
         <header className="text-4xl lg:w-1/2 lg:pr-[25%]">
-          {/* TODO: Update to "Top Hits" */}
-          <h2 className="mb-[1em] text-base">Portfolio</h2>
+          <h2 className="mb-[1em] text-base">Work</h2>
           <p>Strategy Meets Momentum</p>
         </header>
         <div className="lg:w-1/2">

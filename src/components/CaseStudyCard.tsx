@@ -2,9 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { CaseStudy } from '@/data/getMDX';
 
-export default function CaseStudyCard(caseStudy: CaseStudy) {
+export default function CaseStudyCard(caseStudy: Partial<CaseStudy>) {
   return (
-    <Link href={caseStudy.slug && `/portfolio/${caseStudy.slug}`}>
+    <Link href={(caseStudy.slug && `/work/${caseStudy.slug}`) ?? ''}>
       <article className="pb-20">
         {caseStudy.feature_image && (
           <Image

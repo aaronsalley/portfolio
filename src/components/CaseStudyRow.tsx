@@ -1,7 +1,7 @@
 import { CaseStudy } from '@/data/getMDX';
 import Button from './Button';
 
-export default function CaseStudyRow(caseStudy: CaseStudy) {
+export default function CaseStudyRow(caseStudy: Partial<CaseStudy>) {
   // TODO: Redesign case
   return (
     <article className="grid grid-cols-1 gap-4 border-salley-secondary py-6 not-last:border-b md:grid-cols-3">
@@ -13,7 +13,7 @@ export default function CaseStudyRow(caseStudy: CaseStudy) {
       <p className="text-salley-primary">{caseStudy.excerpt}</p>
       <div className="flex items-center justify-end">
         <Button
-          href={caseStudy.slug && `/portfolio/${caseStudy.slug}`}
+          href={(caseStudy.slug && `/work/${caseStudy.slug}`) ?? ''}
           variant="hollow"
         >
           Read More

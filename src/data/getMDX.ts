@@ -29,7 +29,7 @@ type Metadata = {
   excerpt: string;
   reading_time?: string;
   category?: Categories;
-  tags?: string[];
+  tags?: string[] | Tags[];
 };
 
 type Post = Metadata & {
@@ -71,23 +71,23 @@ function parseFrontmatter(fileContent: string) {
           ? [parsedValue]
           : [];
     } else {
-      metadata[trimmedKey] = parsedValue as any;
+      metadata[trimmedKey] = parsedValue as never;
     }
   });
 
   return { metadata: metadata, content };
 }
 
-function getMDXFiles(dir: any) {
+function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === '.md');
 }
 
-function readMDXFile(filePath: any) {
+function readMDXFile(filePath: string) {
   const rawContent = fs.readFileSync(filePath, 'utf-8');
   return parseFrontmatter(rawContent);
 }
 
-function getMDXData(dir: any) {
+function getMDXData(dir: string) {
   const mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     const { metadata, content } = readMDXFile(path.join(dir, file));
@@ -101,6 +101,14 @@ function getMDXData(dir: any) {
   });
 }
 
-export function getCaseStudies(): any[] {
-  return getMDXData(path.join(process.cwd(), 'src', 'data', 'cases'));
+export function getCaseStudies(): Partial<CaseStudy>[] {
+  return getMDXData(path.join(process.cwd(), 'src', 'data', 'cases'))
+    .filter((post) => post.visibility === 'public')
+    .sort((a, b) => {
+      if (!a.published_at || !b.published_at) return 0;
+
+      return (
+        new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+      );
+    });
 }

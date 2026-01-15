@@ -2,7 +2,7 @@ import { CustomMDX } from '@/components/mdx';
 import { CaseStudy, getCaseStudies } from '@/data/getMDX';
 
 export async function generateStaticParams() {
-  let posts = getCaseStudies();
+  const posts = getCaseStudies();
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -11,9 +11,13 @@ export async function generateStaticParams() {
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = await params;
-  const post: CaseStudy = await getCaseStudies().find(
+  const post: Partial<CaseStudy> | undefined = await getCaseStudies().find(
     (post) => post.slug === slug
   );
+
+  if (!post) {
+    return <div>Post not found</div>;
+  }
 
   const lede =
     'nth-of-type-1:text-xl nth-of-type-1:text-pretty nth-of-type-1:first-line:text-end';

@@ -4,7 +4,7 @@ feature_image: '/MSK_patient_access.png'
 feature_image_alt:
 feature_image_caption:
 featured: true
-visibility:
+visibility: public
 published_at: 2025
 excerpt: 'In high-reliability environments, speed without judgment creates risk. This case explores how AI automation was introduced to reduce manual load and operational strain—without compromising safety, trust, or human oversight.'
 reading_time:

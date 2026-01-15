@@ -5,7 +5,11 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import CaseStudyCard from './CaseStudyCard';
 import { CaseStudy } from '@/data/getMDX';
 
-export default function CaseStudyGrid({ posts }: { posts: CaseStudy[] }) {
+export default function CaseStudyGrid({
+  posts,
+}: {
+  posts: Partial<CaseStudy>[];
+}) {
   // Get search params
   const router = useRouter();
   const pathname = usePathname();
@@ -21,7 +25,7 @@ export default function CaseStudyGrid({ posts }: { posts: CaseStudy[] }) {
   const tags = useMemo(() => {
     const unique = new Set(
       posts.reduce((acc, item) => {
-        item.tags && item.tags.forEach((tag) => acc.push(tag));
+        if (item.tags) item.tags.forEach((tag) => acc.push(tag));
         return acc;
       }, [] as string[])
     );
