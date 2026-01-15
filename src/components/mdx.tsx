@@ -53,6 +53,18 @@ function Code({ children, ...props }: { children: string }) {
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
+function UnorderedList({ children, ...props }: any) {
+  return <ul {...props}>{children}</ul>;
+}
+
+function OrderedList({ children, ...props }: any) {
+  return <ol {...props}>{children}</ol>;
+}
+
+function ListItem(props: any) {
+  return <li className="pl-1 marker:text-stone-500" {...props} />;
+}
+
 function slugify(str: any) {
   return str
     .toString()
@@ -96,6 +108,9 @@ const components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
+  ul: UnorderedList,
+  ol: OrderedList,
+  li: ListItem,
   Table,
 };
 

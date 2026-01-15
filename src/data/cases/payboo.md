@@ -5,7 +5,7 @@ feature_image_alt:
 feature_image_caption:
 featured:
 visibility: public
-published_at: 2019
+published_at: 2018
 excerpt: 'Financial flexibility only works when it’s sequenced correctly. This case examines how enterprise readiness came first, and how new payment options were introduced deliberately—earning trust before exposure.'
 reading_time:
 category: 'Commerce'

@@ -33,11 +33,23 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const Heading = ({ children }: { children: React.ReactNode }) => (
     <h2 className="my-[1em] mt-10 mb-4 text-xl">{children}</h2>
   );
+  const List = ({ children }: { children: React.ReactNode }) => (
+    <ul className="my-6 list-disc space-y-2 pl-6 text-base leading-7">
+      {children}
+    </ul>
+  );
+  const OrderedList = ({ children }: { children: React.ReactNode }) => (
+    <ol className="my-6 list-decimal space-y-2 pl-6 text-base leading-7">
+      {children}
+    </ol>
+  );
 
   const overrideComponents = {
     h1: Title,
     p: Body,
     h2: Heading,
+    ul: List,
+    ol: OrderedList,
   };
 
   return (
