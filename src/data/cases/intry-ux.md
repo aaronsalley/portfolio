@@ -1,10 +1,10 @@
 ---
 title: 'UX Development'
-feature_image: '/Intry.jpg'
+feature_image: '/Intry_web.jpg'
 feature_image_alt:
 feature_image_caption:
 featured:
-visibility:
+visibility: draft
 published_at:
 excerpt: ''
 reading_time:

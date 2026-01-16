@@ -4,7 +4,7 @@ feature_image:
 feature_image_alt:
 feature_image_caption:
 featured:
-visibility:
+visibility: draft
 published_at:
 excerpt: ''
 reading_time:
