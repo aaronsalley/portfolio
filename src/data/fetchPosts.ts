@@ -10,50 +10,51 @@ export type Post = {
   readingTime?: string;
 };
 
-const stripHtml = (value: string) => value.replace(/<[^>]*>/g, "").trim();
+const stripHtml = (value: string) => value.replace(/<[^>]*>/g, '').trim();
 
 const extractImageFromContent = (content?: string) => {
-  if (!content) return "";
+  if (!content) return '';
   const match = content.match(/<img[^>]+>/i);
-  if (!match) return "";
+  if (!match) return '';
 
   const imgTag = match[0];
   const srcMatch = imgTag.match(/src="([^">]+)"/i);
   const widthMatch = imgTag.match(/width="(\d+)"/i);
   const heightMatch = imgTag.match(/height="(\d+)"/i);
 
-  const width = widthMatch ? Number(widthMatch[1]) : 0;
-  const height = heightMatch ? Number(heightMatch[1]) : 0;
+  const width = Number(widthMatch?.[1]);
+  const height = Number(heightMatch?.[1]);
 
-  if (width <= 1 || height <= 1) return "";
-  return srcMatch?.[1] ?? "";
+  if (width || height) return '';
+
+  return srcMatch?.[1] ?? '';
 };
 
 export const fetchPosts = async (): Promise<Post[]> => {
-  "use cache";
+  'use cache';
 
-  const { default: Parser } = await import("rss-parser");
+  const { default: Parser } = await import('rss-parser');
   const parser = new Parser({
     customFields: {
-      item: ["content:encoded"],
+      item: ['content:encoded'],
     },
   });
 
-  const feed = await parser.parseURL("https://medium.com/feed/@aaronsalley");
+  const feed = await parser.parseURL('https://medium.com/feed/@aaronsalley');
 
   return feed.items.map((item, index) => {
-    const content = (item as { "content:encoded"?: string })["content:encoded"];
+    const content = (item as { 'content:encoded'?: string })['content:encoded'];
 
     return {
       id: index + 1,
-      title: item.title ?? "Untitled",
+      title: item.title ?? 'Untitled',
       excerpt: item.contentSnippet
         ? item.contentSnippet.trim()
-        : stripHtml(content ?? ""),
-      url: item.link ?? "",
+        : stripHtml(content ?? ''),
+      url: item.link ?? '',
       image: extractImageFromContent(content),
       featured: index < 3,
-      category: item.categories?.[0] ?? "",
+      category: item.categories?.[0] ?? '',
       tags: item.categories ?? [],
     };
   });

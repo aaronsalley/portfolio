@@ -47,6 +47,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       new URL('https://medium.com/**'),
+      new URL('https://cdn-images-1.medium.com/**'),
       new URL('https://mir-s3-cdn-cf.behance.net/**'),
     ],
   },
