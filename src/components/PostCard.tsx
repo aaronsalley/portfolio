@@ -18,7 +18,7 @@ export default function PostCard(post: Post) {
           )}
           <ul className="mt-5 ml-5 inline-flex">
             {post.tags.length > 0 && (
-              <li className="rounded-2xl bg-salley-dark px-2 py-1 text-sm text-salley-light uppercase">
+              <li className="rounded-2xl bg-salley-dark px-2 py-1 text-xs text-salley-light uppercase">
                 {post.tags[0]}
               </li>
             )}
