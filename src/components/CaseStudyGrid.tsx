@@ -19,7 +19,18 @@ export default function CaseStudyGrid({
 
   // List of unique categories and tags
   const categories = useMemo(() => {
-    const unique = new Set(posts.map((item) => item.category).filter(Boolean));
+    // const unique = new Set(posts.map((item) => item.category).filter(Boolean));
+    const unique = new Set(
+      posts.reduce((acc, item) => {
+        if (item.category)
+          if (Array.isArray(item.category)) {
+            item.category.forEach((category) => acc.push(category));
+          } else {
+            acc.push(item.category);
+          }
+        return acc;
+      }, [] as string[])
+    );
     return ['All', ...unique];
   }, [posts]);
   const tags = useMemo(() => {
@@ -92,7 +103,11 @@ export default function CaseStudyGrid({
   // Filtered case studies based on active category and tag
   const filteredCaseStudies = posts.filter((item) => {
     const matchesCategory =
-      activeCategory === 'All' || item.category === activeCategory;
+      activeCategory === 'All' ||
+      (item.category &&
+        (Array.isArray(item.category)
+          ? item.category.includes(activeCategory)
+          : item.category === activeCategory));
     const matchesTag =
       activeTag === 'All' ||
       (item.tags &&
