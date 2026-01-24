@@ -8,7 +8,7 @@ visibility: draft
 published_at:
 excerpt: ''
 reading_time:
-category: Healthcare
+category: [Healthcare, AI]
 tags: []
 client_name: 'DaVincian Healthcare'
 client_logo: '/svgs/brand--Davincian.svg'
