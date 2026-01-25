@@ -1,7 +1,7 @@
-import { CaseStudy } from '@/data/getMDX';
+import { CaseStudy } from '@/data/cases/cases';
 import Button from './Button';
 
-export default function CaseStudyRow(caseStudy: Partial<CaseStudy>) {
+export default function CaseStudyRow(caseStudy: CaseStudy) {
   // TODO: Redesign case
   return (
     <article className="grid grid-cols-1 gap-4 border-salley-secondary py-6 not-last:border-b md:grid-cols-3">

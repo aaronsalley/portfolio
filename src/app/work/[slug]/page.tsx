@@ -1,5 +1,5 @@
 import { CustomMDX } from '@/components/mdx';
-import { CaseStudy, getCaseStudies } from '@/data/getMDX';
+import { CaseStudy, getCaseStudies } from '@/data/cases/cases';
 
 export async function generateStaticParams() {
   const posts = getCaseStudies();

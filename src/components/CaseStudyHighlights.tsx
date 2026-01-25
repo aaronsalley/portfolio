@@ -1,6 +1,6 @@
 import CaseStudyRow from './CaseStudyRow';
 import Button from './Button';
-import { getCaseStudies } from '@/data/getMDX';
+import { getCaseStudies } from '@/data/cases/cases';
 
 export const CaseStudyHighlights = () => {
   const caseStudies = getCaseStudies();

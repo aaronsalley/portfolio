@@ -3,13 +3,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import CaseStudyCard from './CaseStudyCard';
-import { CaseStudy } from '@/data/getMDX';
+import { CaseStudy } from '@/data/cases/cases';
 
-export default function CaseStudyGrid({
-  posts,
-}: {
-  posts: Partial<CaseStudy>[];
-}) {
+export default function CaseStudyGrid({ posts }: { posts: CaseStudy[] }) {
   // Get search params
   const router = useRouter();
   const pathname = usePathname();
@@ -19,7 +15,6 @@ export default function CaseStudyGrid({
 
   // List of unique categories and tags
   const categories = useMemo(() => {
-    // const unique = new Set(posts.map((item) => item.category).filter(Boolean));
     const unique = new Set(
       posts.reduce((acc, item) => {
         if (item.category)
