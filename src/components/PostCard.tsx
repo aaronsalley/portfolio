@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function PostCard(post: Post) {
   return (
     <li key={post.id} className="group rounded-2xl bg-salley-light">
-      <Link href={post.url} target="_blank">
+      <Link href={post.link} target="_blank">
         <article>
           {post.image ? (
             <Image
