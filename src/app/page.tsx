@@ -6,7 +6,7 @@ import CredibilityStrip from '@/components/CredibilityStrip';
 import { fetchPosts } from '@/data/fetchPosts';
 import PostList from '@/components/PostList';
 import { CaseStudyHighlights } from '@/components/CaseStudyHighlights';
-import { getCaseStudies } from '@/data/getMDX';
+import { getCaseStudies } from '@/data/cases/cases';
 
 export const metadata: Metadata = {
   description:

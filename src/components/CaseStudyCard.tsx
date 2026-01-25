@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { CaseStudy } from '@/data/getMDX';
+import { CaseStudy } from '@/data/cases/cases';
 
-export default function CaseStudyCard(caseStudy: Partial<CaseStudy>) {
+export default function CaseStudyCard(caseStudy: CaseStudy) {
   return (
     <Link href={(caseStudy.slug && `/work/${caseStudy.slug}`) ?? ''}>
       <article className="pb-20">
         {caseStudy.feature_image && (
           <Image
-            src={caseStudy.feature_image}
+            src={caseStudy.feature_image as string}
             alt={`${caseStudy.title}} Project Image`}
             className={'aspect-2/3 h-auto w-full object-cover pb-2'}
             width={400}

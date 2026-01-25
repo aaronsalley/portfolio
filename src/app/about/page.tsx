@@ -6,7 +6,7 @@ import Carousel from '@/components/Carousel';
 import PostList from '@/components/PostList';
 import { fetchPosts } from '@/data/fetchPosts';
 import Experience from '@/components/Experience';
-import { getCaseStudies } from '@/data/getMDX';
+import { getCaseStudies } from '@/data/cases/cases';
 
 export const metadata: Metadata = {
   title: 'About',

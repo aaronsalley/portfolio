@@ -1,16 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import link_out from '../../public/svgs/link_out.svg';
-import { CaseStudy } from '@/data/getMDX';
+import { CaseStudy } from '@/data/cases/cases';
 
-export default function CarouselCard({ item }: { item: Partial<CaseStudy> }) {
+export default function CarouselCard({ item }: { item: CaseStudy }) {
   return (
     <li className="z-0 flex w-full max-w-200 flex-col items-start">
       <Link href={(item.slug && `/work/${item.slug}`) ?? ''} className="w-full">
         <div className="relative flex items-center justify-center">
           {item.feature_image && (
             <Image
-              src={item.feature_image}
+              src={item.feature_image as string}
               alt={item.client_name ?? 'Case Study Image'}
               width={800}
               height={400}
@@ -31,7 +31,7 @@ export default function CarouselCard({ item }: { item: Partial<CaseStudy> }) {
             for <span className="hidden">{item.client_name}</span>
           </small>
           <Image
-            src={item.client_logo ?? ''}
+            src={item.client_logo as string}
             alt={item.client_name ?? 'Client Logo'}
             width={100}
             height={50}

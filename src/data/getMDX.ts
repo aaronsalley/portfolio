@@ -1,46 +1,8 @@
 import fs from 'fs';
 import path from 'path';
+import { CaseStudy } from './cases/cases';
 
-enum Tags {
-  Strategy = 'Strategy',
-  Design = 'Design',
-  AI = 'AI',
-  Leadership = 'Leadership',
-  Mobile = 'Mobile',
-  Engineering = 'Engineering',
-}
-
-enum Categories {
-  Healthcare = 'Healthcare',
-  Commerce = 'Commerce',
-  SaaS = 'SaaS',
-  IoT = 'IoT',
-  Platform = 'Platform',
-}
-
-type Metadata = {
-  title: string;
-  feature_image?: string;
-  feature_image_alt?: string;
-  feature_image_caption?: string;
-  featured?: boolean;
-  visibility?: string;
-  published_at: string;
-  excerpt: string;
-  reading_time?: string;
-  category?: Categories;
-  tags?: string[] | Tags[];
-};
-
-type Post = Metadata & {
-  slug: string;
-  content: string;
-};
-
-export type CaseStudy = Post & {
-  client_name: string;
-  client_logo?: string;
-};
+type Metadata = Omit<CaseStudy, 'content'>;
 
 function parseFrontmatter(fileContent: string) {
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
@@ -48,7 +10,7 @@ function parseFrontmatter(fileContent: string) {
   const frontMatterBlock = match![1];
   const content = fileContent.replace(frontmatterRegex, '').trim();
   const frontMatterLines = frontMatterBlock.trim().split('\n');
-  const metadata: Partial<Metadata> = {};
+  const metadata: Metadata = {} as Metadata;
 
   frontMatterLines.forEach((line) => {
     const [key, ...valueArr] = line.split(': ');
@@ -87,28 +49,16 @@ function readMDXFile(filePath: string) {
   return parseFrontmatter(rawContent);
 }
 
-function getMDXData(dir: string) {
+export function getMDXData(dir: string) {
   const mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     const { metadata, content } = readMDXFile(path.join(dir, file));
     const slug = path.basename(file, path.extname(file));
 
     return {
-      ...metadata,
       slug,
+      ...metadata,
       content,
     };
   });
-}
-
-export function getCaseStudies(): Partial<CaseStudy>[] {
-  return getMDXData(path.join(process.cwd(), 'src', 'data', 'cases'))
-    .filter((post) => post.visibility === 'public')
-    .sort((a, b) => {
-      if (!a.published_at || !b.published_at) return 0;
-
-      return (
-        new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
-      );
-    });
 }
