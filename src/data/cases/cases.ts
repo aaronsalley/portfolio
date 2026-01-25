@@ -38,7 +38,7 @@ export type CaseStudy = {
   slug?: string;
 };
 
-export function getCaseStudies(): Partial<CaseStudy>[] {
+export function getCaseStudies(): CaseStudy[] {
   return getMDXData(path.join(process.cwd(), 'src', 'data', 'cases'))
     .filter((post) => post.visibility === 'public')
     .sort((a, b) => {
