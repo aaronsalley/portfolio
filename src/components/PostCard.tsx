@@ -16,7 +16,7 @@ export default function PostCard(post: Post) {
               className="aspect-7/5 w-full rounded-2xl object-cover"
             />
           ) : (
-            <div className="group:bg-[url('/placeholder2.jpg')] aspect-7/5 w-full rounded-2xl bg-cover bg-center group-first:bg-[url('/placeholder1.jpg')] group-last:bg-[url('/placeholder1.jpg')]"></div>
+            <div className="aspect-7/5 w-full rounded-2xl bg-[url('/placeholder2.jpg')] bg-cover bg-center group-first:bg-[url('/placeholder1.jpg')] group-last:bg-[url('/placeholder1.jpg')]"></div>
           )}
           <ul className="mt-5 ml-5 inline-flex">
             {post.tags.length > 0 && (
