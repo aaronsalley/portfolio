@@ -18,7 +18,6 @@ export default function TopBar() {
 
     if (!hero || !navbar) return;
 
-    // if scroll position >= hero height - navbar height, state = sticky
     if (navbar && hero)
       setSticky(scrollPosition >= hero.scrollHeight - navbar.scrollHeight);
   };

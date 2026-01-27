@@ -19,7 +19,6 @@ export default function Footer() {
         </p>
       </div>
       <NavLinks className="grid w-full grid-cols-2 gap-6 text-center font-sans text-sm tracking-widest uppercase md:order-1 md:ml-9 md:flex md:flex-1 md:columns-1 md:items-center lg:gap-15" />
-      {/* Instagram className='md:order-7' */}
       <div className="mx-10 flex-1 md:order-6 md:mr-9">
         <EmailSubscribeForm className="sm:mr-auto md:mr-8 md:max-w-xl lg:ml-16" />
       </div>

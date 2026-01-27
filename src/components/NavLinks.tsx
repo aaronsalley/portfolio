@@ -6,7 +6,7 @@ const links = [
     href: 'https://aaronsalley.medium.com/',
     label: 'Insights',
     target: '_blank',
-  }, // TODO: Make local and remove target
+  },
   { href: '/contact', label: 'Contact' },
 ];
 

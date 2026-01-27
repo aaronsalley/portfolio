@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Introduction
 
-## Getting Started
+This repository contains the production code for my personal portfolio site.
 
-First, run the development server:
+It is written by hand in TypeScript, Next.js, and Tailwind CSS, and reflects the same approach I apply to product and UX work more broadly: clarity over cleverness, structure over sprawl, and restraint where systems tend to overreach.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The site itself documents selected case studies spanning healthcare, commerce, AI-mediated platforms, and connected systems. The code here is not a demo or a sandbox—it is the deployed implementation that supports that work, designed to be readable, maintainable, and intentionally boring in the best sense.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You won’t find frameworks stacked for novelty or abstractions added without purpose. Decisions were made deliberately, balancing speed, durability, and long-term maintainability. The architecture favors composability, explicitness, and predictable behavior over premature optimization.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This is not a complete catalog of experiments. \
+It is a working system, built and maintained over time.
 
-## Learn More
+**What this repo is (and isn’t)** \
+ • Is: production Next.js code written and maintained by me, not AI\
+ • Is: opinionated in service of clarity and longevity\
+ • Is: the foundation for a real, deployed portfolio\
+ • _Is not: a framework showcase_\
+ • _Is not: a collection of isolated demos_\
+ • _Is not: optimized for trend-chasing_
 
-To learn more about Next.js, take a look at the following resources:
+## Technical principles
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The code in this repository follows the same principles that guide my product and UX work: make intent explicit, absorb complexity early, and avoid decisions that create future drag.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Clarity over cleverness
 
-## Deploy on Vercel
+Code is written to be read and understood later—not admired once. Abstractions exist only when they reduce cognitive load.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Restraint as a feature
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+I avoid unnecessary layers, frameworks, and patterns. Simpler structures scale better and fail more predictably.
+
+### Structure before optimization
+
+Clear boundaries, naming, and composition matter more than premature performance tuning. Optimization follows evidence, not instinct.
+
+### Boring, on purpose
+
+Defaults are chosen for stability and longevity. When something is unconventional, it’s because the trade-off was explicit and justified.
+
+### Design intent carried through code
+
+Layout, spacing, and interaction decisions are treated as first-class concerns. Tailwind is used as a constraint system, not a styling shortcut.
+
+### Built to evolve, not sprawl
+
+The architecture favors small, composable units and predictable data flow—so the site can change without accumulating friction.
+
+This repository reflects how I think about systems:\
+_good decisions made early compound quietly over time._
