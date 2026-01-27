@@ -1,6 +1,6 @@
+import { getMDXData } from '@/helpers/mdx';
 import { Timestamp } from 'next/dist/server/lib/cache-handlers/types';
 import { Url } from 'next/dist/shared/lib/router/router';
-import { getMDXData } from '../getMDX';
 import path from 'path';
 
 export enum Tags {

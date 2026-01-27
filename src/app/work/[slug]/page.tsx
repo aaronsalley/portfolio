@@ -1,4 +1,4 @@
-import { CustomMDX } from '@/components/mdx';
+import { CustomMDX } from '@/helpers/mdx';
 import { CaseStudy, getCaseStudies } from '@/data/cases/cases';
 
 export async function generateStaticParams() {
@@ -58,7 +58,10 @@ export default async function Post({ params }: { params: { slug: string } }) {
         <h1 className="font-serif text-5xl">{post.title}</h1>
         <p>{post.excerpt}</p>
       </header>
-      <CustomMDX source={post.content} components={overrideComponents} />
+      <CustomMDX
+        source={post.content as never}
+        components={overrideComponents}
+      />
     </article>
   );
 }
