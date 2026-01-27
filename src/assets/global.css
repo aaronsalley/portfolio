@@ -71,7 +71,7 @@
     container-name: headshot;
 
     @media (height <= 800px) {
-      @apply min-h-[597px];
+      @apply min-h-149.25;
 
       img {
         object-position: 50% -97.41px;
