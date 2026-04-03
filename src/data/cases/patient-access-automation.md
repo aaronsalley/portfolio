@@ -14,32 +14,87 @@ client_name: 'MSK'
 client_logo: '/svgs/brand--MSK.svg'
 ---
 
-The pressure point wasn’t the entire patient access operation.
-It was the moment a new visit request first entered the system.
-Volume was high, intake quality was inconsistent, and teams were spending disproportionate time just determining what a request was—before they could decide what to do with it. Automation seemed like the obvious answer.
-The real question was whether speeding up that first step would actually improve access—or quietly make downstream problems worse.
+Every new patient at MSK arrives with a history.
+Before care can begin, that history has to be gathered, reviewed, and made usable—often from fragmented, external sources like fax and email. For Patient Access Services (PAS), this meant processing thousands of pages of medical records each week, under time pressure, with direct impact on how quickly a patient could be seen.
+The work wasn’t optional.
+It was foundational.
+But it was also almost entirely manual.
 
-New visit requests arrived through multiple channels, often bundled with attachments that had to be manually interpreted, separated, and prepared before any routing or scheduling could begin. A significant portion of intake time wasn’t decision-making at all—it was preparatory work required to make information usable downstream.
-To keep work moving, this processing often happened outside core systems. Documents were temporarily saved to local machines so they could be split, renamed, and re-uploaded into the EHR (Epic), introducing both delay and unnecessary exposure of protected health information.
-The surface issue was throughput.
-The deeper issue was risk and decision confidence.
-Speeding up intake without addressing these hidden steps would have accelerated volume while increasing operational and compliance risk—exactly the opposite of what access teams and leadership needed.
+Incoming records arrived as large, unstructured document packets—often 50 to 100+ pages—containing a mix of reports, scans, cover sheets, and duplicates.
 
-New visit intake sits at a sensitive intersection: patient trust, staff workload, and regulatory responsibility. Errors or shortcuts at this point don’t just create rework—they introduce downstream inefficiency and risk that compounds quietly over time.
-The goal wasn’t to move requests faster.
-It was to remove fragile workarounds and restore confidence at the front door.
+Access Assistants were responsible for:
 
-The first decision was to constrain the scope deliberately.
-Rather than automating scheduling or downstream decisions, the focus stayed on structuring the request itself—extracting intent, normalizing information, and eliminating the manual steps that existed solely to make data usable.
-This meant addressing the work no one had formally designed for: separating bundled documents, interpreting attachments, and ensuring information could be archived correctly without ever touching a local machine. Automating around this work without understanding it would have increased throughput while quietly increasing PHI risk.
-AI was introduced as an assistive layer—identifying key attributes, flagging missing or ambiguous information, and supporting routing—while keeping final judgment with staff. Just as importantly, clear boundaries were set around what the system would not decide.
-By removing the need for local document handling and embedding structure earlier in the workflow, the automation reduced both interpretation burden and risk exposure—without asking teams to move faster than the system could responsibly support.
+- Monitoring multiple inboxes
+- Downloading and organizing files
+- Splitting documents manually
+- Identifying patient context
+- Classifying document types
+- Preparing subsets for Epic
 
-The new visit request workflow reduced the time teams spent interpreting and reworking intake, without removing judgment from the process. Requests arrived clearer, more consistent, and easier to act on—allowing staff to move from sorting to resolving.
-Just as importantly, fragile workarounds were eliminated. Intake processing no longer depended on documents being stored locally to keep work moving, reducing unnecessary exposure of protected health information and removing a source of quiet operational risk.
-As clarity improved at the point of entry, downstream friction decreased. Exceptions became more visible rather than more frequent, and teams spent less time compensating for ambiguity introduced upstream.
-A less visible—but equally important—result was relief across the access teams themselves. As manual rework declined and intake became more predictable, the reliance on sustained overtime to keep up with demand began to ease. This wasn’t the result of pushing teams harder. It came from removing unnecessary interpretation work and risk from the workflow itself.
-Leadership gained confidence not just in the automation, but in a repeatable approach to improving access—one that strengthened judgment, reduced risk, and relieved organizational strain without shifting the burden elsewhere.
+The surface issue looked like inefficiency.
+The deeper issue was cognitive overload at scale.
+Each case required sustained attention, pattern recognition, and judgment—applied to repetitive, low-leverage tasks. Processing times stretched into hours per case, introducing delays that directly impacted patient scheduling and readiness for care.
+This wasn’t just an operational problem.
+It was a time-to-care problem.
 
-Automation improves access only when it strengthens judgment at the front door.
-Speed follows clarity—not the other way around.
+At MSK, delays in intake aren’t abstract—they affect when a patient is seen, how quickly a diagnosis is confirmed, and how confidently care teams can act.
+At the same time, the process carried real risk:
+
+- Inconsistent document quality entering Epic
+- PHI exposure through fragmented handling workflows
+- Rising overtime costs to keep pace with volume
+- Limited scalability without adding staff
+
+The goal wasn’t full automation.
+It was to remove the work that didn’t require human judgment.
+
+The most important decision was where to start.
+Initial stakeholder instinct focused on automating Epic upload. But deeper workflow analysis revealed a different constraint:
+
+# Document separation—not system entry—was the true bottleneck.
+
+If records couldn’t be reliably split, classified, and contextualized, downstream automation would only propagate errors faster.
+So V1 focused upstream.
+The system was designed to:
+
+- Ingest records from shared inboxes automatically
+- Separate and classify documents using intelligent processing
+- Extract patient context with conservative confidence thresholds
+- Present outputs in a structured QA interface for human validation
+
+This introduced a human-in-the-loop model:
+automation handled repetition; humans retained judgment.
+
+Equally important was sequencing.
+Rather than waiting on Epic governance and integration dependencies, the solution was intentionally scoped to deliver value before system-of-record automation. This allowed the team to prove impact early, build trust with PAS users, and iterate safely within a regulated environment.
+The product wasn’t positioned as a bot.
+It was positioned as a new intake workflow.
+
+The first production release delivered immediate and measurable impact:
+
+- ~80% reduction in Access Assistant processing time (4 hours → ~55 minutes)
+- ~88% reduction in time to Care Advisor handoff (80 hours → ~9.75 hours)
+- 1,200+ documents processed in the initial production window
+- ~50% of documents were immediately “ready for upload” without rework
+
+Just as important as the metrics was adoption.
+Users didn’t treat the system as a temporary tool.
+They chose to stay in it—even after rotation.
+
+That signal mattered.
+It indicated the system wasn’t just faster.
+It was less cognitively taxing and more trustworthy.
+
+The system did more than improve throughput.
+
+It:
+
+- Reduced reliance on overtime to meet demand
+- Lowered PHI risk by eliminating local document handling
+- Standardized document quality entering Epic
+- Created a foundation for future automation (Epic, OnBase, summarization)
+
+What began as a workflow fix became a platform for intake intelligence.
+
+Automation doesn’t create value by replacing people.
+It creates value by removing the work that prevents people from thinking.
